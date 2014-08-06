@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
+		A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */; };
+		A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EFB19914B4E00536DD7 /* UIKit.framework */; };
+		A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F0019914B4E00536DD7 /* InfoPlist.strings */; };
+		A4C72F0419914B4E00536DD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C72F0319914B4E00536DD7 /* main.m */; };
+		A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */; };
+		A4C72F0B19914B4E00536DD7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */; };
+		A4C72F0E19914B4E00536DD7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */; };
+		A4C72F1119914B4E00536DD7 /* TMBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C72F1019914B4E00536DD7 /* TMBViewController.m */; };
+		A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F1219914B4E00536DD7 /* Images.xcassets */; };
+		A4C72F1A19914B4E00536DD7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72F1919914B4E00536DD7 /* XCTest.framework */; };
+		A4C72F1B19914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
+		A4C72F1C19914B4E00536DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EFB19914B4E00536DD7 /* UIKit.framework */; };
+		A4C72F2419914B4E00536DD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F2219914B4E00536DD7 /* InfoPlist.strings */; };
+		A4C72F2619914B4E00536DD7 /* Sky_VendaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C72F2519914B4E00536DD7 /* Sky_VendaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A4C72F1D19914B4E00536DD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4C72EEC19914B4E00536DD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4C72EF319914B4E00536DD7;
+			remoteInfo = Sky_Venda;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A4C72EF419914B4E00536DD7 /* Sky_Venda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky_Venda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4C72EF719914B4E00536DD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A4C72EFB19914B4E00536DD7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A4C72EFF19914B4E00536DD7 /* Sky_Venda-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sky_Venda-Info.plist"; sourceTree = "<group>"; };
+		A4C72F0119914B4E00536DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A4C72F0319914B4E00536DD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A4C72F0519914B4E00536DD7 /* Sky_Venda-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sky_Venda-Prefix.pch"; sourceTree = "<group>"; };
+		A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMBAppDelegate.h; sourceTree = "<group>"; };
+		A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMBAppDelegate.m; sourceTree = "<group>"; };
+		A4C72F0A19914B4E00536DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		A4C72F0D19914B4E00536DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		A4C72F0F19914B4E00536DD7 /* TMBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMBViewController.h; sourceTree = "<group>"; };
+		A4C72F1019914B4E00536DD7 /* TMBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMBViewController.m; sourceTree = "<group>"; };
+		A4C72F1219914B4E00536DD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A4C72F1819914B4E00536DD7 /* Sky_VendaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sky_VendaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4C72F1919914B4E00536DD7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A4C72F2119914B4E00536DD7 /* Sky_VendaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sky_VendaTests-Info.plist"; sourceTree = "<group>"; };
+		A4C72F2319914B4E00536DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A4C72F2519914B4E00536DD7 /* Sky_VendaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sky_VendaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4C72EF119914B4E00536DD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */,
+				A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */,
+				A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4C72F1519914B4E00536DD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C72F1A19914B4E00536DD7 /* XCTest.framework in Frameworks */,
+				A4C72F1C19914B4E00536DD7 /* UIKit.framework in Frameworks */,
+				A4C72F1B19914B4E00536DD7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4C72EEB19914B4E00536DD7 = {
+			isa = PBXGroup;
+			children = (
+				A4C72EFD19914B4E00536DD7 /* Sky_Venda */,
+				A4C72F1F19914B4E00536DD7 /* Sky_VendaTests */,
+				A4C72EF619914B4E00536DD7 /* Frameworks */,
+				A4C72EF519914B4E00536DD7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4C72EF519914B4E00536DD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4C72EF419914B4E00536DD7 /* Sky_Venda.app */,
+				A4C72F1819914B4E00536DD7 /* Sky_VendaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4C72EF619914B4E00536DD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4C72EF719914B4E00536DD7 /* Foundation.framework */,
+				A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */,
+				A4C72EFB19914B4E00536DD7 /* UIKit.framework */,
+				A4C72F1919914B4E00536DD7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4C72EFD19914B4E00536DD7 /* Sky_Venda */ = {
+			isa = PBXGroup;
+			children = (
+				A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */,
+				A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */,
+				A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */,
+				A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */,
+				A4C72F0F19914B4E00536DD7 /* TMBViewController.h */,
+				A4C72F1019914B4E00536DD7 /* TMBViewController.m */,
+				A4C72F1219914B4E00536DD7 /* Images.xcassets */,
+				A4C72EFE19914B4E00536DD7 /* Supporting Files */,
+			);
+			path = Sky_Venda;
+			sourceTree = "<group>";
+		};
+		A4C72EFE19914B4E00536DD7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4C72EFF19914B4E00536DD7 /* Sky_Venda-Info.plist */,
+				A4C72F0019914B4E00536DD7 /* InfoPlist.strings */,
+				A4C72F0319914B4E00536DD7 /* main.m */,
+				A4C72F0519914B4E00536DD7 /* Sky_Venda-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4C72F1F19914B4E00536DD7 /* Sky_VendaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A4C72F2519914B4E00536DD7 /* Sky_VendaTests.m */,
+				A4C72F2019914B4E00536DD7 /* Supporting Files */,
+			);
+			path = Sky_VendaTests;
+			sourceTree = "<group>";
+		};
+		A4C72F2019914B4E00536DD7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4C72F2119914B4E00536DD7 /* Sky_VendaTests-Info.plist */,
+				A4C72F2219914B4E00536DD7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4C72EF319914B4E00536DD7 /* Sky_Venda */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4C72F2919914B4E00536DD7 /* Build configuration list for PBXNativeTarget "Sky_Venda" */;
+			buildPhases = (
+				A4C72EF019914B4E00536DD7 /* Sources */,
+				A4C72EF119914B4E00536DD7 /* Frameworks */,
+				A4C72EF219914B4E00536DD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sky_Venda;
+			productName = Sky_Venda;
+			productReference = A4C72EF419914B4E00536DD7 /* Sky_Venda.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A4C72F1719914B4E00536DD7 /* Sky_VendaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4C72F2C19914B4E00536DD7 /* Build configuration list for PBXNativeTarget "Sky_VendaTests" */;
+			buildPhases = (
+				A4C72F1419914B4E00536DD7 /* Sources */,
+				A4C72F1519914B4E00536DD7 /* Frameworks */,
+				A4C72F1619914B4E00536DD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4C72F1E19914B4E00536DD7 /* PBXTargetDependency */,
+			);
+			name = Sky_VendaTests;
+			productName = Sky_VendaTests;
+			productReference = A4C72F1819914B4E00536DD7 /* Sky_VendaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4C72EEC19914B4E00536DD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TMB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = TMB;
+				TargetAttributes = {
+					A4C72F1719914B4E00536DD7 = {
+						TestTargetID = A4C72EF319914B4E00536DD7;
+					};
+				};
+			};
+			buildConfigurationList = A4C72EEF19914B4E00536DD7 /* Build configuration list for PBXProject "Sky_Venda" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4C72EEB19914B4E00536DD7;
+			productRefGroup = A4C72EF519914B4E00536DD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4C72EF319914B4E00536DD7 /* Sky_Venda */,
+				A4C72F1719914B4E00536DD7 /* Sky_VendaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4C72EF219914B4E00536DD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C72F0E19914B4E00536DD7 /* Main_iPad.storyboard in Resources */,
+				A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */,
+				A4C72F0B19914B4E00536DD7 /* Main_iPhone.storyboard in Resources */,
+				A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4C72F1619914B4E00536DD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C72F2419914B4E00536DD7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4C72EF019914B4E00536DD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C72F1119914B4E00536DD7 /* TMBViewController.m in Sources */,
+				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
+				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4C72F1419914B4E00536DD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C72F2619914B4E00536DD7 /* Sky_VendaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A4C72F1E19914B4E00536DD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4C72EF319914B4E00536DD7 /* Sky_Venda */;
+			targetProxy = A4C72F1D19914B4E00536DD7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A4C72F0019914B4E00536DD7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4C72F0119914B4E00536DD7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4C72F0A19914B4E00536DD7 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4C72F0D19914B4E00536DD7 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		A4C72F2219914B4E00536DD7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4C72F2319914B4E00536DD7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4C72F2719914B4E00536DD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4C72F2819914B4E00536DD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4C72F2A19914B4E00536DD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sky_Venda/Sky_Venda-Prefix.pch";
+				INFOPLIST_FILE = "Sky_Venda/Sky_Venda-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A4C72F2B19914B4E00536DD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sky_Venda/Sky_Venda-Prefix.pch";
+				INFOPLIST_FILE = "Sky_Venda/Sky_Venda-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A4C72F2D19914B4E00536DD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sky_Venda.app/Sky_Venda";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sky_Venda/Sky_Venda-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sky_VendaTests/Sky_VendaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A4C72F2E19914B4E00536DD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sky_Venda.app/Sky_Venda";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sky_Venda/Sky_Venda-Prefix.pch";
+				INFOPLIST_FILE = "Sky_VendaTests/Sky_VendaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4C72EEF19914B4E00536DD7 /* Build configuration list for PBXProject "Sky_Venda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4C72F2719914B4E00536DD7 /* Debug */,
+				A4C72F2819914B4E00536DD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4C72F2919914B4E00536DD7 /* Build configuration list for PBXNativeTarget "Sky_Venda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4C72F2A19914B4E00536DD7 /* Debug */,
+				A4C72F2B19914B4E00536DD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A4C72F2C19914B4E00536DD7 /* Build configuration list for PBXNativeTarget "Sky_VendaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4C72F2D19914B4E00536DD7 /* Debug */,
+				A4C72F2E19914B4E00536DD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4C72EEC19914B4E00536DD7 /* Project object */;
+}
