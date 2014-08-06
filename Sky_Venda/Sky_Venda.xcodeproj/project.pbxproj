@@ -81,6 +81,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A45371141992A74C00BF9BBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */,
+				A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A45371151992A76D00BF9BBF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4C72F0F19914B4E00536DD7 /* TMBViewController.h */,
+				A4C72F1019914B4E00536DD7 /* TMBViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A45371161992A77800BF9BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A45371171992A79700BF9BBF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		A4C72EEB19914B4E00536DD7 = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +146,12 @@
 		A4C72EFD19914B4E00536DD7 /* Sky_Venda */ = {
 			isa = PBXGroup;
 			children = (
+				A45371171992A79700BF9BBF /* Resources */,
 				A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */,
 				A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */,
-				A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */,
-				A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */,
-				A4C72F0F19914B4E00536DD7 /* TMBViewController.h */,
-				A4C72F1019914B4E00536DD7 /* TMBViewController.m */,
+				A45371161992A77800BF9BBF /* Model */,
+				A45371141992A74C00BF9BBF /* Views */,
+				A45371151992A76D00BF9BBF /* Controllers */,
 				A4C72F1219914B4E00536DD7 /* Images.xcassets */,
 				A4C72EFE19914B4E00536DD7 /* Supporting Files */,
 			);
@@ -471,6 +503,7 @@
 				A4C72F2B19914B4E00536DD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4C72F2C19914B4E00536DD7 /* Build configuration list for PBXNativeTarget "Sky_VendaTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +512,7 @@
 				A4C72F2E19914B4E00536DD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
