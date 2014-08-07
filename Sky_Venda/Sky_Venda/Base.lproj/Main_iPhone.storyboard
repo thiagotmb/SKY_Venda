@@ -4,24 +4,24 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - Packages Content-->
+        <!--Packages Presentation Table View Controller - Packages Presentation-->
         <scene sceneID="Pgz-cQ-ZPR">
             <objects>
-                <tableViewController title="Packages Content" id="SAP-oN-3QV" sceneMemberID="viewController">
+                <tableViewController title="Packages Presentation" id="SAP-oN-3QV" customClass="TMBPackagesPresentationTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Lq-Q9-447">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PackagesCell" id="xui-cB-LMy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PackagesCell" id="xui-cB-LMy" customClass="TMBPackagesPresentationTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xui-cB-LMy" id="5lX-KI-j5b">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="wqV-BY-dlC" kind="push" id="dI9-Q2-qcW"/>
+                                    <segue destination="wqV-BY-dlC" kind="push" id="jtq-ot-SCS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,7 +69,6 @@
         <!--View Controller - Package Confirmation-->
         <scene sceneID="wXl-ah-gPf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iAJ-L5-CP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Package Confirmation" id="Mxc-dg-yrO" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wFt-wo-Ddq"/>
@@ -81,6 +80,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAJ-L5-CP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1350" y="-2366"/>
         </scene>
@@ -96,7 +96,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9Z4-R4-Jvy" kind="relationship" relationship="viewControllers" id="ceM-y9-uE3"/>
-                        <segue destination="tyI-kJ-fy3" kind="relationship" relationship="viewControllers" id="wDs-cv-1Fu"/>
+                        <segue destination="NXz-pg-ocf" kind="relationship" relationship="viewControllers" id="wDs-cv-1Fu"/>
                         <segue destination="Fbt-2a-dKz" kind="relationship" relationship="viewControllers" id="y0i-uh-2KL"/>
                     </connections>
                 </tabBarController>
@@ -136,12 +136,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cliente" id="2Aq-66-j7q"/>
                     <navigationItem key="navigationItem" title="Cliente" id="O0L-EA-wOK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3k6-l6-ze9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="-1569"/>
+            <point key="canvasLocation" x="373" y="-1569"/>
         </scene>
         <!--View Controller - FAQ Answers-->
         <scene sceneID="vD7-Yz-G7P">
@@ -165,7 +164,6 @@
         <!--View Controller - Client Edit-->
         <scene sceneID="pDa-9i-NAl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M3l-Jv-mgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Client Edit" id="egn-Gz-QJH" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GJH-u7-3yF"/>
@@ -177,8 +175,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3l-Jv-mgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="373" y="-1569"/>
+            <point key="canvasLocation" x="882" y="-1569"/>
         </scene>
         <!--Table View Controller - FAQ List-->
         <scene sceneID="E7L-JJ-WGZ">
@@ -228,32 +227,24 @@
             </objects>
             <point key="canvasLocation" x="-197" y="-818"/>
         </scene>
-        <!--View Controller - Client Login-->
-        <scene sceneID="CBm-Id-O5P">
+        <!--Navigation Controller - Cliente-->
+        <scene sceneID="Xgb-F0-yzn">
             <objects>
-                <viewController storyboardIdentifier="LoginStoryBoard" title="Client Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A8v-TV-cbo" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YCb-mb-EQW"/>
-                        <viewControllerLayoutGuide type="bottom" id="lCn-PV-7oo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RRq-Uo-MTb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4a-Lh-MkS">
-                                <rect key="frame" x="137" y="364" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kJn-ch-mY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NXz-pg-ocf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cliente" id="2Aq-66-j7q"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3sy-7a-Crj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tyI-kJ-fy3" kind="relationship" relationship="rootViewController" id="fDw-S5-tKA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2a-Qh-i27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-751" y="-305"/>
+            <point key="canvasLocation" x="-197" y="-1569"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
