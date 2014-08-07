@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		A47ABA5E1993ED32002B613C /* TMBPackagesPresentationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47ABA5D1993ED32002B613C /* TMBPackagesPresentationTableViewController.m */; };
 		A47ABA611993EE57002B613C /* TMBPackagesPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47ABA601993EE57002B613C /* TMBPackagesPresentationTableViewCell.m */; };
+		A47ABA6B1994140B002B613C /* SKY0.png in Resources */ = {isa = PBXBuildFile; fileRef = A47ABA6A1994140B002B613C /* SKY0.png */; };
+		A47ABA6F19941721002B613C /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A47ABA6C19941721002B613C /* SKY1.png */; };
+		A47ABA7019941721002B613C /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A47ABA6D19941721002B613C /* SKY2.png */; };
+		A47ABA7119941721002B613C /* SKY3.png in Resources */ = {isa = PBXBuildFile; fileRef = A47ABA6E19941721002B613C /* SKY3.png */; };
+		A47ABA7419941AE0002B613C /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47ABA7319941AE0002B613C /* TMBPackageAdhesionViewController.m */; };
 		A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
 		A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */; };
 		A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EFB19914B4E00536DD7 /* UIKit.framework */; };
@@ -40,6 +45,12 @@
 		A47ABA5D1993ED32002B613C /* TMBPackagesPresentationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMBPackagesPresentationTableViewController.m; path = Controllers/Package/TMBPackagesPresentationTableViewController.m; sourceTree = "<group>"; };
 		A47ABA5F1993EE57002B613C /* TMBPackagesPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMBPackagesPresentationTableViewCell.h; path = Controllers/Package/TMBPackagesPresentationTableViewCell.h; sourceTree = "<group>"; };
 		A47ABA601993EE57002B613C /* TMBPackagesPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMBPackagesPresentationTableViewCell.m; path = Controllers/Package/TMBPackagesPresentationTableViewCell.m; sourceTree = "<group>"; };
+		A47ABA6A1994140B002B613C /* SKY0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY0.png; sourceTree = "<group>"; };
+		A47ABA6C19941721002B613C /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
+		A47ABA6D19941721002B613C /* SKY2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY2.png; sourceTree = "<group>"; };
+		A47ABA6E19941721002B613C /* SKY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY3.png; sourceTree = "<group>"; };
+		A47ABA7219941AE0002B613C /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMBPackageAdhesionViewController.h; path = Controllers/Package/TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
+		A47ABA7319941AE0002B613C /* TMBPackageAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMBPackageAdhesionViewController.m; path = Controllers/Package/TMBPackageAdhesionViewController.m; sourceTree = "<group>"; };
 		A4C72EF419914B4E00536DD7 /* Sky_Venda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky_Venda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C72EF719914B4E00536DD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,6 +124,7 @@
 		A45371171992A79700BF9BBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A47ABA691994140B002B613C /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -124,6 +136,8 @@
 				A47ABA5D1993ED32002B613C /* TMBPackagesPresentationTableViewController.m */,
 				A47ABA5F1993EE57002B613C /* TMBPackagesPresentationTableViewCell.h */,
 				A47ABA601993EE57002B613C /* TMBPackagesPresentationTableViewCell.m */,
+				A47ABA7219941AE0002B613C /* TMBPackageAdhesionViewController.h */,
+				A47ABA7319941AE0002B613C /* TMBPackageAdhesionViewController.m */,
 			);
 			name = Package;
 			sourceTree = "<group>";
@@ -140,6 +154,18 @@
 			children = (
 			);
 			name = Faq;
+			sourceTree = "<group>";
+		};
+		A47ABA691994140B002B613C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A47ABA6A1994140B002B613C /* SKY0.png */,
+				A47ABA6C19941721002B613C /* SKY1.png */,
+				A47ABA6D19941721002B613C /* SKY2.png */,
+				A47ABA6E19941721002B613C /* SKY3.png */,
+			);
+			name = Images;
+			path = Resources/Images;
 			sourceTree = "<group>";
 		};
 		A4C72EEB19914B4E00536DD7 = {
@@ -293,9 +319,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47ABA7019941721002B613C /* SKY2.png in Resources */,
 				A4C72F0E19914B4E00536DD7 /* Main_iPad.storyboard in Resources */,
 				A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */,
 				A4C72F0B19914B4E00536DD7 /* Main_iPhone.storyboard in Resources */,
+				A47ABA6F19941721002B613C /* SKY1.png in Resources */,
+				A47ABA7119941721002B613C /* SKY3.png in Resources */,
+				A47ABA6B1994140B002B613C /* SKY0.png in Resources */,
 				A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +349,7 @@
 				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
 				A47ABA611993EE57002B613C /* TMBPackagesPresentationTableViewCell.m in Sources */,
 				A47ABA5E1993ED32002B613C /* TMBPackagesPresentationTableViewController.m in Sources */,
+				A47ABA7419941AE0002B613C /* TMBPackageAdhesionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

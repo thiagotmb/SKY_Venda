@@ -10,4 +10,6 @@
 
 @interface TMBPackagesPresentationTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *packagePresentImage;
+
 @end
