@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A47ABA5E1993ED32002B613C /* TMBPackagesPresentationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47ABA5D1993ED32002B613C /* TMBPackagesPresentationTableViewController.m */; };
-		A47ABA611993EE57002B613C /* TMBPackagesPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47ABA601993EE57002B613C /* TMBPackagesPresentationTableViewCell.m */; };
-		A47ABA6B1994140B002B613C /* SKY0.png in Resources */ = {isa = PBXBuildFile; fileRef = A47ABA6A1994140B002B613C /* SKY0.png */; };
-		A47ABA6F19941721002B613C /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A47ABA6C19941721002B613C /* SKY1.png */; };
-		A47ABA7019941721002B613C /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A47ABA6D19941721002B613C /* SKY2.png */; };
-		A47ABA7119941721002B613C /* SKY3.png in Resources */ = {isa = PBXBuildFile; fileRef = A47ABA6E19941721002B613C /* SKY3.png */; };
-		A47ABA7419941AE0002B613C /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47ABA7319941AE0002B613C /* TMBPackageAdhesionViewController.m */; };
+		A48E3ED01994528B00EA54E2 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3EC71994528B00EA54E2 /* TMBFaqListViewController.m */; };
+		A48E3ED11994528B00EA54E2 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ECA1994528B00EA54E2 /* TMBPackageAdhesionViewController.m */; };
+		A48E3ED21994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */; };
+		A48E3ED31994528B00EA54E2 /* TMBContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ECF1994528B00EA54E2 /* TMBContactTableViewCell.m */; };
+		A48E3EDC199452CF00EA54E2 /* TMBFaqTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ED7199452CF00EA54E2 /* TMBFaqTableViewCell.m */; };
+		A48E3EDD199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3EDA199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m */; };
+		A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE0199452F400EA54E2 /* SKY0.png */; };
+		A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE1199452F400EA54E2 /* SKY1.png */; };
+		A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE2199452F400EA54E2 /* SKY2.png */; };
+		A48E3EE7199452F400EA54E2 /* SKY3.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE3199452F400EA54E2 /* SKY3.png */; };
+		A48E3EEE1994586F00EA54E2 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3EED1994586F00EA54E2 /* TMBFaqAnswerViewController.m */; };
 		A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
 		A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */; };
 		A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EFB19914B4E00536DD7 /* UIKit.framework */; };
@@ -41,16 +45,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A47ABA5C1993ED32002B613C /* TMBPackagesPresentationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMBPackagesPresentationTableViewController.h; path = Controllers/Package/TMBPackagesPresentationTableViewController.h; sourceTree = "<group>"; };
-		A47ABA5D1993ED32002B613C /* TMBPackagesPresentationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMBPackagesPresentationTableViewController.m; path = Controllers/Package/TMBPackagesPresentationTableViewController.m; sourceTree = "<group>"; };
-		A47ABA5F1993EE57002B613C /* TMBPackagesPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMBPackagesPresentationTableViewCell.h; path = Controllers/Package/TMBPackagesPresentationTableViewCell.h; sourceTree = "<group>"; };
-		A47ABA601993EE57002B613C /* TMBPackagesPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMBPackagesPresentationTableViewCell.m; path = Controllers/Package/TMBPackagesPresentationTableViewCell.m; sourceTree = "<group>"; };
-		A47ABA6A1994140B002B613C /* SKY0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY0.png; sourceTree = "<group>"; };
-		A47ABA6C19941721002B613C /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
-		A47ABA6D19941721002B613C /* SKY2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY2.png; sourceTree = "<group>"; };
-		A47ABA6E19941721002B613C /* SKY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY3.png; sourceTree = "<group>"; };
-		A47ABA7219941AE0002B613C /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMBPackageAdhesionViewController.h; path = Controllers/Package/TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
-		A47ABA7319941AE0002B613C /* TMBPackageAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMBPackageAdhesionViewController.m; path = Controllers/Package/TMBPackageAdhesionViewController.m; sourceTree = "<group>"; };
+		A48E3EC61994528B00EA54E2 /* TMBFaqListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqListViewController.h; sourceTree = "<group>"; };
+		A48E3EC71994528B00EA54E2 /* TMBFaqListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqListViewController.m; sourceTree = "<group>"; };
+		A48E3EC91994528B00EA54E2 /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
+		A48E3ECA1994528B00EA54E2 /* TMBPackageAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackageAdhesionViewController.m; sourceTree = "<group>"; };
+		A48E3ECB1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewController.h; sourceTree = "<group>"; };
+		A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewController.m; sourceTree = "<group>"; };
+		A48E3ECE1994528B00EA54E2 /* TMBContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBContactTableViewCell.h; sourceTree = "<group>"; };
+		A48E3ECF1994528B00EA54E2 /* TMBContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBContactTableViewCell.m; sourceTree = "<group>"; };
+		A48E3ED6199452CF00EA54E2 /* TMBFaqTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqTableViewCell.h; sourceTree = "<group>"; };
+		A48E3ED7199452CF00EA54E2 /* TMBFaqTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqTableViewCell.m; sourceTree = "<group>"; };
+		A48E3ED9199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewCell.h; sourceTree = "<group>"; };
+		A48E3EDA199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewCell.m; sourceTree = "<group>"; };
+		A48E3EE0199452F400EA54E2 /* SKY0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY0.png; sourceTree = "<group>"; };
+		A48E3EE1199452F400EA54E2 /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
+		A48E3EE2199452F400EA54E2 /* SKY2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY2.png; sourceTree = "<group>"; };
+		A48E3EE3199452F400EA54E2 /* SKY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY3.png; sourceTree = "<group>"; };
+		A48E3EEC1994586F00EA54E2 /* TMBFaqAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqAnswerViewController.h; sourceTree = "<group>"; };
+		A48E3EED1994586F00EA54E2 /* TMBFaqAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqAnswerViewController.m; sourceTree = "<group>"; };
 		A4C72EF419914B4E00536DD7 /* Sky_Venda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky_Venda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C72EF719914B4E00536DD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,77 +107,132 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A45371141992A74C00BF9BBF /* Views */ = {
+		A48E3EC41994528B00EA54E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A48E3EC51994528B00EA54E2 /* Faq */,
+				A48E3EC81994528B00EA54E2 /* Package */,
+				A48E3ECD1994528B00EA54E2 /* Query */,
+				A48E3ECE1994528B00EA54E2 /* TMBContactTableViewCell.h */,
+				A48E3ECF1994528B00EA54E2 /* TMBContactTableViewCell.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A48E3EC51994528B00EA54E2 /* Faq */ = {
+			isa = PBXGroup;
+			children = (
+				A48E3EC61994528B00EA54E2 /* TMBFaqListViewController.h */,
+				A48E3EC71994528B00EA54E2 /* TMBFaqListViewController.m */,
+				A48E3EEC1994586F00EA54E2 /* TMBFaqAnswerViewController.h */,
+				A48E3EED1994586F00EA54E2 /* TMBFaqAnswerViewController.m */,
+			);
+			path = Faq;
+			sourceTree = "<group>";
+		};
+		A48E3EC81994528B00EA54E2 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				A48E3EC91994528B00EA54E2 /* TMBPackageAdhesionViewController.h */,
+				A48E3ECA1994528B00EA54E2 /* TMBPackageAdhesionViewController.m */,
+				A48E3ECB1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.h */,
+				A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */,
+			);
+			path = Package;
+			sourceTree = "<group>";
+		};
+		A48E3ECD1994528B00EA54E2 /* Query */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
+		A48E3ED4199452CF00EA54E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */,
 				A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */,
+				A48E3ED5199452CF00EA54E2 /* Faq */,
+				A48E3ED8199452CF00EA54E2 /* Packages */,
+				A48E3EDB199452CF00EA54E2 /* Query */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		A45371151992A76D00BF9BBF /* Controllers */ = {
+		A48E3ED5199452CF00EA54E2 /* Faq */ = {
 			isa = PBXGroup;
 			children = (
-				A47ABA5A1993ECBE002B613C /* Client */,
-				A47ABA5B1993ECC3002B613C /* Faq */,
-				A47ABA591993ECB8002B613C /* Package */,
+				A48E3ED6199452CF00EA54E2 /* TMBFaqTableViewCell.h */,
+				A48E3ED7199452CF00EA54E2 /* TMBFaqTableViewCell.m */,
 			);
-			name = Controllers;
+			path = Faq;
 			sourceTree = "<group>";
 		};
-		A45371161992A77800BF9BBF /* Model */ = {
+		A48E3ED8199452CF00EA54E2 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				A48E3ED9199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.h */,
+				A48E3EDA199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m */,
 			);
-			name = Model;
+			path = Packages;
 			sourceTree = "<group>";
 		};
-		A45371171992A79700BF9BBF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A47ABA691994140B002B613C /* Images */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		A47ABA591993ECB8002B613C /* Package */ = {
-			isa = PBXGroup;
-			children = (
-				A47ABA5C1993ED32002B613C /* TMBPackagesPresentationTableViewController.h */,
-				A47ABA5D1993ED32002B613C /* TMBPackagesPresentationTableViewController.m */,
-				A47ABA5F1993EE57002B613C /* TMBPackagesPresentationTableViewCell.h */,
-				A47ABA601993EE57002B613C /* TMBPackagesPresentationTableViewCell.m */,
-				A47ABA7219941AE0002B613C /* TMBPackageAdhesionViewController.h */,
-				A47ABA7319941AE0002B613C /* TMBPackageAdhesionViewController.m */,
-			);
-			name = Package;
-			sourceTree = "<group>";
-		};
-		A47ABA5A1993ECBE002B613C /* Client */ = {
+		A48E3EDB199452CF00EA54E2 /* Query */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Client;
+			path = Query;
 			sourceTree = "<group>";
 		};
-		A47ABA5B1993ECC3002B613C /* Faq */ = {
+		A48E3EDE199452F400EA54E2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A48E3EDF199452F400EA54E2 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A48E3EDF199452F400EA54E2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A48E3EE0199452F400EA54E2 /* SKY0.png */,
+				A48E3EE1199452F400EA54E2 /* SKY1.png */,
+				A48E3EE2199452F400EA54E2 /* SKY2.png */,
+				A48E3EE3199452F400EA54E2 /* SKY3.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A48E3EE81994531200EA54E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A48E3EE91994531200EA54E2 /* Faq */,
+				A48E3EEA1994531200EA54E2 /* Packages */,
+				A48E3EEB1994531200EA54E2 /* Query */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A48E3EE91994531200EA54E2 /* Faq */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Faq;
+			path = Faq;
 			sourceTree = "<group>";
 		};
-		A47ABA691994140B002B613C /* Images */ = {
+		A48E3EEA1994531200EA54E2 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				A47ABA6A1994140B002B613C /* SKY0.png */,
-				A47ABA6C19941721002B613C /* SKY1.png */,
-				A47ABA6D19941721002B613C /* SKY2.png */,
-				A47ABA6E19941721002B613C /* SKY3.png */,
 			);
-			name = Images;
-			path = Resources/Images;
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		A48E3EEB1994531200EA54E2 /* Query */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Query;
 			sourceTree = "<group>";
 		};
 		A4C72EEB19914B4E00536DD7 = {
@@ -201,12 +268,12 @@
 		A4C72EFD19914B4E00536DD7 /* Sky_Venda */ = {
 			isa = PBXGroup;
 			children = (
-				A45371171992A79700BF9BBF /* Resources */,
 				A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */,
 				A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */,
-				A45371161992A77800BF9BBF /* Model */,
-				A45371141992A74C00BF9BBF /* Views */,
-				A45371151992A76D00BF9BBF /* Controllers */,
+				A48E3EE81994531200EA54E2 /* Models */,
+				A48E3ED4199452CF00EA54E2 /* Views */,
+				A48E3EC41994528B00EA54E2 /* Controllers */,
+				A48E3EDE199452F400EA54E2 /* Resources */,
 				A4C72F1219914B4E00536DD7 /* Images.xcassets */,
 				A4C72EFE19914B4E00536DD7 /* Supporting Files */,
 			);
@@ -319,13 +386,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A47ABA7019941721002B613C /* SKY2.png in Resources */,
+				A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */,
 				A4C72F0E19914B4E00536DD7 /* Main_iPad.storyboard in Resources */,
 				A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */,
+				A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */,
+				A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */,
+				A48E3EE7199452F400EA54E2 /* SKY3.png in Resources */,
 				A4C72F0B19914B4E00536DD7 /* Main_iPhone.storyboard in Resources */,
-				A47ABA6F19941721002B613C /* SKY1.png in Resources */,
-				A47ABA7119941721002B613C /* SKY3.png in Resources */,
-				A47ABA6B1994140B002B613C /* SKY0.png in Resources */,
 				A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,11 +412,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48E3ED31994528B00EA54E2 /* TMBContactTableViewCell.m in Sources */,
+				A48E3EDC199452CF00EA54E2 /* TMBFaqTableViewCell.m in Sources */,
+				A48E3EDD199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m in Sources */,
+				A48E3ED21994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m in Sources */,
+				A48E3ED01994528B00EA54E2 /* TMBFaqListViewController.m in Sources */,
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
+				A48E3ED11994528B00EA54E2 /* TMBPackageAdhesionViewController.m in Sources */,
 				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
-				A47ABA611993EE57002B613C /* TMBPackagesPresentationTableViewCell.m in Sources */,
-				A47ABA5E1993ED32002B613C /* TMBPackagesPresentationTableViewController.m in Sources */,
-				A47ABA7419941AE0002B613C /* TMBPackageAdhesionViewController.m in Sources */,
+				A48E3EEE1994586F00EA54E2 /* TMBFaqAnswerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +457,7 @@
 				A4C72F0A19914B4E00536DD7 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */ = {
@@ -394,6 +466,7 @@
 				A4C72F0D19914B4E00536DD7 /* Base */,
 			);
 			name = Main_iPad.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A4C72F2219914B4E00536DD7 /* InfoPlist.strings */ = {
@@ -487,6 +560,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sky_Venda/Sky_Venda-Prefix.pch";
 				INFOPLIST_FILE = "Sky_Venda/Sky_Venda-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -500,6 +574,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sky_Venda/Sky_Venda-Prefix.pch";
 				INFOPLIST_FILE = "Sky_Venda/Sky_Venda-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
