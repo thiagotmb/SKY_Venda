@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "TMBPackagesPresentationTableViewCell.h"
-#import "TMBPackageAdhesionViewController.h"
+#import "TMBClientDataViewController.h"
 @interface TMBPackagesPresentationTableViewController : UITableViewController
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A438C27A19994E7C003DE777 /* TMBClientDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A438C27919994E7C003DE777 /* TMBClientDataViewController.m */; };
+		A438C27D19995CCC003DE777 /* TMBClientDataSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A438C27C19995CCC003DE777 /* TMBClientDataSecondViewController.m */; };
 		A48E3ED01994528B00EA54E2 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3EC71994528B00EA54E2 /* TMBFaqListViewController.m */; };
 		A48E3ED11994528B00EA54E2 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ECA1994528B00EA54E2 /* TMBPackageAdhesionViewController.m */; };
 		A48E3ED21994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */; };
@@ -45,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A438C27819994E7C003DE777 /* TMBClientDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataViewController.h; sourceTree = "<group>"; };
+		A438C27919994E7C003DE777 /* TMBClientDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataViewController.m; sourceTree = "<group>"; };
+		A438C27B19995CCC003DE777 /* TMBClientDataSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataSecondViewController.h; sourceTree = "<group>"; };
+		A438C27C19995CCC003DE777 /* TMBClientDataSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataSecondViewController.m; sourceTree = "<group>"; };
 		A48E3EC61994528B00EA54E2 /* TMBFaqListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqListViewController.h; sourceTree = "<group>"; };
 		A48E3EC71994528B00EA54E2 /* TMBFaqListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqListViewController.m; sourceTree = "<group>"; };
 		A48E3EC91994528B00EA54E2 /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
@@ -135,6 +141,10 @@
 			children = (
 				A48E3EC91994528B00EA54E2 /* TMBPackageAdhesionViewController.h */,
 				A48E3ECA1994528B00EA54E2 /* TMBPackageAdhesionViewController.m */,
+				A438C27819994E7C003DE777 /* TMBClientDataViewController.h */,
+				A438C27919994E7C003DE777 /* TMBClientDataViewController.m */,
+				A438C27B19995CCC003DE777 /* TMBClientDataSecondViewController.h */,
+				A438C27C19995CCC003DE777 /* TMBClientDataSecondViewController.m */,
 				A48E3ECB1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.h */,
 				A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */,
 			);
@@ -415,7 +425,9 @@
 				A48E3ED31994528B00EA54E2 /* TMBContactTableViewCell.m in Sources */,
 				A48E3EDC199452CF00EA54E2 /* TMBFaqTableViewCell.m in Sources */,
 				A48E3EDD199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m in Sources */,
+				A438C27A19994E7C003DE777 /* TMBClientDataViewController.m in Sources */,
 				A48E3ED21994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m in Sources */,
+				A438C27D19995CCC003DE777 /* TMBClientDataSecondViewController.m in Sources */,
 				A48E3ED01994528B00EA54E2 /* TMBFaqListViewController.m in Sources */,
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
 				A48E3ED11994528B00EA54E2 /* TMBPackageAdhesionViewController.m in Sources */,

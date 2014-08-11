@@ -110,13 +110,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    TMBPackageAdhesionViewController *adhesion = segue.destinationViewController;
+    TMBClientDataViewController *clientData = segue.destinationViewController;
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    adhesion.packagePresentationImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",indexPath.row]];    // Get the new view controller using [segue destinationViewController].
+    clientData.packagePresentationImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",indexPath.row]];
+    // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    NSLog(@"%@",adhesion.packagePresentation.image);
 }
 
 
