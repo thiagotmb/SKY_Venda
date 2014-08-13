@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TMBClientDataSecondViewController.h"
 
-@interface TMBClientDataViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
+@interface TMBClientDataViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 @property (nonatomic) UIImage *packagePresentationImage;
-
-@property (weak, nonatomic) IBOutlet UIPickerView *genderPickerView;
-@property (weak, nonatomic) IBOutlet UIPickerView *socialReasonPickerView;
 
 @end

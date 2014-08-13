@@ -7,11 +7,9 @@
 //
 
 #import "TMBClientDataViewController.h"
-#define NUMBEROFCOMPONENTSINPICKERVIEW 1
 
 @interface TMBClientDataViewController ()
-@property (nonatomic) NSArray *genderPickerData;
-@property (nonatomic) NSArray *socialReasonPickerData;
+
 
 
 @end
@@ -32,13 +30,6 @@
     [super viewDidLoad];
     self.packagePresentation.image = self.packagePresentationImage;
     
-    self.genderPickerData = @[@"Masculino",@"Feminino"];
-    self.genderPickerView.dataSource = self;
-    self.genderPickerView.delegate = self;
-    
-    self.socialReasonPickerData = @[@"Solteiro",@"Casado"];
-    self.socialReasonPickerView.dataSource = self;
-    self.socialReasonPickerView.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -48,39 +39,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return NUMBEROFCOMPONENTSINPICKERVIEW;
-}
-
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    
-    switch (pickerView.tag) {
-        case 0:
-            return self.genderPickerData.count;
-            break;
-        case 1:
-            return self.socialReasonPickerData.count;
-            break;
-        default:
-            return 0;
-            break;
-    }
-}
-
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    switch (pickerView.tag) {
-        case 0:
-            return self.genderPickerData[row];
-            break;
-        case 1:
-            return self.socialReasonPickerData[row];
-            break;
-        default:
-            return nil;
-            break;
-    }
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

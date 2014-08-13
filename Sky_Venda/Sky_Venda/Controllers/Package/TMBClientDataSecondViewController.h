@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TMBClientDataThirdViewController.h"
 
 @interface TMBClientDataSecondViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;

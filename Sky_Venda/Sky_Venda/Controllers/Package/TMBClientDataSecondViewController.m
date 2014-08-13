@@ -9,6 +9,7 @@
 #import "TMBClientDataSecondViewController.h"
 
 @interface TMBClientDataSecondViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeigth;
 @property (nonatomic) NSArray *socialReasonPickerData;
 @end
 
@@ -30,6 +31,12 @@
     // Do any additional setup after loading the view.
     
     self.birthDatePickerView.datePickerMode = UIDatePickerModeDate;
+    
+    if (self.view.bounds.size.height == 1024) {
+        NSLog(@"passei");
+        //self.imageHeigth.constant = 600 ;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,16 +46,16 @@
 }
 
 
-/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    TMBClientDataSecondViewController *clientData = segue.destinationViewController;
+    TMBClientDataThirdViewController *clientData = segue.destinationViewController;
     
     clientData.packagePresentationImage = self.packagePresentationImage;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
- */
+
 
 
 /*

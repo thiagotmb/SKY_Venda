@@ -59,7 +59,7 @@
 {
     TMBPackagesPresentationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PackagesCell"];
 
-    cell.packagePresentImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",indexPath.row]];
+    cell.packagePresentImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%d.png",indexPath.row]];
     // Configure the cell...
     
     return cell;
@@ -114,7 +114,7 @@
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    clientData.packagePresentationImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",indexPath.row]];
+    clientData.packagePresentationImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%d.png",indexPath.row]];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

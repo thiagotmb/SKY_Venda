@@ -20,6 +20,7 @@
 		A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE2199452F400EA54E2 /* SKY2.png */; };
 		A48E3EE7199452F400EA54E2 /* SKY3.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE3199452F400EA54E2 /* SKY3.png */; };
 		A48E3EEE1994586F00EA54E2 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3EED1994586F00EA54E2 /* TMBFaqAnswerViewController.m */; };
+		A4C62BAE199A912400145D4B /* TMBClientDataThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C62BAD199A912400145D4B /* TMBClientDataThirdViewController.m */; };
 		A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
 		A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */; };
 		A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EFB19914B4E00536DD7 /* UIKit.framework */; };
@@ -69,6 +70,8 @@
 		A48E3EE3199452F400EA54E2 /* SKY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY3.png; sourceTree = "<group>"; };
 		A48E3EEC1994586F00EA54E2 /* TMBFaqAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqAnswerViewController.h; sourceTree = "<group>"; };
 		A48E3EED1994586F00EA54E2 /* TMBFaqAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqAnswerViewController.m; sourceTree = "<group>"; };
+		A4C62BAC199A912400145D4B /* TMBClientDataThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataThirdViewController.h; sourceTree = "<group>"; };
+		A4C62BAD199A912400145D4B /* TMBClientDataThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataThirdViewController.m; sourceTree = "<group>"; };
 		A4C72EF419914B4E00536DD7 /* Sky_Venda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky_Venda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C72EF719914B4E00536DD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,8 @@
 				A438C27919994E7C003DE777 /* TMBClientDataViewController.m */,
 				A438C27B19995CCC003DE777 /* TMBClientDataSecondViewController.h */,
 				A438C27C19995CCC003DE777 /* TMBClientDataSecondViewController.m */,
+				A4C62BAC199A912400145D4B /* TMBClientDataThirdViewController.h */,
+				A4C62BAD199A912400145D4B /* TMBClientDataThirdViewController.m */,
 				A48E3ECB1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.h */,
 				A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */,
 			);
@@ -429,6 +434,7 @@
 				A48E3ED21994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m in Sources */,
 				A438C27D19995CCC003DE777 /* TMBClientDataSecondViewController.m in Sources */,
 				A48E3ED01994528B00EA54E2 /* TMBFaqListViewController.m in Sources */,
+				A4C62BAE199A912400145D4B /* TMBClientDataThirdViewController.m in Sources */,
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
 				A48E3ED11994528B00EA54E2 /* TMBPackageAdhesionViewController.m in Sources */,
 				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
