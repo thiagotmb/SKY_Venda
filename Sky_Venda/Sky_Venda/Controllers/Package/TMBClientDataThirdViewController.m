@@ -81,17 +81,17 @@
     }
 }
 
-/*
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    TMBClientDataSecondViewController *clientData = segue.destinationViewController;
+    TMBClientDataFourthViewController *clientData = segue.destinationViewController;
     
     clientData.packagePresentationImage = self.packagePresentationImage;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 /*
 #pragma mark - Navigation

@@ -84,6 +84,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Adesão" id="lkL-PG-UFw"/>
+                    <connections>
+                        <outlet property="packagePresentation" destination="ROT-Ik-tHe" id="2Ya-p9-QOL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Q3-Ce-fyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -779,7 +782,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eIh-Nf-3GY" kind="push" id="wj8-VZ-fpH"/>
+                                    <segue destination="eIh-Nf-3GY" kind="push" id="7mI-Bc-Rwa"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Razão Social" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2a-M7-0lw">
@@ -803,11 +806,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1868" y="-2366"/>
         </scene>
-        <!--Client Data View Controller - Endereço de Instalação 4/5-->
+        <!--Client Data Fourth View Controller - Endereço de Instalação 4/5-->
         <scene sceneID="FyQ-el-UEB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9B0-kf-1r6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="eIh-Nf-3GY" customClass="TMBClientDataViewController" sceneMemberID="viewController">
+                <viewController id="eIh-Nf-3GY" customClass="TMBClientDataFourthViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LrU-HE-Slf"/>
                         <viewControllerLayoutGuide type="bottom" id="Z3h-aE-Xq7"/>
@@ -873,14 +875,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="packagePresentation" destination="UeF-aG-8aT" id="WyZ-Gg-3Yh"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9B0-kf-1r6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2346" y="-2366"/>
         </scene>
-        <!--Client Data View Controller - Endereço de Instalação 5/5-->
+        <!--Client Data Fifth View Controller - Endereço de Instalação 5/5-->
         <scene sceneID="y3g-dt-gEs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7bz-6v-e7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="ED4-iP-WMz" customClass="TMBClientDataViewController" sceneMemberID="viewController">
+                <viewController id="ED4-iP-WMz" customClass="TMBClientDataFifthViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RZ3-KA-TU9"/>
                         <viewControllerLayoutGuide type="bottom" id="wxK-nC-ddG"/>
@@ -985,13 +987,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="packagePresentation" destination="nuy-Ch-dYK" id="Urk-KF-WLc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bz-6v-e7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2800" y="-2366"/>
         </scene>
-        <!--Client Data View Controller - Dados de Pagamento-->
+        <!--Payment Data View Controller - Dados de Pagamento-->
         <scene sceneID="zJa-6W-NpE">
             <objects>
-                <viewController id="V9l-wU-ELL" customClass="TMBClientDataViewController" sceneMemberID="viewController">
+                <viewController id="V9l-wU-ELL" customClass="TMBPaymentDataViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="McL-eO-V5X"/>
                         <viewControllerLayoutGuide type="bottom" id="PgP-27-bg9"/>
@@ -1063,10 +1066,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2338" y="-3082"/>
         </scene>
-        <!--Client Data View Controller - Confirmação de dados-->
+        <!--Data Check View Controller - Confirmação de dados-->
         <scene sceneID="m6a-ql-6DO">
             <objects>
-                <viewController id="HoH-zy-BM1" customClass="TMBClientDataViewController" sceneMemberID="viewController">
+                <viewController id="HoH-zy-BM1" customClass="TMBDataCheckViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uFu-eC-LSs"/>
                         <viewControllerLayoutGuide type="bottom" id="N2u-O2-7H1"/>
