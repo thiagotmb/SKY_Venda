@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "TMBPackageAdhesionViewController.h"
+#import "TMBSignatureData.h"
+
 
 @interface TMBDataCheckViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 @property (nonatomic) UIImage *packagePresentationImage;
+
+- (IBAction)nextStep:(id)sender;
+
+
 @end

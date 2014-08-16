@@ -69,4 +69,15 @@
 }
 */
 
+- (IBAction)nextStep:(id)sender {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString;
+    dateString = [dateFormat stringFromDate:self.birthDatePickerView.date];
+    [[TMBSignatureData sharedData] setClientBirthDate:dateString];
+    
+   // NSLog(@"%@",[[TMBSignatureData sharedData] clientBirthDate]);
+    
+}
 @end

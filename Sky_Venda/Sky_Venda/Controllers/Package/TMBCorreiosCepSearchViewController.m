@@ -1,20 +1,18 @@
 //
-//  TMBClientDataViewController.m
+//  TMBCorreiosCepSearchViewController.m
 //  Sky_Venda
 //
-//  Created by Thiago-Bernardes on 8/11/14.
+//  Created by Thiago-Bernardes on 8/16/14.
 //  Copyright (c) 2014 TMB. All rights reserved.
 //
 
-#import "TMBClientDataViewController.h"
+#import "TMBCorreiosCepSearchViewController.h"
 
-@interface TMBClientDataViewController ()
-
-
+@interface TMBCorreiosCepSearchViewController ()
 
 @end
 
-@implementation TMBClientDataViewController
+@implementation TMBCorreiosCepSearchViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,9 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.packagePresentation.image = self.packagePresentationImage;
-    
     // Do any additional setup after loading the view.
+    self.packagePresentation.image = self.packagePresentationImage;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,21 +37,17 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    [self.view endEditing:YES];
-    
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    TMBClientDataSecondViewController *clientData = segue.destinationViewController;
+    TMBClientDataFifthViewController *clientData = segue.destinationViewController;
     
     clientData.packagePresentationImage = self.packagePresentationImage;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+
 
 /*
 #pragma mark - Navigation
@@ -66,20 +60,17 @@
 }
 */
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
+}
+
 - (IBAction)nextStep:(id)sender {
     
-    [[TMBSignatureData sharedData] setClientName:self.clientName.text];
-    [[TMBSignatureData sharedData] setClientCpf:self.clientCpf.text];
-    [[TMBSignatureData sharedData] setClientRg:self.clientRg.text];
-    [[TMBSignatureData sharedData] setClientEmail:self.clientEmail.text];
-    [[TMBSignatureData sharedData] setClientPhoneNumber:self.clientPhoneNumber.text];
-  
-    /*
-    NSLog(@"Nome %@",[[TMBSignatureData sharedData] clientName]);
-    NSLog(@"CPF %@",[[TMBSignatureData sharedData] clientCpf]);
-    NSLog(@"RG %@",[[TMBSignatureData sharedData] clientRg]);
-    NSLog(@"Email %@",[[TMBSignatureData sharedData] clientEmail]);
-    NSLog(@"Telefone %@",[[TMBSignatureData sharedData] clientPhoneNumber]);
-    */
+    [[TMBSignatureData sharedData] setInstallationAdressCep:self.installationAdressCep.text];
+    
+    //NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressCep]);
+    
 }
+
 @end

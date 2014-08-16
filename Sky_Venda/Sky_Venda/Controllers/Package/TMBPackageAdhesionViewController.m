@@ -47,4 +47,6 @@
 }
 */
 
+- (IBAction)submitPackageSignature:(id)sender {
+}
 @end

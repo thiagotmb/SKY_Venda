@@ -63,4 +63,24 @@
 }
 */
 
+- (IBAction)nextStep:(id)sender {
+    
+    [[TMBSignatureData sharedData] setInstallationAdressCity:self.installationAdressCity.text];
+    [[TMBSignatureData sharedData] setInstallationAdressState:self.installationAdressState.text];
+    [[TMBSignatureData sharedData] setInstallationAdressSector:self.installationAdressSector.text];
+    [[TMBSignatureData sharedData] setInstallationAdressStreet:self.installationAdressStreet.text];
+    [[TMBSignatureData sharedData] setInstallationAdressNumber:self.installationAdressNumber.text];
+    [[TMBSignatureData sharedData] setInstallationAdressComplement:self.installationAdressComplement.text];
+    
+    /*
+    NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressCity]);
+    NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressState]);
+    NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressSector]);
+    NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressStreet]);
+    NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressNumber]);
+    NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressComplement]);
+    */
+
+    
+}
 @end

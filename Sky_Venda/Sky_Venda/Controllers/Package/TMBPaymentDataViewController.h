@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "TMBDataCheckViewController.h"
+#import "TMBSignatureData.h"
 
-@interface TMBPaymentDataViewController : UIViewController
+
+@interface TMBPaymentDataViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 @property (nonatomic) UIImage *packagePresentationImage;
+
+@property (weak, nonatomic) IBOutlet UITextField *creditCardNumber;
+@property (weak, nonatomic) IBOutlet UIPickerView *creditCardExpirationDatePicker;
+
+
+
+- (IBAction)nextStep:(id)sender;
+
 @end

@@ -43,7 +43,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+   
     TMBClientDataFifthViewController *clientData = segue.destinationViewController;
     
     clientData.packagePresentationImage = self.packagePresentationImage;
@@ -61,5 +61,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)getMyLocation:(id)sender {
+}
+
+- (IBAction)nextStep:(id)sender {
+    
+    [[TMBSignatureData sharedData] setInstallationAdressCep:self.installationAdressCep.text];
+    
+    NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressCep]);
+    
+}
+
 
 @end

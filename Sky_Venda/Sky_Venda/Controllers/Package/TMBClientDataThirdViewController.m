@@ -7,7 +7,10 @@
 //
 
 #import "TMBClientDataThirdViewController.h"
-#define NUMBEROFCOMPONENTSINPICKERVIEW 1
+#define NUMBER_OF_COMPONENTS_IN_PICKERVIEW 1
+#define GENDER_PICKER_TAG 0
+#define SOCIALREASON_PICKER_TAG 1
+
 
 @interface TMBClientDataThirdViewController ()
 @property (nonatomic) NSArray *genderPickerData;
@@ -48,16 +51,16 @@
 
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return NUMBEROFCOMPONENTSINPICKERVIEW;
+    return NUMBER_OF_COMPONENTS_IN_PICKERVIEW;
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
     switch (pickerView.tag) {
-        case 0:
+        case GENDER_PICKER_TAG:
             return self.genderPickerData.count;
             break;
-        case 1:
+        case SOCIALREASON_PICKER_TAG:
             return self.socialReasonPickerData.count;
             break;
         default:
@@ -69,10 +72,10 @@
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
     switch (pickerView.tag) {
-        case 0:
+        case GENDER_PICKER_TAG:
             return self.genderPickerData[row];
             break;
-        case 1:
+        case SOCIALREASON_PICKER_TAG:
             return self.socialReasonPickerData[row];
             break;
         default:
@@ -93,15 +96,20 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)nextStep:(id)sender {
+    
+    NSInteger socialReasonRow = [self.socialReasonPickerView selectedRowInComponent:0];
+    NSString *selectedSocialReason = [self.socialReasonPickerData objectAtIndex:socialReasonRow];
+    [[TMBSignatureData sharedData] setClientSocialReason:selectedSocialReason];
+    
+    NSInteger genderRow = [self.genderPickerView selectedRowInComponent:0];
+    NSString *selectedGender = [self.genderPickerData objectAtIndex:genderRow];
+    [[TMBSignatureData sharedData] setClientGender:selectedGender];
+   
+    /*
+    NSLog(@"%@",[[TMBSignatureData sharedData] clientGender]);
+    NSLog(@"%@",[[TMBSignatureData sharedData] clientSocialReason]);
+    */
+    
 }
-*/
-
 @end

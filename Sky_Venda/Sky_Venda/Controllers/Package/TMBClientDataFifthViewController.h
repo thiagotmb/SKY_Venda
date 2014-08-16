@@ -8,9 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "TMBPaymentDataViewController.h"
+#import "TMBSignatureData.h"
+
 
 
 @interface TMBClientDataFifthViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 @property (nonatomic) UIImage *packagePresentationImage;
+
+@property (weak, nonatomic) IBOutlet UITextField *installationAdressCity;
+@property (weak, nonatomic) IBOutlet UITextField *installationAdressState;
+@property (weak, nonatomic) IBOutlet UITextField *installationAdressSector;
+@property (weak, nonatomic) IBOutlet UITextField *installationAdressStreet;
+@property (weak, nonatomic) IBOutlet UITextField *installationAdressNumber;
+@property (weak, nonatomic) IBOutlet UITextField *installationAdressComplement;
+
+
+- (IBAction)nextStep:(id)sender;
+
+
 @end

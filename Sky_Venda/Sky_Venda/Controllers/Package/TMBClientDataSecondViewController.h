@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "TMBClientDataThirdViewController.h"
+#import "TMBSignatureData.h"
+
 
 @interface TMBClientDataSecondViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 @property (nonatomic) UIImage *packagePresentationImage;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *birthDatePickerView;
+
+- (IBAction)nextStep:(id)sender;
 
 @end

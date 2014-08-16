@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TMBClientDataFourthViewController.h"
+#import "TMBSignatureData.h"
+
 
 @interface TMBClientDataThirdViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
@@ -15,5 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *genderPickerView;
 @property (weak, nonatomic) IBOutlet UIPickerView *socialReasonPickerView;
+
+- (IBAction)nextStep:(id)sender;
 
 @end
