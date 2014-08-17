@@ -47,17 +47,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    TMBDataCheckViewController *clientData = segue.destinationViewController;
+    [self.view endEditing:YES];
     
-    clientData.packagePresentationImage = self.packagePresentationImage;
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     
     return NUMBER_OF_COMPONENTS_IN_PICKERVIEW;
@@ -114,5 +108,14 @@
     NSLog(@"%@",[[TMBSignatureData sharedData] creditCardNumber]);
     NSLog(@"%@",[[TMBSignatureData sharedData] creditExpirationDate]);
 
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    TMBDataCheckViewController *clientData = segue.destinationViewController;
+    
+    clientData.packagePresentationImage = self.packagePresentationImage;
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 @end

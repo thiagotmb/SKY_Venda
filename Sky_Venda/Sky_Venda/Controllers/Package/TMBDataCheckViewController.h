@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "TMBPackageAdhesionViewController.h"
 #import "TMBSignatureData.h"
+#import "TMBTextLabelTableViewCell.h"
 
 
-@interface TMBDataCheckViewController : UIViewController
+@interface TMBDataCheckViewController : UIViewController<UITableViewDataSource,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 @property (nonatomic) UIImage *packagePresentationImage;
 
-- (IBAction)nextStep:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UITableView *dataCheckTableView;
 
 @end

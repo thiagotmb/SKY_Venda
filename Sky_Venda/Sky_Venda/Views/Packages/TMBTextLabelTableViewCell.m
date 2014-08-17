@@ -1,14 +1,14 @@
 //
-//  TMBFaqTableViewCell.m
+//  TMBTextLabelTableViewCell.m
 //  Sky_Venda
 //
-//  Created by Thiago-Bernardes on 8/7/14.
+//  Created by Thiago-Bernardes on 8/17/14.
 //  Copyright (c) 2014 TMB. All rights reserved.
 //
 
-#import "TMBFaqTableViewCell.h"
+#import "TMBTextLabelTableViewCell.h"
 
-@implementation TMBFaqTableViewCell
+@implementation TMBTextLabelTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -29,11 +29,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    [self endEditing:YES];
 }
 
 @end

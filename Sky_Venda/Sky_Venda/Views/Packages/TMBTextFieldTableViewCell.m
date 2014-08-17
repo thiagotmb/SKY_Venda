@@ -1,14 +1,14 @@
 //
-//  TMBFaqTableViewCell.m
+//  TMBTextFieldTableViewCell.m
 //  Sky_Venda
 //
-//  Created by Thiago-Bernardes on 8/7/14.
+//  Created by Thiago-Bernardes on 8/16/14.
 //  Copyright (c) 2014 TMB. All rights reserved.
 //
 
-#import "TMBFaqTableViewCell.h"
+#import "TMBTextFieldTableViewCell.h"
 
-@implementation TMBFaqTableViewCell
+@implementation TMBTextFieldTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -33,7 +33,6 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    [self endEditing:YES];
+    [super endEditing:YES];
 }
-
 @end

@@ -7,19 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TMBClientDataSecondViewController.h"
+#import "TMBInstallationAdressDataViewController.h"
 #import "TMBSignatureData.h"
+#import "TMBTextFieldTableViewCell.h"
+#import "TMBPickerTableViewCell.h"
+#import "TMBDatePickerTableViewCell.h"
 
-@interface TMBClientDataViewController : UIViewController
+@interface TMBClientDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 @property (nonatomic) UIImage *packagePresentationImage;
 
-@property (weak, nonatomic) IBOutlet UITextField *clientName;
-@property (weak, nonatomic) IBOutlet UITextField *clientCpf;
-@property (weak, nonatomic) IBOutlet UITextField *clientRg;
-@property (weak, nonatomic) IBOutlet UITextField *clientEmail;
-@property (weak, nonatomic) IBOutlet UITextField *clientPhoneNumber;
+@property (weak, nonatomic) IBOutlet UITableView *clientDataTableView;
+
+
+@property (weak, nonatomic) UITextField *clientName;
+@property (weak, nonatomic) UITextField *clientCpf;
+@property (weak, nonatomic) UITextField *clientRg;
+@property (weak, nonatomic) UITextField *clientEmail;
+@property (weak, nonatomic) UITextField *clientPhoneNumber;
+
+@property (nonatomic) UIDatePicker *birthDatePickerView;
+
+@property (weak, nonatomic) UIPickerView *genderPickerView;
+@property (nonatomic) NSArray *genderPickerData;
+@property (weak, nonatomic) UIPickerView *socialReasonPickerView;
+@property (nonatomic) NSArray *socialReasonPickerData;
 
 
 - (IBAction)nextStep:(id)sender;

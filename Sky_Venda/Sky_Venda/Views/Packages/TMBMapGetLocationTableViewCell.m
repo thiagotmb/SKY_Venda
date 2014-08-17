@@ -1,14 +1,14 @@
 //
-//  TMBFaqTableViewCell.m
+//  TMBMapGetLocationTableViewCell.m
 //  Sky_Venda
 //
-//  Created by Thiago-Bernardes on 8/7/14.
+//  Created by Thiago-Bernardes on 8/17/14.
 //  Copyright (c) 2014 TMB. All rights reserved.
 //
 
-#import "TMBFaqTableViewCell.h"
+#import "TMBMapGetLocationTableViewCell.h"
 
-@implementation TMBFaqTableViewCell
+@implementation TMBMapGetLocationTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -31,9 +31,15 @@
     // Configure the view for the selected state
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+- (IBAction)getMyLocation:(id)sender {
     
-    [self endEditing:YES];
+    self.MAP.image = [UIImage imageNamed:@"map.png"];
+    self.Cep = @"73801280";
+    [[TMBSignatureData sharedData] setInstallationAdressCep:self.Cep];
+    
+    NSLog(@"%@",self.Cep);
+
+    
 }
 
 @end

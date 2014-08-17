@@ -1,42 +1,45 @@
 //
-//  TMBClientDataViewController.m
+//  TMBInstallationAdressDataViewController.m
 //  Sky_Venda
 //
-//  Created by Thiago-Bernardes on 8/11/14.
+//  Created by Thiago-Bernardes on 8/17/14.
 //  Copyright (c) 2014 TMB. All rights reserved.
 //
 
-#import "TMBClientDataViewController.h"
+#import "TMBInstallationAdressDataViewController.h"
 #define NUMBER_OF_SECTIONS 1
-#define NUMBER_OF_ROWS_IN_SECTION_DEFAULT 9
+#define NUMBER_OF_ROWS_IN_SECTION_DEFAULT 10
+
 BOOL keyboardShown;
 CGFloat keyboardOverlap;
-@interface TMBClientDataViewController ()
 
+@interface TMBInstallationAdressDataViewController ()
 enum TMBTableViewRow:NSInteger{
-  
-    TMBTableViewRowClientName = 0,
-    TMBTableViewRowClientGender = 1,
-    TMBTableViewRowClientRg = 2,
-    TMBTableViewRowClientCpf = 3,
     
-    TMBTableViewRowClientSocialReason = 4,
-    TMBTableViewRowClientEmail = 5,
-    TMBTableViewRowClientPhoneNumber = 6,
-    TMBTableViewRowClientBirthDate = 7,
-
-    TMBTableViewRowNextSepButton = 8,
-
-
+    TMBTableViewRowInstallationAdressCep = 1,
+    TMBTableViewRowInstallationAdressCity = 3,
+    TMBTableViewRowInstallationAdressState = 4,
+    TMBTableViewRowInstallationAdressSector = 5,
     
+    TMBTableViewRowInstallationAdressStreet = 6,
+    TMBTableViewRowInstallationAdressNumber = 7,
+    TMBTableViewRowInstallationAdressComplement = 8,
+    
+    TMBTableViewRowInstallationAdressNextStepButton = 9,
+    TMBTableViewRowInstallationAdressMapView = 0,
+    
+    TMBTableViewRowInstallationAdressCorreiosWebView = 10,
+    TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton = 2,
+
     
 };
 
 @property (nonatomic) NSIndexPath *activeCellIndexPath;
 
+
 @end
 
-@implementation TMBClientDataViewController
+@implementation TMBInstallationAdressDataViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,17 +56,6 @@ enum TMBTableViewRow:NSInteger{
     // Do any additional setup after loading the view.
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    self.packagePresentation.image = self.packagePresentationImage;
-    self.genderPickerData = @[@"Masculino",@"Feminino"];
-    self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
-
-    
-}
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -74,8 +66,6 @@ enum TMBTableViewRow:NSInteger{
     
     [self.view endEditing:YES];
 }
-
-
 
 #pragma mark - TableView
 
@@ -94,82 +84,86 @@ enum TMBTableViewRow:NSInteger{
     
     
     switch (indexPath.row) {
-        case TMBTableViewRowClientName:{
+        case TMBTableViewRowInstallationAdressCep:{
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
-            cell.titleLabel.text = @"Nome";
-            cell.textField.placeholder = @"Nome completo como consta no CPF";
-            self.clientName = cell.textField;
-            return cell;
-            break;
-        }
-        case TMBTableViewRowClientCpf:{
-            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
-            cell.titleLabel.text = @"CPF";
-            cell.textField.placeholder = @"CPF relativo ao nome acima";
+            cell.titleLabel.text = @"CEP";
+            cell.textField.placeholder = @"Cep do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            self.clientCpf = cell.textField;
+            self.installationAdressCep = cell.textField;
             return cell;
             break;
         }
-        case TMBTableViewRowClientRg:{
+        case TMBTableViewRowInstallationAdressCity:{
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
-            cell.titleLabel.text = @"RG";
-            cell.textField.placeholder = @"RG";
+            cell.titleLabel.text = @"Cidade";
+            cell.textField.placeholder = @"Cidade do endereço de instalação";
+            cell.textField.keyboardType = UIKeyboardTypeDefault;
+            self.installationAdressCity = cell.textField;
+            return cell;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressState:{
+            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
+            cell.titleLabel.text = @"Estado";
+            cell.textField.placeholder = @"Estado do endereço de instalação";
+            cell.textField.keyboardType = UIKeyboardTypeDefault;
+            self.installationAdressState = cell.textField;
+            return cell;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressSector:{
+            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
+            cell.titleLabel.text = @"Bairro";
+            cell.textField.placeholder = @"Bairro do endereço de instalação";
+            cell.textField.keyboardType = UIKeyboardTypeDefault;
+            self.installationAdressSector = cell.textField;
+            return cell;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressStreet:{
+            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
+            cell.titleLabel.text = @"Rua";
+            cell.textField.placeholder = @"Rua do endereço de instalação";
+            cell.textField.keyboardType = UIKeyboardTypeDefault;
+            self.installationAdressStreet = cell.textField;
+            return cell;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressNumber:{
+            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
+            cell.titleLabel.text = @"Número";
+            cell.textField.placeholder = @"Número do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            self.clientRg = cell.textField;
+            self.installationAdressNumber = cell.textField;
             return cell;
             break;
         }
-        case TMBTableViewRowClientEmail:{
+        case TMBTableViewRowInstallationAdressComplement:{
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
-            cell.titleLabel.text = @"E-Mail";
-            cell.textField.placeholder = @"E-Mail para contato";
-            cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
-            self.clientEmail = cell.textField;
+            cell.titleLabel.text = @"Complemento";
+            cell.textField.placeholder = @"Complemento do endereço de instalação";
+            cell.textField.keyboardType = UIKeyboardTypeDefault;
+            self.installationAdressComplement = cell.textField;
             return cell;
             break;
         }
-        case TMBTableViewRowClientPhoneNumber:{
-            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
-            cell.titleLabel.text = @"Telefone";
-            cell.textField.placeholder = @"Telefone para contato";
-            cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            self.clientPhoneNumber = cell.textField;
+        case TMBTableViewRowInstallationAdressMapView:{
+            TMBMapGetLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MapViewCell" forIndexPath:indexPath];
             return cell;
             break;
         }
-        case TMBTableViewRowClientGender:{
-            TMBPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PickerCell" forIndexPath:indexPath];
-            cell.pickerView.delegate = cell;
-            cell.pickerView.dataSource = cell;
-            cell.titleLabel.text = @"Sexo";
-            cell.pickerData = self.genderPickerData;
-            cell.numberOfComponentsInPickerView = 1;
-            self.genderPickerView = cell.pickerView;
-            
-            return cell;
-            break;
-        }
-        case TMBTableViewRowClientSocialReason:{
-            TMBPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PickerCell" forIndexPath:indexPath];
-            cell.pickerView.delegate = cell;
-            cell.pickerView.dataSource = cell;
-            cell.titleLabel.text = @"Razão Social";
-            cell.pickerData = self.socialReasonPickerData ;
-            cell.numberOfComponentsInPickerView = 1;
-            self.socialReasonPickerView = cell.pickerView;
-            
-            return cell;
-            break;
-        }
-        case TMBTableViewRowClientBirthDate:{
-            TMBDatePickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DatePickerCell" forIndexPath:indexPath];
-            self.birthDatePickerView = cell.datePickerView;
-            return cell;
-            break;
-        }
-        case TMBTableViewRowNextSepButton:{
+        case TMBTableViewRowInstallationAdressNextStepButton:{
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NextStepTableViewCell" forIndexPath:indexPath];
+            return cell;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchInCorreiosButtonCell" forIndexPath:indexPath];
+            return cell;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressCorreiosWebView:{
+            UITableViewCell *cell;
             return cell;
             break;
         }
@@ -181,69 +175,65 @@ enum TMBTableViewRow:NSInteger{
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
     switch (indexPath.row) {
-        case TMBTableViewRowClientSocialReason:
-            return 80;
+            case TMBTableViewRowInstallationAdressMapView:
+                case TMBTableViewRowInstallationAdressCorreiosWebView:
+                    return 350;
             break;
-        case TMBTableViewRowClientGender:
-            return 60;
-            break;
-            case TMBTableViewRowClientBirthDate:
-            return 160;
+            case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:
+                case TMBTableViewRowInstallationAdressNextStepButton:
+                    return 45;
             break;
         default:
-            return 50;
+            return 55;
             break;
     }
 }
 
-#pragma mark - Navigation
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    self.installationAdressCep.text = [[TMBSignatureData sharedData] installationAdressCep];
+    
+}
 
+
+#pragma mark - Navigation
 - (IBAction)nextStep:(id)sender {
     
-    [[TMBSignatureData sharedData] setClientName:self.clientName.text];
-    [[TMBSignatureData sharedData] setClientCpf:self.clientCpf.text];
-    [[TMBSignatureData sharedData] setClientRg:self.clientRg.text];
-    [[TMBSignatureData sharedData] setClientEmail:self.clientEmail.text];
-    [[TMBSignatureData sharedData] setClientPhoneNumber:self.clientPhoneNumber.text];
+    [[TMBSignatureData sharedData] setInstallationAdressCep:self.installationAdressCep.text];
+    [[TMBSignatureData sharedData] setInstallationAdressCity:self.installationAdressCity.text];
+    [[TMBSignatureData sharedData] setInstallationAdressState:self.installationAdressState.text];
+    [[TMBSignatureData sharedData] setInstallationAdressSector:self.installationAdressSector.text];
+    [[TMBSignatureData sharedData] setInstallationAdressStreet:self.installationAdressStreet.text];
+    [[TMBSignatureData sharedData] setInstallationAdressNumber:self.installationAdressNumber.text];
+    [[TMBSignatureData sharedData] setInstallationAdressComplement:self.installationAdressComplement.text];
     
-    NSInteger genderRow = [self.genderPickerView selectedRowInComponent:0];
-    NSString *selectedGender = [self.genderPickerData objectAtIndex:genderRow];
-    [[TMBSignatureData sharedData] setClientGender:selectedGender];
-    
-    NSInteger socialReasonRow = [self.socialReasonPickerView selectedRowInComponent:0];
-    NSString *selectedSocialReason = [self.socialReasonPickerData objectAtIndex:socialReasonRow];
-    [[TMBSignatureData sharedData] setClientSocialReason:selectedSocialReason];
-    
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
-    NSString *dateString;
-    dateString = [dateFormat stringFromDate:self.birthDatePickerView.date];
-    [[TMBSignatureData sharedData] setClientBirthDate:dateString];
-    
-
     /*
-    NSLog(@"Nome %@",[[TMBSignatureData sharedData] clientName]);
-    NSLog(@"CPF %@",[[TMBSignatureData sharedData] clientCpf]);
-    NSLog(@"RG %@",[[TMBSignatureData sharedData] clientRg]);
-    NSLog(@"Email %@",[[TMBSignatureData sharedData] clientEmail]);
-    NSLog(@"Telefone %@",[[TMBSignatureData sharedData] clientPhoneNumber]);
-    NSLog(@"%@",[[TMBSignatureData sharedData] clientGender]);
-    NSLog(@"%@",[[TMBSignatureData sharedData] clientSocialReason]);
-    NSLog(@"%@",[[TMBSignatureData sharedData] clientBirthDate]);
-    */
+     NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressCep]);
+     NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressCity]);
+     NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressState]);
+     NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressSector]);
+     NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressStreet]);
+     NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressNumber]);
+     NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressComplement]);
+     */
+
+    
+    
 }
+
+
+#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    TMBInstallationAdressDataViewController *clientData = segue.destinationViewController;
+    TMBPaymentDataViewController *clientData = segue.destinationViewController;
     
     clientData.packagePresentationImage = self.packagePresentationImage;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
 
 -(void)viewDidAppear:(BOOL)animated{
     
@@ -268,10 +258,10 @@ enum TMBTableViewRow:NSInteger{
     
     // Get the keyboard size
     UIScrollView *tableView;
-    if([self.clientDataTableView.superview isKindOfClass:[UIScrollView class]])
-        tableView = (UIScrollView *)self.clientDataTableView.superview;
+    if([self.installationAdressDataTableView.superview isKindOfClass:[UIScrollView class]])
+        tableView = (UIScrollView *)self.installationAdressDataTableView.superview;
     else
-        tableView = self.clientDataTableView;
+        tableView = self.installationAdressDataTableView;
     NSDictionary *userInfo = [aNotification userInfo];
     NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardRect = [tableView.superview convertRect:[aValue CGRectValue] fromView:nil];
@@ -325,10 +315,10 @@ enum TMBTableViewRow:NSInteger{
     keyboardShown = NO;
     
     UIScrollView *tableView;
-    if([self.clientDataTableView.superview isKindOfClass:[UIScrollView class]])
-        tableView = (UIScrollView *)self.clientDataTableView.superview;
+    if([self.installationAdressDataTableView.superview isKindOfClass:[UIScrollView class]])
+        tableView = (UIScrollView *)self.installationAdressDataTableView.superview;
     else
-        tableView = self.clientDataTableView;
+        tableView = self.installationAdressDataTableView;
     if(self.inputAccessoryView)
     {
         tableView.contentInset = UIEdgeInsetsZero;
@@ -365,11 +355,9 @@ enum TMBTableViewRow:NSInteger{
     // Scroll to the active cell
     if(self.activeCellIndexPath)
     {
-        [self.clientDataTableView scrollToRowAtIndexPath:self.activeCellIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [self.installationAdressDataTableView scrollToRowAtIndexPath:self.activeCellIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
         
-        [self.clientDataTableView selectRowAtIndexPath:self.activeCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+        [self.installationAdressDataTableView selectRowAtIndexPath:self.activeCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
 }
-
-
 @end

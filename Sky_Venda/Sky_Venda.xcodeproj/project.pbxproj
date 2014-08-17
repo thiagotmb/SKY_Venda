@@ -7,33 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A438C27A19994E7C003DE777 /* TMBClientDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A438C27919994E7C003DE777 /* TMBClientDataViewController.m */; };
-		A438C27D19995CCC003DE777 /* TMBClientDataSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A438C27C19995CCC003DE777 /* TMBClientDataSecondViewController.m */; };
-		A4795B7A199E423700BBAF93 /* TMBClientDataFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4795B79199E423700BBAF93 /* TMBClientDataFourthViewController.m */; };
-		A4795B7D199E42B100BBAF93 /* TMBClientDataFifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4795B7C199E42B100BBAF93 /* TMBClientDataFifthViewController.m */; };
-		A4795B80199E464300BBAF93 /* TMBPaymentDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4795B7F199E464300BBAF93 /* TMBPaymentDataViewController.m */; };
-		A4795B83199E73CA00BBAF93 /* TMBDataCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4795B82199E73CA00BBAF93 /* TMBDataCheckViewController.m */; };
-		A4795B86199E776500BBAF93 /* TMBSignatureData.m in Sources */ = {isa = PBXBuildFile; fileRef = A4795B85199E776500BBAF93 /* TMBSignatureData.m */; };
-		A4795B89199FAB4700BBAF93 /* TMBCorreiosCepSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4795B88199FAB4700BBAF93 /* TMBCorreiosCepSearchViewController.m */; };
-		A48E3ED01994528B00EA54E2 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3EC71994528B00EA54E2 /* TMBFaqListViewController.m */; };
-		A48E3ED11994528B00EA54E2 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ECA1994528B00EA54E2 /* TMBPackageAdhesionViewController.m */; };
-		A48E3ED21994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */; };
-		A48E3EDC199452CF00EA54E2 /* TMBFaqTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3ED7199452CF00EA54E2 /* TMBFaqTableViewCell.m */; };
-		A48E3EDD199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3EDA199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m */; };
+		A40A3D3B19A0DC0600601C91 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D3A19A0DC0600601C91 /* map.png */; };
+		A40A3D6B19A0ED6F00601C91 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */; };
+		A40A3D6C19A0ED6F00601C91 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */; };
+		A40A3D6D19A0ED6F00601C91 /* TMBClientDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */; };
+		A40A3D6E19A0ED6F00601C91 /* TMBDataCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4919A0ED6F00601C91 /* TMBDataCheckViewController.m */; };
+		A40A3D6F19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */; };
+		A40A3D7019A0ED6F00601C91 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */; };
+		A40A3D7119A0ED6F00601C91 /* TMBPackagesPresentationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4F19A0ED6F00601C91 /* TMBPackagesPresentationTableViewController.m */; };
+		A40A3D7219A0ED6F00601C91 /* TMBPaymentDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */; };
+		A40A3D7319A0ED6F00601C91 /* TMBSignatureData.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D5719A0ED6F00601C91 /* TMBSignatureData.m */; };
+		A40A3D7419A0ED6F00601C91 /* TMBFaqTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D5C19A0ED6F00601C91 /* TMBFaqTableViewCell.m */; };
+		A40A3D7519A0ED6F00601C91 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D5D19A0ED6F00601C91 /* Main_iPad.storyboard */; };
+		A40A3D7619A0ED6F00601C91 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D5E19A0ED6F00601C91 /* Main_iPhone.storyboard */; };
+		A40A3D7719A0ED6F00601C91 /* TMBDatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6119A0ED6F00601C91 /* TMBDatePickerTableViewCell.m */; };
+		A40A3D7819A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6319A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m */; };
+		A40A3D7919A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6519A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m */; };
+		A40A3D7A19A0ED6F00601C91 /* TMBPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6719A0ED6F00601C91 /* TMBPickerTableViewCell.m */; };
+		A40A3D7B19A0ED6F00601C91 /* TMBTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6919A0ED6F00601C91 /* TMBTextFieldTableViewCell.m */; };
+		A40A3D8419A0EF9C00601C91 /* TMBTextLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D8319A0EF9C00601C91 /* TMBTextLabelTableViewCell.m */; };
 		A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE0199452F400EA54E2 /* SKY0.png */; };
 		A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE1199452F400EA54E2 /* SKY1.png */; };
 		A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE2199452F400EA54E2 /* SKY2.png */; };
 		A48E3EE7199452F400EA54E2 /* SKY3.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE3199452F400EA54E2 /* SKY3.png */; };
-		A48E3EEE1994586F00EA54E2 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48E3EED1994586F00EA54E2 /* TMBFaqAnswerViewController.m */; };
-		A4C62BAE199A912400145D4B /* TMBClientDataThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C62BAD199A912400145D4B /* TMBClientDataThirdViewController.m */; };
 		A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
 		A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */; };
 		A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EFB19914B4E00536DD7 /* UIKit.framework */; };
 		A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F0019914B4E00536DD7 /* InfoPlist.strings */; };
 		A4C72F0419914B4E00536DD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C72F0319914B4E00536DD7 /* main.m */; };
 		A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */; };
-		A4C72F0B19914B4E00536DD7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */; };
-		A4C72F0E19914B4E00536DD7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */; };
 		A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4C72F1219914B4E00536DD7 /* Images.xcassets */; };
 		A4C72F1A19914B4E00536DD7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72F1919914B4E00536DD7 /* XCTest.framework */; };
 		A4C72F1B19914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
@@ -53,40 +55,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A438C27819994E7C003DE777 /* TMBClientDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataViewController.h; sourceTree = "<group>"; };
-		A438C27919994E7C003DE777 /* TMBClientDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataViewController.m; sourceTree = "<group>"; };
-		A438C27B19995CCC003DE777 /* TMBClientDataSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataSecondViewController.h; sourceTree = "<group>"; };
-		A438C27C19995CCC003DE777 /* TMBClientDataSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataSecondViewController.m; sourceTree = "<group>"; };
-		A4795B78199E423700BBAF93 /* TMBClientDataFourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataFourthViewController.h; sourceTree = "<group>"; };
-		A4795B79199E423700BBAF93 /* TMBClientDataFourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataFourthViewController.m; sourceTree = "<group>"; };
-		A4795B7B199E42B100BBAF93 /* TMBClientDataFifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMBClientDataFifthViewController.h; path = Sky_Venda/Controllers/Package/TMBClientDataFifthViewController.h; sourceTree = SOURCE_ROOT; };
-		A4795B7C199E42B100BBAF93 /* TMBClientDataFifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMBClientDataFifthViewController.m; path = Sky_Venda/Controllers/Package/TMBClientDataFifthViewController.m; sourceTree = SOURCE_ROOT; };
-		A4795B7E199E464300BBAF93 /* TMBPaymentDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPaymentDataViewController.h; sourceTree = "<group>"; };
-		A4795B7F199E464300BBAF93 /* TMBPaymentDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPaymentDataViewController.m; sourceTree = "<group>"; };
-		A4795B81199E73CA00BBAF93 /* TMBDataCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDataCheckViewController.h; sourceTree = "<group>"; };
-		A4795B82199E73CA00BBAF93 /* TMBDataCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDataCheckViewController.m; sourceTree = "<group>"; };
-		A4795B84199E776500BBAF93 /* TMBSignatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignatureData.h; sourceTree = "<group>"; };
-		A4795B85199E776500BBAF93 /* TMBSignatureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignatureData.m; sourceTree = "<group>"; };
-		A4795B87199FAB4700BBAF93 /* TMBCorreiosCepSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBCorreiosCepSearchViewController.h; sourceTree = "<group>"; };
-		A4795B88199FAB4700BBAF93 /* TMBCorreiosCepSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBCorreiosCepSearchViewController.m; sourceTree = "<group>"; };
-		A48E3EC61994528B00EA54E2 /* TMBFaqListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqListViewController.h; sourceTree = "<group>"; };
-		A48E3EC71994528B00EA54E2 /* TMBFaqListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqListViewController.m; sourceTree = "<group>"; };
-		A48E3EC91994528B00EA54E2 /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
-		A48E3ECA1994528B00EA54E2 /* TMBPackageAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackageAdhesionViewController.m; sourceTree = "<group>"; };
-		A48E3ECB1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewController.h; sourceTree = "<group>"; };
-		A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewController.m; sourceTree = "<group>"; };
-		A48E3ED6199452CF00EA54E2 /* TMBFaqTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqTableViewCell.h; sourceTree = "<group>"; };
-		A48E3ED7199452CF00EA54E2 /* TMBFaqTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqTableViewCell.m; sourceTree = "<group>"; };
-		A48E3ED9199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewCell.h; sourceTree = "<group>"; };
-		A48E3EDA199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewCell.m; sourceTree = "<group>"; };
+		A40A3D3A19A0DC0600601C91 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		A40A3D4119A0ED6F00601C91 /* TMBFaqAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqAnswerViewController.h; sourceTree = "<group>"; };
+		A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqAnswerViewController.m; sourceTree = "<group>"; };
+		A40A3D4319A0ED6F00601C91 /* TMBFaqListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqListViewController.h; sourceTree = "<group>"; };
+		A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqListViewController.m; sourceTree = "<group>"; };
+		A40A3D4619A0ED6F00601C91 /* TMBClientDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataViewController.h; sourceTree = "<group>"; };
+		A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataViewController.m; sourceTree = "<group>"; };
+		A40A3D4819A0ED6F00601C91 /* TMBDataCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDataCheckViewController.h; sourceTree = "<group>"; };
+		A40A3D4919A0ED6F00601C91 /* TMBDataCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDataCheckViewController.m; sourceTree = "<group>"; };
+		A40A3D4A19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBInstallationAdressDataViewController.h; sourceTree = "<group>"; };
+		A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBInstallationAdressDataViewController.m; sourceTree = "<group>"; };
+		A40A3D4C19A0ED6F00601C91 /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
+		A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackageAdhesionViewController.m; sourceTree = "<group>"; };
+		A40A3D4E19A0ED6F00601C91 /* TMBPackagesPresentationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewController.h; sourceTree = "<group>"; };
+		A40A3D4F19A0ED6F00601C91 /* TMBPackagesPresentationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewController.m; sourceTree = "<group>"; };
+		A40A3D5019A0ED6F00601C91 /* TMBPaymentDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPaymentDataViewController.h; sourceTree = "<group>"; };
+		A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPaymentDataViewController.m; sourceTree = "<group>"; };
+		A40A3D5619A0ED6F00601C91 /* TMBSignatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignatureData.h; sourceTree = "<group>"; };
+		A40A3D5719A0ED6F00601C91 /* TMBSignatureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignatureData.m; sourceTree = "<group>"; };
+		A40A3D5B19A0ED6F00601C91 /* TMBFaqTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqTableViewCell.h; sourceTree = "<group>"; };
+		A40A3D5C19A0ED6F00601C91 /* TMBFaqTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqTableViewCell.m; sourceTree = "<group>"; };
+		A40A3D5D19A0ED6F00601C91 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		A40A3D5E19A0ED6F00601C91 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		A40A3D6019A0ED6F00601C91 /* TMBDatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDatePickerTableViewCell.h; sourceTree = "<group>"; };
+		A40A3D6119A0ED6F00601C91 /* TMBDatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDatePickerTableViewCell.m; sourceTree = "<group>"; };
+		A40A3D6219A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBMapGetLocationTableViewCell.h; sourceTree = "<group>"; };
+		A40A3D6319A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBMapGetLocationTableViewCell.m; sourceTree = "<group>"; };
+		A40A3D6419A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewCell.h; sourceTree = "<group>"; };
+		A40A3D6519A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewCell.m; sourceTree = "<group>"; };
+		A40A3D6619A0ED6F00601C91 /* TMBPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPickerTableViewCell.h; sourceTree = "<group>"; };
+		A40A3D6719A0ED6F00601C91 /* TMBPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPickerTableViewCell.m; sourceTree = "<group>"; };
+		A40A3D6819A0ED6F00601C91 /* TMBTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		A40A3D6919A0ED6F00601C91 /* TMBTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		A40A3D8219A0EF9C00601C91 /* TMBTextLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextLabelTableViewCell.h; sourceTree = "<group>"; };
+		A40A3D8319A0EF9C00601C91 /* TMBTextLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextLabelTableViewCell.m; sourceTree = "<group>"; };
 		A48E3EE0199452F400EA54E2 /* SKY0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY0.png; sourceTree = "<group>"; };
 		A48E3EE1199452F400EA54E2 /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
 		A48E3EE2199452F400EA54E2 /* SKY2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY2.png; sourceTree = "<group>"; };
 		A48E3EE3199452F400EA54E2 /* SKY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY3.png; sourceTree = "<group>"; };
-		A48E3EEC1994586F00EA54E2 /* TMBFaqAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqAnswerViewController.h; sourceTree = "<group>"; };
-		A48E3EED1994586F00EA54E2 /* TMBFaqAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqAnswerViewController.m; sourceTree = "<group>"; };
-		A4C62BAC199A912400145D4B /* TMBClientDataThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataThirdViewController.h; sourceTree = "<group>"; };
-		A4C62BAD199A912400145D4B /* TMBClientDataThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataThirdViewController.m; sourceTree = "<group>"; };
 		A4C72EF419914B4E00536DD7 /* Sky_Venda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky_Venda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C72EF719914B4E00536DD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,8 +104,6 @@
 		A4C72F0519914B4E00536DD7 /* Sky_Venda-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sky_Venda-Prefix.pch"; sourceTree = "<group>"; };
 		A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMBAppDelegate.h; sourceTree = "<group>"; };
 		A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMBAppDelegate.m; sourceTree = "<group>"; };
-		A4C72F0A19914B4E00536DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		A4C72F0D19914B4E00536DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A4C72F1219914B4E00536DD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A4C72F1819914B4E00536DD7 /* Sky_VendaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sky_VendaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C72F1919914B4E00536DD7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -131,92 +136,127 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A48E3EC41994528B00EA54E2 /* Controllers */ = {
+		A40A3D3F19A0ED6F00601C91 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A48E3EC51994528B00EA54E2 /* Faq */,
-				A48E3EC81994528B00EA54E2 /* Package */,
-				A48E3ECD1994528B00EA54E2 /* Query */,
+				A40A3D4019A0ED6F00601C91 /* Faq */,
+				A40A3D4519A0ED6F00601C91 /* Package */,
+				A40A3D5219A0ED6F00601C91 /* Query */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		A48E3EC51994528B00EA54E2 /* Faq */ = {
+		A40A3D4019A0ED6F00601C91 /* Faq */ = {
 			isa = PBXGroup;
 			children = (
-				A48E3EC61994528B00EA54E2 /* TMBFaqListViewController.h */,
-				A48E3EC71994528B00EA54E2 /* TMBFaqListViewController.m */,
-				A48E3EEC1994586F00EA54E2 /* TMBFaqAnswerViewController.h */,
-				A48E3EED1994586F00EA54E2 /* TMBFaqAnswerViewController.m */,
+				A40A3D4119A0ED6F00601C91 /* TMBFaqAnswerViewController.h */,
+				A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */,
+				A40A3D4319A0ED6F00601C91 /* TMBFaqListViewController.h */,
+				A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */,
 			);
 			path = Faq;
 			sourceTree = "<group>";
 		};
-		A48E3EC81994528B00EA54E2 /* Package */ = {
+		A40A3D4519A0ED6F00601C91 /* Package */ = {
 			isa = PBXGroup;
 			children = (
-				A48E3ECB1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.h */,
-				A48E3ECC1994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m */,
-				A438C27819994E7C003DE777 /* TMBClientDataViewController.h */,
-				A438C27919994E7C003DE777 /* TMBClientDataViewController.m */,
-				A438C27B19995CCC003DE777 /* TMBClientDataSecondViewController.h */,
-				A438C27C19995CCC003DE777 /* TMBClientDataSecondViewController.m */,
-				A4C62BAC199A912400145D4B /* TMBClientDataThirdViewController.h */,
-				A4C62BAD199A912400145D4B /* TMBClientDataThirdViewController.m */,
-				A4795B78199E423700BBAF93 /* TMBClientDataFourthViewController.h */,
-				A4795B79199E423700BBAF93 /* TMBClientDataFourthViewController.m */,
-				A4795B87199FAB4700BBAF93 /* TMBCorreiosCepSearchViewController.h */,
-				A4795B88199FAB4700BBAF93 /* TMBCorreiosCepSearchViewController.m */,
-				A4795B7B199E42B100BBAF93 /* TMBClientDataFifthViewController.h */,
-				A4795B7C199E42B100BBAF93 /* TMBClientDataFifthViewController.m */,
-				A4795B7E199E464300BBAF93 /* TMBPaymentDataViewController.h */,
-				A4795B7F199E464300BBAF93 /* TMBPaymentDataViewController.m */,
-				A4795B81199E73CA00BBAF93 /* TMBDataCheckViewController.h */,
-				A4795B82199E73CA00BBAF93 /* TMBDataCheckViewController.m */,
-				A48E3EC91994528B00EA54E2 /* TMBPackageAdhesionViewController.h */,
-				A48E3ECA1994528B00EA54E2 /* TMBPackageAdhesionViewController.m */,
+				A40A3D4619A0ED6F00601C91 /* TMBClientDataViewController.h */,
+				A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */,
+				A40A3D4819A0ED6F00601C91 /* TMBDataCheckViewController.h */,
+				A40A3D4919A0ED6F00601C91 /* TMBDataCheckViewController.m */,
+				A40A3D4A19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.h */,
+				A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */,
+				A40A3D4C19A0ED6F00601C91 /* TMBPackageAdhesionViewController.h */,
+				A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */,
+				A40A3D4E19A0ED6F00601C91 /* TMBPackagesPresentationTableViewController.h */,
+				A40A3D4F19A0ED6F00601C91 /* TMBPackagesPresentationTableViewController.m */,
+				A40A3D5019A0ED6F00601C91 /* TMBPaymentDataViewController.h */,
+				A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */,
 			);
 			path = Package;
 			sourceTree = "<group>";
 		};
-		A48E3ECD1994528B00EA54E2 /* Query */ = {
+		A40A3D5219A0ED6F00601C91 /* Query */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Query;
 			sourceTree = "<group>";
 		};
-		A48E3ED4199452CF00EA54E2 /* Views */ = {
+		A40A3D5319A0ED6F00601C91 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */,
-				A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */,
-				A48E3ED5199452CF00EA54E2 /* Faq */,
-				A48E3ED8199452CF00EA54E2 /* Packages */,
-				A48E3EDB199452CF00EA54E2 /* Query */,
+				A40A3D5419A0ED6F00601C91 /* Faq */,
+				A40A3D5519A0ED6F00601C91 /* Packages */,
+				A40A3D5819A0ED6F00601C91 /* Query */,
 			);
-			path = Views;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		A48E3ED5199452CF00EA54E2 /* Faq */ = {
+		A40A3D5419A0ED6F00601C91 /* Faq */ = {
 			isa = PBXGroup;
 			children = (
-				A48E3ED6199452CF00EA54E2 /* TMBFaqTableViewCell.h */,
-				A48E3ED7199452CF00EA54E2 /* TMBFaqTableViewCell.m */,
 			);
 			path = Faq;
 			sourceTree = "<group>";
 		};
-		A48E3ED8199452CF00EA54E2 /* Packages */ = {
+		A40A3D5519A0ED6F00601C91 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				A48E3ED9199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.h */,
-				A48E3EDA199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m */,
+				A40A3D5619A0ED6F00601C91 /* TMBSignatureData.h */,
+				A40A3D5719A0ED6F00601C91 /* TMBSignatureData.m */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		A48E3EDB199452CF00EA54E2 /* Query */ = {
+		A40A3D5819A0ED6F00601C91 /* Query */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
+		A40A3D5919A0ED6F00601C91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A40A3D5D19A0ED6F00601C91 /* Main_iPad.storyboard */,
+				A40A3D5E19A0ED6F00601C91 /* Main_iPhone.storyboard */,
+				A40A3D5A19A0ED6F00601C91 /* Faq */,
+				A40A3D5F19A0ED6F00601C91 /* Packages */,
+				A40A3D6A19A0ED6F00601C91 /* Query */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A40A3D5A19A0ED6F00601C91 /* Faq */ = {
+			isa = PBXGroup;
+			children = (
+				A40A3D5B19A0ED6F00601C91 /* TMBFaqTableViewCell.h */,
+				A40A3D5C19A0ED6F00601C91 /* TMBFaqTableViewCell.m */,
+			);
+			path = Faq;
+			sourceTree = "<group>";
+		};
+		A40A3D5F19A0ED6F00601C91 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A40A3D6019A0ED6F00601C91 /* TMBDatePickerTableViewCell.h */,
+				A40A3D6119A0ED6F00601C91 /* TMBDatePickerTableViewCell.m */,
+				A40A3D6219A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.h */,
+				A40A3D6319A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m */,
+				A40A3D6419A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.h */,
+				A40A3D6519A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m */,
+				A40A3D6619A0ED6F00601C91 /* TMBPickerTableViewCell.h */,
+				A40A3D6719A0ED6F00601C91 /* TMBPickerTableViewCell.m */,
+				A40A3D6819A0ED6F00601C91 /* TMBTextFieldTableViewCell.h */,
+				A40A3D6919A0ED6F00601C91 /* TMBTextFieldTableViewCell.m */,
+				A40A3D8219A0EF9C00601C91 /* TMBTextLabelTableViewCell.h */,
+				A40A3D8319A0EF9C00601C91 /* TMBTextLabelTableViewCell.m */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		A40A3D6A19A0ED6F00601C91 /* Query */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -234,45 +274,13 @@
 		A48E3EDF199452F400EA54E2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A40A3D3A19A0DC0600601C91 /* map.png */,
 				A48E3EE0199452F400EA54E2 /* SKY0.png */,
 				A48E3EE1199452F400EA54E2 /* SKY1.png */,
 				A48E3EE2199452F400EA54E2 /* SKY2.png */,
 				A48E3EE3199452F400EA54E2 /* SKY3.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		A48E3EE81994531200EA54E2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A48E3EE91994531200EA54E2 /* Faq */,
-				A48E3EEA1994531200EA54E2 /* Packages */,
-				A48E3EEB1994531200EA54E2 /* Query */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A48E3EE91994531200EA54E2 /* Faq */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Faq;
-			sourceTree = "<group>";
-		};
-		A48E3EEA1994531200EA54E2 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				A4795B84199E776500BBAF93 /* TMBSignatureData.h */,
-				A4795B85199E776500BBAF93 /* TMBSignatureData.m */,
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		A48E3EEB1994531200EA54E2 /* Query */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Query;
 			sourceTree = "<group>";
 		};
 		A4C72EEB19914B4E00536DD7 = {
@@ -310,9 +318,9 @@
 			children = (
 				A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */,
 				A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */,
-				A48E3EE81994531200EA54E2 /* Models */,
-				A48E3ED4199452CF00EA54E2 /* Views */,
-				A48E3EC41994528B00EA54E2 /* Controllers */,
+				A40A3D3F19A0ED6F00601C91 /* Controllers */,
+				A40A3D5319A0ED6F00601C91 /* Models */,
+				A40A3D5919A0ED6F00601C91 /* Views */,
 				A48E3EDE199452F400EA54E2 /* Resources */,
 				A4C72F1219914B4E00536DD7 /* Images.xcassets */,
 				A4C72EFE19914B4E00536DD7 /* Supporting Files */,
@@ -426,13 +434,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40A3D3B19A0DC0600601C91 /* map.png in Resources */,
 				A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */,
-				A4C72F0E19914B4E00536DD7 /* Main_iPad.storyboard in Resources */,
 				A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */,
 				A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */,
 				A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */,
+				A40A3D7619A0ED6F00601C91 /* Main_iPhone.storyboard in Resources */,
+				A40A3D7519A0ED6F00601C91 /* Main_iPad.storyboard in Resources */,
 				A48E3EE7199452F400EA54E2 /* SKY3.png in Resources */,
-				A4C72F0B19914B4E00536DD7 /* Main_iPhone.storyboard in Resources */,
 				A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,23 +461,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4795B7D199E42B100BBAF93 /* TMBClientDataFifthViewController.m in Sources */,
-				A48E3EDC199452CF00EA54E2 /* TMBFaqTableViewCell.m in Sources */,
-				A4795B7A199E423700BBAF93 /* TMBClientDataFourthViewController.m in Sources */,
-				A48E3EDD199452CF00EA54E2 /* TMBPackagesPresentationTableViewCell.m in Sources */,
-				A4795B83199E73CA00BBAF93 /* TMBDataCheckViewController.m in Sources */,
-				A438C27A19994E7C003DE777 /* TMBClientDataViewController.m in Sources */,
-				A4795B89199FAB4700BBAF93 /* TMBCorreiosCepSearchViewController.m in Sources */,
-				A48E3ED21994528B00EA54E2 /* TMBPackagesPresentationTableViewController.m in Sources */,
-				A438C27D19995CCC003DE777 /* TMBClientDataSecondViewController.m in Sources */,
-				A4795B80199E464300BBAF93 /* TMBPaymentDataViewController.m in Sources */,
-				A48E3ED01994528B00EA54E2 /* TMBFaqListViewController.m in Sources */,
-				A4C62BAE199A912400145D4B /* TMBClientDataThirdViewController.m in Sources */,
+				A40A3D7B19A0ED6F00601C91 /* TMBTextFieldTableViewCell.m in Sources */,
+				A40A3D7719A0ED6F00601C91 /* TMBDatePickerTableViewCell.m in Sources */,
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
-				A4795B86199E776500BBAF93 /* TMBSignatureData.m in Sources */,
-				A48E3ED11994528B00EA54E2 /* TMBPackageAdhesionViewController.m in Sources */,
+				A40A3D7219A0ED6F00601C91 /* TMBPaymentDataViewController.m in Sources */,
+				A40A3D7419A0ED6F00601C91 /* TMBFaqTableViewCell.m in Sources */,
+				A40A3D6E19A0ED6F00601C91 /* TMBDataCheckViewController.m in Sources */,
 				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
-				A48E3EEE1994586F00EA54E2 /* TMBFaqAnswerViewController.m in Sources */,
+				A40A3D7819A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m in Sources */,
+				A40A3D7A19A0ED6F00601C91 /* TMBPickerTableViewCell.m in Sources */,
+				A40A3D7319A0ED6F00601C91 /* TMBSignatureData.m in Sources */,
+				A40A3D6F19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m in Sources */,
+				A40A3D6B19A0ED6F00601C91 /* TMBFaqAnswerViewController.m in Sources */,
+				A40A3D6D19A0ED6F00601C91 /* TMBClientDataViewController.m in Sources */,
+				A40A3D7019A0ED6F00601C91 /* TMBPackageAdhesionViewController.m in Sources */,
+				A40A3D6C19A0ED6F00601C91 /* TMBFaqListViewController.m in Sources */,
+				A40A3D7119A0ED6F00601C91 /* TMBPackagesPresentationTableViewController.m in Sources */,
+				A40A3D7919A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m in Sources */,
+				A40A3D8419A0EF9C00601C91 /* TMBTextLabelTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,24 +507,6 @@
 				A4C72F0119914B4E00536DD7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A4C72F0919914B4E00536DD7 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4C72F0A19914B4E00536DD7 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		A4C72F0C19914B4E00536DD7 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4C72F0D19914B4E00536DD7 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		A4C72F2219914B4E00536DD7 /* InfoPlist.strings */ = {
