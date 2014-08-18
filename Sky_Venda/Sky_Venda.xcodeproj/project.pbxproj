@@ -30,6 +30,7 @@
 		A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE1199452F400EA54E2 /* SKY1.png */; };
 		A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE2199452F400EA54E2 /* SKY2.png */; };
 		A48E3EE7199452F400EA54E2 /* SKY3.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE3199452F400EA54E2 /* SKY3.png */; };
+		A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BAD67319A21B0400EA244B /* iCarousel.m */; };
 		A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
 		A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */; };
 		A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EFB19914B4E00536DD7 /* UIKit.framework */; };
@@ -94,6 +95,8 @@
 		A48E3EE1199452F400EA54E2 /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
 		A48E3EE2199452F400EA54E2 /* SKY2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY2.png; sourceTree = "<group>"; };
 		A48E3EE3199452F400EA54E2 /* SKY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY3.png; sourceTree = "<group>"; };
+		A4BAD67219A21B0400EA244B /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		A4BAD67319A21B0400EA244B /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		A4C72EF419914B4E00536DD7 /* Sky_Venda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky_Venda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C72EF719914B4E00536DD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -283,6 +286,23 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		A4BAD67019A21B0400EA244B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A4BAD67119A21B0400EA244B /* iCarousel */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A4BAD67119A21B0400EA244B /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				A4BAD67219A21B0400EA244B /* iCarousel.h */,
+				A4BAD67319A21B0400EA244B /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
 		A4C72EEB19914B4E00536DD7 = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +336,7 @@
 		A4C72EFD19914B4E00536DD7 /* Sky_Venda */ = {
 			isa = PBXGroup;
 			children = (
+				A4BAD67019A21B0400EA244B /* API */,
 				A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */,
 				A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */,
 				A40A3D3F19A0ED6F00601C91 /* Controllers */,
@@ -472,6 +493,7 @@
 				A40A3D7A19A0ED6F00601C91 /* TMBPickerTableViewCell.m in Sources */,
 				A40A3D7319A0ED6F00601C91 /* TMBSignatureData.m in Sources */,
 				A40A3D6F19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m in Sources */,
+				A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */,
 				A40A3D6B19A0ED6F00601C91 /* TMBFaqAnswerViewController.m in Sources */,
 				A40A3D6D19A0ED6F00601C91 /* TMBClientDataViewController.m in Sources */,
 				A40A3D7019A0ED6F00601C91 /* TMBPackageAdhesionViewController.m in Sources */,
