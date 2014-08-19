@@ -126,11 +126,12 @@
     //NSLog(@"%d",self.packagePresentPrincipalView.currentItemIndex);
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    TMBClientDataViewController *myVC = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
+    TMBClientDataViewController *clientDataViewController = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
 
-    //myVC.packagePresentationImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",(long)self.packagePresentPrincipalView.currentItemIndex]];
+    NSString *selectedPackage = [NSString stringWithFormat:@"%ld",(long)self.packagePresentPrincipalView.currentItemIndex];
+    [[TMBSignatureData sharedData] setSelectedPackage:selectedPackage];
     
-    [self.navigationController pushViewController:myVC animated:YES];
+    [self.navigationController pushViewController:clientDataViewController animated:YES];
 }
 
 #pragma mark - Navigation

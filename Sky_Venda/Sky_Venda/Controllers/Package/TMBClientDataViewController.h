@@ -16,7 +16,6 @@
 @interface TMBClientDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
-@property (nonatomic) UIImage *packagePresentationImage;
 
 @property (weak, nonatomic) IBOutlet UITableView *clientDataTableView;
 

@@ -11,7 +11,6 @@
 		A40A3D6B19A0ED6F00601C91 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */; };
 		A40A3D6C19A0ED6F00601C91 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */; };
 		A40A3D6D19A0ED6F00601C91 /* TMBClientDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */; };
-		A40A3D6E19A0ED6F00601C91 /* TMBDataCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4919A0ED6F00601C91 /* TMBDataCheckViewController.m */; };
 		A40A3D6F19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */; };
 		A40A3D7019A0ED6F00601C91 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */; };
 		A40A3D7219A0ED6F00601C91 /* TMBPaymentDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */; };
@@ -63,8 +62,6 @@
 		A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqListViewController.m; sourceTree = "<group>"; };
 		A40A3D4619A0ED6F00601C91 /* TMBClientDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataViewController.h; sourceTree = "<group>"; };
 		A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataViewController.m; sourceTree = "<group>"; };
-		A40A3D4819A0ED6F00601C91 /* TMBDataCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDataCheckViewController.h; sourceTree = "<group>"; };
-		A40A3D4919A0ED6F00601C91 /* TMBDataCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDataCheckViewController.m; sourceTree = "<group>"; };
 		A40A3D4A19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBInstallationAdressDataViewController.h; sourceTree = "<group>"; };
 		A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBInstallationAdressDataViewController.m; sourceTree = "<group>"; };
 		A40A3D4C19A0ED6F00601C91 /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
@@ -163,18 +160,16 @@
 		A40A3D4519A0ED6F00601C91 /* Package */ = {
 			isa = PBXGroup;
 			children = (
-				A40A3D4619A0ED6F00601C91 /* TMBClientDataViewController.h */,
-				A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */,
-				A40A3D4819A0ED6F00601C91 /* TMBDataCheckViewController.h */,
-				A40A3D4919A0ED6F00601C91 /* TMBDataCheckViewController.m */,
-				A40A3D4A19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.h */,
-				A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */,
-				A40A3D4C19A0ED6F00601C91 /* TMBPackageAdhesionViewController.h */,
-				A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */,
-				A40A3D5019A0ED6F00601C91 /* TMBPaymentDataViewController.h */,
-				A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */,
 				A49D1BC519A2824500846DD9 /* TMBPackagePresentationViewController.h */,
 				A49D1BC619A2824500846DD9 /* TMBPackagePresentationViewController.m */,
+				A40A3D4619A0ED6F00601C91 /* TMBClientDataViewController.h */,
+				A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */,
+				A40A3D4A19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.h */,
+				A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */,
+				A40A3D5019A0ED6F00601C91 /* TMBPaymentDataViewController.h */,
+				A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */,
+				A40A3D4C19A0ED6F00601C91 /* TMBPackageAdhesionViewController.h */,
+				A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */,
 			);
 			path = Package;
 			sourceTree = "<group>";
@@ -488,7 +483,6 @@
 				A49D1BC719A2824500846DD9 /* TMBPackagePresentationViewController.m in Sources */,
 				A40A3D7219A0ED6F00601C91 /* TMBPaymentDataViewController.m in Sources */,
 				A40A3D7419A0ED6F00601C91 /* TMBFaqTableViewCell.m in Sources */,
-				A40A3D6E19A0ED6F00601C91 /* TMBDataCheckViewController.m in Sources */,
 				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
 				A40A3D7819A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m in Sources */,
 				A40A3D7A19A0ED6F00601C91 /* TMBPickerTableViewCell.m in Sources */,

@@ -26,7 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.packagePresentation.image = self.packagePresentationImage;
+    NSString *imageName = [NSString stringWithFormat:@"SKY%@.png",[[TMBSignatureData sharedData] selectedPackage]];
+    
+    self.packagePresentation.image = [UIImage imageNamed:imageName];
     // Do any additional setup after loading the view.
 }
 
@@ -48,5 +50,9 @@
 */
 
 - (IBAction)submitPackageSignature:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    UIViewController *signatureSubmited = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBSignatureSubmited"];
+    [self.navigationController pushViewController:signatureSubmited animated:YES];
 }
 @end

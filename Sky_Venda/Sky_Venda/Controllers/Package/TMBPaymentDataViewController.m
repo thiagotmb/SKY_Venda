@@ -32,7 +32,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.packagePresentation.image = self.packagePresentationImage;
     
     self.creditCardExpirationDatePicker.dataSource = self;
     self.creditCardExpirationDatePicker.delegate = self;
@@ -105,17 +104,15 @@
     
     [[TMBSignatureData sharedData] setCreditExpirationDate:creditCartExpirationDateString];
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    TMBPackageAdhesionViewController *packageAdhesionViewController = (TMBPackageAdhesionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBPackageAdhesionViewController"];
+    [self.navigationController pushViewController:packageAdhesionViewController animated:YES];
+    
+    /*
     NSLog(@"%@",[[TMBSignatureData sharedData] creditCardNumber]);
     NSLog(@"%@",[[TMBSignatureData sharedData] creditExpirationDate]);
+     */
 
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    TMBDataCheckViewController *clientData = segue.destinationViewController;
-    
-    clientData.packagePresentationImage = self.packagePresentationImage;
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 @end

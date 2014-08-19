@@ -12,7 +12,6 @@
 @interface TMBPackageAdhesionViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
-@property (nonatomic) UIImage *packagePresentationImage;
 
 - (IBAction)submitPackageSignature:(id)sender;
 

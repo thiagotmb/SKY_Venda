@@ -27,8 +27,6 @@ enum TMBTableViewRow:NSInteger{
     
     TMBTableViewRowInstallationAdressNextStepButton = 9,
     TMBTableViewRowInstallationAdressMapView = 0,
-    
-    TMBTableViewRowInstallationAdressCorreiosWebView = 10,
     TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton = 2,
 
     
@@ -153,17 +151,12 @@ enum TMBTableViewRow:NSInteger{
             break;
         }
         case TMBTableViewRowInstallationAdressNextStepButton:{
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NextStepTableViewCell" forIndexPath:indexPath];
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NextStepButton" forIndexPath:indexPath];
             return cell;
             break;
         }
         case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:{
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchInCorreiosButtonCell" forIndexPath:indexPath];
-            return cell;
-            break;
-        }
-        case TMBTableViewRowInstallationAdressCorreiosWebView:{
-            UITableViewCell *cell;
             return cell;
             break;
         }
@@ -178,7 +171,6 @@ enum TMBTableViewRow:NSInteger{
     
     switch (indexPath.row) {
             case TMBTableViewRowInstallationAdressMapView:
-                case TMBTableViewRowInstallationAdressCorreiosWebView:
                     return 350;
             break;
             case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:
@@ -191,11 +183,12 @@ enum TMBTableViewRow:NSInteger{
     }
 }
 
+/*BUG DEMONIADO
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     self.installationAdressCep.text = [[TMBSignatureData sharedData] installationAdressCep];
     
 }
-
+*/
 
 #pragma mark - Navigation
 - (IBAction)nextStep:(id)sender {
@@ -207,6 +200,10 @@ enum TMBTableViewRow:NSInteger{
     [[TMBSignatureData sharedData] setInstallationAdressStreet:self.installationAdressStreet.text];
     [[TMBSignatureData sharedData] setInstallationAdressNumber:self.installationAdressNumber.text];
     [[TMBSignatureData sharedData] setInstallationAdressComplement:self.installationAdressComplement.text];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    TMBPaymentDataViewController *paymentDataViewController = (TMBPaymentDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBPaymentDataViewController"];
+    [self.navigationController pushViewController:paymentDataViewController animated:YES];
     
     /*
      NSLog(@"%@",[[TMBSignatureData sharedData] installationAdressCep]);
@@ -225,15 +222,6 @@ enum TMBTableViewRow:NSInteger{
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    TMBPaymentDataViewController *clientData = segue.destinationViewController;
-    
-    clientData.packagePresentationImage = self.packagePresentationImage;
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 
 -(void)viewDidAppear:(BOOL)animated{
     

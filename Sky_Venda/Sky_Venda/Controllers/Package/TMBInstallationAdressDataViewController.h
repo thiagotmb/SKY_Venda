@@ -25,8 +25,6 @@
 @property (nonatomic) UITextField *installationAdressNumber;
 @property (nonatomic) UITextField *installationAdressComplement;
 
-@property (nonatomic) UIImage* packagePresentationImage;
-
 - (IBAction)nextStep:(id)sender;
 
 

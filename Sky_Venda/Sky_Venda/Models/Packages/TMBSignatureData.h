@@ -10,6 +10,8 @@
 
 @interface TMBSignatureData : NSObject
 
+@property(nonatomic) NSString* selectedPackage;
+
 @property (nonatomic) NSString *clientName;
 @property (nonatomic) NSString *clientCpf;
 @property (nonatomic) NSString *clientRg;

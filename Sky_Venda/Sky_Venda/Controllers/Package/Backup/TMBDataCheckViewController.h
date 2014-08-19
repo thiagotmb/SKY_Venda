@@ -15,7 +15,6 @@
 @interface TMBDataCheckViewController : UIViewController<UITableViewDataSource,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
-@property (nonatomic) UIImage *packagePresentationImage;
 
 @property (weak, nonatomic) IBOutlet UITableView *dataCheckTableView;
 

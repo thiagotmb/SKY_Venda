@@ -50,22 +50,16 @@ enum TMBTableViewRow:NSInteger{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.packagePresentation.image = self.packagePresentationImage;
+     
+     NSString *imageName = [NSString stringWithFormat:@"SKY%@.png",[[TMBSignatureData sharedData] selectedPackage]];
+     
+    self.packagePresentation.image = [UIImage imageNamed:imageName];
 
     // Do any additional setup after loading the view.
     self.genderPickerData = @[@"Masculino",@"Feminino"];
     self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
 
 }
-
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    
-//    self.genderPickerData = @[@"Masculino",@"Feminino"];
-//    self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
-//
-//    
-//}
 
 
 - (void)didReceiveMemoryWarning
@@ -78,8 +72,6 @@ enum TMBTableViewRow:NSInteger{
     
     [self.view endEditing:YES];
 }
-
-
 
 #pragma mark - TableView
 
@@ -225,7 +217,10 @@ enum TMBTableViewRow:NSInteger{
     dateString = [dateFormat stringFromDate:self.birthDatePickerView.date];
     [[TMBSignatureData sharedData] setClientBirthDate:dateString];
     
-
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    TMBInstallationAdressDataViewController *installationAdressDataViewController = (TMBInstallationAdressDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBInstallationAdressDataViewController"];
+    [self.navigationController pushViewController:installationAdressDataViewController animated:YES];
     /*
     NSLog(@"Nome %@",[[TMBSignatureData sharedData] clientName]);
     NSLog(@"CPF %@",[[TMBSignatureData sharedData] clientCpf]);
@@ -238,29 +233,22 @@ enum TMBTableViewRow:NSInteger{
     */
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
     
-    TMBInstallationAdressDataViewController *clientData = segue.destinationViewController;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     
-    clientData.packagePresentationImage = self.packagePresentationImage;
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
 }
 
-
-//-(void)viewDidAppear:(BOOL)animated{
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-//    
-//}
-
-//-(void)viewWillDisappear:(BOOL)animated{
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
-//}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)keyboardWillShow:(NSNotification *)aNotification
 {
@@ -374,6 +362,7 @@ enum TMBTableViewRow:NSInteger{
         [self.clientDataTableView selectRowAtIndexPath:self.activeCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
 }
+
 
 
 @end

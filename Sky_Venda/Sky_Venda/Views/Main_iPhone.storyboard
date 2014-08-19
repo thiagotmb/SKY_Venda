@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="7rN-B1-N4R" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="65" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="lJb-FP-ZX0" id="zO2-e9-zDv"/>
@@ -41,7 +41,7 @@
         <!--Package Adhesion View Controller - Adesão-->
         <scene sceneID="88h-gD-FBI">
             <objects>
-                <viewController id="uHV-oO-UQz" customClass="TMBPackageAdhesionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TMBPackageAdhesionViewController" id="uHV-oO-UQz" customClass="TMBPackageAdhesionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wu9-3n-w4W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,7 +56,6 @@
                                 </state>
                                 <connections>
                                     <action selector="submitPackageSignature:" destination="uHV-oO-UQz" eventType="touchUpInside" id="5CL-cK-FQj"/>
-                                    <segue destination="Mxc-dg-yrO" kind="push" id="0AY-53-mdV"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ROT-Ik-tHe">
@@ -83,12 +82,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Q3-Ce-fyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2642" y="-2366"/>
+            <point key="canvasLocation" x="2245" y="-2366"/>
         </scene>
         <!--View Controller - Package Confirmation-->
         <scene sceneID="wXl-ah-gPf">
             <objects>
-                <viewController title="Package Confirmation" id="Mxc-dg-yrO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TMBSignatureSubmited" title="Package Confirmation" id="Mxc-dg-yrO" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iLe-wu-FMY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -132,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAJ-L5-CP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3124" y="-2366"/>
+            <point key="canvasLocation" x="2729" y="-2366"/>
         </scene>
         <!--Tab Bar Controller - Tab Bar Controll-->
         <scene sceneID="7la-rK-MxK">
@@ -548,7 +547,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RoD-pz-7cZ">
-                                <rect key="frame" x="0.0" y="61" width="320" height="170"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="O23-qb-bag">
@@ -674,8 +673,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                         <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="nextStep:" destination="BNr-jj-PLq" eventType="touchUpInside" id="fVJ-dA-ZCX"/>
-                                                        <segue destination="0Kv-fc-Zi0" kind="push" id="E7J-r9-cCu"/>
+                                                        <action selector="nextStep:" destination="BNr-jj-PLq" eventType="touchUpInside" id="TZq-uf-Bv0"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -707,7 +705,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Payment Data View Controller - Dados de Pagamento 3/3-->
         <scene sceneID="zJa-6W-NpE">
             <objects>
-                <viewController id="V9l-wU-ELL" customClass="TMBPaymentDataViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TMBPaymentDataViewController" id="V9l-wU-ELL" customClass="TMBPaymentDataViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="szt-fN-kkD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -758,7 +756,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </state>
                                 <connections>
                                     <action selector="nextStep:" destination="V9l-wU-ELL" eventType="touchUpInside" id="cMR-JU-KMQ"/>
-                                    <segue destination="HoH-zy-BM1" kind="push" id="7fi-gm-Y0u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -777,103 +774,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1764" y="-2366"/>
         </scene>
-        <!--Data Check View Controller - Confirmação de dados-->
-        <scene sceneID="m6a-ql-6DO">
-            <objects>
-                <viewController id="HoH-zy-BM1" customClass="TMBDataCheckViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xk3-g3-UtZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Nf3-of-dz8">
-                                <rect key="frame" x="0.0" y="65" width="320" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QNt-ga-kFE">
-                                <rect key="frame" x="0.0" y="235" width="320" height="283"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextLabelCell" rowHeight="55" id="OJI-s6-UD7" customClass="TMBTextLabelTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OJI-s6-UD7" id="GKd-M2-7nH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v6q-v7-05B">
-                                                    <rect key="frame" x="20" y="0.0" width="131" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thiago Meira Bernardes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nze-eu-Tdw">
-                                                    <rect key="frame" x="20" y="20" width="184" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="contentLabel" destination="nze-eu-Tdw" id="Xg8-Tu-n0Q"/>
-                                            <outlet property="titleLabel" destination="v6q-v7-05B" id="8zh-Yg-43G"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NextStepTableViewCell" id="DrY-zs-a7W">
-                                        <rect key="frame" x="0.0" y="77" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DrY-zs-a7W" id="tAP-jO-EMq">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Uhl-Hq-yfE">
-                                                    <rect key="frame" x="108" y="7" width="104" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.023573720190000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Próximo Passo">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="uHV-oO-UQz" kind="push" id="7uP-g7-ELB"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="HoH-zy-BM1" id="dXF-I4-iQ5"/>
-                                    <outlet property="delegate" destination="HoH-zy-BM1" id="hm4-rp-ERN"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Confirmação de dados" id="E2K-6L-0hi">
-                        <barButtonItem key="backBarButtonItem" title="Checkin" id="C3B-DN-mSp"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="dataCheckTableView" destination="QNt-ga-kFE" id="Jop-2J-zwx"/>
-                        <outlet property="packagePresentation" destination="Nf3-of-dz8" id="gZa-Oj-0Fk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Oj-Qm-FyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2196" y="-2366"/>
-        </scene>
         <!--Installation Adress Data View Controller - Endereço de Instalação 2/3-->
         <scene sceneID="XF5-MU-Gep">
             <objects>
-                <viewController id="0Kv-fc-Zi0" customClass="TMBInstallationAdressDataViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TMBInstallationAdressDataViewController" id="0Kv-fc-Zi0" customClass="TMBInstallationAdressDataViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="do0-DQ-7xM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="298" sectionHeaderHeight="22" sectionFooterHeight="22" id="S2F-4H-hZG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="516"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="516"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -885,7 +795,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HCU-HN-xMy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="302"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v9W-D3-V1J">
@@ -952,34 +862,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CorreiosWebViewCell" rowHeight="358" id="gUo-aW-9BI">
-                                        <rect key="frame" x="0.0" y="546" width="320" height="358"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gUo-aW-9BI" id="bSe-oZ-Xi9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="357"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XZn-mg-A0n">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h6c-IO-1WI">
-                                                    <rect key="frame" x="57" y="308" width="207" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Pronto">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NextStepTableViewCell" rowHeight="47" id="2n4-ea-Um0">
-                                        <rect key="frame" x="0.0" y="904" width="320" height="47"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NextStepButton" rowHeight="50" id="2n4-ea-Um0">
+                                        <rect key="frame" x="0.0" y="546" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2n4-ea-Um0" id="aUK-OT-VTj">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZuY-SE-PUV">
@@ -991,8 +878,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="nextStep:" destination="0Kv-fc-Zi0" eventType="touchUpInside" id="2R1-27-XBV"/>
-                                                        <segue destination="V9l-wU-ELL" kind="push" id="OND-LY-Cdp"/>
+                                                        <action selector="nextStep:" destination="0Kv-fc-Zi0" eventType="touchUpInside" id="w8n-Mr-zcp"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1018,7 +904,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9c-WH-UVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332" y="-2366"/>
+            <point key="canvasLocation" x="1329" y="-2366"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

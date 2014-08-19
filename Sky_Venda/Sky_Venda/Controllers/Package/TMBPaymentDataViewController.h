@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TMBDataCheckViewController.h"
 #import "TMBSignatureData.h"
-
+#import "TMBPackageAdhesionViewController.h"
 
 @interface TMBPaymentDataViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
-@property (nonatomic) UIImage *packagePresentationImage;
 
 @property (weak, nonatomic) IBOutlet UITextField *creditCardNumber;
 @property (weak, nonatomic) IBOutlet UIPickerView *creditCardExpirationDatePicker;
