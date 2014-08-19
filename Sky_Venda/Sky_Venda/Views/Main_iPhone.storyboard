@@ -4,45 +4,38 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Packages Presentation Table View Controller - Packages Presentation-->
-        <scene sceneID="Pgz-cQ-ZPR">
+        <!--Package Presentation View Controller-->
+        <scene sceneID="EMI-50-b6R">
             <objects>
-                <tableViewController title="Packages Presentation" id="SAP-oN-3QV" customClass="TMBPackagesPresentationTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="173" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Lq-Q9-447">
+                <viewController id="lJb-FP-ZX0" customClass="TMBPackagePresentationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C6H-TH-Rs9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PackagesCell" rowHeight="173" id="xui-cB-LMy" customClass="TMBPackagesPresentationTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="173"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xui-cB-LMy" id="5lX-KI-j5b">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="172"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="iZT-Ma-sr5">
-                                            <rect key="frame" x="0.0" y="3" width="353" height="166"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="7rN-B1-N4R" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="65" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="packagePresentImage" destination="iZT-Ma-sr5" id="GqW-Xx-zhB"/>
-                                    <segue destination="BNr-jj-PLq" kind="push" id="BBd-oU-ooa"/>
+                                    <outlet property="dataSource" destination="lJb-FP-ZX0" id="zO2-e9-zDv"/>
+                                    <outlet property="delegate" destination="lJb-FP-ZX0" id="MzT-xJ-6y0"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="SAP-oN-3QV" id="O8D-KE-3QJ"/>
-                            <outlet property="delegate" destination="SAP-oN-3QV" id="qRf-Gg-Nip"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="xCb-UY-Xo8"/>
-                    <navigationItem key="navigationItem" title="Pacotes" id="g9p-5Q-uFb">
-                        <barButtonItem key="backBarButtonItem" title="Pacotes" id="33A-2c-j5w"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eW6-RS-UNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OyN-uA-alG">
+                                <rect key="frame" x="0.0" y="235" width="320" height="284"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q1m-zY-Utw"/>
+                    <connections>
+                        <outlet property="packageDetailTableView" destination="OyN-uA-alG" id="Suq-y9-6Ms"/>
+                        <outlet property="packagePresentPrincipalView" destination="7rN-B1-N4R" id="bFM-ov-s08"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqL-iH-OTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="373" y="-2366"/>
         </scene>
@@ -178,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="SAP-oN-3QV" kind="relationship" relationship="rootViewController" id="0er-f2-FOJ"/>
+                        <segue destination="lJb-FP-ZX0" kind="relationship" relationship="rootViewController" id="eTM-rf-sDg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFO-cI-afI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,7 +543,7 @@
         <!--Client Data View Controller - Dados do Cliente 1/3-->
         <scene sceneID="Lcp-B0-8kc">
             <objects>
-                <viewController id="BNr-jj-PLq" customClass="TMBClientDataViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TMBClientDataViewController" id="BNr-jj-PLq" customClass="TMBClientDataViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hG4-2d-nwT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
