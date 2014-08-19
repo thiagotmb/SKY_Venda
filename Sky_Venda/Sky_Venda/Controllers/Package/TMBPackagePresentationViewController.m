@@ -128,7 +128,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBClientDataViewController *myVC = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
 
-    myVC.packagePresentationImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",(long)self.packagePresentPrincipalView.currentItemIndex]];
+    //myVC.packagePresentationImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",(long)self.packagePresentPrincipalView.currentItemIndex]];
     
     [self.navigationController pushViewController:myVC animated:YES];
 }

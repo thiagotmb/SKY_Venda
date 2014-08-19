@@ -50,19 +50,22 @@ enum TMBTableViewRow:NSInteger{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.packagePresentation.image = self.packagePresentationImage;
+    //self.packagePresentation.image = self.packagePresentationImage;
 
     // Do any additional setup after loading the view.
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
     self.genderPickerData = @[@"Masculino",@"Feminino"];
     self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
 
-    
 }
+
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    
+//    self.genderPickerData = @[@"Masculino",@"Feminino"];
+//    self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
+//
+//    
+//}
 
 
 - (void)didReceiveMemoryWarning
@@ -246,18 +249,18 @@ enum TMBTableViewRow:NSInteger{
 }
 
 
--(void)viewDidAppear:(BOOL)animated{
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
-}
+//-(void)viewDidAppear:(BOOL)animated{
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//    
+//}
 
--(void)viewWillDisappear:(BOOL)animated{
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
+//-(void)viewWillDisappear:(BOOL)animated{
+//    
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//}
 
 - (void)keyboardWillShow:(NSNotification *)aNotification
 {
