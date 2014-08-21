@@ -34,8 +34,7 @@
     self.creditCardOperatorNow = self.creditCard.operatorCode;
     self.creditCardExpirationDatePicker.date = self.creditCard.expiration;
     
-    self.creditCardOperatorNow = [[[TMBSignatureData sharedData] creditCardOperator] integerValue];
-    self.creditCardNumber.text = [[TMBSignatureData sharedData] creditCardNumber];
+
     //self.creditCardExpirationDatePicker.date = [[TMBSignatureData sharedData] creditExpirationDate];
 
     
@@ -60,14 +59,13 @@
     self.creditCard.expiration = self.creditCardExpirationDatePicker.date;
     self.creditCard.operatorCode = self.creditCardOperatorNow;
     
-    [[TMBSignatureData sharedData] setCreditCardNumber:[NSString stringWithFormat:@"%@",self.creditCardNumber.text]];
-    
+   /*
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM"];
     NSString *dateString;
     dateString = [dateFormat stringFromDate:self.creditCardExpirationDatePicker.date];
-    [[TMBSignatureData sharedData] setCreditExpirationDate:dateString];
-
+    */
+    
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBPackageAdhesionViewController *packageAdhesionViewController = (TMBPackageAdhesionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBPackageAdhesionViewController"];

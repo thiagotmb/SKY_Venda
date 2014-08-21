@@ -10,7 +10,6 @@
 		A409B38519A5166400C83BD4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A409B38419A5166400C83BD4 /* libsqlite3.0.dylib */; };
 		A409B3CB19A68DB700C83BD4 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B39519A68DB700C83BD4 /* TMBFaqAnswerViewController.m */; };
 		A409B3CC19A68DB700C83BD4 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B39719A68DB700C83BD4 /* TMBFaqListViewController.m */; };
-		A409B3CD19A68DB700C83BD4 /* TMBDataCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B39B19A68DB700C83BD4 /* TMBDataCheckViewController.m */; };
 		A409B3CE19A68DB700C83BD4 /* TMBClientDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A019A68DB700C83BD4 /* TMBClientDataViewController.m */; };
 		A409B3CF19A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A219A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m */; };
 		A409B3D019A68DB700C83BD4 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */; };
@@ -32,6 +31,7 @@
 		A409B3E019A68DB700C83BD4 /* TMBTextLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C919A68DB700C83BD4 /* TMBTextLabelTableViewCell.m */; };
 		A409B3E319A6941A00C83BD4 /* TMBInstallationAdress.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */; };
 		A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */; };
+		A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */; };
 		A40A3D3B19A0DC0600601C91 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D3A19A0DC0600601C91 /* map.png */; };
 		A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE0199452F400EA54E2 /* SKY0.png */; };
 		A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE1199452F400EA54E2 /* SKY1.png */; };
@@ -68,8 +68,6 @@
 		A409B39519A68DB700C83BD4 /* TMBFaqAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqAnswerViewController.m; sourceTree = "<group>"; };
 		A409B39619A68DB700C83BD4 /* TMBFaqListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqListViewController.h; sourceTree = "<group>"; };
 		A409B39719A68DB700C83BD4 /* TMBFaqListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqListViewController.m; sourceTree = "<group>"; };
-		A409B39A19A68DB700C83BD4 /* TMBDataCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDataCheckViewController.h; sourceTree = "<group>"; };
-		A409B39B19A68DB700C83BD4 /* TMBDataCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDataCheckViewController.m; sourceTree = "<group>"; };
 		A409B39F19A68DB700C83BD4 /* TMBClientDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataViewController.h; sourceTree = "<group>"; };
 		A409B3A019A68DB700C83BD4 /* TMBClientDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataViewController.m; sourceTree = "<group>"; };
 		A409B3A119A68DB700C83BD4 /* TMBInstallationAdressDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBInstallationAdressDataViewController.h; sourceTree = "<group>"; };
@@ -109,6 +107,8 @@
 		A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBInstallationAdress.m; sourceTree = "<group>"; };
 		A409B3E719A6A8A000C83BD4 /* TMBCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBCreditCard.h; sourceTree = "<group>"; };
 		A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBCreditCard.m; sourceTree = "<group>"; };
+		A409B3EA19A6AFDA00C83BD4 /* TMBSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignature.h; sourceTree = "<group>"; };
+		A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignature.m; sourceTree = "<group>"; };
 		A40A3D3A19A0DC0600601C91 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		A48E3EE0199452F400EA54E2 /* SKY0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY0.png; sourceTree = "<group>"; };
 		A48E3EE1199452F400EA54E2 /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
@@ -187,16 +187,16 @@
 				A409B39C19A68DB700C83BD4 /* ClientData */,
 				A409B39D19A68DB700C83BD4 /* InstallationAdressData */,
 				A409B39E19A68DB700C83BD4 /* PaymentData */,
+				A409B3A519A68DB700C83BD4 /* TMBPackagePresentationViewController.h */,
+				A409B3A619A68DB700C83BD4 /* TMBPackagePresentationViewController.m */,
 				A409B39F19A68DB700C83BD4 /* TMBClientDataViewController.h */,
 				A409B3A019A68DB700C83BD4 /* TMBClientDataViewController.m */,
 				A409B3A119A68DB700C83BD4 /* TMBInstallationAdressDataViewController.h */,
 				A409B3A219A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m */,
-				A409B3A319A68DB700C83BD4 /* TMBPackageAdhesionViewController.h */,
-				A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */,
-				A409B3A519A68DB700C83BD4 /* TMBPackagePresentationViewController.h */,
-				A409B3A619A68DB700C83BD4 /* TMBPackagePresentationViewController.m */,
 				A409B3A719A68DB700C83BD4 /* TMBPaymentDataViewController.h */,
 				A409B3A819A68DB700C83BD4 /* TMBPaymentDataViewController.m */,
+				A409B3A319A68DB700C83BD4 /* TMBPackageAdhesionViewController.h */,
+				A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */,
 			);
 			path = Package;
 			sourceTree = "<group>";
@@ -204,8 +204,6 @@
 		A409B39919A68DB700C83BD4 /* Backup */ = {
 			isa = PBXGroup;
 			children = (
-				A409B39A19A68DB700C83BD4 /* TMBDataCheckViewController.h */,
-				A409B39B19A68DB700C83BD4 /* TMBDataCheckViewController.m */,
 			);
 			path = Backup;
 			sourceTree = "<group>";
@@ -265,6 +263,8 @@
 				A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */,
 				A409B3E719A6A8A000C83BD4 /* TMBCreditCard.h */,
 				A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */,
+				A409B3EA19A6AFDA00C83BD4 /* TMBSignature.h */,
+				A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */,
 				A409B3AF19A68DB700C83BD4 /* TMBPrivateSignatureData.h */,
 				A409B3B019A68DB700C83BD4 /* TMBPrivateSignatureData.m */,
 				A409B3B119A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.h */,
@@ -400,12 +400,12 @@
 		A4C72EFD19914B4E00536DD7 /* Sky_Venda */ = {
 			isa = PBXGroup;
 			children = (
+				A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */,
+				A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */,
 				A409B39219A68DB700C83BD4 /* Controllers */,
 				A409B3AA19A68DB700C83BD4 /* Models */,
 				A409B3B719A68DB700C83BD4 /* Views */,
 				A4BAD67019A21B0400EA244B /* API */,
-				A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */,
-				A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */,
 				A48E3EDE199452F400EA54E2 /* Resources */,
 				A4C72F1219914B4E00536DD7 /* Images.xcassets */,
 				A4C72EFE19914B4E00536DD7 /* Supporting Files */,
@@ -550,7 +550,6 @@
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
 				A409B3D419A68DB700C83BD4 /* TMBPrivateSignatureData.m in Sources */,
 				A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */,
-				A409B3CD19A68DB700C83BD4 /* TMBDataCheckViewController.m in Sources */,
 				A409B3DE19A68DB700C83BD4 /* TMBPickerTableViewCell.m in Sources */,
 				A409B3E319A6941A00C83BD4 /* TMBInstallationAdress.m in Sources */,
 				A409B3D519A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */,
@@ -570,6 +569,7 @@
 				A409B3D019A68DB700C83BD4 /* TMBPackageAdhesionViewController.m in Sources */,
 				A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */,
 				A409B3D819A68DB700C83BD4 /* TMBFaqTableViewCell.m in Sources */,
+				A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */,
 				A409B3D619A68DB700C83BD4 /* TMBSignatureData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

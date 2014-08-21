@@ -7,6 +7,7 @@
 //
 
 #import "TMBPackagePresentationViewController.h"
+#import "TMBSignatureData.h"
 
 @interface TMBPackagePresentationViewController ()
 
@@ -17,7 +18,10 @@
 
 @end
 
-@implementation TMBPackagePresentationViewController
+@implementation TMBPackagePresentationViewController{
+    
+    TMBSignatureData *sharedSignatureData;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    sharedSignatureData = [TMBSignatureData sharedData];
     // Do any additional setup after loading the view.
     
     self.packagePresentPrincipalView.type = iCarouselTypeCoverFlow;
@@ -127,8 +132,8 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBClientDataViewController *clientDataViewController = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
 
-    NSString *selectedPackage = [NSString stringWithFormat:@"%ld",(long)self.packagePresentPrincipalView.currentItemIndex];
-    [[TMBSignatureData sharedData] setSelectedPackage:selectedPackage];
+    int selectedPackage = self.packagePresentPrincipalView.currentItemIndex;
+    sharedSignatureData.signature.package = selectedPackage;
     
     [self.navigationController pushViewController:clientDataViewController animated:YES];
 }

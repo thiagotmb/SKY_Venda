@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
 #import "TMBClientDataViewController.h"
-#import "TMBSignatureData.h"
 
 @interface TMBPackagePresentationViewController : UIViewController<iCarouselDelegate,iCarouselDataSource,UITableViewDataSource,UITableViewDelegate>
 

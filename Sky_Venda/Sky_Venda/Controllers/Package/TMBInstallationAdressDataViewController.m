@@ -284,18 +284,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField{
-    
-    [[TMBSignatureData sharedData] setInstallationAdressCep:self.installationAdressCep.text];
-    [[TMBSignatureData sharedData] setInstallationAdressCity:self.installationAdressCity.text];
-    [[TMBSignatureData sharedData] setInstallationAdressState:self.installationAdressState.text];
-    [[TMBSignatureData sharedData] setInstallationAdressSector:self.installationAdressSector.text];
-    [[TMBSignatureData sharedData] setInstallationAdressStreet:self.installationAdressStreet.text];
-    [[TMBSignatureData sharedData] setInstallationAdressNumber:self.installationAdressNumber.text];
-    [[TMBSignatureData sharedData] setInstallationAdressComplement:self.installationAdressComplement.text];
-
-    
-}
 
 #pragma mark - Navigation
 

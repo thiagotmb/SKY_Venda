@@ -89,7 +89,7 @@
     }
     
 }
-
+/*
 -(BOOL)savePrivateSignatureData{
     
     TMBSignatureData *sharedSignatureData = [TMBSignatureData sharedData];
@@ -134,7 +134,7 @@
     
     return sucess;
 }
-    
+   */ 
     
 
 @end

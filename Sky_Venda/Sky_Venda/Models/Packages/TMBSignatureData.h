@@ -7,33 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TMBSignature.h"
+
 #import "TMBPrivateSignatureDataDAO.h"
 #import "TMBPrivateSignatureData.h"
 
+
+@class TMBSignature;
+
 @interface TMBSignatureData : NSObject
 
-@property(nonatomic) NSString* selectedPackage;
-
-@property (nonatomic) NSString *clientName;
-@property (nonatomic) NSString *clientCpf;
-@property (nonatomic) NSString *clientRg;
-@property (nonatomic) NSString *clientEmail;
-@property (nonatomic) NSString *clientPhoneNumber;
-@property (nonatomic) NSString *clientBirthDate;
-@property (nonatomic) NSString *clientSocialReason;
-@property (nonatomic) NSString *clientGender;
-
-@property (nonatomic) NSString *installationAdressCep;
-@property (nonatomic) NSString *installationAdressCity;
-@property (nonatomic) NSString *installationAdressState;
-@property (nonatomic) NSString *installationAdressSector;
-@property (nonatomic) NSString *installationAdressStreet;
-@property (nonatomic) NSString *installationAdressNumber;
-@property (nonatomic) NSString *installationAdressComplement;
-
-@property(nonatomic) NSString *creditCardOperator;
-@property(nonatomic) NSString *creditCardNumber;
-@property(nonatomic) NSString *creditExpirationDate;
+@property (nonatomic) TMBSignature* signature;
 
 +(id)sharedData;
 

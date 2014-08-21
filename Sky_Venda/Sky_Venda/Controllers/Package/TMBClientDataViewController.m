@@ -7,13 +7,16 @@
 //
 
 #import "TMBClientDataViewController.h"
+#import "TMBSignatureData.h"
 #import "TMBClient.h"
 
 #define NUMBER_OF_SECTIONS 1
 #define NUMBER_OF_ROWS_IN_SECTION_DEFAULT 9
-BOOL keyboardShown;
-CGFloat keyboardOverlap;
+
+
 @interface TMBClientDataViewController ()
+
+@property (nonatomic) NSIndexPath *activeCellIndexPath;
 
 enum TMBTableViewRow:NSInteger{
   
@@ -34,11 +37,15 @@ enum TMBTableViewRow:NSInteger{
     
 };
 
-@property (nonatomic) NSIndexPath *activeCellIndexPath;
-
 @end
 
-@implementation TMBClientDataViewController
+@implementation TMBClientDataViewController{
+    
+    TMBSignatureData *sharedSignatureData;
+    BOOL keyboardShown;
+    CGFloat keyboardOverlap;
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,18 +60,16 @@ enum TMBTableViewRow:NSInteger{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    sharedSignatureData = [TMBSignatureData sharedData];
     self.client = [[TMBClient alloc] init];
     
-     NSString *imageName = [NSString stringWithFormat:@"SKY%@.png",[[TMBSignatureData sharedData] selectedPackage]];
+     NSString *imageName = [NSString stringWithFormat:@"SKY%d.png",sharedSignatureData.signature.package];
      
     self.packagePresentation.image = [UIImage imageNamed:imageName];
 
     // Do any additional setup after loading the view.
     self.genderPickerData = @[@"Masculino",@"Feminino"];
     self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
-    
-    [self.birthDatePickerView addTarget:self action:@selector(birthDateSelected:) forControlEvents:UIControlEventValueChanged];
     
 }
 
@@ -276,61 +281,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField{
-    
-    if (textField == self.clientName) {
-        [[TMBSignatureData sharedData] setClientName:self.clientName.text];
-    }
-    if (textField == self.clientCpf) {
-        [[TMBSignatureData sharedData] setClientCpf:self.clientCpf.text];
-    }
-    if (textField == self.clientRg) {
-        [[TMBSignatureData sharedData] setClientRg:self.clientRg.text];
-    }
-    if (textField == self.clientEmail) {
-        [[TMBSignatureData sharedData] setClientEmail:self.clientEmail.text];
-    }
-    if (textField == self.clientPhoneNumber) {
-        [[TMBSignatureData sharedData] setClientPhoneNumber:self.clientPhoneNumber.text];
-    }
 
 
-}
 
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    
-    
-    if (pickerView == self.genderPickerView) {
-        NSInteger genderRow = [self.genderPickerView selectedRowInComponent:0];
-        NSString *selectedGender = [self.genderPickerData objectAtIndex:genderRow];
-        [[TMBSignatureData sharedData] setClientGender:selectedGender];
-
-    }
-    
-    if (pickerView == self.socialReasonPickerView) {
-        NSInteger socialReasonRow = [self.socialReasonPickerView selectedRowInComponent:0];
-        NSString *selectedSocialReason = [self.socialReasonPickerData objectAtIndex:socialReasonRow];
-        [[TMBSignatureData sharedData] setClientSocialReason:selectedSocialReason];
-    }
-    
- 
-    
-
-    
-
-}
-
--(void)birthDateSelected:(UIDatePicker*)datePicker {
-    
-    if (datePicker == self.birthDatePickerView) {
-        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"yyyy-MM-dd"];
-        NSString *dateString;
-        dateString = [dateFormat stringFromDate:self.birthDatePickerView.date];
-        [[TMBSignatureData sharedData] setClientBirthDate:dateString];
-    }
-    
-}
 
 #pragma mark - Navigation
 

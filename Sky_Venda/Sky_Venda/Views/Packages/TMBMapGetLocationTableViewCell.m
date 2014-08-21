@@ -8,13 +8,18 @@
 
 #import "TMBMapGetLocationTableViewCell.h"
 
-@implementation TMBMapGetLocationTableViewCell
+@implementation TMBMapGetLocationTableViewCell{
+    
+    TMBSignatureData *sharedSignatureData;
+
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        sharedSignatureData = [TMBSignatureData sharedData];
     }
     return self;
 }
@@ -35,7 +40,9 @@
     
     self.MAP.image = [UIImage imageNamed:@"map.png"];
     self.Cep = @"73801280";
-    [[TMBSignatureData sharedData] setInstallationAdressCep:self.Cep];
+    
+    sharedSignatureData.signature.installationAdress.cep = self.Cep;
+    
     
     NSLog(@"%@",self.Cep);
 

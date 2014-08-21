@@ -7,12 +7,16 @@
 //
 
 #import "TMBPackageAdhesionViewController.h"
+#import "TMBSignatureData.h"
 
 @interface TMBPackageAdhesionViewController ()
 
 @end
 
-@implementation TMBPackageAdhesionViewController
+@implementation TMBPackageAdhesionViewController{
+    
+    TMBSignatureData *sharedSignatureData;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,9 +30,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *imageName = [NSString stringWithFormat:@"SKY%@.png",[[TMBSignatureData sharedData] selectedPackage]];
+    
+    sharedSignatureData = [TMBSignatureData sharedData];
+    
+    NSString *imageName = [NSString stringWithFormat:@"SKY%d.png",sharedSignatureData.signature.package];
     
     self.packagePresentation.image = [UIImage imageNamed:imageName];
+    
     // Do any additional setup after loading the view.
 }
 

@@ -39,6 +39,7 @@
     
     if (self) {
         
+        self.signature = [[TMBSignature alloc] init];
         
     }
     
