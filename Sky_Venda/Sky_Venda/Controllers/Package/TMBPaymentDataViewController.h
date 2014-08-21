@@ -10,12 +10,13 @@
 #import "TMBSignatureData.h"
 #import "TMBPackageAdhesionViewController.h"
 
-@interface TMBPaymentDataViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource>
+@interface TMBPaymentDataViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 
 @property (weak, nonatomic) IBOutlet UITextField *creditCardNumber;
-@property (weak, nonatomic) IBOutlet UIPickerView *creditCardExpirationDatePicker;
+@property (weak, nonatomic) IBOutlet UIDatePicker *creditCardExpirationDatePicker;
+@property (nonatomic) int creditCardOperatorNow;
 
 
 

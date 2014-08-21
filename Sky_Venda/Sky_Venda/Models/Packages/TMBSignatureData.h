@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TMBPrivateSignatureDataDAO.h"
+#import "TMBPrivateSignatureData.h"
 
 @interface TMBSignatureData : NSObject
 
@@ -29,6 +31,7 @@
 @property (nonatomic) NSString *installationAdressNumber;
 @property (nonatomic) NSString *installationAdressComplement;
 
+@property(nonatomic) NSString *creditCardOperator;
 @property(nonatomic) NSString *creditCardNumber;
 @property(nonatomic) NSString *creditExpirationDate;
 

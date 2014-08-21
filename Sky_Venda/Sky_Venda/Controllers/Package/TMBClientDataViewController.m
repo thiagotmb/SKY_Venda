@@ -55,6 +55,8 @@ enum TMBTableViewRow:NSInteger{
      
     self.packagePresentation.image = [UIImage imageNamed:imageName];
 
+    self.packagePresentation.image = [UIImage imageNamed:imageName];
+
     // Do any additional setup after loading the view.
     self.genderPickerData = @[@"Masculino",@"Feminino"];
     self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
@@ -191,6 +193,17 @@ enum TMBTableViewRow:NSInteger{
             return 50;
             break;
     }
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    self.clientName.text = [[TMBSignatureData sharedData] clientName];
+    self.clientCpf.text = [[TMBSignatureData sharedData] clientCpf];
+    self.clientRg.text = [[TMBSignatureData sharedData] clientRg];
+    self.clientEmail.text = [[TMBSignatureData sharedData] clientEmail];
+    self.clientPhoneNumber.text = [[TMBSignatureData sharedData] clientPhoneNumber];
+
 }
 
 #pragma mark - Navigation

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A409B38519A5166400C83BD4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A409B38419A5166400C83BD4 /* libsqlite3.0.dylib */; };
+		A409B38819A51A7C00C83BD4 /* TMBPrivateSignatureData.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B38719A51A7C00C83BD4 /* TMBPrivateSignatureData.m */; };
+		A409B38B19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B38A19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m */; };
+		A409B38E19A5278D00C83BD4 /* SKY_VENDA.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A409B38D19A5278D00C83BD4 /* SKY_VENDA.sqlite */; };
 		A40A3D3B19A0DC0600601C91 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D3A19A0DC0600601C91 /* map.png */; };
 		A40A3D6B19A0ED6F00601C91 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */; };
 		A40A3D6C19A0ED6F00601C91 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */; };
@@ -55,6 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A409B38419A5166400C83BD4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		A409B38619A51A7C00C83BD4 /* TMBPrivateSignatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPrivateSignatureData.h; sourceTree = "<group>"; };
+		A409B38719A51A7C00C83BD4 /* TMBPrivateSignatureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPrivateSignatureData.m; sourceTree = "<group>"; };
+		A409B38919A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPrivateSignatureDataDAO.h; sourceTree = "<group>"; };
+		A409B38A19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPrivateSignatureDataDAO.m; sourceTree = "<group>"; };
+		A409B38D19A5278D00C83BD4 /* SKY_VENDA.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = SKY_VENDA.sqlite; sourceTree = "<group>"; };
 		A40A3D3A19A0DC0600601C91 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		A40A3D4119A0ED6F00601C91 /* TMBFaqAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqAnswerViewController.h; sourceTree = "<group>"; };
 		A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqAnswerViewController.m; sourceTree = "<group>"; };
@@ -117,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A409B38519A5166400C83BD4 /* libsqlite3.0.dylib in Frameworks */,
 				A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */,
 				A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */,
 				A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */,
@@ -184,6 +195,7 @@
 		A40A3D5319A0ED6F00601C91 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A409B38D19A5278D00C83BD4 /* SKY_VENDA.sqlite */,
 				A40A3D5419A0ED6F00601C91 /* Faq */,
 				A40A3D5519A0ED6F00601C91 /* Packages */,
 				A40A3D5819A0ED6F00601C91 /* Query */,
@@ -203,6 +215,10 @@
 			children = (
 				A40A3D5619A0ED6F00601C91 /* TMBSignatureData.h */,
 				A40A3D5719A0ED6F00601C91 /* TMBSignatureData.m */,
+				A409B38619A51A7C00C83BD4 /* TMBPrivateSignatureData.h */,
+				A409B38719A51A7C00C83BD4 /* TMBPrivateSignatureData.m */,
+				A409B38919A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.h */,
+				A409B38A19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -320,6 +336,7 @@
 		A4C72EF619914B4E00536DD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A409B38419A5166400C83BD4 /* libsqlite3.0.dylib */,
 				A4C72EF719914B4E00536DD7 /* Foundation.framework */,
 				A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */,
 				A4C72EFB19914B4E00536DD7 /* UIKit.framework */,
@@ -452,6 +469,7 @@
 			files = (
 				A40A3D3B19A0DC0600601C91 /* map.png in Resources */,
 				A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */,
+				A409B38E19A5278D00C83BD4 /* SKY_VENDA.sqlite in Resources */,
 				A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */,
 				A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */,
 				A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */,
@@ -478,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40A3D7B19A0ED6F00601C91 /* TMBTextFieldTableViewCell.m in Sources */,
+				A409B38819A51A7C00C83BD4 /* TMBPrivateSignatureData.m in Sources */,
 				A40A3D7719A0ED6F00601C91 /* TMBDatePickerTableViewCell.m in Sources */,
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
 				A49D1BC719A2824500846DD9 /* TMBPackagePresentationViewController.m in Sources */,
@@ -489,6 +508,7 @@
 				A40A3D7319A0ED6F00601C91 /* TMBSignatureData.m in Sources */,
 				A40A3D6F19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m in Sources */,
 				A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */,
+				A409B38B19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */,
 				A40A3D6B19A0ED6F00601C91 /* TMBFaqAnswerViewController.m in Sources */,
 				A40A3D6D19A0ED6F00601C91 /* TMBClientDataViewController.m in Sources */,
 				A40A3D7019A0ED6F00601C91 /* TMBPackageAdhesionViewController.m in Sources */,

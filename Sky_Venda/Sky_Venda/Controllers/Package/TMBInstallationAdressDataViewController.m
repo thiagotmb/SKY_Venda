@@ -183,6 +183,19 @@ enum TMBTableViewRow:NSInteger{
     }
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    self.installationAdressCep.text = [[TMBSignatureData sharedData] installationAdressCep];
+    self.installationAdressCity.text = [[TMBSignatureData sharedData] installationAdressCity];
+    self.installationAdressState.text = [[TMBSignatureData sharedData] installationAdressState];
+    self.installationAdressSector.text = [[TMBSignatureData sharedData] installationAdressSector];
+    self.installationAdressStreet.text = [[TMBSignatureData sharedData] installationAdressStreet];
+    self.installationAdressNumber.text = [[TMBSignatureData sharedData] installationAdressNumber];
+    self.installationAdressComplement.text = [[TMBSignatureData sharedData] installationAdressComplement];
+
+}
+
 /*BUG DEMONIADO
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     self.installationAdressCep.text = [[TMBSignatureData sharedData] installationAdressCep];
