@@ -8,31 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		A409B38519A5166400C83BD4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A409B38419A5166400C83BD4 /* libsqlite3.0.dylib */; };
-		A409B38819A51A7C00C83BD4 /* TMBPrivateSignatureData.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B38719A51A7C00C83BD4 /* TMBPrivateSignatureData.m */; };
-		A409B38B19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B38A19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m */; };
-		A409B38E19A5278D00C83BD4 /* SKY_VENDA.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A409B38D19A5278D00C83BD4 /* SKY_VENDA.sqlite */; };
+		A409B3CB19A68DB700C83BD4 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B39519A68DB700C83BD4 /* TMBFaqAnswerViewController.m */; };
+		A409B3CC19A68DB700C83BD4 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B39719A68DB700C83BD4 /* TMBFaqListViewController.m */; };
+		A409B3CD19A68DB700C83BD4 /* TMBDataCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B39B19A68DB700C83BD4 /* TMBDataCheckViewController.m */; };
+		A409B3CE19A68DB700C83BD4 /* TMBClientDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A019A68DB700C83BD4 /* TMBClientDataViewController.m */; };
+		A409B3CF19A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A219A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m */; };
+		A409B3D019A68DB700C83BD4 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */; };
+		A409B3D119A68DB700C83BD4 /* TMBPackagePresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A619A68DB700C83BD4 /* TMBPackagePresentationViewController.m */; };
+		A409B3D219A68DB700C83BD4 /* TMBPaymentDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A819A68DB700C83BD4 /* TMBPaymentDataViewController.m */; };
+		A409B3D319A68DB700C83BD4 /* TMBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3AE19A68DB700C83BD4 /* TMBClient.m */; };
+		A409B3D419A68DB700C83BD4 /* TMBPrivateSignatureData.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3B019A68DB700C83BD4 /* TMBPrivateSignatureData.m */; };
+		A409B3D519A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3B219A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.m */; };
+		A409B3D619A68DB700C83BD4 /* TMBSignatureData.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3B419A68DB700C83BD4 /* TMBSignatureData.m */; };
+		A409B3D719A68DB700C83BD4 /* SKY_VENDA.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A409B3B619A68DB700C83BD4 /* SKY_VENDA.sqlite */; };
+		A409B3D819A68DB700C83BD4 /* TMBFaqTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3BA19A68DB700C83BD4 /* TMBFaqTableViewCell.m */; };
+		A409B3D919A68DB700C83BD4 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A409B3BB19A68DB700C83BD4 /* Main_iPad.storyboard */; };
+		A409B3DA19A68DB700C83BD4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A409B3BC19A68DB700C83BD4 /* Main_iPhone.storyboard */; };
+		A409B3DB19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3BF19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m */; };
+		A409B3DC19A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C119A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m */; };
+		A409B3DD19A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C319A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m */; };
+		A409B3DE19A68DB700C83BD4 /* TMBPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C519A68DB700C83BD4 /* TMBPickerTableViewCell.m */; };
+		A409B3DF19A68DB700C83BD4 /* TMBTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C719A68DB700C83BD4 /* TMBTextFieldTableViewCell.m */; };
+		A409B3E019A68DB700C83BD4 /* TMBTextLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C919A68DB700C83BD4 /* TMBTextLabelTableViewCell.m */; };
+		A409B3E319A6941A00C83BD4 /* TMBInstallationAdress.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */; };
+		A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */; };
 		A40A3D3B19A0DC0600601C91 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D3A19A0DC0600601C91 /* map.png */; };
-		A40A3D6B19A0ED6F00601C91 /* TMBFaqAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */; };
-		A40A3D6C19A0ED6F00601C91 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */; };
-		A40A3D6D19A0ED6F00601C91 /* TMBClientDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */; };
-		A40A3D6F19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */; };
-		A40A3D7019A0ED6F00601C91 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */; };
-		A40A3D7219A0ED6F00601C91 /* TMBPaymentDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */; };
-		A40A3D7319A0ED6F00601C91 /* TMBSignatureData.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D5719A0ED6F00601C91 /* TMBSignatureData.m */; };
-		A40A3D7419A0ED6F00601C91 /* TMBFaqTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D5C19A0ED6F00601C91 /* TMBFaqTableViewCell.m */; };
-		A40A3D7519A0ED6F00601C91 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D5D19A0ED6F00601C91 /* Main_iPad.storyboard */; };
-		A40A3D7619A0ED6F00601C91 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D5E19A0ED6F00601C91 /* Main_iPhone.storyboard */; };
-		A40A3D7719A0ED6F00601C91 /* TMBDatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6119A0ED6F00601C91 /* TMBDatePickerTableViewCell.m */; };
-		A40A3D7819A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6319A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m */; };
-		A40A3D7919A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6519A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m */; };
-		A40A3D7A19A0ED6F00601C91 /* TMBPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6719A0ED6F00601C91 /* TMBPickerTableViewCell.m */; };
-		A40A3D7B19A0ED6F00601C91 /* TMBTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D6919A0ED6F00601C91 /* TMBTextFieldTableViewCell.m */; };
-		A40A3D8419A0EF9C00601C91 /* TMBTextLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A3D8319A0EF9C00601C91 /* TMBTextLabelTableViewCell.m */; };
 		A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE0199452F400EA54E2 /* SKY0.png */; };
 		A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE1199452F400EA54E2 /* SKY1.png */; };
 		A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE2199452F400EA54E2 /* SKY2.png */; };
 		A48E3EE7199452F400EA54E2 /* SKY3.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE3199452F400EA54E2 /* SKY3.png */; };
-		A49D1BC719A2824500846DD9 /* TMBPackagePresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49D1BC619A2824500846DD9 /* TMBPackagePresentationViewController.m */; };
 		A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BAD67319A21B0400EA244B /* iCarousel.m */; };
 		A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
 		A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */; };
@@ -60,48 +64,56 @@
 
 /* Begin PBXFileReference section */
 		A409B38419A5166400C83BD4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		A409B38619A51A7C00C83BD4 /* TMBPrivateSignatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPrivateSignatureData.h; sourceTree = "<group>"; };
-		A409B38719A51A7C00C83BD4 /* TMBPrivateSignatureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPrivateSignatureData.m; sourceTree = "<group>"; };
-		A409B38919A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPrivateSignatureDataDAO.h; sourceTree = "<group>"; };
-		A409B38A19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPrivateSignatureDataDAO.m; sourceTree = "<group>"; };
-		A409B38D19A5278D00C83BD4 /* SKY_VENDA.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = SKY_VENDA.sqlite; sourceTree = "<group>"; };
+		A409B39419A68DB700C83BD4 /* TMBFaqAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqAnswerViewController.h; sourceTree = "<group>"; };
+		A409B39519A68DB700C83BD4 /* TMBFaqAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqAnswerViewController.m; sourceTree = "<group>"; };
+		A409B39619A68DB700C83BD4 /* TMBFaqListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqListViewController.h; sourceTree = "<group>"; };
+		A409B39719A68DB700C83BD4 /* TMBFaqListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqListViewController.m; sourceTree = "<group>"; };
+		A409B39A19A68DB700C83BD4 /* TMBDataCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDataCheckViewController.h; sourceTree = "<group>"; };
+		A409B39B19A68DB700C83BD4 /* TMBDataCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDataCheckViewController.m; sourceTree = "<group>"; };
+		A409B39F19A68DB700C83BD4 /* TMBClientDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataViewController.h; sourceTree = "<group>"; };
+		A409B3A019A68DB700C83BD4 /* TMBClientDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataViewController.m; sourceTree = "<group>"; };
+		A409B3A119A68DB700C83BD4 /* TMBInstallationAdressDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBInstallationAdressDataViewController.h; sourceTree = "<group>"; };
+		A409B3A219A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBInstallationAdressDataViewController.m; sourceTree = "<group>"; };
+		A409B3A319A68DB700C83BD4 /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
+		A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackageAdhesionViewController.m; sourceTree = "<group>"; };
+		A409B3A519A68DB700C83BD4 /* TMBPackagePresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagePresentationViewController.h; sourceTree = "<group>"; };
+		A409B3A619A68DB700C83BD4 /* TMBPackagePresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagePresentationViewController.m; sourceTree = "<group>"; };
+		A409B3A719A68DB700C83BD4 /* TMBPaymentDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPaymentDataViewController.h; sourceTree = "<group>"; };
+		A409B3A819A68DB700C83BD4 /* TMBPaymentDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPaymentDataViewController.m; sourceTree = "<group>"; };
+		A409B3AD19A68DB700C83BD4 /* TMBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClient.h; sourceTree = "<group>"; };
+		A409B3AE19A68DB700C83BD4 /* TMBClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClient.m; sourceTree = "<group>"; };
+		A409B3AF19A68DB700C83BD4 /* TMBPrivateSignatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPrivateSignatureData.h; sourceTree = "<group>"; };
+		A409B3B019A68DB700C83BD4 /* TMBPrivateSignatureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPrivateSignatureData.m; sourceTree = "<group>"; };
+		A409B3B119A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPrivateSignatureDataDAO.h; sourceTree = "<group>"; };
+		A409B3B219A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPrivateSignatureDataDAO.m; sourceTree = "<group>"; };
+		A409B3B319A68DB700C83BD4 /* TMBSignatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignatureData.h; sourceTree = "<group>"; };
+		A409B3B419A68DB700C83BD4 /* TMBSignatureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignatureData.m; sourceTree = "<group>"; };
+		A409B3B619A68DB700C83BD4 /* SKY_VENDA.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = SKY_VENDA.sqlite; sourceTree = "<group>"; };
+		A409B3B919A68DB700C83BD4 /* TMBFaqTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqTableViewCell.h; sourceTree = "<group>"; };
+		A409B3BA19A68DB700C83BD4 /* TMBFaqTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqTableViewCell.m; sourceTree = "<group>"; };
+		A409B3BB19A68DB700C83BD4 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		A409B3BC19A68DB700C83BD4 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		A409B3BE19A68DB700C83BD4 /* TMBDatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDatePickerTableViewCell.h; sourceTree = "<group>"; };
+		A409B3BF19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDatePickerTableViewCell.m; sourceTree = "<group>"; };
+		A409B3C019A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBMapGetLocationTableViewCell.h; sourceTree = "<group>"; };
+		A409B3C119A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBMapGetLocationTableViewCell.m; sourceTree = "<group>"; };
+		A409B3C219A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewCell.h; sourceTree = "<group>"; };
+		A409B3C319A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewCell.m; sourceTree = "<group>"; };
+		A409B3C419A68DB700C83BD4 /* TMBPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPickerTableViewCell.h; sourceTree = "<group>"; };
+		A409B3C519A68DB700C83BD4 /* TMBPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPickerTableViewCell.m; sourceTree = "<group>"; };
+		A409B3C619A68DB700C83BD4 /* TMBTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		A409B3C719A68DB700C83BD4 /* TMBTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		A409B3C819A68DB700C83BD4 /* TMBTextLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextLabelTableViewCell.h; sourceTree = "<group>"; };
+		A409B3C919A68DB700C83BD4 /* TMBTextLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextLabelTableViewCell.m; sourceTree = "<group>"; };
+		A409B3E119A6941A00C83BD4 /* TMBInstallationAdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBInstallationAdress.h; sourceTree = "<group>"; };
+		A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBInstallationAdress.m; sourceTree = "<group>"; };
+		A409B3E719A6A8A000C83BD4 /* TMBCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBCreditCard.h; sourceTree = "<group>"; };
+		A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBCreditCard.m; sourceTree = "<group>"; };
 		A40A3D3A19A0DC0600601C91 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
-		A40A3D4119A0ED6F00601C91 /* TMBFaqAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqAnswerViewController.h; sourceTree = "<group>"; };
-		A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqAnswerViewController.m; sourceTree = "<group>"; };
-		A40A3D4319A0ED6F00601C91 /* TMBFaqListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqListViewController.h; sourceTree = "<group>"; };
-		A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqListViewController.m; sourceTree = "<group>"; };
-		A40A3D4619A0ED6F00601C91 /* TMBClientDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClientDataViewController.h; sourceTree = "<group>"; };
-		A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataViewController.m; sourceTree = "<group>"; };
-		A40A3D4A19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBInstallationAdressDataViewController.h; sourceTree = "<group>"; };
-		A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBInstallationAdressDataViewController.m; sourceTree = "<group>"; };
-		A40A3D4C19A0ED6F00601C91 /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
-		A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackageAdhesionViewController.m; sourceTree = "<group>"; };
-		A40A3D5019A0ED6F00601C91 /* TMBPaymentDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPaymentDataViewController.h; sourceTree = "<group>"; };
-		A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPaymentDataViewController.m; sourceTree = "<group>"; };
-		A40A3D5619A0ED6F00601C91 /* TMBSignatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignatureData.h; sourceTree = "<group>"; };
-		A40A3D5719A0ED6F00601C91 /* TMBSignatureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignatureData.m; sourceTree = "<group>"; };
-		A40A3D5B19A0ED6F00601C91 /* TMBFaqTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqTableViewCell.h; sourceTree = "<group>"; };
-		A40A3D5C19A0ED6F00601C91 /* TMBFaqTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqTableViewCell.m; sourceTree = "<group>"; };
-		A40A3D5D19A0ED6F00601C91 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
-		A40A3D5E19A0ED6F00601C91 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
-		A40A3D6019A0ED6F00601C91 /* TMBDatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDatePickerTableViewCell.h; sourceTree = "<group>"; };
-		A40A3D6119A0ED6F00601C91 /* TMBDatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDatePickerTableViewCell.m; sourceTree = "<group>"; };
-		A40A3D6219A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBMapGetLocationTableViewCell.h; sourceTree = "<group>"; };
-		A40A3D6319A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBMapGetLocationTableViewCell.m; sourceTree = "<group>"; };
-		A40A3D6419A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewCell.h; sourceTree = "<group>"; };
-		A40A3D6519A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewCell.m; sourceTree = "<group>"; };
-		A40A3D6619A0ED6F00601C91 /* TMBPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPickerTableViewCell.h; sourceTree = "<group>"; };
-		A40A3D6719A0ED6F00601C91 /* TMBPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPickerTableViewCell.m; sourceTree = "<group>"; };
-		A40A3D6819A0ED6F00601C91 /* TMBTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		A40A3D6919A0ED6F00601C91 /* TMBTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextFieldTableViewCell.m; sourceTree = "<group>"; };
-		A40A3D8219A0EF9C00601C91 /* TMBTextLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextLabelTableViewCell.h; sourceTree = "<group>"; };
-		A40A3D8319A0EF9C00601C91 /* TMBTextLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextLabelTableViewCell.m; sourceTree = "<group>"; };
 		A48E3EE0199452F400EA54E2 /* SKY0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY0.png; sourceTree = "<group>"; };
 		A48E3EE1199452F400EA54E2 /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
 		A48E3EE2199452F400EA54E2 /* SKY2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY2.png; sourceTree = "<group>"; };
 		A48E3EE3199452F400EA54E2 /* SKY3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY3.png; sourceTree = "<group>"; };
-		A49D1BC519A2824500846DD9 /* TMBPackagePresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagePresentationViewController.h; sourceTree = "<group>"; };
-		A49D1BC619A2824500846DD9 /* TMBPackagePresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagePresentationViewController.m; sourceTree = "<group>"; };
 		A4BAD67219A21B0400EA244B /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		A4BAD67319A21B0400EA244B /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		A4C72EF419914B4E00536DD7 /* Sky_Venda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky_Venda.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,130 +159,170 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A40A3D3F19A0ED6F00601C91 /* Controllers */ = {
+		A409B39219A68DB700C83BD4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A40A3D4019A0ED6F00601C91 /* Faq */,
-				A40A3D4519A0ED6F00601C91 /* Package */,
-				A40A3D5219A0ED6F00601C91 /* Query */,
+				A409B39319A68DB700C83BD4 /* Faq */,
+				A409B39819A68DB700C83BD4 /* Package */,
+				A409B3A919A68DB700C83BD4 /* Query */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		A40A3D4019A0ED6F00601C91 /* Faq */ = {
+		A409B39319A68DB700C83BD4 /* Faq */ = {
 			isa = PBXGroup;
 			children = (
-				A40A3D4119A0ED6F00601C91 /* TMBFaqAnswerViewController.h */,
-				A40A3D4219A0ED6F00601C91 /* TMBFaqAnswerViewController.m */,
-				A40A3D4319A0ED6F00601C91 /* TMBFaqListViewController.h */,
-				A40A3D4419A0ED6F00601C91 /* TMBFaqListViewController.m */,
+				A409B39419A68DB700C83BD4 /* TMBFaqAnswerViewController.h */,
+				A409B39519A68DB700C83BD4 /* TMBFaqAnswerViewController.m */,
+				A409B39619A68DB700C83BD4 /* TMBFaqListViewController.h */,
+				A409B39719A68DB700C83BD4 /* TMBFaqListViewController.m */,
 			);
 			path = Faq;
 			sourceTree = "<group>";
 		};
-		A40A3D4519A0ED6F00601C91 /* Package */ = {
+		A409B39819A68DB700C83BD4 /* Package */ = {
 			isa = PBXGroup;
 			children = (
-				A49D1BC519A2824500846DD9 /* TMBPackagePresentationViewController.h */,
-				A49D1BC619A2824500846DD9 /* TMBPackagePresentationViewController.m */,
-				A40A3D4619A0ED6F00601C91 /* TMBClientDataViewController.h */,
-				A40A3D4719A0ED6F00601C91 /* TMBClientDataViewController.m */,
-				A40A3D4A19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.h */,
-				A40A3D4B19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m */,
-				A40A3D5019A0ED6F00601C91 /* TMBPaymentDataViewController.h */,
-				A40A3D5119A0ED6F00601C91 /* TMBPaymentDataViewController.m */,
-				A40A3D4C19A0ED6F00601C91 /* TMBPackageAdhesionViewController.h */,
-				A40A3D4D19A0ED6F00601C91 /* TMBPackageAdhesionViewController.m */,
+				A409B39919A68DB700C83BD4 /* Backup */,
+				A409B39C19A68DB700C83BD4 /* ClientData */,
+				A409B39D19A68DB700C83BD4 /* InstallationAdressData */,
+				A409B39E19A68DB700C83BD4 /* PaymentData */,
+				A409B39F19A68DB700C83BD4 /* TMBClientDataViewController.h */,
+				A409B3A019A68DB700C83BD4 /* TMBClientDataViewController.m */,
+				A409B3A119A68DB700C83BD4 /* TMBInstallationAdressDataViewController.h */,
+				A409B3A219A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m */,
+				A409B3A319A68DB700C83BD4 /* TMBPackageAdhesionViewController.h */,
+				A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */,
+				A409B3A519A68DB700C83BD4 /* TMBPackagePresentationViewController.h */,
+				A409B3A619A68DB700C83BD4 /* TMBPackagePresentationViewController.m */,
+				A409B3A719A68DB700C83BD4 /* TMBPaymentDataViewController.h */,
+				A409B3A819A68DB700C83BD4 /* TMBPaymentDataViewController.m */,
 			);
 			path = Package;
 			sourceTree = "<group>";
 		};
-		A40A3D5219A0ED6F00601C91 /* Query */ = {
+		A409B39919A68DB700C83BD4 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				A409B39A19A68DB700C83BD4 /* TMBDataCheckViewController.h */,
+				A409B39B19A68DB700C83BD4 /* TMBDataCheckViewController.m */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		A409B39C19A68DB700C83BD4 /* ClientData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClientData;
+			sourceTree = "<group>";
+		};
+		A409B39D19A68DB700C83BD4 /* InstallationAdressData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InstallationAdressData;
+			sourceTree = "<group>";
+		};
+		A409B39E19A68DB700C83BD4 /* PaymentData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PaymentData;
+			sourceTree = "<group>";
+		};
+		A409B3A919A68DB700C83BD4 /* Query */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Query;
 			sourceTree = "<group>";
 		};
-		A40A3D5319A0ED6F00601C91 /* Models */ = {
+		A409B3AA19A68DB700C83BD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A409B38D19A5278D00C83BD4 /* SKY_VENDA.sqlite */,
-				A40A3D5419A0ED6F00601C91 /* Faq */,
-				A40A3D5519A0ED6F00601C91 /* Packages */,
-				A40A3D5819A0ED6F00601C91 /* Query */,
+				A409B3AB19A68DB700C83BD4 /* Faq */,
+				A409B3AC19A68DB700C83BD4 /* Packages */,
+				A409B3B519A68DB700C83BD4 /* Query */,
+				A409B3B619A68DB700C83BD4 /* SKY_VENDA.sqlite */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A40A3D5419A0ED6F00601C91 /* Faq */ = {
+		A409B3AB19A68DB700C83BD4 /* Faq */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Faq;
 			sourceTree = "<group>";
 		};
-		A40A3D5519A0ED6F00601C91 /* Packages */ = {
+		A409B3AC19A68DB700C83BD4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				A40A3D5619A0ED6F00601C91 /* TMBSignatureData.h */,
-				A40A3D5719A0ED6F00601C91 /* TMBSignatureData.m */,
-				A409B38619A51A7C00C83BD4 /* TMBPrivateSignatureData.h */,
-				A409B38719A51A7C00C83BD4 /* TMBPrivateSignatureData.m */,
-				A409B38919A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.h */,
-				A409B38A19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m */,
+				A409B3AD19A68DB700C83BD4 /* TMBClient.h */,
+				A409B3AE19A68DB700C83BD4 /* TMBClient.m */,
+				A409B3E119A6941A00C83BD4 /* TMBInstallationAdress.h */,
+				A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */,
+				A409B3E719A6A8A000C83BD4 /* TMBCreditCard.h */,
+				A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */,
+				A409B3AF19A68DB700C83BD4 /* TMBPrivateSignatureData.h */,
+				A409B3B019A68DB700C83BD4 /* TMBPrivateSignatureData.m */,
+				A409B3B119A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.h */,
+				A409B3B219A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.m */,
+				A409B3B319A68DB700C83BD4 /* TMBSignatureData.h */,
+				A409B3B419A68DB700C83BD4 /* TMBSignatureData.m */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		A40A3D5819A0ED6F00601C91 /* Query */ = {
+		A409B3B519A68DB700C83BD4 /* Query */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Query;
 			sourceTree = "<group>";
 		};
-		A40A3D5919A0ED6F00601C91 /* Views */ = {
+		A409B3B719A68DB700C83BD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A40A3D5E19A0ED6F00601C91 /* Main_iPhone.storyboard */,
-				A40A3D5D19A0ED6F00601C91 /* Main_iPad.storyboard */,
-				A40A3D5A19A0ED6F00601C91 /* Faq */,
-				A40A3D5F19A0ED6F00601C91 /* Packages */,
-				A40A3D6A19A0ED6F00601C91 /* Query */,
+				A409B3B819A68DB700C83BD4 /* Faq */,
+				A409B3BB19A68DB700C83BD4 /* Main_iPad.storyboard */,
+				A409B3BC19A68DB700C83BD4 /* Main_iPhone.storyboard */,
+				A409B3BD19A68DB700C83BD4 /* Packages */,
+				A409B3CA19A68DB700C83BD4 /* Query */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A40A3D5A19A0ED6F00601C91 /* Faq */ = {
+		A409B3B819A68DB700C83BD4 /* Faq */ = {
 			isa = PBXGroup;
 			children = (
-				A40A3D5B19A0ED6F00601C91 /* TMBFaqTableViewCell.h */,
-				A40A3D5C19A0ED6F00601C91 /* TMBFaqTableViewCell.m */,
+				A409B3B919A68DB700C83BD4 /* TMBFaqTableViewCell.h */,
+				A409B3BA19A68DB700C83BD4 /* TMBFaqTableViewCell.m */,
 			);
 			path = Faq;
 			sourceTree = "<group>";
 		};
-		A40A3D5F19A0ED6F00601C91 /* Packages */ = {
+		A409B3BD19A68DB700C83BD4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				A40A3D6019A0ED6F00601C91 /* TMBDatePickerTableViewCell.h */,
-				A40A3D6119A0ED6F00601C91 /* TMBDatePickerTableViewCell.m */,
-				A40A3D6219A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.h */,
-				A40A3D6319A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m */,
-				A40A3D6419A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.h */,
-				A40A3D6519A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m */,
-				A40A3D6619A0ED6F00601C91 /* TMBPickerTableViewCell.h */,
-				A40A3D6719A0ED6F00601C91 /* TMBPickerTableViewCell.m */,
-				A40A3D6819A0ED6F00601C91 /* TMBTextFieldTableViewCell.h */,
-				A40A3D6919A0ED6F00601C91 /* TMBTextFieldTableViewCell.m */,
-				A40A3D8219A0EF9C00601C91 /* TMBTextLabelTableViewCell.h */,
-				A40A3D8319A0EF9C00601C91 /* TMBTextLabelTableViewCell.m */,
+				A409B3BE19A68DB700C83BD4 /* TMBDatePickerTableViewCell.h */,
+				A409B3BF19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m */,
+				A409B3C019A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.h */,
+				A409B3C119A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m */,
+				A409B3C219A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.h */,
+				A409B3C319A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m */,
+				A409B3C419A68DB700C83BD4 /* TMBPickerTableViewCell.h */,
+				A409B3C519A68DB700C83BD4 /* TMBPickerTableViewCell.m */,
+				A409B3C619A68DB700C83BD4 /* TMBTextFieldTableViewCell.h */,
+				A409B3C719A68DB700C83BD4 /* TMBTextFieldTableViewCell.m */,
+				A409B3C819A68DB700C83BD4 /* TMBTextLabelTableViewCell.h */,
+				A409B3C919A68DB700C83BD4 /* TMBTextLabelTableViewCell.m */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		A40A3D6A19A0ED6F00601C91 /* Query */ = {
+		A409B3CA19A68DB700C83BD4 /* Query */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -348,12 +400,12 @@
 		A4C72EFD19914B4E00536DD7 /* Sky_Venda */ = {
 			isa = PBXGroup;
 			children = (
+				A409B39219A68DB700C83BD4 /* Controllers */,
+				A409B3AA19A68DB700C83BD4 /* Models */,
+				A409B3B719A68DB700C83BD4 /* Views */,
 				A4BAD67019A21B0400EA244B /* API */,
 				A4C72F0619914B4E00536DD7 /* TMBAppDelegate.h */,
 				A4C72F0719914B4E00536DD7 /* TMBAppDelegate.m */,
-				A40A3D3F19A0ED6F00601C91 /* Controllers */,
-				A40A3D5319A0ED6F00601C91 /* Models */,
-				A40A3D5919A0ED6F00601C91 /* Views */,
 				A48E3EDE199452F400EA54E2 /* Resources */,
 				A4C72F1219914B4E00536DD7 /* Images.xcassets */,
 				A4C72EFE19914B4E00536DD7 /* Supporting Files */,
@@ -469,12 +521,12 @@
 			files = (
 				A40A3D3B19A0DC0600601C91 /* map.png in Resources */,
 				A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */,
-				A409B38E19A5278D00C83BD4 /* SKY_VENDA.sqlite in Resources */,
+				A409B3DA19A68DB700C83BD4 /* Main_iPhone.storyboard in Resources */,
 				A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */,
+				A409B3D919A68DB700C83BD4 /* Main_iPad.storyboard in Resources */,
 				A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */,
+				A409B3D719A68DB700C83BD4 /* SKY_VENDA.sqlite in Resources */,
 				A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */,
-				A40A3D7619A0ED6F00601C91 /* Main_iPhone.storyboard in Resources */,
-				A40A3D7519A0ED6F00601C91 /* Main_iPad.storyboard in Resources */,
 				A48E3EE7199452F400EA54E2 /* SKY3.png in Resources */,
 				A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */,
 			);
@@ -495,26 +547,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A40A3D7B19A0ED6F00601C91 /* TMBTextFieldTableViewCell.m in Sources */,
-				A409B38819A51A7C00C83BD4 /* TMBPrivateSignatureData.m in Sources */,
-				A40A3D7719A0ED6F00601C91 /* TMBDatePickerTableViewCell.m in Sources */,
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
-				A49D1BC719A2824500846DD9 /* TMBPackagePresentationViewController.m in Sources */,
-				A40A3D7219A0ED6F00601C91 /* TMBPaymentDataViewController.m in Sources */,
-				A40A3D7419A0ED6F00601C91 /* TMBFaqTableViewCell.m in Sources */,
+				A409B3D419A68DB700C83BD4 /* TMBPrivateSignatureData.m in Sources */,
+				A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */,
+				A409B3CD19A68DB700C83BD4 /* TMBDataCheckViewController.m in Sources */,
+				A409B3DE19A68DB700C83BD4 /* TMBPickerTableViewCell.m in Sources */,
+				A409B3E319A6941A00C83BD4 /* TMBInstallationAdress.m in Sources */,
+				A409B3D519A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */,
+				A409B3DF19A68DB700C83BD4 /* TMBTextFieldTableViewCell.m in Sources */,
+				A409B3CB19A68DB700C83BD4 /* TMBFaqAnswerViewController.m in Sources */,
+				A409B3D119A68DB700C83BD4 /* TMBPackagePresentationViewController.m in Sources */,
+				A409B3D319A68DB700C83BD4 /* TMBClient.m in Sources */,
+				A409B3DD19A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m in Sources */,
+				A409B3DB19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m in Sources */,
+				A409B3DC19A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m in Sources */,
+				A409B3D219A68DB700C83BD4 /* TMBPaymentDataViewController.m in Sources */,
 				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
-				A40A3D7819A0ED6F00601C91 /* TMBMapGetLocationTableViewCell.m in Sources */,
-				A40A3D7A19A0ED6F00601C91 /* TMBPickerTableViewCell.m in Sources */,
-				A40A3D7319A0ED6F00601C91 /* TMBSignatureData.m in Sources */,
-				A40A3D6F19A0ED6F00601C91 /* TMBInstallationAdressDataViewController.m in Sources */,
+				A409B3CF19A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m in Sources */,
+				A409B3E019A68DB700C83BD4 /* TMBTextLabelTableViewCell.m in Sources */,
+				A409B3CE19A68DB700C83BD4 /* TMBClientDataViewController.m in Sources */,
+				A409B3CC19A68DB700C83BD4 /* TMBFaqListViewController.m in Sources */,
+				A409B3D019A68DB700C83BD4 /* TMBPackageAdhesionViewController.m in Sources */,
 				A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */,
-				A409B38B19A51A8800C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */,
-				A40A3D6B19A0ED6F00601C91 /* TMBFaqAnswerViewController.m in Sources */,
-				A40A3D6D19A0ED6F00601C91 /* TMBClientDataViewController.m in Sources */,
-				A40A3D7019A0ED6F00601C91 /* TMBPackageAdhesionViewController.m in Sources */,
-				A40A3D6C19A0ED6F00601C91 /* TMBFaqListViewController.m in Sources */,
-				A40A3D7919A0ED6F00601C91 /* TMBPackagesPresentationTableViewCell.m in Sources */,
-				A40A3D8419A0EF9C00601C91 /* TMBTextLabelTableViewCell.m in Sources */,
+				A409B3D819A68DB700C83BD4 /* TMBFaqTableViewCell.m in Sources */,
+				A409B3D619A68DB700C83BD4 /* TMBSignatureData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

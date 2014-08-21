@@ -69,7 +69,6 @@
     
     self.packageImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",(long)index]];
     UIImageView *packagePresentImageView = [[UIImageView alloc] initWithFrame:imageViewFrame];
-    packagePresentImageView.contentMode = UIViewContentModeScaleToFill;
     
     packagePresentImageView.image = self.packageImage;
     packagePresentImageView.backgroundColor = [UIColor redColor];

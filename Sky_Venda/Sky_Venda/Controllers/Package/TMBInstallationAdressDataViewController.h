@@ -12,8 +12,8 @@
 #import "TMBMapGetLocationTableViewCell.h"
 #import "TMBPaymentDataViewController.h"
 
-
-@interface TMBInstallationAdressDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@class TMBInstallationAdress;
+@interface TMBInstallationAdressDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *installationAdressDataTableView;
 
@@ -24,6 +24,8 @@
 @property (nonatomic) UITextField *installationAdressStreet;
 @property (nonatomic) UITextField *installationAdressNumber;
 @property (nonatomic) UITextField *installationAdressComplement;
+
+@property (nonatomic) TMBInstallationAdress *installationAdress;
 
 - (IBAction)nextStep:(id)sender;
 

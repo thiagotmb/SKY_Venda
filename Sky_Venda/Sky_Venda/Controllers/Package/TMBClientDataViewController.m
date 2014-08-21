@@ -7,6 +7,8 @@
 //
 
 #import "TMBClientDataViewController.h"
+#import "TMBClient.h"
+
 #define NUMBER_OF_SECTIONS 1
 #define NUMBER_OF_ROWS_IN_SECTION_DEFAULT 9
 BOOL keyboardShown;
@@ -42,6 +44,7 @@ enum TMBTableViewRow:NSInteger{
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
         // Custom initialization
     }
     return self;
@@ -50,19 +53,20 @@ enum TMBTableViewRow:NSInteger{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     
+    
+    self.client = [[TMBClient alloc] init];
+    
      NSString *imageName = [NSString stringWithFormat:@"SKY%@.png",[[TMBSignatureData sharedData] selectedPackage]];
      
-    self.packagePresentation.image = [UIImage imageNamed:imageName];
-
     self.packagePresentation.image = [UIImage imageNamed:imageName];
 
     // Do any additional setup after loading the view.
     self.genderPickerData = @[@"Masculino",@"Feminino"];
     self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
-
+    
+    [self.birthDatePickerView addTarget:self action:@selector(birthDateSelected:) forControlEvents:UIControlEventValueChanged];
+    
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -88,6 +92,66 @@ enum TMBTableViewRow:NSInteger{
     return NUMBER_OF_ROWS_IN_SECTION_DEFAULT;
 }
 
+
+- (void)tableView:(UITableView *)tableView
+didEndDisplayingCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case TMBTableViewRowClientName:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.client.name = customCell.textField.text;
+            break;
+        }
+        case TMBTableViewRowClientCpf:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.client.cpf = customCell.textField.text;
+            
+            break;
+        }
+        case TMBTableViewRowClientRg:{
+
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.client.rg = customCell.textField.text;
+            
+            break;
+        }
+        case TMBTableViewRowClientEmail:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.client.email = customCell.textField.text;
+            
+            break;
+        }
+        case TMBTableViewRowClientPhoneNumber:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.client.phoneNumber = customCell.textField.text;
+
+            break;
+        }
+        case TMBTableViewRowClientGender:{
+            TMBPickerTableViewCell *customCell = (TMBPickerTableViewCell *)cell;
+            self.client.gender = [customCell.pickerView selectedRowInComponent:0];
+
+            break;
+        }
+        case TMBTableViewRowClientSocialReason:{
+            TMBPickerTableViewCell *customCell = (TMBPickerTableViewCell *)cell;
+            self.client.socialReason = [customCell.pickerView selectedRowInComponent:0];
+            break;
+        }
+        case TMBTableViewRowClientBirthDate:{
+            TMBDatePickerTableViewCell *customCell = (TMBDatePickerTableViewCell *)cell;
+            self.client.birthDate = customCell.datePickerView.date;
+            break;
+        }
+        case TMBTableViewRowNextSepButton:{
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
@@ -96,78 +160,95 @@ enum TMBTableViewRow:NSInteger{
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
             cell.titleLabel.text = @"Nome";
             cell.textField.placeholder = @"Nome completo como consta no CPF";
-            self.clientName = cell.textField;
+            cell.textField.text = self.client.name;
+            cell.textField.delegate = self;
             return cell;
             break;
         }
         case TMBTableViewRowClientCpf:{
+            
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
             cell.titleLabel.text = @"CPF";
             cell.textField.placeholder = @"CPF relativo ao nome acima";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            self.clientCpf = cell.textField;
+            cell.textField.text = self.client.cpf;
+            cell.textField.delegate = self;
             return cell;
-            break;
+            
+            
         }
         case TMBTableViewRowClientRg:{
+            
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
             cell.titleLabel.text = @"RG";
             cell.textField.placeholder = @"RG";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            self.clientRg = cell.textField;
+            cell.textField.text = self.client.rg;
+            cell.textField.delegate = self;
             return cell;
-            break;
+            
         }
         case TMBTableViewRowClientEmail:{
+            
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
             cell.titleLabel.text = @"E-Mail";
             cell.textField.placeholder = @"E-Mail para contato";
             cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
-            self.clientEmail = cell.textField;
+            cell.textField.text = self.client.email;
+            cell.textField.delegate = self;
             return cell;
-            break;
+            
         }
         case TMBTableViewRowClientPhoneNumber:{
-            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
+            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"
+                                                                              forIndexPath:indexPath];
+            
             cell.titleLabel.text = @"Telefone";
             cell.textField.placeholder = @"Telefone para contato";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            self.clientPhoneNumber = cell.textField;
+            cell.textField.text = self.client.phoneNumber;
+            cell.textField.delegate = self;
+
+
             return cell;
             break;
         }
         case TMBTableViewRowClientGender:{
-            TMBPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PickerCell" forIndexPath:indexPath];
+            TMBPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PickerCell"
+                                                                           forIndexPath:indexPath];
             cell.pickerView.delegate = cell;
             cell.pickerView.dataSource = cell;
             cell.titleLabel.text = @"Sexo";
             cell.pickerData = self.genderPickerData;
             cell.numberOfComponentsInPickerView = 1;
-            self.genderPickerView = cell.pickerView;
+            [cell.pickerView selectRow:self.client.gender inComponent:0 animated:YES];
             
             return cell;
             break;
         }
         case TMBTableViewRowClientSocialReason:{
-            TMBPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PickerCell" forIndexPath:indexPath];
+            TMBPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PickerCell"
+                                                                           forIndexPath:indexPath];
             cell.pickerView.delegate = cell;
             cell.pickerView.dataSource = cell;
             cell.titleLabel.text = @"Razão Social";
             cell.pickerData = self.socialReasonPickerData ;
             cell.numberOfComponentsInPickerView = 1;
-            self.socialReasonPickerView = cell.pickerView;
-            
+            [cell.pickerView selectRow:self.client.socialReason inComponent:0 animated:YES];
+    
             return cell;
             break;
         }
         case TMBTableViewRowClientBirthDate:{
-            TMBDatePickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DatePickerCell" forIndexPath:indexPath];
-            self.birthDatePickerView = cell.datePickerView;
+            TMBDatePickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DatePickerCell"
+                                                                            forIndexPath:indexPath];
+            cell.datePickerView.date = self.client.birthDate;
             return cell;
             break;
         }
         case TMBTableViewRowNextSepButton:{
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NextStepTableViewCell" forIndexPath:indexPath];
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NextStepTableViewCell"
+                                                                    forIndexPath:indexPath];
             return cell;
             break;
         }
@@ -195,40 +276,65 @@ enum TMBTableViewRow:NSInteger{
     }
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)textFieldDidEndEditing:(UITextField *)textField{
     
-    
-    self.clientName.text = [[TMBSignatureData sharedData] clientName];
-    self.clientCpf.text = [[TMBSignatureData sharedData] clientCpf];
-    self.clientRg.text = [[TMBSignatureData sharedData] clientRg];
-    self.clientEmail.text = [[TMBSignatureData sharedData] clientEmail];
-    self.clientPhoneNumber.text = [[TMBSignatureData sharedData] clientPhoneNumber];
+    if (textField == self.clientName) {
+        [[TMBSignatureData sharedData] setClientName:self.clientName.text];
+    }
+    if (textField == self.clientCpf) {
+        [[TMBSignatureData sharedData] setClientCpf:self.clientCpf.text];
+    }
+    if (textField == self.clientRg) {
+        [[TMBSignatureData sharedData] setClientRg:self.clientRg.text];
+    }
+    if (textField == self.clientEmail) {
+        [[TMBSignatureData sharedData] setClientEmail:self.clientEmail.text];
+    }
+    if (textField == self.clientPhoneNumber) {
+        [[TMBSignatureData sharedData] setClientPhoneNumber:self.clientPhoneNumber.text];
+    }
 
+
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    
+    if (pickerView == self.genderPickerView) {
+        NSInteger genderRow = [self.genderPickerView selectedRowInComponent:0];
+        NSString *selectedGender = [self.genderPickerData objectAtIndex:genderRow];
+        [[TMBSignatureData sharedData] setClientGender:selectedGender];
+
+    }
+    
+    if (pickerView == self.socialReasonPickerView) {
+        NSInteger socialReasonRow = [self.socialReasonPickerView selectedRowInComponent:0];
+        NSString *selectedSocialReason = [self.socialReasonPickerData objectAtIndex:socialReasonRow];
+        [[TMBSignatureData sharedData] setClientSocialReason:selectedSocialReason];
+    }
+    
+ 
+    
+
+    
+
+}
+
+-(void)birthDateSelected:(UIDatePicker*)datePicker {
+    
+    if (datePicker == self.birthDatePickerView) {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        NSString *dateString;
+        dateString = [dateFormat stringFromDate:self.birthDatePickerView.date];
+        [[TMBSignatureData sharedData] setClientBirthDate:dateString];
+    }
+    
 }
 
 #pragma mark - Navigation
 
 - (IBAction)nextStep:(id)sender {
-    
-    [[TMBSignatureData sharedData] setClientName:self.clientName.text];
-    [[TMBSignatureData sharedData] setClientCpf:self.clientCpf.text];
-    [[TMBSignatureData sharedData] setClientRg:self.clientRg.text];
-    [[TMBSignatureData sharedData] setClientEmail:self.clientEmail.text];
-    [[TMBSignatureData sharedData] setClientPhoneNumber:self.clientPhoneNumber.text];
-    
-    NSInteger genderRow = [self.genderPickerView selectedRowInComponent:0];
-    NSString *selectedGender = [self.genderPickerData objectAtIndex:genderRow];
-    [[TMBSignatureData sharedData] setClientGender:selectedGender];
-    
-    NSInteger socialReasonRow = [self.socialReasonPickerView selectedRowInComponent:0];
-    NSString *selectedSocialReason = [self.socialReasonPickerData objectAtIndex:socialReasonRow];
-    [[TMBSignatureData sharedData] setClientSocialReason:selectedSocialReason];
-    
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
-    NSString *dateString;
-    dateString = [dateFormat stringFromDate:self.birthDatePickerView.date];
-    [[TMBSignatureData sharedData] setClientBirthDate:dateString];
     
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];

@@ -7,7 +7,7 @@
 //
 
 #import "TMBPaymentDataViewController.h"
-
+#import "TMBCreditCard.h"
 
 @interface TMBPaymentDataViewController ()
 
@@ -27,7 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.creditCardExpirationDatePicker.minimumDate = [NSDate date];
+    
+    self.creditCard = [[TMBCreditCard alloc] init];
+    
+    self.creditCardNumber.text = self.creditCard.number;
+    self.creditCardOperatorNow = self.creditCard.operatorCode;
+    self.creditCardExpirationDatePicker.date = self.creditCard.expiration;
     
     self.creditCardOperatorNow = [[[TMBSignatureData sharedData] creditCardOperator] integerValue];
     self.creditCardNumber.text = [[TMBSignatureData sharedData] creditCardNumber];
@@ -51,6 +56,9 @@
 
 - (IBAction)nextStep:(id)sender {
     
+    self.creditCard.number = self.creditCardNumber.text;
+    self.creditCard.expiration = self.creditCardExpirationDatePicker.date;
+    self.creditCard.operatorCode = self.creditCardOperatorNow;
     
     [[TMBSignatureData sharedData] setCreditCardNumber:[NSString stringWithFormat:@"%@",self.creditCardNumber.text]];
     

@@ -54,7 +54,6 @@ enum TMBTableViewRow:NSInteger{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.packagePresentation.image = self.packagePresentationImage;
     // Do any additional setup after loading the view.
 }
 
@@ -198,15 +197,7 @@ enum TMBTableViewRow:NSInteger{
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    TMBPackageAdhesionViewController *clientData = segue.destinationViewController;
-    
-    clientData.packagePresentationImage = self.packagePresentationImage;
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+
 
 
 @end

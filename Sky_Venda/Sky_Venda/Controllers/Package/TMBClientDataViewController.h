@@ -13,7 +13,9 @@
 #import "TMBPickerTableViewCell.h"
 #import "TMBDatePickerTableViewCell.h"
 
-@interface TMBClientDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@class TMBClient;
+
+@interface TMBClientDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 
@@ -33,6 +35,7 @@
 @property (weak, nonatomic) UIPickerView *socialReasonPickerView;
 @property (nonatomic) NSArray *socialReasonPickerData;
 
+@property TMBClient *client;
 
 - (IBAction)nextStep:(id)sender;
 

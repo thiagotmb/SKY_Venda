@@ -37,4 +37,7 @@
 
 +(id)sharedData;
 
+-(void)loadSharedData;
+-(void)saveSharedData;
+
 @end

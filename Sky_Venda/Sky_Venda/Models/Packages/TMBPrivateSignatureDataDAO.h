@@ -19,6 +19,6 @@
 
 -(TMBPrivateSignatureData*) getPrivateSignatureData;
 
--(void)updatePrivateSignatureData;
+-(BOOL)savePrivateSignatureData;
 
 @end

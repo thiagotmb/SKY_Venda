@@ -90,20 +90,49 @@
     
 }
 
--(void)updatePrivateSignatureData{
+-(BOOL)savePrivateSignatureData{
     
-    TMBSignatureData *signatureData = [TMBSignatureData sharedData];
+    TMBSignatureData *sharedSignatureData = [TMBSignatureData sharedData];
     
+    TMBPrivateSignatureData *signatureData = [self getPrivateSignatureData];
     BOOL sucess = NO;
     
     sqlite3_stmt *statement = NULL;
     
     
     if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+
+        if (signatureData.clientCpfDAO != nil) {
+            
+            NSString *updateSQL = [NSString stringWithFormat:@"UPDATE SignatureData set Name = '%@', Cpf = '%@', Rg = '%@', Email = '%@', PhoneNumber = '%@', BirthDate = '%@', SocialReason = '%@', Gender = '%@', Cep = '%@', City = '%@', State = '%@', Sector = '%@', Street = '%@', AdressNumber = '%@', Complement = '%@', CreditCardOperator = '%@', CreditCardNumber = '%@', CreditCardExpiration = '%@' ",sharedSignatureData.clientName,sharedSignatureData.clientCpf,sharedSignatureData.clientRg,sharedSignatureData.clientEmail,sharedSignatureData.clientPhoneNumber, sharedSignatureData.clientBirthDate, sharedSignatureData.clientSocialReason, sharedSignatureData.clientGender, sharedSignatureData.installationAdressCep, sharedSignatureData.installationAdressCity, sharedSignatureData.installationAdressState, sharedSignatureData.installationAdressSector, sharedSignatureData.installationAdressStreet, sharedSignatureData.installationAdressNumber, sharedSignatureData.installationAdressComplement, sharedSignatureData.creditCardOperator, sharedSignatureData.creditCardNumber, sharedSignatureData.creditExpirationDate];
+            const char* update_stmt = [updateSQL UTF8String];
+            NSLog(@"%@",updateSQL);
+
+            sqlite3_prepare_v2(database, update_stmt, -1, &statement, NULL);
+                       
+            if (sqlite3_step(statement) == SQLITE_DONE) {
+                sucess = true;
+            }
+
+
+        }else{
+            
+            NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO SignatureData (Name, Cpf, Rg) VALUES (\"%@\", \"%@\", \"%@\")",sharedSignatureData.clientName,sharedSignatureData.clientCpf,sharedSignatureData.clientRg];
+            const char* insert_stmt = [insertSQL UTF8String];
+
+            sqlite3_prepare_v2(database, insert_stmt, -1, &statement, NULL);
+            
+            if (sqlite3_step(statement) == SQLITE_DONE) {
+                sucess = true;
+            }
+            
+        }
         
-        
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
     }
     
+    return sucess;
 }
     
     

@@ -7,6 +7,8 @@
 //
 
 #import "TMBInstallationAdressDataViewController.h"
+#import "TMBInstallationAdress.h"
+
 #define NUMBER_OF_SECTIONS 1
 #define NUMBER_OF_ROWS_IN_SECTION_DEFAULT 10
 
@@ -51,6 +53,7 @@ enum TMBTableViewRow:NSInteger{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.installationAdress = [[TMBInstallationAdress alloc] init];
     // Do any additional setup after loading the view.
 }
 
@@ -78,16 +81,78 @@ enum TMBTableViewRow:NSInteger{
     return NUMBER_OF_ROWS_IN_SECTION_DEFAULT;
 }
 
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView
+didEndDisplayingCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case TMBTableViewRowInstallationAdressCep:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.installationAdress.cep = customCell.textField.text;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressCity:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.installationAdress.city = customCell.textField.text;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressState:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.installationAdress.state = customCell.textField.text;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressSector:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.installationAdress.sector = customCell.textField.text;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressStreet:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.installationAdress.street = customCell.textField.text;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressNumber:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.installationAdress.number = customCell.textField.text;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressComplement:{
+            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
+            self.installationAdress.complement = customCell.textField.text;
+            break;
+        }
+        case TMBTableViewRowInstallationAdressMapView:{
+
+            break;
+        }
+        case TMBTableViewRowInstallationAdressNextStepButton:{
+
+            break;
+        }
+        case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:{
+
+            break;
+        }
+        default:
+
+            break;
+    }
+
     
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     switch (indexPath.row) {
         case TMBTableViewRowInstallationAdressCep:{
+            
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
             cell.titleLabel.text = @"CEP";
             cell.textField.placeholder = @"Cep do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            self.installationAdressCep = cell.textField;
+            cell.textField.text = self.installationAdress.cep;
+            cell.textField.delegate = self;
+
             return cell;
             break;
         }
@@ -96,7 +161,8 @@ enum TMBTableViewRow:NSInteger{
             cell.titleLabel.text = @"Cidade";
             cell.textField.placeholder = @"Cidade do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
-            self.installationAdressCity = cell.textField;
+            cell.textField.text = self.installationAdress.city;
+            cell.textField.delegate = self;
             return cell;
             break;
         }
@@ -105,7 +171,8 @@ enum TMBTableViewRow:NSInteger{
             cell.titleLabel.text = @"Estado";
             cell.textField.placeholder = @"Estado do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
-            self.installationAdressState = cell.textField;
+            cell.textField.text = self.installationAdress.state;
+            cell.textField.delegate = self;
             return cell;
             break;
         }
@@ -114,7 +181,8 @@ enum TMBTableViewRow:NSInteger{
             cell.titleLabel.text = @"Bairro";
             cell.textField.placeholder = @"Bairro do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
-            self.installationAdressSector = cell.textField;
+            cell.textField.text = self.installationAdress.sector;
+            cell.textField.delegate = self;
             return cell;
             break;
         }
@@ -123,7 +191,8 @@ enum TMBTableViewRow:NSInteger{
             cell.titleLabel.text = @"Rua";
             cell.textField.placeholder = @"Rua do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
-            self.installationAdressStreet = cell.textField;
+            cell.textField.text = self.installationAdress.street;
+            cell.textField.delegate = self;
             return cell;
             break;
         }
@@ -132,7 +201,8 @@ enum TMBTableViewRow:NSInteger{
             cell.titleLabel.text = @"Número";
             cell.textField.placeholder = @"Número do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            self.installationAdressNumber = cell.textField;
+            cell.textField.text = self.installationAdress.number;
+            cell.textField.delegate = self;
             return cell;
             break;
         }
@@ -141,7 +211,8 @@ enum TMBTableViewRow:NSInteger{
             cell.titleLabel.text = @"Complemento";
             cell.textField.placeholder = @"Complemento do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
-            self.installationAdressComplement = cell.textField;
+            cell.textField.text = self.installationAdress.complement;
+            cell.textField.delegate = self;
             return cell;
             break;
         }
@@ -183,18 +254,6 @@ enum TMBTableViewRow:NSInteger{
     }
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    self.installationAdressCep.text = [[TMBSignatureData sharedData] installationAdressCep];
-    self.installationAdressCity.text = [[TMBSignatureData sharedData] installationAdressCity];
-    self.installationAdressState.text = [[TMBSignatureData sharedData] installationAdressState];
-    self.installationAdressSector.text = [[TMBSignatureData sharedData] installationAdressSector];
-    self.installationAdressStreet.text = [[TMBSignatureData sharedData] installationAdressStreet];
-    self.installationAdressNumber.text = [[TMBSignatureData sharedData] installationAdressNumber];
-    self.installationAdressComplement.text = [[TMBSignatureData sharedData] installationAdressComplement];
-
-}
 
 /*BUG DEMONIADO
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -206,14 +265,7 @@ enum TMBTableViewRow:NSInteger{
 #pragma mark - Navigation
 - (IBAction)nextStep:(id)sender {
     
-    [[TMBSignatureData sharedData] setInstallationAdressCep:self.installationAdressCep.text];
-    [[TMBSignatureData sharedData] setInstallationAdressCity:self.installationAdressCity.text];
-    [[TMBSignatureData sharedData] setInstallationAdressState:self.installationAdressState.text];
-    [[TMBSignatureData sharedData] setInstallationAdressSector:self.installationAdressSector.text];
-    [[TMBSignatureData sharedData] setInstallationAdressStreet:self.installationAdressStreet.text];
-    [[TMBSignatureData sharedData] setInstallationAdressNumber:self.installationAdressNumber.text];
-    [[TMBSignatureData sharedData] setInstallationAdressComplement:self.installationAdressComplement.text];
-    
+
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBPaymentDataViewController *paymentDataViewController = (TMBPaymentDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBPaymentDataViewController"];
     [self.navigationController pushViewController:paymentDataViewController animated:YES];
@@ -232,16 +284,29 @@ enum TMBTableViewRow:NSInteger{
     
 }
 
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    [[TMBSignatureData sharedData] setInstallationAdressCep:self.installationAdressCep.text];
+    [[TMBSignatureData sharedData] setInstallationAdressCity:self.installationAdressCity.text];
+    [[TMBSignatureData sharedData] setInstallationAdressState:self.installationAdressState.text];
+    [[TMBSignatureData sharedData] setInstallationAdressSector:self.installationAdressSector.text];
+    [[TMBSignatureData sharedData] setInstallationAdressStreet:self.installationAdressStreet.text];
+    [[TMBSignatureData sharedData] setInstallationAdressNumber:self.installationAdressNumber.text];
+    [[TMBSignatureData sharedData] setInstallationAdressComplement:self.installationAdressComplement.text];
+
+    
+}
 
 #pragma mark - Navigation
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    
+    [super viewDidAppear:YES];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
+ 
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
