@@ -10,7 +10,7 @@
 
 @implementation TMBMapGetLocationTableViewCell{
     
-    TMBSignatureData *sharedSignatureData;
+    TMBSignatureSingleton *sharedSignatureData;
 
 }
 
@@ -19,7 +19,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        sharedSignatureData = [TMBSignatureData sharedData];
+        sharedSignatureData = [TMBSignatureSingleton sharedData];
     }
     return self;
 }

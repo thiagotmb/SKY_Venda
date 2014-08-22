@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TMBSignatureData.h"
+#import "TMBSignatureSingleton.h"
 @interface TMBMapGetLocationTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *MAP;

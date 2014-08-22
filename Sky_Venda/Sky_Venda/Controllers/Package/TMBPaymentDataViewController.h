@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TMBSignatureData.h"
+#import "TMBSignatureSingleton.h"
 #import "TMBPackageAdhesionViewController.h"
 
 @class TMBCreditCard;

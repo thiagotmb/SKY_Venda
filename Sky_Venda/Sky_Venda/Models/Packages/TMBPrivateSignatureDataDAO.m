@@ -7,6 +7,7 @@
 //
 
 #import "TMBPrivateSignatureDataDAO.h"
+#import "TMBSignature.h"
 
 @implementation TMBPrivateSignatureDataDAO
 
@@ -20,79 +21,81 @@
     return self;
 }
 
--(TMBPrivateSignatureData *)getPrivateSignatureData{
-    
-    TMBPrivateSignatureData *signatureData;
-    
-    @try{
-        NSFileManager* fileManager = [NSFileManager defaultManager];
-        BOOL sucess = [fileManager fileExistsAtPath:dbPath];
+-(NSString*)getColumnText:(int)iColumn forStatement:(sqlite3_stmt*)statement{
+    if (sqlite3_column_type(statement, iColumn) != SQLITE_NULL) {
+        return [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, iColumn)];
+    }else{
         
-        if (sucess) {
-            
-            if((sqlite3_open([dbPath UTF8String], &database)) == SQLITE_OK){
-                
-                const char *sqlProgram = "select Name, Cpf, Rg, Email, PhoneNumber, BirthDate, SocialReason, Gender, Cep, City, State, Sector, Street, AdressNumber, Complement, CreditCardOperator, CreditCardNumber, CreditCardExpiration FROM SignatureData";
-                sqlite3_stmt *sqlStatement;
-                
-                if (sqlite3_prepare(database, sqlProgram, -1, &sqlStatement, NULL) == SQLITE_OK) {
-                    
-                    if (sqlite3_step(sqlStatement)) {
-                        signatureData = [[TMBPrivateSignatureData alloc] init];
-                        
-                        
-                        signatureData.clientNameDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 0)];
-                        signatureData.clientCpfDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 1)];;
-                        signatureData.clientRgDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 2)];;
-                        signatureData.clientEmailDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 3)];
-                        signatureData.clientPhoneNumberDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 4)];
-                        signatureData.clientBirthDateDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 5)];;
-                    
-                        signatureData.clientSocialReasonDAO = sqlite3_column_int(sqlStatement, 6);
-                        signatureData.clientGenderDAO = sqlite3_column_int(sqlStatement, 7);
-                        
-                        
-                        signatureData.installationAdressCepDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 8)];
-                        signatureData.installationAdressCityDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 9)];
-                        signatureData.installationAdressStateDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 10)];
-                        signatureData.installationAdressSectorDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 11)];
-                        signatureData.installationAdressStreetDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 12)];
-                        signatureData.installationAdressNumberDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 13)];
-                        signatureData.installationAdressComplementDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 14)];
+        return nil;
+    }
+}
 
-                        signatureData.creditCardOperatorDAO = sqlite3_column_int(sqlStatement, 15);
-                        signatureData.creditCardNumberDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 16)];
-                        signatureData.creditExpirationDateDAO = [NSString stringWithUTF8String:(char*)sqlite3_column_text(sqlStatement, 17)];
-                        
-                    }
-                    
-                }else{
-                    
-                    NSLog(@"Can't prepare statement");
-                }
-                
-            }else{
-                
-                NSLog(@"Database can't open");
-            }
-            
-        }else{
-            NSLog(@"Can't locate database file at path %@:",dbPath);
-        }
-    }
-    @catch (NSException *exception){
+-(TMBSignature *)getSignatureData{
+    
+    TMBSignature *signatureData;
+    
+    
+    const char *dbpath = [dbPath UTF8String];
+    sqlite3_stmt    *statement;
+    
+    
+    
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK)
+    {
+        NSString *querySQL = @"SELECT Name, Cpf, Rg, Email, PhoneNumber, BirthDate, SocialReason, Gender, Cep, City, State, Sector, Street, AdressNumber, Complement, CreditCardOperator, CreditCardNumber, CreditCardExpiration FROM SignatureData";
+        const char *query_stmt = [querySQL UTF8String];
         
-        NSLog(@"Exception in get users: %@", [exception reason]);
-    }
-    @finally{
-        return signatureData;
+        if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                signatureData = [[TMBSignature alloc] init];
+                
+
+                signatureData.client.name = [self getColumnText:0 forStatement:statement];
+                signatureData.client.cpf = [self getColumnText:1 forStatement:statement];;
+                
+                signatureData.client.rg = [self getColumnText:2 forStatement:statement];;;
+                signatureData.client.email = [self getColumnText:3 forStatement:statement];;
+                signatureData.client.phoneNumber = [self getColumnText:4 forStatement:statement];;
+                
+                
+                NSDate *storedBirthDate = [signatureData getDateFromString:[self getColumnText:5 forStatement:statement]];
+                signatureData.client.birthDate = storedBirthDate;
+                
+                signatureData.client.socialReason = sqlite3_column_int(statement, 6);
+                signatureData.client.gender = sqlite3_column_int(statement, 7);
+                
+                
+                signatureData.installationAdress.cep = [self getColumnText:8 forStatement:statement];;
+                signatureData.installationAdress.city = [self getColumnText:9 forStatement:statement];;
+                signatureData.installationAdress.state = [self getColumnText:10 forStatement:statement];;
+                signatureData.installationAdress.sector = [self getColumnText:11 forStatement:statement];;
+                signatureData.installationAdress.street = [self getColumnText:12 forStatement:statement];;
+                signatureData.installationAdress.number = [self getColumnText:13 forStatement:statement];;
+                signatureData.installationAdress.complement = [self getColumnText:14 forStatement:statement];
+                
+                signatureData.creditCard.operatorCode = sqlite3_column_int(statement, 15);
+                signatureData.creditCard.number = [self getColumnText:16 forStatement:statement];;
+                
+                NSDate *storedExpiratoinDate = [signatureData getDateFromString:[self getColumnText:17 forStatement:statement]];
+                signatureData.client.birthDate = storedExpiratoinDate;
+                signatureData.creditCard.expiration = storedExpiratoinDate;
+
+
+
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(database);
     }
     
+    return signatureData;    
 }
 /*
 -(BOOL)savePrivateSignatureData{
     
-    TMBSignatureData *sharedSignatureData = [TMBSignatureData sharedData];
+    TMBSignatureSingleton *sharedSignatureData = [TMBSignatureSingleton sharedData];
     
     TMBPrivateSignatureData *signatureData = [self getPrivateSignatureData];
     BOOL sucess = NO;

@@ -19,4 +19,8 @@
 @property (nonatomic) TMBInstallationAdress *installationAdress;
 @property (nonatomic) TMBCreditCard *creditCard;
 
+-(NSString*)getStringFromDate:(NSDate*)dateToConvert;
+-(NSDate*)getDateFromString:(NSString*)string;
+
+
 @end

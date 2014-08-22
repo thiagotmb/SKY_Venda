@@ -7,7 +7,7 @@
 //
 
 #import "TMBPackageAdhesionViewController.h"
-#import "TMBSignatureData.h"
+#import "TMBSignatureSingleton.h"
 
 @interface TMBPackageAdhesionViewController ()
 
@@ -15,7 +15,7 @@
 
 @implementation TMBPackageAdhesionViewController{
     
-    TMBSignatureData *sharedSignatureData;
+    TMBSignatureSingleton *sharedSignatureData;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    sharedSignatureData = [TMBSignatureData sharedData];
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
     
     NSString *imageName = [NSString stringWithFormat:@"SKY%d.png",sharedSignatureData.signature.package];
     

@@ -7,7 +7,7 @@
 //
 
 #import "TMBPackagePresentationViewController.h"
-#import "TMBSignatureData.h"
+#import "TMBSignatureSingleton.h"
 
 @interface TMBPackagePresentationViewController ()
 
@@ -20,7 +20,7 @@
 
 @implementation TMBPackagePresentationViewController{
     
-    TMBSignatureData *sharedSignatureData;
+    TMBSignatureSingleton *sharedSignatureData;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,7 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    sharedSignatureData = [TMBSignatureData sharedData];
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
     // Do any additional setup after loading the view.
     
     self.packagePresentPrincipalView.type = iCarouselTypeCoverFlow;

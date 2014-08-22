@@ -7,7 +7,7 @@
 //
 
 #import "TMBClientDataViewController.h"
-#import "TMBSignatureData.h"
+#import "TMBSignatureSingleton.h"
 #import "TMBClient.h"
 
 #define NUMBER_OF_SECTIONS 1
@@ -41,7 +41,7 @@ enum TMBTableViewRow:NSInteger{
 
 @implementation TMBClientDataViewController{
     
-    TMBSignatureData *sharedSignatureData;
+    TMBSignatureSingleton *sharedSignatureData;
     BOOL keyboardShown;
     CGFloat keyboardOverlap;
 }
@@ -60,7 +60,7 @@ enum TMBTableViewRow:NSInteger{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    sharedSignatureData = [TMBSignatureData sharedData];
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
     self.client = sharedSignatureData.signature.client;
     
      NSString *imageName = [NSString stringWithFormat:@"SKY%d.png",sharedSignatureData.signature.package];
@@ -221,8 +221,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         }
         case TMBTableViewRowClientBirthDate:{
             TMBDatePickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DatePickerCell"
-                                                                            forIndexPath:indexPath];
-            cell.datePickerView.date = self.client.birthDate;
+                                                                        forIndexPath:indexPath];
+            if (self.client.birthDate!=nil) {
+                cell.datePickerView.date = self.client.birthDate;
+            }
             return cell;
             break;
         }

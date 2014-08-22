@@ -8,7 +8,7 @@
 
 #import "TMBInstallationAdressDataViewController.h"
 #import "TMBInstallationAdress.h"
-#import "TMBSignatureData.h"
+#import "TMBSignatureSingleton.h"
 
 #define NUMBER_OF_SECTIONS 1
 #define NUMBER_OF_ROWS_IN_SECTION_DEFAULT 10
@@ -40,7 +40,7 @@ enum TMBTableViewRow:NSInteger{
 
 @implementation TMBInstallationAdressDataViewController{
     
-    TMBSignatureData *sharedSignatureData;
+    TMBSignatureSingleton *sharedSignatureData;
     BOOL keyboardShown;
     CGFloat keyboardOverlap;
 }
@@ -58,7 +58,7 @@ enum TMBTableViewRow:NSInteger{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    sharedSignatureData = [TMBSignatureData sharedData];
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
     self.installationAdress = sharedSignatureData.signature.installationAdress;
     // Do any additional setup after loading the view.
 }
@@ -234,7 +234,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 /*BUG DEMONIADO
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    self.installationAdressCep.text = [[TMBSignatureData sharedData] installationAdressCep];
+    self.installationAdressCep.text = [[TMBSignatureSingleton sharedData] installationAdressCep];
     
 }
 */

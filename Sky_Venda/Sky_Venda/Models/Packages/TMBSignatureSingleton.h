@@ -1,5 +1,5 @@
 //
-//  TMBSignatureData.h
+//  TMBSignatureSingleton.h
 //  Sky_Venda
 //
 //  Created by Thiago-Bernardes on 8/15/14.
@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "TMBSignature.h"
 
-#import "TMBPrivateSignatureDataDAO.h"
-#import "TMBPrivateSignatureData.h"
 
 
 @class TMBSignature;
 
-@interface TMBSignatureData : NSObject
+@interface TMBSignatureSingleton : NSObject
 
 @property (nonatomic) TMBSignature* signature;
 

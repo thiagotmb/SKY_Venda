@@ -15,7 +15,7 @@
 
 @implementation TMBPaymentDataViewController{
     
-    TMBSignatureData *sharedSignatureData;
+    TMBSignatureSingleton *sharedSignatureData;
 
 }
 
@@ -32,12 +32,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    sharedSignatureData = [TMBSignatureData sharedData];
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
     
     self.creditCard = sharedSignatureData.signature.creditCard;
     self.creditCardNumber.text = self.creditCard.number;
     self.creditCardOperatorNow = self.creditCard.operatorCode;
-    self.creditCardExpirationDatePicker.date = self.creditCard.expiration;
+    
+    if (self.creditCard.expiration!=nil) {
+        self.creditCardExpirationDatePicker.date = self.creditCard.expiration;
+    }
 
     
     
@@ -68,16 +71,7 @@
 
 - (IBAction)nextStep:(id)sender {
     
-
-    
     //NSLog(@"%@",sharedSignatureData.signature.creditCard);
-
-   /*
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM"];
-    NSString *dateString;
-    dateString = [dateFormat stringFromDate:self.creditCardExpirationDatePicker.date];
-    */
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBPackageAdhesionViewController *packageAdhesionViewController = (TMBPackageAdhesionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBPackageAdhesionViewController"];

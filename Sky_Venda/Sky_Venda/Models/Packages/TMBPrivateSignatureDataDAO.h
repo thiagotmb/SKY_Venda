@@ -8,17 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-#import "TMBPrivateSignatureData.h"
-#import "TMBSignatureData.h"
 
+@class TMBSignature;
 @interface TMBPrivateSignatureDataDAO : NSObject{
     
     sqlite3 *database;
     NSString *dbPath;
 }
 
--(TMBPrivateSignatureData*) getPrivateSignatureData;
+-(TMBSignature*) getSignatureData;
 
--(BOOL)savePrivateSignatureData;
+-(NSString*)getColumnText:(int)iColumn forStatement:(sqlite3_stmt*)statement;
+
+-(BOOL)saveSignatureData;
 
 @end

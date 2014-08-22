@@ -7,10 +7,10 @@
 //
 
 #import "TMBTextFieldTableViewCell.h"
-#import "TMBSignatureData.h"
+#import "TMBSignatureSingleton.h"
 @implementation TMBTextFieldTableViewCell{
     
-    TMBSignatureData *sharedSignatureData;
+    TMBSignatureSingleton *sharedSignatureData;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -26,7 +26,7 @@
 {
     // Initialization code
     self.textField.delegate = self;
-    sharedSignatureData = [TMBSignatureData sharedData];
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
     
 }
 
