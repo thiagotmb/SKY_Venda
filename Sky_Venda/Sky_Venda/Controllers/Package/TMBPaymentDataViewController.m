@@ -66,18 +66,10 @@
     self.creditCard.expiration = self.creditCardExpirationDatePicker.date;
     self.creditCard.operatorCode = self.creditCardOperatorNow;
     sharedSignatureData.signature.creditCard = self.creditCard;
-
-}
-
-- (IBAction)nextStep:(id)sender {
-    
     //NSLog(@"%@",sharedSignatureData.signature.creditCard);
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    TMBPackageAdhesionViewController *packageAdhesionViewController = (TMBPackageAdhesionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBPackageAdhesionViewController"];
-    [self.navigationController pushViewController:packageAdhesionViewController animated:YES];
-    
 
 }
+
+
 
 @end

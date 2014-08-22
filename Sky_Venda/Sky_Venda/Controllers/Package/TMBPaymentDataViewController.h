@@ -21,6 +21,5 @@
 @property (nonatomic) int creditCardOperatorNow;
 @property(nonatomic) TMBCreditCard* creditCard;
 
-- (IBAction)nextStep:(id)sender;
 
 @end

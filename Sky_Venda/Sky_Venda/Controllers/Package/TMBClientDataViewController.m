@@ -260,25 +260,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 
 
-
-#pragma mark - Navigation
-
-- (IBAction)nextStep:(id)sender {
-    
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    TMBInstallationAdressDataViewController *installationAdressDataViewController = (TMBInstallationAdressDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBInstallationAdressDataViewController"];
-    [self.navigationController pushViewController:installationAdressDataViewController animated:YES];
-   
-    
-    //NSLog(@"%@",sharedSignatureData.signature.client);
-    
-
-    
-}
-
-
-
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     
@@ -294,6 +275,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [super viewWillDisappear:YES];
     sharedSignatureData.signature.client = self.client;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    //NSLog(@"%@",sharedSignatureData.signature.client);
+
 }
 
 - (void)keyboardWillShow:(NSNotification *)aNotification

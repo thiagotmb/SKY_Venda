@@ -18,7 +18,6 @@
 
 @property (nonatomic) TMBInstallationAdress *installationAdress;
 
-- (IBAction)nextStep:(id)sender;
 
 
 @end

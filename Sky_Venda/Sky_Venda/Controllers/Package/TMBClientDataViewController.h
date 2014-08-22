@@ -25,7 +25,6 @@
 
 @property TMBClient *client;
 
-- (IBAction)nextStep:(id)sender;
 
 
 @end

@@ -239,25 +239,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 }
 */
 
-#pragma mark - Navigation
-- (IBAction)nextStep:(id)sender {
-    
-
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    TMBPaymentDataViewController *paymentDataViewController = (TMBPaymentDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBPaymentDataViewController"];
-    [self.navigationController pushViewController:paymentDataViewController animated:YES];
-    
-    
-     //NSLog(@"%@",sharedSignatureData.signature.installationAdress);
-
-    
-    
-    
-}
-
-
-#pragma mark - Navigation
-
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
@@ -272,7 +253,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     sharedSignatureData.signature.installationAdress = self.installationAdress;
-    
+    //NSLog(@"%@",sharedSignatureData.signature.installationAdress);
+
 }
 
 - (void)keyboardWillShow:(NSNotification *)aNotification

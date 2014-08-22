@@ -63,6 +63,5 @@
     UIViewController *signatureSubmited = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBSignatureSubmited"];
     [self.navigationController pushViewController:signatureSubmited animated:YES];
     
-    NSLog(@"%@",sharedSignatureData);
 }
 @end
