@@ -26,4 +26,11 @@
     return self;
 }
 
+-(NSString *)description{
+    
+    NSString *description = [NSString stringWithFormat:@"Object: %@\nCep: %@\nState: %@\nCity: %@\nSector: %@\nStreet: %@\nNumber: %@\nComplement: %@",self.class,self.cep,self.state,self.city,self.sector,self.street,self.number,self.complement];
+    
+    return description;
+}
+
 @end

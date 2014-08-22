@@ -61,7 +61,7 @@ enum TMBTableViewRow:NSInteger{
 {
     [super viewDidLoad];
     sharedSignatureData = [TMBSignatureData sharedData];
-    self.client = [[TMBClient alloc] init];
+    self.client = sharedSignatureData.signature.client;
     
      NSString *imageName = [NSString stringWithFormat:@"SKY%d.png",sharedSignatureData.signature.package];
      
@@ -98,41 +98,13 @@ enum TMBTableViewRow:NSInteger{
 }
 
 
+
 - (void)tableView:(UITableView *)tableView
 didEndDisplayingCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
-        case TMBTableViewRowClientName:{
-            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
-            self.client.name = customCell.textField.text;
-            break;
-        }
-        case TMBTableViewRowClientCpf:{
-            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
-            self.client.cpf = customCell.textField.text;
             
-            break;
-        }
-        case TMBTableViewRowClientRg:{
-
-            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
-            self.client.rg = customCell.textField.text;
-            
-            break;
-        }
-        case TMBTableViewRowClientEmail:{
-            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
-            self.client.email = customCell.textField.text;
-            
-            break;
-        }
-        case TMBTableViewRowClientPhoneNumber:{
-            TMBTextFieldTableViewCell *customCell = (TMBTextFieldTableViewCell *)cell;
-            self.client.phoneNumber = customCell.textField.text;
-
-            break;
-        }
         case TMBTableViewRowClientGender:{
             TMBPickerTableViewCell *customCell = (TMBPickerTableViewCell *)cell;
             self.client.gender = [customCell.pickerView selectedRowInComponent:0];
@@ -166,7 +138,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.titleLabel.text = @"Nome";
             cell.textField.placeholder = @"Nome completo como consta no CPF";
             cell.textField.text = self.client.name;
-            cell.textField.delegate = self;
+            cell.textField.keyboardType = UIKeyboardTypeDefault;
+            cell.textField.tag = TMBClientNameTextFieldTag;
+            
             return cell;
             break;
         }
@@ -177,7 +151,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"CPF relativo ao nome acima";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.client.cpf;
-            cell.textField.delegate = self;
+            cell.textField.tag = TMBClientCpfTextFieldTag;
             return cell;
             
             
@@ -189,7 +163,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"RG";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.client.rg;
-            cell.textField.delegate = self;
+            cell.textField.tag = TMBClientRgTextFieldTag;
+
             return cell;
             
         }
@@ -200,7 +175,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"E-Mail para contato";
             cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
             cell.textField.text = self.client.email;
-            cell.textField.delegate = self;
+            cell.textField.tag = TMBClientEmailTextFieldTag;
+ 
             return cell;
             
         }
@@ -212,9 +188,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"Telefone para contato";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.client.phoneNumber;
-            cell.textField.delegate = self;
-
-
+            cell.textField.tag = TMBClientPhoneNumberTextFieldTag;
+            
             return cell;
             break;
         }
@@ -284,7 +259,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 
 
-
 #pragma mark - Navigation
 
 - (IBAction)nextStep:(id)sender {
@@ -293,16 +267,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBInstallationAdressDataViewController *installationAdressDataViewController = (TMBInstallationAdressDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBInstallationAdressDataViewController"];
     [self.navigationController pushViewController:installationAdressDataViewController animated:YES];
-    /*
-    NSLog(@"Nome %@",[[TMBSignatureData sharedData] clientName]);
-    NSLog(@"CPF %@",[[TMBSignatureData sharedData] clientCpf]);
-    NSLog(@"RG %@",[[TMBSignatureData sharedData] clientRg]);
-    NSLog(@"Email %@",[[TMBSignatureData sharedData] clientEmail]);
-    NSLog(@"Telefone %@",[[TMBSignatureData sharedData] clientPhoneNumber]);
-    NSLog(@"%@",[[TMBSignatureData sharedData] clientGender]);
-    NSLog(@"%@",[[TMBSignatureData sharedData] clientSocialReason]);
-    NSLog(@"%@",[[TMBSignatureData sharedData] clientBirthDate]);
-    */
+   
+    
+    //NSLog(@"%@",sharedSignatureData.signature.client);
+    
+
+    
 }
 
 
@@ -316,9 +286,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
 }
 
+
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
-    
+    sharedSignatureData.signature.client = self.client;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -434,7 +406,5 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         [self.clientDataTableView selectRowAtIndexPath:self.activeCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
 }
-
-
 
 @end

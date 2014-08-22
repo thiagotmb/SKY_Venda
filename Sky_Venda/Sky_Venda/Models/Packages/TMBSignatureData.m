@@ -23,6 +23,13 @@
     return sharedData;
 }
 
+-(NSString *)description{
+    
+    NSString *description = [NSString stringWithFormat:@"Object: %@\nSignature: %@",self.class,self.signature];
+    
+    return description;
+}
+
 -(id)init{
     
     self = [super init];

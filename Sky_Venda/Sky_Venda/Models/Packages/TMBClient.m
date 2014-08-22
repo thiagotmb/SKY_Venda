@@ -20,9 +20,17 @@
         self.email = [[NSString alloc] init];
         self.phoneNumber = [[NSString alloc] init];
         
-        self.birthDate = [NSDate date];
+        self.birthDate = [[NSDate alloc]init];
         
     }
     return self;
 }
+-(NSString *)description{
+    
+    NSString *description = [NSString stringWithFormat:@"Object: %@\nName: %@\nCPF: %@\nRG: %@\nEmail: %@\nPhoneNumber: %@\nBirthDate: %@\nGender: %d\nSocialReazon: %d",self.class,self.name,self.cpf,self.rg,self.email,self.phoneNumber,self.birthDate,self.gender,self.socialReason];
+    
+    return description;
+}
+
+
 @end

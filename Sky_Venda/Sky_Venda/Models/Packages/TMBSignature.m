@@ -22,5 +22,10 @@
     }
     return self;
 }
-
+-(NSString *)description{
+    
+    NSString *description = [NSString stringWithFormat:@"Object: %@\nClient: %@\nInstallationAdress: %@\nCreditCard: %@\nPackage: %d",self.class,self.client,self.installationAdress,self.creditCard,self.package];
+    
+    return description;
+}
 @end

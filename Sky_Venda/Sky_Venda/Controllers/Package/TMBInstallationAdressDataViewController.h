@@ -12,7 +12,7 @@
 #import "TMBPaymentDataViewController.h"
 
 @class TMBInstallationAdress;
-@interface TMBInstallationAdressDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
+@interface TMBInstallationAdressDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *installationAdressDataTableView;
 

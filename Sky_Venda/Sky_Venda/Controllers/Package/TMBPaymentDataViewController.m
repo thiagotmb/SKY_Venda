@@ -13,7 +13,12 @@
 
 @end
 
-@implementation TMBPaymentDataViewController
+@implementation TMBPaymentDataViewController{
+    
+    TMBSignatureData *sharedSignatureData;
+
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,16 +32,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    sharedSignatureData = [TMBSignatureData sharedData];
     
-    self.creditCard = [[TMBCreditCard alloc] init];
-    
+    self.creditCard = sharedSignatureData.signature.creditCard;
     self.creditCardNumber.text = self.creditCard.number;
     self.creditCardOperatorNow = self.creditCard.operatorCode;
     self.creditCardExpirationDatePicker.date = self.creditCard.expiration;
+
     
-
-    //self.creditCardExpirationDatePicker.date = [[TMBSignatureData sharedData] creditExpirationDate];
-
     
     // Do any additional setup after loading the view.
 }
@@ -53,12 +56,22 @@
     
 }
 
-- (IBAction)nextStep:(id)sender {
+-(void)viewDidDisappear:(BOOL)animated{
     
+    [super viewDidDisappear:YES];
     self.creditCard.number = self.creditCardNumber.text;
     self.creditCard.expiration = self.creditCardExpirationDatePicker.date;
     self.creditCard.operatorCode = self.creditCardOperatorNow;
+    sharedSignatureData.signature.creditCard = self.creditCard;
+
+}
+
+- (IBAction)nextStep:(id)sender {
     
+
+    
+    //NSLog(@"%@",sharedSignatureData.signature.creditCard);
+
    /*
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM"];
@@ -66,15 +79,10 @@
     dateString = [dateFormat stringFromDate:self.creditCardExpirationDatePicker.date];
     */
     
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBPackageAdhesionViewController *packageAdhesionViewController = (TMBPackageAdhesionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBPackageAdhesionViewController"];
     [self.navigationController pushViewController:packageAdhesionViewController animated:YES];
     
-    /*
-    NSLog(@"%@",[[TMBSignatureData sharedData] creditCardNumber]);
-    NSLog(@"%@",[[TMBSignatureData sharedData] creditExpirationDate]);
-     */
 
 }
 

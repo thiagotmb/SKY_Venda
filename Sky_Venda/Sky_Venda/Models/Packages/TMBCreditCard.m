@@ -20,5 +20,11 @@
     return self;
 }
 
+-(NSString *)description{
+    
+    NSString *description = [NSString stringWithFormat:@"Object: %@\nNumber: %@\nExpiration: %@\nOperatorCode: %d",self.class,self.number,self.expiration,self.operatorCode];
+    
+    return description;
+}
 
 @end

@@ -14,7 +14,7 @@
 
 @class TMBClient;
 
-@interface TMBClientDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate>
+@interface TMBClientDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *packagePresentation;
 
