@@ -23,7 +23,6 @@
         sharedData = [[self alloc] initPrivate];
         
     }
-    
     return sharedData;
 }
 
@@ -65,15 +64,13 @@
     
     
     self.signature = [signatureDAO getSignatureData];
-    NSLog(@"%@",self.signature);
 
 }
 
 -(void)saveSharedData{
-  /*
-    TMBPrivateSignatureDataDAO *storedSignatureDataDAO = [[TMBPrivateSignatureDataDAO alloc] init];
-    [storedSignatureDataDAO savePrivateSignatureData];
-   */
+  
+    [signatureDAO saveSignatureData:self.signature];
+   
 }
 
 @end

@@ -80,8 +80,6 @@
             break;
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SaveTheData" object:self];
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

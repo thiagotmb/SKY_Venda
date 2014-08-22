@@ -42,12 +42,12 @@
     
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *querySQL = @"SELECT Name, Cpf, Rg, Email, PhoneNumber, BirthDate, SocialReason, Gender, Cep, City, State, Sector, Street, AdressNumber, Complement, CreditCardOperator, CreditCardNumber, CreditCardExpiration FROM SignatureData";
+        NSString *querySQL = @"SELECT Name, Cpf, Rg, Email, PhoneNumber, BirthDate, SocialReason, Gender, Cep, City, State, Sector, Street, AdressNumber, Complement, CreditCardOperator, CreditCardNumber, CreditCardExpiration, Package, SubmitDate FROM SignatureData";
         const char *query_stmt = [querySQL UTF8String];
         
         if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
         {
-            while (sqlite3_step(statement) == SQLITE_ROW)
+            if (sqlite3_step(statement) == SQLITE_ROW)
             {
                 signatureData = [[TMBSignature alloc] init];
                 
@@ -65,8 +65,7 @@
                 
                 signatureData.client.socialReason = sqlite3_column_int(statement, 6);
                 signatureData.client.gender = sqlite3_column_int(statement, 7);
-                
-                
+
                 signatureData.installationAdress.cep = [self getColumnText:8 forStatement:statement];;
                 signatureData.installationAdress.city = [self getColumnText:9 forStatement:statement];;
                 signatureData.installationAdress.state = [self getColumnText:10 forStatement:statement];;
@@ -79,9 +78,11 @@
                 signatureData.creditCard.number = [self getColumnText:16 forStatement:statement];;
                 
                 NSDate *storedExpiratoinDate = [signatureData getDateFromString:[self getColumnText:17 forStatement:statement]];
-                signatureData.client.birthDate = storedExpiratoinDate;
                 signatureData.creditCard.expiration = storedExpiratoinDate;
 
+                signatureData.package = sqlite3_column_int(statement, 18);
+                
+                signatureData.submitDate = [signatureData getDateFromString:[self getColumnText:19 forStatement:statement]];
 
 
             }
@@ -92,24 +93,24 @@
     
     return signatureData;    
 }
-/*
--(BOOL)savePrivateSignatureData{
-    
-    TMBSignatureSingleton *sharedSignatureData = [TMBSignatureSingleton sharedData];
-    
-    TMBPrivateSignatureData *signatureData = [self getPrivateSignatureData];
-    BOOL sucess = NO;
-    
+
+-(BOOL)saveSignatureData:(TMBSignature*)signatureData{
+
+    BOOL sucess = NO;    
     sqlite3_stmt *statement = NULL;
     
+
     
     if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
 
-        if (signatureData.clientCpfDAO != nil) {
-            
-            NSString *updateSQL = [NSString stringWithFormat:@"UPDATE SignatureData set Name = '%@', Cpf = '%@', Rg = '%@', Email = '%@', PhoneNumber = '%@', BirthDate = '%@', SocialReason = '%@', Gender = '%@', Cep = '%@', City = '%@', State = '%@', Sector = '%@', Street = '%@', AdressNumber = '%@', Complement = '%@', CreditCardOperator = '%@', CreditCardNumber = '%@', CreditCardExpiration = '%@' ",sharedSignatureData.clientName,sharedSignatureData.clientCpf,sharedSignatureData.clientRg,sharedSignatureData.clientEmail,sharedSignatureData.clientPhoneNumber, sharedSignatureData.clientBirthDate, sharedSignatureData.clientSocialReason, sharedSignatureData.clientGender, sharedSignatureData.installationAdressCep, sharedSignatureData.installationAdressCity, sharedSignatureData.installationAdressState, sharedSignatureData.installationAdressSector, sharedSignatureData.installationAdressStreet, sharedSignatureData.installationAdressNumber, sharedSignatureData.installationAdressComplement, sharedSignatureData.creditCardOperator, sharedSignatureData.creditCardNumber, sharedSignatureData.creditExpirationDate];
+        NSString *birthDateString = [signatureData getStringFromDate:signatureData.client.birthDate];
+        
+        NSString *creditCardExpirationDateString = [signatureData getStringFromDate:signatureData.creditCard.expiration];
+        
+        NSString *signatureSubmitDate = [signatureData getStringFromDate:signatureData.submitDate];
+        
+            NSString *updateSQL = [NSString stringWithFormat:@"UPDATE SignatureData set Name = '%@', Cpf = '%@', Rg = '%@', Email = '%@', PhoneNumber = '%@', BirthDate = '%@', SocialReason = '%d', Gender = '%d', Cep = '%@', City = '%@', State = '%@', Sector = '%@', Street = '%@', AdressNumber = '%@', Complement = '%@', CreditCardOperator = '%d', CreditCardNumber = '%@', CreditCardExpiration = '%@', SubmitDate = '%@' ",signatureData.client.name,signatureData.client.cpf,signatureData.client.rg,signatureData.client.email,signatureData.client.phoneNumber, birthDateString, signatureData.client.socialReason, signatureData.client.gender, signatureData.installationAdress.cep, signatureData.installationAdress.city, signatureData.installationAdress.state, signatureData.installationAdress.sector, signatureData.installationAdress.street, signatureData.installationAdress.number, signatureData.installationAdress.complement, signatureData.creditCard.operatorCode, signatureData.creditCard.number, creditCardExpirationDateString, signatureSubmitDate];
             const char* update_stmt = [updateSQL UTF8String];
-            NSLog(@"%@",updateSQL);
 
             sqlite3_prepare_v2(database, update_stmt, -1, &statement, NULL);
                        
@@ -117,27 +118,14 @@
                 sucess = true;
             }
 
-
-        }else{
-            
-            NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO SignatureData (Name, Cpf, Rg) VALUES (\"%@\", \"%@\", \"%@\")",sharedSignatureData.clientName,sharedSignatureData.clientCpf,sharedSignatureData.clientRg];
-            const char* insert_stmt = [insertSQL UTF8String];
-
-            sqlite3_prepare_v2(database, insert_stmt, -1, &statement, NULL);
-            
-            if (sqlite3_step(statement) == SQLITE_DONE) {
-                sucess = true;
-            }
-            
-        }
-        
-        sqlite3_finalize(statement);
-        sqlite3_close(database);
     }
+    
+    sqlite3_finalize(statement);
+    sqlite3_close(database);
+    
     
     return sucess;
 }
-   */ 
     
 
 @end

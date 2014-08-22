@@ -7,14 +7,20 @@
 //
 
 #import "TMBDatePickerTableViewCell.h"
+#import "TMBSignatureSingleton.h"
 
-@implementation TMBDatePickerTableViewCell
+@implementation TMBDatePickerTableViewCell{
+    
+    TMBSignatureSingleton *sharedSignatureData;
+}
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+
     }
     return self;
 }
@@ -22,6 +28,23 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
+    [self.datePickerView addTarget:self action:@selector(updateDate:) forControlEvents:UIControlEventValueChanged];
+
+    
+}
+
+
+-(IBAction)updateDate:(UIDatePicker*)datePicker{
+
+    switch (datePicker.tag) {
+        case TMBClientBirhDatePickerTag:
+            sharedSignatureData.signature.client.birthDate = datePicker.date;
+            break;
+
+        default:
+            break;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -32,7 +55,7 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
+
     [super endEditing:YES];
 }
 

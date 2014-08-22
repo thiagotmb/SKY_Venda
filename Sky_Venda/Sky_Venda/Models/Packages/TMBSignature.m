@@ -18,13 +18,14 @@
         self.client = [[TMBClient alloc] init];
         self.installationAdress = [[TMBInstallationAdress alloc] init];
         self.creditCard = [[TMBCreditCard alloc] init];
+        self.submitDate = [[NSDate alloc] init];
         
     }
     return self;
 }
 -(NSString *)description{
     
-    NSString *description = [NSString stringWithFormat:@"Object: %@\nClient: %@\nInstallationAdress: %@\nCreditCard: %@\nPackage: %d",self.class,self.client,self.installationAdress,self.creditCard,self.package];
+    NSString *description = [NSString stringWithFormat:@"Object: %@\nClient: %@\nInstallationAdress: %@\nCreditCard: %@\nPackage: %d\nSubmitDate: %@",self.class,self.client,self.installationAdress,self.creditCard,self.package,self.submitDate];
     
     return description;
 }
@@ -35,7 +36,7 @@
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
     NSString *dateString;
     dateString = [dateFormat stringFromDate:dateToConvert];
-    
+
     return dateString;
 }
 
@@ -45,7 +46,7 @@
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
     NSDate *dateToGet;
     dateToGet = [dateFormat dateFromString:string];
-    
+
     return dateToGet;
 }
 @end

@@ -13,4 +13,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePickerView;
 
+enum TMBDatePickerTag:NSInteger{
+    
+    TMBClientBirhDatePickerTag = 0,
+
+};
+
 @end

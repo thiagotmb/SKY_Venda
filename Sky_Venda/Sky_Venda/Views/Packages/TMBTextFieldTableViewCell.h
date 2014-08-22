@@ -28,9 +28,6 @@ enum TMBTextFieldTag:NSInteger{
     TMBInstallationAdressStreetTextFieldTag = 9,
     TMBInstallationAdressNumberTextFieldTag = 10,
     TMBInstallationAdressComplementTextFieldTag = 11,
-
-    creditCardNumber
-    
 };
 
 @end

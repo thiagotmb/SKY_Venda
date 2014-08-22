@@ -98,37 +98,6 @@ enum TMBTableViewRow:NSInteger{
 }
 
 
-
-- (void)tableView:(UITableView *)tableView
-didEndDisplayingCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.row) {
-            
-        case TMBTableViewRowClientGender:{
-            TMBPickerTableViewCell *customCell = (TMBPickerTableViewCell *)cell;
-            self.client.gender = [customCell.pickerView selectedRowInComponent:0];
-
-            break;
-        }
-        case TMBTableViewRowClientSocialReason:{
-            TMBPickerTableViewCell *customCell = (TMBPickerTableViewCell *)cell;
-            self.client.socialReason = [customCell.pickerView selectedRowInComponent:0];
-            break;
-        }
-        case TMBTableViewRowClientBirthDate:{
-            TMBDatePickerTableViewCell *customCell = (TMBDatePickerTableViewCell *)cell;
-            self.client.birthDate = customCell.datePickerView.date;
-            break;
-        }
-        case TMBTableViewRowNextSepButton:{
-            break;
-        }
-        default:
-            break;
-    }
-}
-
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
@@ -201,6 +170,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.titleLabel.text = @"Sexo";
             cell.pickerData = self.genderPickerData;
             cell.numberOfComponentsInPickerView = 1;
+            cell.pickerView.tag = TMBClientGenderPickerTag;
             [cell.pickerView selectRow:self.client.gender inComponent:0 animated:YES];
             
             return cell;
@@ -214,6 +184,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.titleLabel.text = @"Razão Social";
             cell.pickerData = self.socialReasonPickerData ;
             cell.numberOfComponentsInPickerView = 1;
+            cell.pickerView.tag = TMBClientSocialReasonPickerTag;
             [cell.pickerView selectRow:self.client.socialReason inComponent:0 animated:YES];
     
             return cell;
@@ -221,9 +192,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         }
         case TMBTableViewRowClientBirthDate:{
             TMBDatePickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DatePickerCell"
-                                                                        forIndexPath:indexPath];
+                                                                forIndexPath:indexPath];
+            cell.datePickerView.tag = TMBClientBirhDatePickerTag;
             if (self.client.birthDate!=nil) {
                 cell.datePickerView.date = self.client.birthDate;
+
             }
             return cell;
             break;

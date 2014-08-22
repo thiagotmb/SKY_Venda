@@ -16,10 +16,9 @@
     NSString *dbPath;
 }
 
--(TMBSignature*) getSignatureData;
-
 -(NSString*)getColumnText:(int)iColumn forStatement:(sqlite3_stmt*)statement;
 
--(BOOL)saveSignatureData;
+-(TMBSignature*) getSignatureData;
+-(BOOL)saveSignatureData:(TMBSignature*)signatureData;
 
 @end

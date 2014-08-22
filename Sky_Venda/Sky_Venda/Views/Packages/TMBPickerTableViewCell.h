@@ -15,4 +15,12 @@
 @property (nonatomic) NSArray *pickerData;
 @property (nonatomic) NSInteger numberOfComponentsInPickerView;
 
+enum TMBPickerTag:NSInteger{
+    
+    TMBClientGenderPickerTag = 0,
+    TMBClientSocialReasonPickerTag = 1,
+    
+};
+
+
 @end

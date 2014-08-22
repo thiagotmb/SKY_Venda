@@ -643,6 +643,9 @@ AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                                     </timeZone>
+                                                    <connections>
+                                                        <action selector="updateDate:" destination="eke-gO-RBb" eventType="valueChanged" id="W7P-IY-NnO"/>
+                                                    </connections>
                                                 </datePicker>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Nascimento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jw5-cd-w6O">
                                                     <rect key="frame" x="20" y="0.0" width="119" height="15"/>

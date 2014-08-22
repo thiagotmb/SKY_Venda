@@ -7,8 +7,12 @@
 //
 
 #import "TMBPickerTableViewCell.h"
+#import "TMBSignatureSingleton.h"
+@implementation TMBPickerTableViewCell{
+    
+    TMBSignatureSingleton *sharedSignatureData;
+}
 
-@implementation TMBPickerTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -24,6 +28,8 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -35,6 +41,21 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super endEditing:YES];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    switch (pickerView.tag) {
+        case TMBClientGenderPickerTag:
+            sharedSignatureData.signature.client.gender = row;
+            break;
+        case TMBClientSocialReasonPickerTag:
+            sharedSignatureData.signature.client.socialReason = row;
+            break;
+        default:
+            break;
+    }
+    
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
