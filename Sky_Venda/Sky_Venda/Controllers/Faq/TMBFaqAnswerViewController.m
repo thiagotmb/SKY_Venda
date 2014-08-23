@@ -7,12 +7,17 @@
 //
 
 #import "TMBFaqAnswerViewController.h"
+#import "TMBFaqSingleton.h"
+#import "TMBFaq.h"
 
 @interface TMBFaqAnswerViewController ()
 
 @end
 
-@implementation TMBFaqAnswerViewController
+@implementation TMBFaqAnswerViewController{
+    
+    TMBFaqSingleton *sharedFaqList;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,8 +31,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.question.text = self.questionText;
-    self.answer.text = self.answerText;
+    
+    sharedFaqList = [TMBFaqSingleton sharedData];
+    self.faqItem = sharedFaqList.faqItem;
+    
+    self.question.text = self.faqItem.question;
+    self.answerText.text = self.faqItem.answer;
     // Do any additional setup after loading the view.
 }
 

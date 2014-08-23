@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class TMBFaq;
+
 @interface TMBFaqAnswerViewController : UIViewController
+
+@property (nonatomic,strong) TMBFaq* faqItem;
+
 @property (weak, nonatomic) IBOutlet UILabel *question;
-@property (nonatomic) NSString *questionText;
-@property (weak, nonatomic) IBOutlet UILabel *answer;
-@property (nonatomic) NSString* answerText;
+
+@property (weak, nonatomic) IBOutlet UITextView *answerText;
+
 
 @end

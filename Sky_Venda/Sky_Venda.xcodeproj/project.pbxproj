@@ -32,6 +32,9 @@
 		A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */; };
 		A409B3EF19A6D7BF00C83BD4 /* TMBSignatureSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */; };
 		A40A3D3B19A0DC0600601C91 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = A40A3D3A19A0DC0600601C91 /* map.png */; };
+		A481769419A7C96300455EE0 /* TMBFaq.m in Sources */ = {isa = PBXBuildFile; fileRef = A481769319A7C96300455EE0 /* TMBFaq.m */; };
+		A481769719A7CA0300455EE0 /* TMBFaqDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = A481769619A7CA0300455EE0 /* TMBFaqDAO.m */; };
+		A481769A19A7D08800455EE0 /* TMBFaqSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A481769919A7D08800455EE0 /* TMBFaqSingleton.m */; };
 		A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE0199452F400EA54E2 /* SKY0.png */; };
 		A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE1199452F400EA54E2 /* SKY1.png */; };
 		A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE2199452F400EA54E2 /* SKY2.png */; };
@@ -107,6 +110,12 @@
 		A409B3ED19A6D7BF00C83BD4 /* TMBSignatureSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignatureSingleton.h; sourceTree = "<group>"; };
 		A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignatureSingleton.m; sourceTree = "<group>"; };
 		A40A3D3A19A0DC0600601C91 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		A481769219A7C96300455EE0 /* TMBFaq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaq.h; sourceTree = "<group>"; };
+		A481769319A7C96300455EE0 /* TMBFaq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaq.m; sourceTree = "<group>"; };
+		A481769519A7CA0300455EE0 /* TMBFaqDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqDAO.h; sourceTree = "<group>"; };
+		A481769619A7CA0300455EE0 /* TMBFaqDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqDAO.m; sourceTree = "<group>"; };
+		A481769819A7D08800455EE0 /* TMBFaqSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaqSingleton.h; sourceTree = "<group>"; };
+		A481769919A7D08800455EE0 /* TMBFaqSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqSingleton.m; sourceTree = "<group>"; };
 		A48E3EE0199452F400EA54E2 /* SKY0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY0.png; sourceTree = "<group>"; };
 		A48E3EE1199452F400EA54E2 /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
 		A48E3EE2199452F400EA54E2 /* SKY2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY2.png; sourceTree = "<group>"; };
@@ -239,6 +248,12 @@
 		A409B3AB19A68DB700C83BD4 /* Faq */ = {
 			isa = PBXGroup;
 			children = (
+				A481769219A7C96300455EE0 /* TMBFaq.h */,
+				A481769319A7C96300455EE0 /* TMBFaq.m */,
+				A481769519A7CA0300455EE0 /* TMBFaqDAO.h */,
+				A481769619A7CA0300455EE0 /* TMBFaqDAO.m */,
+				A481769819A7D08800455EE0 /* TMBFaqSingleton.h */,
+				A481769919A7D08800455EE0 /* TMBFaqSingleton.m */,
 			);
 			path = Faq;
 			sourceTree = "<group>";
@@ -548,14 +563,17 @@
 				A409B3DC19A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m in Sources */,
 				A409B3D219A68DB700C83BD4 /* TMBPaymentDataViewController.m in Sources */,
 				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
+				A481769A19A7D08800455EE0 /* TMBFaqSingleton.m in Sources */,
 				A409B3CF19A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m in Sources */,
 				A409B3E019A68DB700C83BD4 /* TMBTextLabelTableViewCell.m in Sources */,
 				A409B3CE19A68DB700C83BD4 /* TMBClientDataViewController.m in Sources */,
 				A409B3EF19A6D7BF00C83BD4 /* TMBSignatureSingleton.m in Sources */,
 				A409B3CC19A68DB700C83BD4 /* TMBFaqListViewController.m in Sources */,
 				A409B3D019A68DB700C83BD4 /* TMBPackageAdhesionViewController.m in Sources */,
+				A481769719A7CA0300455EE0 /* TMBFaqDAO.m in Sources */,
 				A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */,
 				A409B3D819A68DB700C83BD4 /* TMBFaqTableViewCell.m in Sources */,
+				A481769419A7C96300455EE0 /* TMBFaq.m in Sources */,
 				A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

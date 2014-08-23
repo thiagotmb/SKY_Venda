@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "TMBFaqTableViewCell.h"
 #import "TMBFaqAnswerViewController.h"
+
 @interface TMBFaqListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray* faqList;
 
 @end
