@@ -1,14 +1,14 @@
 //
-//  TMBInstallationAdress.m
+//  TMBAdress.m
 //  Sky_Venda
 //
 //  Created by Thiago-Bernardes on 8/21/14.
 //  Copyright (c) 2014 TMB. All rights reserved.
 //
 
-#import "TMBInstallationAdress.h"
+#import "TMBAdress.h"
 
-@implementation TMBInstallationAdress
+@implementation TMBAdress
 
 - (instancetype)init
 {

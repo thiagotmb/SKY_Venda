@@ -7,10 +7,12 @@
 //
 
 #import "TMBMapGetLocationTableViewCell.h"
+#define METERS_PER_MILE 1609.344
 
 @implementation TMBMapGetLocationTableViewCell{
     
     TMBSignatureSingleton *sharedSignatureData;
+    CLLocationCoordinate2D zoomLocation;
 
 }
 
@@ -19,7 +21,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        sharedSignatureData = [TMBSignatureSingleton sharedData];
     }
     return self;
 }
@@ -27,7 +28,33 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
 }
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+    UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Não foi possível pegar sua localização, verifique suas conexões" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [errorAlert show];
+    NSLog(@"Error: %@",error.description);
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *crnLoc = [locations lastObject];
+    self.Cep = [NSString stringWithFormat:@"%.8f, %.8f",crnLoc.coordinate.latitude,crnLoc.coordinate.longitude];
+    
+    
+    
+    zoomLocation.latitude = crnLoc.coordinate.latitude;
+    zoomLocation.longitude = crnLoc.coordinate.longitude;
+    
+    
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
@@ -37,16 +64,22 @@
 }
 
 - (IBAction)getMyLocation:(id)sender {
-    
-    self.MAP.image = [UIImage imageNamed:@"map.png"];
-    self.Cep = @"73801280";
-    
-    sharedSignatureData.signature.installationAdress.cep = self.Cep;
-    
-    
-    NSLog(@"%@",self.Cep);
+    [self.locationManager startUpdatingLocation];
+
+    if (self.Cep) {
+        sharedSignatureData.signature.installationAdress.cep = self.Cep;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationReceived" object:self];
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+        
+        [self.mapView setRegion:viewRegion animated:YES];
+
+    }
+        
+    NSLog(@"%@",sharedSignatureData.signature.installationAdress.cep);
 
     
 }
+
+
 
 @end

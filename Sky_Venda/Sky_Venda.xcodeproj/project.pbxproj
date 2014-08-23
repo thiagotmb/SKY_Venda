@@ -27,7 +27,7 @@
 		A409B3DE19A68DB700C83BD4 /* TMBPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C519A68DB700C83BD4 /* TMBPickerTableViewCell.m */; };
 		A409B3DF19A68DB700C83BD4 /* TMBTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C719A68DB700C83BD4 /* TMBTextFieldTableViewCell.m */; };
 		A409B3E019A68DB700C83BD4 /* TMBTextLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C919A68DB700C83BD4 /* TMBTextLabelTableViewCell.m */; };
-		A409B3E319A6941A00C83BD4 /* TMBInstallationAdress.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */; };
+		A409B3E319A6941A00C83BD4 /* TMBAdress.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E219A6941A00C83BD4 /* TMBAdress.m */; };
 		A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */; };
 		A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */; };
 		A409B3EF19A6D7BF00C83BD4 /* TMBSignatureSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */; };
@@ -38,6 +38,11 @@
 		A48176A019A82A4900455EE0 /* TMBPackageDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = A481769F19A82A4900455EE0 /* TMBPackageDAO.m */; };
 		A48176A319A82AF600455EE0 /* TMBPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = A48176A219A82AF600455EE0 /* TMBPackage.m */; };
 		A48176A619A82F7C00455EE0 /* TMBPackageSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A48176A519A82F7C00455EE0 /* TMBPackageSingleton.m */; };
+		A48BBDC119A8E2020060047F /* TMBEnterpriseContact.m in Sources */ = {isa = PBXBuildFile; fileRef = A48BBDC019A8E2020060047F /* TMBEnterpriseContact.m */; };
+		A48BBDC419A8E8B40060047F /* TMBEnterpriseContactSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A48BBDC319A8E8B40060047F /* TMBEnterpriseContactSingleton.m */; };
+		A48BBDC719A8E9940060047F /* TMBEnterpriseContactDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = A48BBDC619A8E9940060047F /* TMBEnterpriseContactDAO.m */; };
+		A48BBDC919A8FE2B0060047F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48BBDC819A8FE2B0060047F /* CoreLocation.framework */; };
+		A48BBDCB19A909440060047F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48BBDCA19A909440060047F /* MapKit.framework */; };
 		A48E3EE4199452F400EA54E2 /* SKY0.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE0199452F400EA54E2 /* SKY0.png */; };
 		A48E3EE5199452F400EA54E2 /* SKY1.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE1199452F400EA54E2 /* SKY1.png */; };
 		A48E3EE6199452F400EA54E2 /* SKY2.png in Resources */ = {isa = PBXBuildFile; fileRef = A48E3EE2199452F400EA54E2 /* SKY2.png */; };
@@ -104,8 +109,8 @@
 		A409B3C719A68DB700C83BD4 /* TMBTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		A409B3C819A68DB700C83BD4 /* TMBTextLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextLabelTableViewCell.h; sourceTree = "<group>"; };
 		A409B3C919A68DB700C83BD4 /* TMBTextLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextLabelTableViewCell.m; sourceTree = "<group>"; };
-		A409B3E119A6941A00C83BD4 /* TMBInstallationAdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBInstallationAdress.h; sourceTree = "<group>"; };
-		A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBInstallationAdress.m; sourceTree = "<group>"; };
+		A409B3E119A6941A00C83BD4 /* TMBAdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBAdress.h; sourceTree = "<group>"; };
+		A409B3E219A6941A00C83BD4 /* TMBAdress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBAdress.m; sourceTree = "<group>"; };
 		A409B3E719A6A8A000C83BD4 /* TMBCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBCreditCard.h; sourceTree = "<group>"; };
 		A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBCreditCard.m; sourceTree = "<group>"; };
 		A409B3EA19A6AFDA00C83BD4 /* TMBSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignature.h; sourceTree = "<group>"; };
@@ -125,6 +130,14 @@
 		A48176A219A82AF600455EE0 /* TMBPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackage.m; sourceTree = "<group>"; };
 		A48176A419A82F7C00455EE0 /* TMBPackageSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageSingleton.h; sourceTree = "<group>"; };
 		A48176A519A82F7C00455EE0 /* TMBPackageSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackageSingleton.m; sourceTree = "<group>"; };
+		A48BBDBF19A8E2020060047F /* TMBEnterpriseContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEnterpriseContact.h; sourceTree = "<group>"; };
+		A48BBDC019A8E2020060047F /* TMBEnterpriseContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEnterpriseContact.m; sourceTree = "<group>"; };
+		A48BBDC219A8E8B40060047F /* TMBEnterpriseContactSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEnterpriseContactSingleton.h; sourceTree = "<group>"; };
+		A48BBDC319A8E8B40060047F /* TMBEnterpriseContactSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEnterpriseContactSingleton.m; sourceTree = "<group>"; };
+		A48BBDC519A8E9940060047F /* TMBEnterpriseContactDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEnterpriseContactDAO.h; sourceTree = "<group>"; };
+		A48BBDC619A8E9940060047F /* TMBEnterpriseContactDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEnterpriseContactDAO.m; sourceTree = "<group>"; };
+		A48BBDC819A8FE2B0060047F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A48BBDCA19A909440060047F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A48E3EE0199452F400EA54E2 /* SKY0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY0.png; sourceTree = "<group>"; };
 		A48E3EE1199452F400EA54E2 /* SKY1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY1.png; sourceTree = "<group>"; };
 		A48E3EE2199452F400EA54E2 /* SKY2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKY2.png; sourceTree = "<group>"; };
@@ -154,9 +167,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48BBDC919A8FE2B0060047F /* CoreLocation.framework in Frameworks */,
 				A409B38519A5166400C83BD4 /* libsqlite3.0.dylib in Frameworks */,
 				A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */,
 				A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */,
+				A48BBDCB19A909440060047F /* MapKit.framework in Frameworks */,
 				A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,7 +194,6 @@
 			children = (
 				A409B39319A68DB700C83BD4 /* Faq */,
 				A409B39819A68DB700C83BD4 /* Package */,
-				A409B3A919A68DB700C83BD4 /* Query */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,20 +250,18 @@
 			path = PaymentData;
 			sourceTree = "<group>";
 		};
-		A409B3A919A68DB700C83BD4 /* Query */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Query;
-			sourceTree = "<group>";
-		};
 		A409B3AA19A68DB700C83BD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				A409B3AB19A68DB700C83BD4 /* Faq */,
 				A409B3AC19A68DB700C83BD4 /* Packages */,
-				A409B3B519A68DB700C83BD4 /* Query */,
 				A409B3B619A68DB700C83BD4 /* SKY_VENDA.sqlite */,
+				A48BBDBF19A8E2020060047F /* TMBEnterpriseContact.h */,
+				A48BBDC019A8E2020060047F /* TMBEnterpriseContact.m */,
+				A48BBDC219A8E8B40060047F /* TMBEnterpriseContactSingleton.h */,
+				A48BBDC319A8E8B40060047F /* TMBEnterpriseContactSingleton.m */,
+				A48BBDC519A8E9940060047F /* TMBEnterpriseContactDAO.h */,
+				A48BBDC619A8E9940060047F /* TMBEnterpriseContactDAO.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,8 +284,8 @@
 			children = (
 				A409B3AD19A68DB700C83BD4 /* TMBClient.h */,
 				A409B3AE19A68DB700C83BD4 /* TMBClient.m */,
-				A409B3E119A6941A00C83BD4 /* TMBInstallationAdress.h */,
-				A409B3E219A6941A00C83BD4 /* TMBInstallationAdress.m */,
+				A409B3E119A6941A00C83BD4 /* TMBAdress.h */,
+				A409B3E219A6941A00C83BD4 /* TMBAdress.m */,
 				A409B3E719A6A8A000C83BD4 /* TMBCreditCard.h */,
 				A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */,
 				A409B3EA19A6AFDA00C83BD4 /* TMBSignature.h */,
@@ -292,13 +304,6 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		A409B3B519A68DB700C83BD4 /* Query */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Query;
-			sourceTree = "<group>";
-		};
 		A409B3B719A68DB700C83BD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +311,6 @@
 				A409B3BB19A68DB700C83BD4 /* Main_iPad.storyboard */,
 				A409B3BC19A68DB700C83BD4 /* Main_iPhone.storyboard */,
 				A409B3BD19A68DB700C83BD4 /* Packages */,
-				A409B3CA19A68DB700C83BD4 /* Query */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,13 +341,6 @@
 				A409B3C919A68DB700C83BD4 /* TMBTextLabelTableViewCell.m */,
 			);
 			path = Packages;
-			sourceTree = "<group>";
-		};
-		A409B3CA19A68DB700C83BD4 /* Query */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Query;
 			sourceTree = "<group>";
 		};
 		A48E3EDE199452F400EA54E2 /* Resources */ = {
@@ -405,6 +402,8 @@
 		A4C72EF619914B4E00536DD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A48BBDCA19A909440060047F /* MapKit.framework */,
+				A48BBDC819A8FE2B0060047F /* CoreLocation.framework */,
 				A409B38419A5166400C83BD4 /* libsqlite3.0.dylib */,
 				A4C72EF719914B4E00536DD7 /* Foundation.framework */,
 				A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */,
@@ -507,6 +506,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = TMB;
 				TargetAttributes = {
+					A4C72EF319914B4E00536DD7 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					A4C72F1719914B4E00536DD7 = {
 						TestTargetID = A4C72EF319914B4E00536DD7;
 					};
@@ -567,7 +573,7 @@
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
 				A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */,
 				A409B3DE19A68DB700C83BD4 /* TMBPickerTableViewCell.m in Sources */,
-				A409B3E319A6941A00C83BD4 /* TMBInstallationAdress.m in Sources */,
+				A409B3E319A6941A00C83BD4 /* TMBAdress.m in Sources */,
 				A409B3D519A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */,
 				A409B3DF19A68DB700C83BD4 /* TMBTextFieldTableViewCell.m in Sources */,
 				A409B3CB19A68DB700C83BD4 /* TMBFaqAnswerViewController.m in Sources */,
@@ -577,6 +583,7 @@
 				A409B3DB19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m in Sources */,
 				A409B3DC19A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m in Sources */,
 				A409B3D219A68DB700C83BD4 /* TMBPaymentDataViewController.m in Sources */,
+				A48BBDC119A8E2020060047F /* TMBEnterpriseContact.m in Sources */,
 				A4C72F0419914B4E00536DD7 /* main.m in Sources */,
 				A48176A619A82F7C00455EE0 /* TMBPackageSingleton.m in Sources */,
 				A481769A19A7D08800455EE0 /* TMBFaqSingleton.m in Sources */,
@@ -587,10 +594,12 @@
 				A409B3CC19A68DB700C83BD4 /* TMBFaqListViewController.m in Sources */,
 				A409B3D019A68DB700C83BD4 /* TMBPackageAdhesionViewController.m in Sources */,
 				A48176A019A82A4900455EE0 /* TMBPackageDAO.m in Sources */,
+				A48BBDC719A8E9940060047F /* TMBEnterpriseContactDAO.m in Sources */,
 				A481769719A7CA0300455EE0 /* TMBFaqDAO.m in Sources */,
 				A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */,
 				A409B3D819A68DB700C83BD4 /* TMBFaqTableViewCell.m in Sources */,
 				A48176A319A82AF600455EE0 /* TMBPackage.m in Sources */,
+				A48BBDC419A8E8B40060047F /* TMBEnterpriseContactSingleton.m in Sources */,
 				A481769419A7C96300455EE0 /* TMBFaq.m in Sources */,
 				A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */,
 			);

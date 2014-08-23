@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 #import "TMBSignatureSingleton.h"
-@interface TMBMapGetLocationTableViewCell : UITableViewCell
+@interface TMBMapGetLocationTableViewCell : UITableViewCell<CLLocationManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *MAP;
-@property (nonatomic) NSString* Cep; 
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) NSString* Cep;
+
+@property (nonatomic) CLLocationManager *locationManager;
 
 - (IBAction)getMyLocation:(id)sender;
-
 
 @end

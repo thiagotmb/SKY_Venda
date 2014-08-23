@@ -10,12 +10,14 @@
 #import "TMBSignatureSingleton.h"
 #import "TMBFaqSingleton.h"
 #import "TMBPackageSingleton.h"
+#import "TMBEnterpriseContactSingleton.h"
 
 @implementation TMBAppDelegate{
     
     TMBSignatureSingleton *sharedSignature;
     TMBFaqSingleton *sharedFaqList;
     TMBPackageSingleton *sharedPackageList;
+    TMBEnterpriseContactSingleton *sharedEnterpriseContact;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -24,10 +26,12 @@
     sharedSignature = [TMBSignatureSingleton sharedData];
     sharedFaqList = [TMBFaqSingleton sharedData];
     sharedPackageList = [TMBPackageSingleton sharedData];
+    sharedEnterpriseContact = [TMBEnterpriseContactSingleton sharedData];
     
     [sharedSignature loadSharedData];
     [sharedFaqList loadSharedData];
     [sharedPackageList loadSharedData];
+    [sharedEnterpriseContact loadSharedData];
     
 
     return YES;

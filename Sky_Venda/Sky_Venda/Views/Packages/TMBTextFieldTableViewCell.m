@@ -27,6 +27,7 @@
     // Initialization code
     self.textField.delegate = self;
     sharedSignatureData = [TMBSignatureSingleton sharedData];
+
     
 }
 
@@ -35,6 +36,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)updateTextField:(NSNotification *)notification{
+    
+    if ([[notification name] isEqualToString:@"LocationReceived"]) {
+        self.textField.text = sharedSignatureData.signature.installationAdress.cep;
+    }
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
@@ -55,25 +63,25 @@
         case TMBClientPhoneNumberTextFieldTag:
             sharedSignatureData.signature.client.phoneNumber = textField.text;
             break;
-        case TMBInstallationAdressCepTextFieldTag:
+        case TMBAdressCepTextFieldTag:
             sharedSignatureData.signature.installationAdress.cep = textField.text;
             break;
-        case TMBInstallationAdressCityTextFieldTag:
+        case TMBAdressCityTextFieldTag:
             sharedSignatureData.signature.installationAdress.city = textField.text;
             break;
-        case TMBInstallationAdressStateTextFieldTag:
+        case TMBAdressStateTextFieldTag:
             sharedSignatureData.signature.installationAdress.state = textField.text;
             break;
-        case TMBInstallationAdressSectorTextFieldTag:
+        case TMBAdressSectorTextFieldTag:
             sharedSignatureData.signature.installationAdress.sector = textField.text;
             break;
-        case TMBInstallationAdressStreetTextFieldTag:
+        case TMBAdressStreetTextFieldTag:
             sharedSignatureData.signature.installationAdress.street = textField.text;
             break;
-        case TMBInstallationAdressNumberTextFieldTag:
+        case TMBAdressNumberTextFieldTag:
             sharedSignatureData.signature.installationAdress.number = textField.text;
             break;
-        case TMBInstallationAdressComplementTextFieldTag:
+        case TMBAdressComplementTextFieldTag:
             sharedSignatureData.signature.installationAdress.complement = textField.text;
             break;
         default:

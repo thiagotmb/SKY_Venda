@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TMBClient.h"
-#import "TMBInstallationAdress.h"
+#import "TMBAdress.h"
 #import "TMBCreditCard.h"
 #import "TMBPackage.h"
 
@@ -16,7 +16,7 @@
 
 @property (nonatomic) TMBPackage* package;
 @property (nonatomic) TMBClient *client;
-@property (nonatomic) TMBInstallationAdress *installationAdress;
+@property (nonatomic) TMBAdress *installationAdress;
 @property (nonatomic) TMBCreditCard *creditCard;
 @property (nonatomic) NSDate* submitDate;
 

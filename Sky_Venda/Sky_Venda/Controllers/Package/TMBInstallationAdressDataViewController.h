@@ -11,12 +11,12 @@
 #import "TMBMapGetLocationTableViewCell.h"
 #import "TMBPaymentDataViewController.h"
 
-@class TMBInstallationAdress;
+@class TMBAdress;
 @interface TMBInstallationAdressDataViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *installationAdressDataTableView;
 
-@property (nonatomic) TMBInstallationAdress *installationAdress;
+@property (nonatomic) TMBAdress *installationAdress;
 
 
 

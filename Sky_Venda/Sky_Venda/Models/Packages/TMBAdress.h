@@ -1,5 +1,5 @@
 //
-//  TMBInstallationAdress.h
+//  TMBAdress.h
 //  Sky_Venda
 //
 //  Created by Thiago-Bernardes on 8/21/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TMBInstallationAdress : NSObject
+@interface TMBAdress : NSObject
 
 @property (nonatomic) NSString* cep;
 @property (nonatomic) NSString* state;

@@ -21,13 +21,17 @@ enum TMBTextFieldTag:NSInteger{
     TMBClientEmailTextFieldTag = 3,
     TMBClientPhoneNumberTextFieldTag = 4,
     
-    TMBInstallationAdressCepTextFieldTag = 5,
-    TMBInstallationAdressCityTextFieldTag = 6,
-    TMBInstallationAdressStateTextFieldTag = 7,
-    TMBInstallationAdressSectorTextFieldTag = 8,
-    TMBInstallationAdressStreetTextFieldTag = 9,
-    TMBInstallationAdressNumberTextFieldTag = 10,
-    TMBInstallationAdressComplementTextFieldTag = 11,
+    TMBAdressCepTextFieldTag = 5,
+    TMBAdressCityTextFieldTag = 6,
+    TMBAdressStateTextFieldTag = 7,
+    TMBAdressSectorTextFieldTag = 8,
+    TMBAdressStreetTextFieldTag = 9,
+    TMBAdressNumberTextFieldTag = 10,
+    TMBAdressComplementTextFieldTag = 11,
 };
+
+
+-(void)updateTextField:(NSNotification*)notification;
+
 
 @end

@@ -1,5 +1,5 @@
 //
-//  TMBInstallationAdressDataViewController.m
+//  TMBInstallationAdressDataViewController.h.m
 //  Sky_Venda
 //
 //  Created by Thiago-Bernardes on 8/17/14.
@@ -7,7 +7,7 @@
 //
 
 #import "TMBInstallationAdressDataViewController.h"
-#import "TMBInstallationAdress.h"
+#import "TMBAdress.h"
 #import "TMBSignatureSingleton.h"
 
 #define NUMBER_OF_SECTIONS 1
@@ -91,9 +91,9 @@ enum TMBTableViewRow:NSInteger{
 didEndDisplayingCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     switch (indexPath.row) {
         case TMBTableViewRowInstallationAdressMapView:{
-
             break;
         }
         case TMBTableViewRowInstallationAdressNextStepButton:{
@@ -102,6 +102,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         }
         case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:{
 
+            break;
+        }
+        case TMBTableViewRowInstallationAdressCep:{
+            [[NSNotificationCenter defaultCenter] removeObserver:cell];
             break;
         }
         default:
@@ -122,7 +126,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"Cep do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.installationAdress.cep;
-            cell.textField.tag = TMBInstallationAdressCepTextFieldTag;
+            cell.textField.tag = TMBAdressCepTextFieldTag;
+            [[NSNotificationCenter defaultCenter] addObserver:cell selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
 
             return cell;
             break;
@@ -133,7 +138,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"Cidade do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.city;
-            cell.textField.tag = TMBInstallationAdressCityTextFieldTag;
+            cell.textField.tag = TMBAdressCityTextFieldTag;
 
             return cell;
             break;
@@ -144,7 +149,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"Estado do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.state;
-            cell.textField.tag = TMBInstallationAdressStateTextFieldTag;
+            cell.textField.tag = TMBAdressStateTextFieldTag;
 
             return cell;
             break;
@@ -155,7 +160,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"Bairro do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.sector;
-            cell.textField.tag = TMBInstallationAdressSectorTextFieldTag;
+            cell.textField.tag = TMBAdressSectorTextFieldTag;
 
             return cell;
             break;
@@ -166,7 +171,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"Rua do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.street;
-            cell.textField.tag = TMBInstallationAdressStreetTextFieldTag;
+            cell.textField.tag = TMBAdressStreetTextFieldTag;
 
             return cell;
             break;
@@ -177,7 +182,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"Número do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.installationAdress.number;
-            cell.textField.tag = TMBInstallationAdressNumberTextFieldTag;
+            cell.textField.tag = TMBAdressNumberTextFieldTag;
 
             return cell;
             break;
@@ -188,13 +193,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.placeholder = @"Complemento do endereço de instalação";
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.complement;
-            cell.textField.tag = TMBInstallationAdressComplementTextFieldTag;
+            cell.textField.tag = TMBAdressComplementTextFieldTag;
   
             return cell;
             break;
         }
         case TMBTableViewRowInstallationAdressMapView:{
             TMBMapGetLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MapViewCell" forIndexPath:indexPath];
+            
             return cell;
             break;
         }

@@ -16,7 +16,7 @@
     if (self) {
         self.package = 0;
         self.client = [[TMBClient alloc] init];
-        self.installationAdress = [[TMBInstallationAdress alloc] init];
+        self.installationAdress = [[TMBAdress alloc] init];
         self.creditCard = [[TMBCreditCard alloc] init];
         self.submitDate = [[NSDate alloc] init];
         self.package = [[TMBPackage alloc] init];
