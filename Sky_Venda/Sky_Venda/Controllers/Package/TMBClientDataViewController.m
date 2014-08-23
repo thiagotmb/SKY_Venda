@@ -62,10 +62,8 @@ enum TMBTableViewRow:NSInteger{
     [super viewDidLoad];
     sharedSignatureData = [TMBSignatureSingleton sharedData];
     self.client = sharedSignatureData.signature.client;
-    
-     NSString *imageName = [NSString stringWithFormat:@"SKY%d.png",sharedSignatureData.signature.package];
      
-    self.packagePresentation.image = [UIImage imageNamed:imageName];
+    self.packagePresentation.image = sharedSignatureData.signature.package.mainImage;
 
     // Do any additional setup after loading the view.
     self.genderPickerData = @[@"Masculino",@"Feminino"];

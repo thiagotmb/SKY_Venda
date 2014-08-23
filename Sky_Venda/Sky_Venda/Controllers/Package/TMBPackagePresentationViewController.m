@@ -8,19 +8,22 @@
 
 #import "TMBPackagePresentationViewController.h"
 #import "TMBSignatureSingleton.h"
+#import "TMBPackageSingleton.h"
+#import "TMBPackage.h"
 
 @interface TMBPackagePresentationViewController ()
 
 @property(nonatomic,strong) IBOutlet iCarousel *packagePresentPrincipalView;
-@property(nonatomic,strong) UIImage *packageImage;
-
 @property (weak, nonatomic) IBOutlet UITableView *packageDetailTableView;
+@property (nonatomic) NSMutableArray* packageList;
+@property (nonatomic) TMBPackage* packageItem;
 
 @end
 
 @implementation TMBPackagePresentationViewController{
     
     TMBSignatureSingleton *sharedSignatureData;
+    TMBPackageSingleton *sharedPackageData;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,8 +39,7 @@
 {
     [super viewDidLoad];
     sharedSignatureData = [TMBSignatureSingleton sharedData];
-    // Do any additional setup after loading the view.
-    
+
     self.packagePresentPrincipalView.type = iCarouselTypeCoverFlow;
 }
 
@@ -63,26 +65,31 @@
 #pragma mark - iCarousel methods
 
 -(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
-    
-    return 4;
+    sharedPackageData = [TMBPackageSingleton sharedData];
+    // Do any additional setup after loading the view.
+    self.packageList =  sharedPackageData.packageList;
+    return self.packageList.count;
 }
 
 -(UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
     
     
+    
+    
     CGRect imageViewFrame = CGRectMake(0, 0, self.packagePresentPrincipalView.frame.size.width/1.7, self.packagePresentPrincipalView.frame.size.height);
     
-    self.packageImage = [UIImage imageNamed:[NSString stringWithFormat:@"SKY%ld.png",(long)index]];
-    UIImageView *packagePresentImageView = [[UIImageView alloc] initWithFrame:imageViewFrame];
     
-    packagePresentImageView.image = self.packageImage;
-    packagePresentImageView.backgroundColor = [UIColor redColor];
+    UIImageView *packagePresentImageView = [[UIImageView alloc] initWithFrame:imageViewFrame];
+
+    self.packageItem = self.packageList[index];
+
+    packagePresentImageView.image = self.packageItem.mainImage;
     
     return packagePresentImageView;
 }
 
 -(CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value{
-    
+
     switch (option)
     {
         case iCarouselOptionWrap:
@@ -117,23 +124,27 @@
         {
             return value;
         }
+
     }
+
 }
 
 -(void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel{
+
     
     //NSLog(@"%d",self.packagePresentPrincipalView.currentItemIndex);
+
 }
 
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
     
     //NSLog(@"%d",self.packagePresentPrincipalView.currentItemIndex);
+    int selectedPackage = self.packagePresentPrincipalView.currentItemIndex;
+    self.packageItem = self.packageList[selectedPackage];
+    sharedSignatureData.signature.package = self.packageItem;
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBClientDataViewController *clientDataViewController = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
-
-    int selectedPackage = self.packagePresentPrincipalView.currentItemIndex;
-    sharedSignatureData.signature.package = selectedPackage;
     
     [self.navigationController pushViewController:clientDataViewController animated:YES];
 }

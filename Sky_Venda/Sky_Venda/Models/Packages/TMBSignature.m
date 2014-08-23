@@ -19,13 +19,14 @@
         self.installationAdress = [[TMBInstallationAdress alloc] init];
         self.creditCard = [[TMBCreditCard alloc] init];
         self.submitDate = [[NSDate alloc] init];
-        
+        self.package = [[TMBPackage alloc] init];
+
     }
     return self;
 }
 -(NSString *)description{
     
-    NSString *description = [NSString stringWithFormat:@"Object: %@\nClient: %@\nInstallationAdress: %@\nCreditCard: %@\nPackage: %d\nSubmitDate: %@",self.class,self.client,self.installationAdress,self.creditCard,self.package,self.submitDate];
+    NSString *description = [NSString stringWithFormat:@"Object: %@\nClient: %@\nInstallationAdress: %@\nCreditCard: %@\nPackage: %@\nSubmitDate: %@",self.class,self.client,self.installationAdress,self.creditCard,self.package,self.submitDate];
     
     return description;
 }

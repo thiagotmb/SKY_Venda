@@ -38,7 +38,7 @@
     
     self = [super init];
     
-    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use + [TMBSignatureSingleton sharedData]" userInfo:nil];
+    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use + [TMBFaqSingleton sharedData]" userInfo:nil];
     
     return nil;
     

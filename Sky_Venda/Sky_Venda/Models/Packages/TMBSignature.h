@@ -10,11 +10,11 @@
 #import "TMBClient.h"
 #import "TMBInstallationAdress.h"
 #import "TMBCreditCard.h"
-
+#import "TMBPackage.h"
 
 @interface TMBSignature : NSObject
 
-@property (nonatomic) int package;
+@property (nonatomic) TMBPackage* package;
 @property (nonatomic) TMBClient *client;
 @property (nonatomic) TMBInstallationAdress *installationAdress;
 @property (nonatomic) TMBCreditCard *creditCard;

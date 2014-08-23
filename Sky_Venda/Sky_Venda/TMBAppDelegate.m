@@ -9,11 +9,13 @@
 #import "TMBAppDelegate.h"
 #import "TMBSignatureSingleton.h"
 #import "TMBFaqSingleton.h"
+#import "TMBPackageSingleton.h"
 
 @implementation TMBAppDelegate{
     
     TMBSignatureSingleton *sharedSignature;
     TMBFaqSingleton *sharedFaqList;
+    TMBPackageSingleton *sharedPackageList;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,9 +23,11 @@
     // Override point for customization after application launch.
     sharedSignature = [TMBSignatureSingleton sharedData];
     sharedFaqList = [TMBFaqSingleton sharedData];
+    sharedPackageList = [TMBPackageSingleton sharedData];
     
     [sharedSignature loadSharedData];
     [sharedFaqList loadSharedData];
+    [sharedPackageList loadSharedData];
     
 
     return YES;
@@ -52,6 +56,7 @@
 {
     [sharedSignature loadSharedData];
     [sharedFaqList loadSharedData];
+    [sharedPackageList loadSharedData];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

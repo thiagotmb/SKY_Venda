@@ -32,10 +32,9 @@
     [super viewDidLoad];
     
     sharedSignatureData = [TMBSignatureSingleton sharedData];
+
     
-    NSString *imageName = [NSString stringWithFormat:@"SKY%d.png",sharedSignatureData.signature.package];
-    
-    self.packagePresentation.image = [UIImage imageNamed:imageName];
+    self.packagePresentation.image = sharedSignatureData.signature.package.mainImage;
     
     // Do any additional setup after loading the view.
 }

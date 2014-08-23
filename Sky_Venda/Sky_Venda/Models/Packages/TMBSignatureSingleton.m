@@ -8,10 +8,10 @@
 
 #import "TMBSignatureSingleton.h"
 #import "TMBPrivateSignatureDataDAO.h"
-
 @implementation TMBSignatureSingleton{
-    
+
     TMBPrivateSignatureDataDAO *signatureDAO;
+
 }
 
 +(id)sharedData{
@@ -51,7 +51,6 @@
         
         self.signature = [[TMBSignature alloc] init];
         signatureDAO = [[TMBPrivateSignatureDataDAO alloc] init];
-
     }
     
     return self;

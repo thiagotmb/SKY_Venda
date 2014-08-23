@@ -79,8 +79,8 @@
                 
                 NSDate *storedExpiratoinDate = [signatureData getDateFromString:[self getColumnText:17 forStatement:statement]];
                 signatureData.creditCard.expiration = storedExpiratoinDate;
-
-                signatureData.package = sqlite3_column_int(statement, 18);
+                
+                signatureData.package.packageId = sqlite3_column_int(statement, 18);
                 
                 signatureData.submitDate = [signatureData getDateFromString:[self getColumnText:19 forStatement:statement]];
 
