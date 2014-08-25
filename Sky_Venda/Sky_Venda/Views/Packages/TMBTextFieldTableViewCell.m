@@ -31,8 +31,9 @@
     sharedSignatureData = [TMBSignatureSingleton sharedData];
     self.backgroundColor = [UIColor clearColor];
     [self updateLabel];
-    
+        
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
@@ -190,6 +191,61 @@
     }
     
 }
+
+-(void)datePickerValueChanged:(UIDatePicker*)datePicker{
+    
+    
+    switch (datePicker.tag) {
+        case TMBClientBirhDatePickerTag:
+            sharedSignatureData.signature.client.birthDate = datePicker.date;
+            self.textField.text = [sharedSignatureData.signature getStringFromDate:datePicker.date];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+
+    switch (pickerView.tag) {
+        case TMBClientGenderPickerTag:
+            sharedSignatureData.signature.client.gender = row;
+            self.textField.text = self.pickerData[[pickerView selectedRowInComponent:component]];
+
+            break;
+        case TMBClientSocialReasonPickerTag:
+            sharedSignatureData.signature.client.socialReason = row;
+            self.textField.text = self.pickerData[[pickerView selectedRowInComponent:component]];
+            break;
+        default:
+            break;
+    }
+    
+}
+-(NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    NSString *title = self.pickerData[row];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    return attString;
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return self.numberOfComponentsInPickerView;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    return self.pickerData.count;
+}
+
+-(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    return self.pickerData[row];
+}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super endEditing:YES];

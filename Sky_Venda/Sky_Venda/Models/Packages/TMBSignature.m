@@ -34,7 +34,7 @@
 -(NSString*)getStringFromDate:(NSDate*)dateToConvert{
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString;
     dateString = [dateFormat stringFromDate:dateToConvert];
 
@@ -44,7 +44,7 @@
 -(NSDate*)getDateFromString:(NSString*)string{
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
     NSDate *dateToGet;
     dateToGet = [dateFormat dateFromString:string];
 

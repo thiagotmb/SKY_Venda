@@ -21,10 +21,8 @@
 		A409B3D819A68DB700C83BD4 /* TMBFaqTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3BA19A68DB700C83BD4 /* TMBFaqTableViewCell.m */; };
 		A409B3D919A68DB700C83BD4 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A409B3BB19A68DB700C83BD4 /* Main_iPad.storyboard */; };
 		A409B3DA19A68DB700C83BD4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A409B3BC19A68DB700C83BD4 /* Main_iPhone.storyboard */; };
-		A409B3DB19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3BF19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m */; };
 		A409B3DC19A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C119A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m */; };
 		A409B3DD19A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C319A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m */; };
-		A409B3DE19A68DB700C83BD4 /* TMBPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C519A68DB700C83BD4 /* TMBPickerTableViewCell.m */; };
 		A409B3DF19A68DB700C83BD4 /* TMBTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C719A68DB700C83BD4 /* TMBTextFieldTableViewCell.m */; };
 		A409B3E019A68DB700C83BD4 /* TMBTextLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3C919A68DB700C83BD4 /* TMBTextLabelTableViewCell.m */; };
 		A409B3E319A6941A00C83BD4 /* TMBAdress.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E219A6941A00C83BD4 /* TMBAdress.m */; };
@@ -98,14 +96,10 @@
 		A409B3BA19A68DB700C83BD4 /* TMBFaqTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBFaqTableViewCell.m; sourceTree = "<group>"; };
 		A409B3BB19A68DB700C83BD4 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		A409B3BC19A68DB700C83BD4 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
-		A409B3BE19A68DB700C83BD4 /* TMBDatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDatePickerTableViewCell.h; sourceTree = "<group>"; };
-		A409B3BF19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDatePickerTableViewCell.m; sourceTree = "<group>"; };
 		A409B3C019A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBMapGetLocationTableViewCell.h; sourceTree = "<group>"; };
 		A409B3C119A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBMapGetLocationTableViewCell.m; sourceTree = "<group>"; };
 		A409B3C219A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagesPresentationTableViewCell.h; sourceTree = "<group>"; };
 		A409B3C319A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagesPresentationTableViewCell.m; sourceTree = "<group>"; };
-		A409B3C419A68DB700C83BD4 /* TMBPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPickerTableViewCell.h; sourceTree = "<group>"; };
-		A409B3C519A68DB700C83BD4 /* TMBPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPickerTableViewCell.m; sourceTree = "<group>"; };
 		A409B3C619A68DB700C83BD4 /* TMBTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		A409B3C719A68DB700C83BD4 /* TMBTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		A409B3C819A68DB700C83BD4 /* TMBTextLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBTextLabelTableViewCell.h; sourceTree = "<group>"; };
@@ -331,16 +325,12 @@
 		A409B3BD19A68DB700C83BD4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				A409B3BE19A68DB700C83BD4 /* TMBDatePickerTableViewCell.h */,
-				A409B3BF19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m */,
 				A477242719A94D4C000CF8E9 /* TMBImageTableViewCell.h */,
 				A477242819A94D4C000CF8E9 /* TMBImageTableViewCell.m */,
 				A409B3C019A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.h */,
 				A409B3C119A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m */,
 				A409B3C219A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.h */,
 				A409B3C319A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m */,
-				A409B3C419A68DB700C83BD4 /* TMBPickerTableViewCell.h */,
-				A409B3C519A68DB700C83BD4 /* TMBPickerTableViewCell.m */,
 				A409B3C619A68DB700C83BD4 /* TMBTextFieldTableViewCell.h */,
 				A409B3C719A68DB700C83BD4 /* TMBTextFieldTableViewCell.m */,
 				A409B3C819A68DB700C83BD4 /* TMBTextLabelTableViewCell.h */,
@@ -578,7 +568,6 @@
 			files = (
 				A4C72F0819914B4E00536DD7 /* TMBAppDelegate.m in Sources */,
 				A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */,
-				A409B3DE19A68DB700C83BD4 /* TMBPickerTableViewCell.m in Sources */,
 				A409B3E319A6941A00C83BD4 /* TMBAdress.m in Sources */,
 				A409B3D519A68DB700C83BD4 /* TMBPrivateSignatureDataDAO.m in Sources */,
 				A409B3DF19A68DB700C83BD4 /* TMBTextFieldTableViewCell.m in Sources */,
@@ -586,7 +575,6 @@
 				A409B3D119A68DB700C83BD4 /* TMBPackagePresentationViewController.m in Sources */,
 				A409B3D319A68DB700C83BD4 /* TMBClient.m in Sources */,
 				A409B3DD19A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m in Sources */,
-				A409B3DB19A68DB700C83BD4 /* TMBDatePickerTableViewCell.m in Sources */,
 				A409B3DC19A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m in Sources */,
 				A409B3D219A68DB700C83BD4 /* TMBPaymentDataViewController.m in Sources */,
 				A48BBDC119A8E2020060047F /* TMBEnterpriseContact.m in Sources */,

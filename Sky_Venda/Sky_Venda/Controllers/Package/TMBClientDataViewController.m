@@ -168,41 +168,78 @@ enum TMBTableViewRow:NSInteger{
             break;
         }
         case TMBTableViewRowClientGender:{
-            TMBPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PickerCell"
+            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"
                                                                            forIndexPath:indexPath];
-            cell.pickerView.delegate = cell;
-            cell.pickerView.dataSource = cell;
+            cell.textField.tag = TMBClientGenderPickerTag;
             cell.titleLabel.text = @"Sexo";
-            cell.pickerData = self.genderPickerData;
+            cell.textField.placeholder = @"Sexo";
+            cell.pickerData = self.genderPickerData ;
             cell.numberOfComponentsInPickerView = 1;
-            cell.pickerView.tag = TMBClientGenderPickerTag;
-            [cell.pickerView selectRow:self.client.gender inComponent:0 animated:YES];
+            
+            UIPickerView* pickerView = [[UIPickerView alloc] init];
+            pickerView.delegate = cell;
+            pickerView.dataSource = cell;
+            [pickerView selectRow:self.client.gender inComponent:0 animated:YES];
+            pickerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+            pickerView.tag = TMBClientGenderPickerTag;
+            if (self.genderPickerData[self.client.gender]!=nil) {
+                cell.textField.text = self.genderPickerData[self.client.gender];
+
+            }
+            cell.textField.inputView = pickerView;
+            [cell updateLabel];
 
             return cell;
             break;
         }
         case TMBTableViewRowClientSocialReason:{
-            TMBPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PickerCell"
+            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"
                                                                            forIndexPath:indexPath];
-            cell.pickerView.delegate = cell;
-            cell.pickerView.dataSource = cell;
+            cell.textField.tag = TMBClientSocialReasonPickerTag;
             cell.titleLabel.text = @"Razão Social";
+            cell.textField.placeholder = @"Razão social";
             cell.pickerData = self.socialReasonPickerData ;
             cell.numberOfComponentsInPickerView = 1;
-            cell.pickerView.tag = TMBClientSocialReasonPickerTag;
-            [cell.pickerView selectRow:self.client.socialReason inComponent:0 animated:YES];
-    
+            
+            UIPickerView* pickerView = [[UIPickerView alloc] init];
+            pickerView.delegate = cell;
+            pickerView.dataSource = cell;
+            [pickerView selectRow:self.client.socialReason inComponent:0 animated:YES];
+            pickerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+            pickerView.tag = TMBClientSocialReasonPickerTag;
+            if (self.socialReasonPickerData[self.client.socialReason]!=nil) {
+
+            cell.textField.text = self.socialReasonPickerData[self.client.socialReason];
+            }
+            cell.textField.inputView = pickerView;
+            [cell updateLabel];
+
+            
             return cell;
             break;
         }
         case TMBTableViewRowClientBirthDate:{
-            TMBDatePickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DatePickerCell"
+            TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"
                                                                 forIndexPath:indexPath];
-            cell.datePickerView.tag = TMBClientBirhDatePickerTag;
+            cell.textField.tag = TMBClientBirhDatePickerTag;
+            cell.titleLabel.text = @"Nascimento";
+            cell.textField.placeholder = @"Data de nascimento";
+            
+            UIDatePicker *datePicker =[[UIDatePicker alloc] init];
+            datePicker.datePickerMode =UIDatePickerModeDate;
+            [datePicker addTarget:cell action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+            datePicker.tag = TMBClientBirhDatePickerTag;
+            datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"];
+            datePicker.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+           
             if (self.client.birthDate!=nil) {
-                cell.datePickerView.date = self.client.birthDate;
-
+                datePicker.date = self.client.birthDate;
             }
+            cell.textField.inputView = datePicker;
+            cell.textField.text = [sharedSignatureData.signature getStringFromDate:self.client.birthDate];
+            [cell updateLabel];
+
+
             return cell;
             break;
         }
@@ -226,9 +263,6 @@ enum TMBTableViewRow:NSInteger{
             break;
         case TMBTableViewRowClientGender:
             return 60;
-            break;
-            case TMBTableViewRowClientBirthDate:
-            return 160;
             break;
         default:
             return 50;

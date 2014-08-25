@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TMBInstallationAdressDataViewController.h"
 #import "TMBTextFieldTableViewCell.h"
-#import "TMBPickerTableViewCell.h"
-#import "TMBDatePickerTableViewCell.h"
 
 @class TMBClient;
 
