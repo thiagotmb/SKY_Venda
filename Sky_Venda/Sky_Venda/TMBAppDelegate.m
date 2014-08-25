@@ -33,6 +33,11 @@
     [sharedPackageList loadSharedData];
     [sharedEnterpriseContact loadSharedData];
     
+    
+    UIImage *transparentImage = [UIImage imageNamed:@"Transparent.png"];
+    [[UINavigationBar appearance] setBackgroundImage:transparentImage forBarMetrics:UIBarMetricsDefault];
+    [[UITabBar appearance] setBackgroundImage:transparentImage];
+
 
     return YES;
 }

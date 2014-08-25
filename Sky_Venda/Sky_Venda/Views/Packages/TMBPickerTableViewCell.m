@@ -29,6 +29,7 @@
 {
     // Initialization code
     sharedSignatureData = [TMBSignatureSingleton sharedData];
+    self.backgroundColor = [UIColor clearColor];
 
 }
 
@@ -56,6 +57,13 @@
             break;
     }
     
+}
+-(NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    NSString *title = self.pickerData[row];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    return attString;
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{

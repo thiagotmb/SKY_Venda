@@ -34,6 +34,7 @@ enum TMBTableViewRow:NSInteger{
 };
 
 @property (nonatomic) NSIndexPath *activeCellIndexPath;
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 
 @end
@@ -61,6 +62,8 @@ enum TMBTableViewRow:NSInteger{
     sharedSignatureData = [TMBSignatureSingleton sharedData];
     self.installationAdress = sharedSignatureData.signature.installationAdress;
     // Do any additional setup after loading the view.
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,6 +122,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     switch (indexPath.row) {
+            
         case TMBTableViewRowInstallationAdressCep:{
             
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
@@ -128,6 +132,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.text = self.installationAdress.cep;
             cell.textField.tag = TMBAdressCepTextFieldTag;
             [[NSNotificationCenter defaultCenter] addObserver:cell selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
+            [cell updateLabel];
 
             return cell;
             break;
@@ -139,6 +144,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.city;
             cell.textField.tag = TMBAdressCityTextFieldTag;
+            [cell updateLabel];
 
             return cell;
             break;
@@ -150,6 +156,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.state;
             cell.textField.tag = TMBAdressStateTextFieldTag;
+            [cell updateLabel];
 
             return cell;
             break;
@@ -161,6 +168,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.sector;
             cell.textField.tag = TMBAdressSectorTextFieldTag;
+            [cell updateLabel];
 
             return cell;
             break;
@@ -172,6 +180,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.street;
             cell.textField.tag = TMBAdressStreetTextFieldTag;
+            [cell updateLabel];
 
             return cell;
             break;
@@ -183,6 +192,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.installationAdress.number;
             cell.textField.tag = TMBAdressNumberTextFieldTag;
+            [cell updateLabel];
 
             return cell;
             break;
@@ -194,7 +204,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.complement;
             cell.textField.tag = TMBAdressComplementTextFieldTag;
-  
+            [cell updateLabel];
+
             return cell;
             break;
         }

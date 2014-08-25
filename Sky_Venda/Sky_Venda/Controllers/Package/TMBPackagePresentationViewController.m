@@ -7,6 +7,7 @@
 //
 
 #import "TMBPackagePresentationViewController.h"
+#import "TMBImageTableViewCell.h"
 #import "TMBSignatureSingleton.h"
 #import "TMBPackageSingleton.h"
 #import "TMBPackage.h"
@@ -50,16 +51,26 @@
 }
 
 #pragma mark - TableView methods
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TMBImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PackageDetail" forIndexPath:indexPath];
+    int selectedPackage = self.packagePresentPrincipalView.currentItemIndex;
+    self.packageItem = self.packageList[selectedPackage];
+    sharedSignatureData.signature.package = self.packageItem;
+
+    cell.imageView.image = self.packageItem.mainImage;
+    return cell;
+    
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 0;
+    return 1;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell;
-    return cell;
+    return self.packageItem.mainImage.size.height;
 }
 
 #pragma mark - iCarousel methods
@@ -119,9 +130,11 @@
         case iCarouselOptionSpacing:
         {
             return value * 1;
+
         }
         default:
         {
+            [self.packageDetailTableView reloadData];
             return value;
         }
 
@@ -130,8 +143,27 @@
 }
 
 -(void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel{
-
     
+    [UIView animateWithDuration:0.5f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         [self.packageDetailTableView setAlpha:0.f];
+                         [self.packageDetailTableView reloadData];
+                         
+                     }
+                     completion:nil];
+    
+    
+    [UIView animateWithDuration:0.7f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         [self.packageDetailTableView setAlpha:1.f];
+                         [self.packageDetailTableView reloadData];
+
+                     }
+                     completion:nil];
     //NSLog(@"%d",self.packagePresentPrincipalView.currentItemIndex);
 
 }
@@ -145,7 +177,6 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBClientDataViewController *clientDataViewController = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
-    
     [self.navigationController pushViewController:clientDataViewController animated:YES];
 }
 

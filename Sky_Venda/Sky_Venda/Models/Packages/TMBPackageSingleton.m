@@ -7,7 +7,6 @@
 //
 
 #import "TMBPackageSingleton.h"
-#import "TMBPackage.h"
 #import "TMBPackageDAO.h"
 
 @implementation TMBPackageSingleton{

@@ -10,6 +10,7 @@
 #import "TMBSignatureSingleton.h"
 
 @interface TMBPackageAdhesionViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 @end
 
@@ -37,6 +38,8 @@
     self.packagePresentation.image = sharedSignatureData.signature.package.mainImage;
     
     // Do any additional setup after loading the view.
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
 }
 
 - (void)didReceiveMemoryWarning

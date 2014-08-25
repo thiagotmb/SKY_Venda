@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TMBPackage.h"
 
-@class TMBPackage;
 @interface TMBPackageSingleton : NSObject
 
 @property (nonatomic) TMBPackage* packageItem;

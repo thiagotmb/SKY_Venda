@@ -12,7 +12,4 @@
 
 @interface TMBPackagePresentationViewController : UIViewController<iCarouselDelegate,iCarouselDataSource,UITableViewDataSource,UITableViewDelegate>
 
-
-
-
 @end

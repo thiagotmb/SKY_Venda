@@ -30,6 +30,8 @@
     // Initialization code
     sharedSignatureData = [TMBSignatureSingleton sharedData];
     [self.datePickerView addTarget:self action:@selector(updateDate:) forControlEvents:UIControlEventValueChanged];
+    self.backgroundColor = [UIColor clearColor];
+
 
     
 }
@@ -46,6 +48,8 @@
             break;
     }
 }
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

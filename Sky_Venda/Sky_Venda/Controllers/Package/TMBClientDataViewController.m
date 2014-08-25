@@ -17,6 +17,7 @@
 @interface TMBClientDataViewController ()
 
 @property (nonatomic) NSIndexPath *activeCellIndexPath;
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 enum TMBTableViewRow:NSInteger{
   
@@ -69,7 +70,10 @@ enum TMBTableViewRow:NSInteger{
     self.genderPickerData = @[@"Masculino",@"Feminino"];
     self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
     
-}
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
+   
+    }
 
 - (void)didReceiveMemoryWarning
 {
@@ -107,7 +111,8 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.text = self.client.name;
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.tag = TMBClientNameTextFieldTag;
-            
+            [cell updateLabel];
+            [cell.textField becomeFirstResponder];
             return cell;
             break;
         }
@@ -119,6 +124,8 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.client.cpf;
             cell.textField.tag = TMBClientCpfTextFieldTag;
+            [cell updateLabel];
+
             return cell;
             
             
@@ -131,7 +138,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.client.rg;
             cell.textField.tag = TMBClientRgTextFieldTag;
-
+            [cell updateLabel];
             return cell;
             
         }
@@ -143,7 +150,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
             cell.textField.text = self.client.email;
             cell.textField.tag = TMBClientEmailTextFieldTag;
- 
+            [cell updateLabel];
             return cell;
             
         }
@@ -156,7 +163,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.client.phoneNumber;
             cell.textField.tag = TMBClientPhoneNumberTextFieldTag;
-            
+            [cell updateLabel];
             return cell;
             break;
         }
@@ -170,7 +177,7 @@ enum TMBTableViewRow:NSInteger{
             cell.numberOfComponentsInPickerView = 1;
             cell.pickerView.tag = TMBClientGenderPickerTag;
             [cell.pickerView selectRow:self.client.gender inComponent:0 animated:YES];
-            
+
             return cell;
             break;
         }
@@ -252,7 +259,6 @@ enum TMBTableViewRow:NSInteger{
 
 - (void)keyboardWillShow:(NSNotification *)aNotification
 {
-    
     if(keyboardShown)
         return;
     

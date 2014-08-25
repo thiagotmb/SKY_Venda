@@ -10,6 +10,8 @@
 #import "TMBCreditCard.h"
 
 @interface TMBPaymentDataViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *background;
+@property (weak, nonatomic) IBOutlet UILabel *maskLabel;
 
 @end
 
@@ -42,8 +44,10 @@
         self.creditCardExpirationDatePicker.date = self.creditCard.expiration;
     }
 
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
     
-    
+    [self.maskLabel setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Label.png"]]];
     // Do any additional setup after loading the view.
 }
 
