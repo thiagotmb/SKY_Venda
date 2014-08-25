@@ -13,7 +13,7 @@
 @interface TMBMapGetLocationTableViewCell : UITableViewCell<CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (nonatomic) NSString* Cep;
+@property (nonatomic) TMBAdress* adress;
 
 @property (nonatomic) CLLocationManager *locationManager;
 

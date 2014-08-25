@@ -102,7 +102,6 @@ enum TMBTableViewRow:NSInteger{
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
     switch (indexPath.row) {
         case TMBTableViewRowClientName:{
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell" forIndexPath:indexPath];
@@ -111,8 +110,8 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.text = self.client.name;
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.tag = TMBClientNameTextFieldTag;
+            cell.textField.inputView = nil;
             [cell updateLabel];
-            [cell.textField becomeFirstResponder];
             return cell;
             break;
         }
@@ -122,8 +121,11 @@ enum TMBTableViewRow:NSInteger{
             cell.titleLabel.text = @"CPF";
             cell.textField.placeholder = @"CPF relativo ao nome acima";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
+            cell.textField.inputView = nil;
+
             cell.textField.text = self.client.cpf;
             cell.textField.tag = TMBClientCpfTextFieldTag;
+            
             [cell updateLabel];
 
             return cell;
@@ -138,6 +140,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.client.rg;
             cell.textField.tag = TMBClientRgTextFieldTag;
+            cell.textField.inputView = nil;
             [cell updateLabel];
             return cell;
             
@@ -150,6 +153,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
             cell.textField.text = self.client.email;
             cell.textField.tag = TMBClientEmailTextFieldTag;
+            cell.textField.inputView = nil;
             [cell updateLabel];
             return cell;
             
@@ -163,6 +167,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.client.phoneNumber;
             cell.textField.tag = TMBClientPhoneNumberTextFieldTag;
+            cell.textField.inputView = nil;
             [cell updateLabel];
             return cell;
             break;
@@ -257,17 +262,7 @@ enum TMBTableViewRow:NSInteger{
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    switch (indexPath.row) {
-        case TMBTableViewRowClientSocialReason:
-            return 80;
-            break;
-        case TMBTableViewRowClientGender:
-            return 60;
-            break;
-        default:
-            return 50;
-            break;
-    }
+    return 50;
 }
 
 

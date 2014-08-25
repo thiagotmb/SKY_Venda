@@ -11,24 +11,23 @@
 #import "TMBSignatureSingleton.h"
 
 #define NUMBER_OF_SECTIONS 1
-#define NUMBER_OF_ROWS_IN_SECTION_DEFAULT 10
+#define NUMBER_OF_ROWS_IN_SECTION_DEFAULT 9
 
 
 @interface TMBInstallationAdressDataViewController ()
 enum TMBTableViewRow:NSInteger{
     
     TMBTableViewRowInstallationAdressCep = 1,
-    TMBTableViewRowInstallationAdressCity = 3,
-    TMBTableViewRowInstallationAdressState = 4,
-    TMBTableViewRowInstallationAdressSector = 5,
+    TMBTableViewRowInstallationAdressCity = 2,
+    TMBTableViewRowInstallationAdressState = 3,
+    TMBTableViewRowInstallationAdressSector = 4,
     
-    TMBTableViewRowInstallationAdressStreet = 6,
-    TMBTableViewRowInstallationAdressNumber = 7,
-    TMBTableViewRowInstallationAdressComplement = 8,
+    TMBTableViewRowInstallationAdressStreet = 5,
+    TMBTableViewRowInstallationAdressNumber = 6,
+    TMBTableViewRowInstallationAdressComplement = 7,
     
-    TMBTableViewRowInstallationAdressNextStepButton = 9,
+    TMBTableViewRowInstallationAdressNextStepButton = 8,
     TMBTableViewRowInstallationAdressMapView = 0,
-    TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton = 2,
 
     
 };
@@ -96,23 +95,44 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
     switch (indexPath.row) {
+            
+        case TMBTableViewRowInstallationAdressCep:{
+            break;
+        }
+        case TMBTableViewRowInstallationAdressCity:{
+
+            break;
+        }
+        case TMBTableViewRowInstallationAdressState:{
+
+            break;
+        }
+        case TMBTableViewRowInstallationAdressSector:{
+
+            break;
+        }
+        case TMBTableViewRowInstallationAdressStreet:{
+
+            break;
+        }
+        case TMBTableViewRowInstallationAdressNumber:{
+
+            break;
+        }
+        case TMBTableViewRowInstallationAdressComplement:{
+
+            break;
+        }
         case TMBTableViewRowInstallationAdressMapView:{
+
             break;
         }
         case TMBTableViewRowInstallationAdressNextStepButton:{
 
             break;
         }
-        case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:{
 
-            break;
-        }
-        case TMBTableViewRowInstallationAdressCep:{
-            [[NSNotificationCenter defaultCenter] removeObserver:cell];
-            break;
-        }
         default:
-
             break;
     }
 
@@ -131,7 +151,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.installationAdress.cep;
             cell.textField.tag = TMBAdressCepTextFieldTag;
-            [[NSNotificationCenter defaultCenter] addObserver:cell selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
+            cell.textField.inputView = nil;
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
+
             [cell updateLabel];
 
             return cell;
@@ -144,6 +166,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.city;
             cell.textField.tag = TMBAdressCityTextFieldTag;
+            cell.textField.inputView = nil;
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
             [cell updateLabel];
 
             return cell;
@@ -156,6 +180,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.state;
             cell.textField.tag = TMBAdressStateTextFieldTag;
+            cell.textField.inputView = nil;
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
             [cell updateLabel];
 
             return cell;
@@ -168,6 +194,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.sector;
             cell.textField.tag = TMBAdressSectorTextFieldTag;
+            cell.textField.inputView = nil;
             [cell updateLabel];
 
             return cell;
@@ -180,6 +207,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.street;
             cell.textField.tag = TMBAdressStreetTextFieldTag;
+            cell.textField.inputView = nil;
             [cell updateLabel];
 
             return cell;
@@ -192,6 +220,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.text = self.installationAdress.number;
             cell.textField.tag = TMBAdressNumberTextFieldTag;
+            cell.textField.inputView = nil;
             [cell updateLabel];
 
             return cell;
@@ -204,6 +233,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.text = self.installationAdress.complement;
             cell.textField.tag = TMBAdressComplementTextFieldTag;
+            cell.textField.inputView = nil;
             [cell updateLabel];
 
             return cell;
@@ -220,11 +250,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             return cell;
             break;
         }
-        case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:{
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchInCorreiosButtonCell" forIndexPath:indexPath];
-            return cell;
-            break;
-        }
         default:
             return nil;
             break;
@@ -238,24 +263,22 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             case TMBTableViewRowInstallationAdressMapView:
                     return 350;
             break;
-            case TMBTableViewRowInstallationAdressSearchInCorreiosSiteButton:
-                case TMBTableViewRowInstallationAdressNextStepButton:
-                    return 45;
-            break;
         default:
-            return 55;
+            return 50;
             break;
     }
 }
 
-
-/*BUG DEMONIADO
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    self.installationAdressCep.text = [[TMBSignatureSingleton sharedData] installationAdressCep];
+-(void)updateTextField:(NSNotification *)notification{
+    
+    if ([[notification name] isEqualToString:@"LocationReceived"]) {
+        self.installationAdress = sharedSignatureData.signature.installationAdress;
+        [self.installationAdressDataTableView reloadData];
+    }
+    
+    
     
 }
-*/
-
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];

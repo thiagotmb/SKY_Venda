@@ -30,8 +30,11 @@
     
     sharedSignatureData = [TMBSignatureSingleton sharedData];
     self.backgroundColor = [UIColor clearColor];
+
     [self updateLabel];
-        
+    
+
+    
 }
 
 
@@ -40,13 +43,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-}
-
--(void)updateTextField:(NSNotification *)notification{
-    
-    if ([[notification name] isEqualToString:@"LocationReceived"]) {
-        self.textField.text = sharedSignatureData.signature.installationAdress.cep;
-    }
 }
 
 -(void)updateLabel{
@@ -87,6 +83,21 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    return [self saveTexField:textField];
+    [self updateLabel];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    [self updateLabel];
+    
+    [self saveTexField:textField];
+    
+}
+
+
+-(BOOL)saveTexField:(UITextField*)textField{
     switch (textField.tag) {
         case TMBClientNameTextFieldTag:
             sharedSignatureData.signature.client.name = textField.text;
@@ -140,56 +151,7 @@
             return YES;
             break;
     }
-    
-}
 
--(void)textFieldDidEndEditing:(UITextField *)textField{
-   
-    [self updateLabel];
-    
-
-    
-    switch (textField.tag) {
-        case TMBClientNameTextFieldTag:
-            sharedSignatureData.signature.client.name = textField.text;
-            break;
-        case TMBClientCpfTextFieldTag:
-            sharedSignatureData.signature.client.cpf = textField.text;
-            break;
-        case TMBClientRgTextFieldTag:
-            sharedSignatureData.signature.client.rg = textField.text;
-            break;
-        case TMBClientEmailTextFieldTag:
-            sharedSignatureData.signature.client.email = textField.text;
-            break;
-        case TMBClientPhoneNumberTextFieldTag:
-            sharedSignatureData.signature.client.phoneNumber = textField.text;
-            break;
-        case TMBAdressCepTextFieldTag:
-            sharedSignatureData.signature.installationAdress.cep = textField.text;
-            break;
-        case TMBAdressCityTextFieldTag:
-            sharedSignatureData.signature.installationAdress.city = textField.text;
-            break;
-        case TMBAdressStateTextFieldTag:
-            sharedSignatureData.signature.installationAdress.state = textField.text;
-            break;
-        case TMBAdressSectorTextFieldTag:
-            sharedSignatureData.signature.installationAdress.sector = textField.text;
-            break;
-        case TMBAdressStreetTextFieldTag:
-            sharedSignatureData.signature.installationAdress.street = textField.text;
-            break;
-        case TMBAdressNumberTextFieldTag:
-            sharedSignatureData.signature.installationAdress.number = textField.text;
-            break;
-        case TMBAdressComplementTextFieldTag:
-            sharedSignatureData.signature.installationAdress.complement = textField.text;
-            break;
-        default:
-            break;
-    }
-    
 }
 
 -(void)datePickerValueChanged:(UIDatePicker*)datePicker{
@@ -250,7 +212,5 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super endEditing:YES];
 }
-
-
 
 @end

@@ -39,7 +39,6 @@ enum TMBTextFieldTag:NSInteger{
 };
 
 
--(void)updateTextField:(NSNotification*)notification;
 
 -(void)updateLabel;
 
