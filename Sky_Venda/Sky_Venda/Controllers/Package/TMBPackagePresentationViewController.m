@@ -54,7 +54,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TMBImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PackageDetail" forIndexPath:indexPath];
-    int selectedPackage = self.packagePresentPrincipalView.currentItemIndex;
+    int selectedPackage = (int)self.packagePresentPrincipalView.currentItemIndex;
     self.packageItem = self.packageList[selectedPackage];
     sharedSignatureData.signature.package = self.packageItem;
 
@@ -171,7 +171,7 @@
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
     
     //NSLog(@"%d",self.packagePresentPrincipalView.currentItemIndex);
-    int selectedPackage = self.packagePresentPrincipalView.currentItemIndex;
+    int selectedPackage = (int)self.packagePresentPrincipalView.currentItemIndex;
     self.packageItem = self.packageList[selectedPackage];
     sharedSignatureData.signature.package = self.packageItem;
     

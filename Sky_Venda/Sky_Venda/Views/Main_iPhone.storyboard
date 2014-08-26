@@ -461,6 +461,40 @@
             </objects>
             <point key="canvasLocation" x="882" y="-2098"/>
         </scene>
+        <!--CardIOAPI View Controller-->
+        <scene sceneID="NPC-Uv-BDH">
+            <objects>
+                <viewController id="kBX-d9-zXE" customClass="TMBCardIOAPIViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bCV-zE-hJx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Bws-EP-vNO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MLG-s8-yTr">
+                                <rect key="frame" x="136" y="537" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelScan:" destination="kBX-d9-zXE" eventType="touchUpInside" id="tOb-zm-obj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardIOView" destination="Bws-EP-vNO" id="nYP-5l-GLj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjZ-mA-oFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="-2812"/>
+        </scene>
         <!--Payment Data View Controller - Dados de Pagamento 3/3-->
         <scene sceneID="zJa-6W-NpE">
             <objects>
@@ -485,6 +519,9 @@
                                 <state key="normal" title="Tirar foto do cartão">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="kBX-d9-zXE" kind="modal" id="q9k-jN-pdC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero do cartão de crédito" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dCe-Cw-yCZ">
                                 <rect key="frame" x="47" y="247" width="227" height="21"/>

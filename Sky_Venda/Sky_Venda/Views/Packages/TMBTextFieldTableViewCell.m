@@ -177,7 +177,7 @@
 
             break;
         case TMBClientSocialReasonPickerTag:
-            sharedSignatureData.signature.client.socialReason = row;
+            sharedSignatureData.signature.client.socialReason = (int)row;
             self.textField.text = self.pickerData[[pickerView selectedRowInComponent:component]];
             break;
         default:

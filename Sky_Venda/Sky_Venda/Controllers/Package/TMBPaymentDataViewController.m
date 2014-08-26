@@ -8,6 +8,8 @@
 
 #import "TMBPaymentDataViewController.h"
 #import "TMBCreditCard.h"
+#import "TMBPaymentSingleton.h"
+
 
 @interface TMBPaymentDataViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *background;
@@ -18,10 +20,9 @@
 @implementation TMBPaymentDataViewController{
     
     TMBSignatureSingleton *sharedSignatureData;
+    TMBPaymentSingleton *sharedPaymentData;
 
 }
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,7 +36,8 @@
 {
     [super viewDidLoad];
     sharedSignatureData = [TMBSignatureSingleton sharedData];
-    
+    sharedPaymentData = [TMBPaymentSingleton sharedData];
+
     self.creditCard = sharedSignatureData.signature.creditCard;
     self.creditCardNumber.text = self.creditCard.number;
     self.creditCardOperatorNow = self.creditCard.operatorCode;
@@ -51,6 +53,15 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)updateCreditCardInfo:(NSNotification*)aNotification{
+    
+
+    if ([aNotification.name isEqual:@"CreditCardScaned"]) {
+        self.creditCardNumber.text = sharedPaymentData.creditCardInfo.redactedCardNumber;
+        self.creditCard.number = sharedPaymentData.creditCardInfo.cardNumber;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -63,17 +74,24 @@
     
 }
 
--(void)viewDidDisappear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
     
-    [super viewDidDisappear:YES];
-    self.creditCard.number = self.creditCardNumber.text;
-    self.creditCard.expiration = self.creditCardExpirationDatePicker.date;
-    self.creditCard.operatorCode = self.creditCardOperatorNow;
-    sharedSignatureData.signature.creditCard = self.creditCard;
-    //NSLog(@"%@",sharedSignatureData.signature.creditCard);
-
+    [super viewWillAppear:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCreditCardInfo:) name:@"CreditCardScaned" object:nil];
+    
+    
 }
 
 
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:YES];
+    self.creditCard.expiration = self.creditCardExpirationDatePicker.date;
+    self.creditCard.operatorCode = self.creditCardOperatorNow;
+    sharedSignatureData.signature.creditCard = self.creditCard;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+}
 
 @end
