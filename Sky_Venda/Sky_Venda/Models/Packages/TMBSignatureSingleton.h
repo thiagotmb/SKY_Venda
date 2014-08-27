@@ -19,6 +19,8 @@
 
 +(id)sharedData;
 
++ (BOOL)postNewSignature:(TMBSignature*)signature;
+
 -(void)loadSharedData;
 -(void)saveSharedData;
 

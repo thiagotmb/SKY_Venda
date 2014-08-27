@@ -152,9 +152,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.text = self.installationAdress.cep;
             cell.textField.tag = TMBAdressCepTextFieldTag;
             cell.textField.inputView = nil;
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
-
             [cell updateLabel];
+            [cell updateText];
 
             return cell;
             break;
@@ -167,8 +166,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.text = self.installationAdress.city;
             cell.textField.tag = TMBAdressCityTextFieldTag;
             cell.textField.inputView = nil;
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
             [cell updateLabel];
+            [cell updateText];
+
 
             return cell;
             break;
@@ -181,8 +181,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.text = self.installationAdress.state;
             cell.textField.tag = TMBAdressStateTextFieldTag;
             cell.textField.inputView = nil;
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
             [cell updateLabel];
+            [cell updateText];
 
             return cell;
             break;
@@ -196,6 +196,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.tag = TMBAdressSectorTextFieldTag;
             cell.textField.inputView = nil;
             [cell updateLabel];
+            [cell updateText];
 
             return cell;
             break;
@@ -209,6 +210,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.tag = TMBAdressStreetTextFieldTag;
             cell.textField.inputView = nil;
             [cell updateLabel];
+            [cell updateText];
 
             return cell;
             break;
@@ -222,6 +224,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.tag = TMBAdressNumberTextFieldTag;
             cell.textField.inputView = nil;
             [cell updateLabel];
+            [cell updateText];
 
             return cell;
             break;
@@ -235,6 +238,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cell.textField.tag = TMBAdressComplementTextFieldTag;
             cell.textField.inputView = nil;
             [cell updateLabel];
+            [cell updateText];
 
             return cell;
             break;
@@ -263,6 +267,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             case TMBTableViewRowInstallationAdressMapView:
                     return 350;
             break;
+            case TMBTableViewRowInstallationAdressNextStepButton:
+            return 100;
         default:
             return 50;
             break;
@@ -270,6 +276,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 -(void)updateTextField:(NSNotification *)notification{
+    
     
     if ([[notification name] isEqualToString:@"LocationReceived"]) {
         self.installationAdress = sharedSignatureData.signature.installationAdress;
@@ -287,6 +294,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
  
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextField:) name:@"LocationReceived" object:nil];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

@@ -185,12 +185,14 @@ enum TMBTableViewRow:NSInteger{
             pickerView.delegate = cell;
             pickerView.dataSource = cell;
             [pickerView selectRow:self.client.gender inComponent:0 animated:YES];
-            pickerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
             pickerView.tag = TMBClientGenderPickerTag;
             if (self.genderPickerData[self.client.gender]!=nil) {
                 cell.textField.text = self.genderPickerData[self.client.gender];
 
             }
+            pickerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"PickerView.png"]];
+
+            [pickerView setFrame:CGRectMake(pickerView.frame.origin.x, pickerView.frame.origin.y, pickerView.frame.size.width, pickerView.frame.size.height/2)];
             cell.textField.inputView = pickerView;
             [cell updateLabel];
 
@@ -210,10 +212,11 @@ enum TMBTableViewRow:NSInteger{
             pickerView.delegate = cell;
             pickerView.dataSource = cell;
             [pickerView selectRow:self.client.socialReason inComponent:0 animated:YES];
-            pickerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
             pickerView.tag = TMBClientSocialReasonPickerTag;
             if (self.socialReasonPickerData[self.client.socialReason]!=nil) {
-
+                pickerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"PickerView.png"]];
+                
+                [pickerView setFrame:CGRectMake(pickerView.frame.origin.x, pickerView.frame.origin.y, pickerView.frame.size.width, pickerView.frame.size.height/2)];
             cell.textField.text = self.socialReasonPickerData[self.client.socialReason];
             }
             cell.textField.inputView = pickerView;
@@ -235,11 +238,12 @@ enum TMBTableViewRow:NSInteger{
             [datePicker addTarget:cell action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
             datePicker.tag = TMBClientBirhDatePickerTag;
             datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"];
-            datePicker.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+            datePicker.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DatePickerView.png"]];
            
             if (self.client.birthDate!=nil) {
                 datePicker.date = self.client.birthDate;
             }
+            cell.textField.keyboardAppearance = UIKeyboardAppearanceDefault;
             cell.textField.inputView = datePicker;
             cell.textField.text = [sharedSignatureData.signature getStringFromDate:self.client.birthDate];
             [cell updateLabel];
@@ -333,7 +337,7 @@ enum TMBTableViewRow:NSInteger{
         if(keyboardRect.size.height)
         {
             delay = (1 - keyboardOverlap/keyboardRect.size.height)*animationDuration;
-            animationDuration = animationDuration * keyboardOverlap/keyboardRect.size.height;
+            animationDuration = 2*  animationDuration * keyboardOverlap/keyboardRect.size.height;
         }
         
         [UIView animateWithDuration:animationDuration delay:delay
@@ -379,7 +383,7 @@ enum TMBTableViewRow:NSInteger{
     tableFrame.size.height += keyboardOverlap;
     
     if(keyboardRect.size.height)
-        animationDuration = animationDuration * keyboardOverlap/keyboardRect.size.height;
+        animationDuration = 2* animationDuration * keyboardOverlap/keyboardRect.size.height;
     
     [UIView animateWithDuration:animationDuration delay:0
                         options:UIViewAnimationOptionBeginFromCurrentState

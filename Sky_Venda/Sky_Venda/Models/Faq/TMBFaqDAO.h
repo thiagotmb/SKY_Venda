@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-
+@class TMBFaq;
 @interface TMBFaqDAO : NSObject{
     
     sqlite3* database;
@@ -18,5 +18,9 @@
 -(NSString*)getColumnText:(int)iColumn forStatement:(sqlite3_stmt*)statement;
 
 -(NSMutableArray*)getFaqList;
+-(BOOL)saveFaqData:(TMBFaq*)faqList;
+-(BOOL)updateFaqData:(NSArray*)faqList;
+
+
 
 @end

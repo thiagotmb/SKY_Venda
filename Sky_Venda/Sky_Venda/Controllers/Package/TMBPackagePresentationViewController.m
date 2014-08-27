@@ -42,6 +42,9 @@
     sharedSignatureData = [TMBSignatureSingleton sharedData];
 
     self.packagePresentPrincipalView.type = iCarouselTypeCoverFlow;
+    self.packageDetailTableView.backgroundColor = [UIColor clearColor];
+    self.packagePresentPrincipalView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +60,8 @@
     int selectedPackage = (int)self.packagePresentPrincipalView.currentItemIndex;
     self.packageItem = self.packageList[selectedPackage];
     sharedSignatureData.signature.package = self.packageItem;
-
+    
+    
     cell.imageView.image = self.packageItem.mainImage;
     return cell;
     

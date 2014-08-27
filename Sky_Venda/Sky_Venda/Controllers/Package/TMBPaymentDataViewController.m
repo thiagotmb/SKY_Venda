@@ -13,7 +13,11 @@
 
 @interface TMBPaymentDataViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *background;
-@property (weak, nonatomic) IBOutlet UILabel *maskLabel;
+@property (weak, nonatomic) IBOutlet UITextField *creditCardExpirationDateTextField;
+@property (weak, nonatomic) IBOutlet UITextView *signatureAdhesionTextView;
+@property (weak, nonatomic) IBOutlet UITextField *creditCardNumber;
+
+- (IBAction)submitSignature:(id)sender;
 
 @end
 
@@ -40,26 +44,63 @@
 
     self.creditCard = sharedSignatureData.signature.creditCard;
     self.creditCardNumber.text = self.creditCard.number;
-    self.creditCardOperatorNow = self.creditCard.operatorCode;
+    self.creditCardExpirationDateTextField.text = [sharedSignatureData.signature getStringFromDate:self.creditCard.expiration];
+    
+
+    UIDatePicker *datePicker =[[UIDatePicker alloc] init];
+    datePicker.datePickerMode =UIDatePickerModeDate;
+    [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+    datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"];
+    datePicker.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DatePickerView.png"]];
     
     if (self.creditCard.expiration!=nil) {
-        self.creditCardExpirationDatePicker.date = self.creditCard.expiration;
+        datePicker.date = self.creditCard.expiration;
     }
-
+    
+    self.creditCardExpirationDateTextField.inputView = datePicker;
+    
     UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
     self.background.image = backgroundImage;
-    
-    [self.maskLabel setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Label.png"]]];
-    // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
 }
 
 -(void)updateCreditCardInfo:(NSNotification*)aNotification{
     
+    NSLog(@"pssei credit card scaned");
 
     if ([aNotification.name isEqual:@"CreditCardScaned"]) {
+        [self updateText:self.creditCardExpirationDateTextField];
         self.creditCardNumber.text = sharedPaymentData.creditCardInfo.redactedCardNumber;
         self.creditCard.number = sharedPaymentData.creditCardInfo.cardNumber;
     }
+}
+
+-(void)updateText:(UITextField*)textField{
+    
+    [UIView animateWithDuration:0.25f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [textField setAlpha:0];
+                     }
+                     completion:nil];
+    [UIView animateWithDuration:0.25f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [textField setAlpha:1];
+                     }
+                     completion:nil];
+    
+}
+
+
+-(void)datePickerValueChanged:(UIDatePicker*)datePicker{
+    
+    [self updateText:self.creditCardExpirationDateTextField];
+    sharedSignatureData.signature.creditCard.expiration = datePicker.date;
+    self.creditCardExpirationDateTextField.text = [sharedSignatureData.signature getStringFromDate:datePicker.date];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,12 +115,11 @@
     
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewDidAppear:(BOOL)animated{
     
-    [super viewWillAppear:YES];
-    
+    [super viewDidAppear:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCreditCardInfo:) name:@"CreditCardScaned" object:nil];
-    
+    NSLog(@"%@",[[NSNotificationCenter defaultCenter] observationInfo]);
     
 }
 
@@ -87,11 +127,19 @@
 -(void)viewDidDisappear:(BOOL)animated{
     
     [super viewDidDisappear:YES];
-    self.creditCard.expiration = self.creditCardExpirationDatePicker.date;
-    self.creditCard.operatorCode = self.creditCardOperatorNow;
+    self.creditCard.expiration = [sharedSignatureData.signature getDateFromString:self.creditCardExpirationDateTextField.text];
     sharedSignatureData.signature.creditCard = self.creditCard;
+
+}
+
+-(void)dealloc{
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
 }
 
+- (IBAction)submitSignature:(id)sender {
+    
+    [TMBSignatureSingleton postNewSignature:sharedSignatureData.signature];
+}
 @end

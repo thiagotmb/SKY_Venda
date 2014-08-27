@@ -34,11 +34,15 @@
     [sharedEnterpriseContact loadSharedData];
     
     
-    UIImage *transparentImage = [UIImage imageNamed:@"Transparent.png"];
-    [[UINavigationBar appearance] setBackgroundImage:transparentImage forBarMetrics:UIBarMetricsDefault];
-    [[UITabBar appearance] setBackgroundImage:transparentImage];
-
-
+    UIImage *navigationBarImage = [UIImage imageNamed:@"NavigationBar.png"];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithHue:0 saturation:1 brightness:0.5 alpha:1]];
+    [[UINavigationBar appearance]
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithHue:0 saturation:1 brightness:0.5 alpha:1]}];
+    [[UINavigationBar appearance] setBackgroundImage:navigationBarImage forBarMetrics:UIBarMetricsDefault];
+    
+    UIImage *tabBarImage = [UIImage imageNamed:@"TabBar.png"];
+    [[UITabBar appearance] setBackgroundImage:tabBarImage];
+    
     return YES;
 }
 

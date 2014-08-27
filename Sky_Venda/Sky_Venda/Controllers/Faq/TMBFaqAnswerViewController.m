@@ -37,6 +37,8 @@
     
     self.question.text = self.faqItem.question;
     self.answerText.text = self.faqItem.answer;
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
     // Do any additional setup after loading the view.
 }
 

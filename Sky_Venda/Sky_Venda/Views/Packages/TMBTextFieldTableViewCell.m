@@ -30,6 +30,8 @@
     
     sharedSignatureData = [TMBSignatureSingleton sharedData];
     self.backgroundColor = [UIColor clearColor];
+    
+    
 
     [self updateLabel];
     
@@ -66,6 +68,25 @@
         
         
     }
+}
+
+-(void)updateText{
+    
+    [UIView animateWithDuration:0.25f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.textField setAlpha:0];
+                     }
+                     completion:nil];
+    [UIView animateWithDuration:0.25f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.textField setAlpha:1];
+                     }
+                     completion:nil];
+    
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -156,13 +177,14 @@
 
 -(void)datePickerValueChanged:(UIDatePicker*)datePicker{
     
+    [self updateText];
     
     switch (datePicker.tag) {
-        case TMBClientBirhDatePickerTag:
+        case TMBClientBirhDatePickerTag:{
             sharedSignatureData.signature.client.birthDate = datePicker.date;
             self.textField.text = [sharedSignatureData.signature getStringFromDate:datePicker.date];
             break;
-            
+        }
         default:
             break;
     }
@@ -170,6 +192,8 @@
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
 
+    [self updateText];
+    
     switch (pickerView.tag) {
         case TMBClientGenderPickerTag:
             sharedSignatureData.signature.client.gender = row;
@@ -188,7 +212,7 @@
 -(NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
     NSString *title = self.pickerData[row];
-    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHue:0 saturation:1 brightness:0.5 alpha:1]}];
     
     return attString;
 }

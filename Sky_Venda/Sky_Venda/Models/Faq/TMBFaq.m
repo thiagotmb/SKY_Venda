@@ -16,7 +16,7 @@
     if (self) {
         self.question = [[NSString alloc] init];
         self.answer = [[NSString alloc] init];
-        self.image = [[UIImage alloc] init];
+        self.image = [[UIImage alloc] initWithData:nil];
         self.questionId = 0;
     }
     return self;

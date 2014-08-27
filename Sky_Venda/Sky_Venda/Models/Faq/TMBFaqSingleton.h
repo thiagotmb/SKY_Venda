@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class TMBFaq;
-@interface TMBFaqSingleton : NSObject
+@interface TMBFaqSingleton : NSObject<UIAlertViewDelegate>
 
 @property (nonatomic) TMBFaq* faqItem;
 @property (nonatomic) NSMutableArray* faqList;
@@ -18,5 +18,6 @@
 
 -(void)loadSharedData;
 
+-(BOOL)requestFaqList;
 
 @end

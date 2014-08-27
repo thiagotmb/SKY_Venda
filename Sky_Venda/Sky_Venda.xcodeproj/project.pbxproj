@@ -12,7 +12,6 @@
 		A409B3CC19A68DB700C83BD4 /* TMBFaqListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B39719A68DB700C83BD4 /* TMBFaqListViewController.m */; };
 		A409B3CE19A68DB700C83BD4 /* TMBClientDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A019A68DB700C83BD4 /* TMBClientDataViewController.m */; };
 		A409B3CF19A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A219A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m */; };
-		A409B3D019A68DB700C83BD4 /* TMBPackageAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */; };
 		A409B3D119A68DB700C83BD4 /* TMBPackagePresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A619A68DB700C83BD4 /* TMBPackagePresentationViewController.m */; };
 		A409B3D219A68DB700C83BD4 /* TMBPaymentDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3A819A68DB700C83BD4 /* TMBPaymentDataViewController.m */; };
 		A409B3D319A68DB700C83BD4 /* TMBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3AE19A68DB700C83BD4 /* TMBClient.m */; };
@@ -29,6 +28,11 @@
 		A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */; };
 		A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */; };
 		A409B3EF19A6D7BF00C83BD4 /* TMBSignatureSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */; };
+		A45A95CB19ACBFBE00C8923E /* NavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CA19ACBFBE00C8923E /* NavigationBar.png */; };
+		A45A95CD19ACC78900C8923E /* PickerView.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CC19ACC78900C8923E /* PickerView.png */; };
+		A45A95CF19ACCB6E00C8923E /* DatePickerView.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CE19ACCB6E00C8923E /* DatePickerView.png */; };
+		A45A95D119ACD34700C8923E /* TabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95D019ACD34700C8923E /* TabBar.png */; };
+		A471F74B19AC24D10074DEF1 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A471F74A19AC24D10074DEF1 /* libCardIO.a */; };
 		A477242919A94D4C000CF8E9 /* TMBImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A477242819A94D4C000CF8E9 /* TMBImageTableViewCell.m */; };
 		A481769419A7C96300455EE0 /* TMBFaq.m in Sources */ = {isa = PBXBuildFile; fileRef = A481769319A7C96300455EE0 /* TMBFaq.m */; };
 		A481769719A7CA0300455EE0 /* TMBFaqDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = A481769619A7CA0300455EE0 /* TMBFaqDAO.m */; };
@@ -57,9 +61,6 @@
 		A4C72F2619914B4E00536DD7 /* Sky_VendaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C72F2519914B4E00536DD7 /* Sky_VendaTests.m */; };
 		A4CA6C0919AA4C31002DEBA3 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CA6C0719AA4C31002DEBA3 /* Background.png */; };
 		A4CA6C0A19AA4C31002DEBA3 /* Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CA6C0819AA4C31002DEBA3 /* Transparent.png */; };
-		A4CA6C0C19AA53E3002DEBA3 /* Background2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CA6C0B19AA53E3002DEBA3 /* Background2.png */; };
-		A4CA6C0E19AA5714002DEBA3 /* Label.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CA6C0D19AA5714002DEBA3 /* Label.png */; };
-		A4D9E19F19ABEE6900E0B9A0 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D9E19E19ABEE6900E0B9A0 /* libCardIO.a */; };
 		A4D9E1A119ABF1E400E0B9A0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D9E1A019ABF1E400E0B9A0 /* AudioToolbox.framework */; };
 		A4D9E1A319ABF1ED00E0B9A0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D9E1A219ABF1ED00E0B9A0 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A4D9E1A519ABF1FB00E0B9A0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D9E1A419ABF1FB00E0B9A0 /* CoreMedia.framework */; };
@@ -92,8 +93,6 @@
 		A409B3A019A68DB700C83BD4 /* TMBClientDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClientDataViewController.m; sourceTree = "<group>"; };
 		A409B3A119A68DB700C83BD4 /* TMBInstallationAdressDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBInstallationAdressDataViewController.h; sourceTree = "<group>"; };
 		A409B3A219A68DB700C83BD4 /* TMBInstallationAdressDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBInstallationAdressDataViewController.m; sourceTree = "<group>"; };
-		A409B3A319A68DB700C83BD4 /* TMBPackageAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackageAdhesionViewController.h; sourceTree = "<group>"; };
-		A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackageAdhesionViewController.m; sourceTree = "<group>"; };
 		A409B3A519A68DB700C83BD4 /* TMBPackagePresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPackagePresentationViewController.h; sourceTree = "<group>"; };
 		A409B3A619A68DB700C83BD4 /* TMBPackagePresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPackagePresentationViewController.m; sourceTree = "<group>"; };
 		A409B3A719A68DB700C83BD4 /* TMBPaymentDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPaymentDataViewController.h; sourceTree = "<group>"; };
@@ -123,6 +122,17 @@
 		A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignature.m; sourceTree = "<group>"; };
 		A409B3ED19A6D7BF00C83BD4 /* TMBSignatureSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignatureSingleton.h; sourceTree = "<group>"; };
 		A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignatureSingleton.m; sourceTree = "<group>"; };
+		A45A95CA19ACBFBE00C8923E /* NavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBar.png; sourceTree = "<group>"; };
+		A45A95CC19ACC78900C8923E /* PickerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickerView.png; sourceTree = "<group>"; };
+		A45A95CE19ACCB6E00C8923E /* DatePickerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DatePickerView.png; sourceTree = "<group>"; };
+		A45A95D019ACD34700C8923E /* TabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBar.png; sourceTree = "<group>"; };
+		A471F74419AC24D10074DEF1 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
+		A471F74519AC24D10074DEF1 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		A471F74619AC24D10074DEF1 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		A471F74719AC24D10074DEF1 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		A471F74819AC24D10074DEF1 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
+		A471F74919AC24D10074DEF1 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
+		A471F74A19AC24D10074DEF1 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
 		A477242719A94D4C000CF8E9 /* TMBImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBImageTableViewCell.h; sourceTree = "<group>"; };
 		A477242819A94D4C000CF8E9 /* TMBImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBImageTableViewCell.m; sourceTree = "<group>"; };
 		A481769219A7C96300455EE0 /* TMBFaq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBFaq.h; sourceTree = "<group>"; };
@@ -167,15 +177,6 @@
 		A4C72F2519914B4E00536DD7 /* Sky_VendaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sky_VendaTests.m; sourceTree = "<group>"; };
 		A4CA6C0719AA4C31002DEBA3 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		A4CA6C0819AA4C31002DEBA3 /* Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Transparent.png; sourceTree = "<group>"; };
-		A4CA6C0B19AA53E3002DEBA3 /* Background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background2.png; sourceTree = "<group>"; };
-		A4CA6C0D19AA5714002DEBA3 /* Label.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Label.png; sourceTree = "<group>"; };
-		A4D9E19819ABEE6900E0B9A0 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
-		A4D9E19919ABEE6900E0B9A0 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
-		A4D9E19A19ABEE6900E0B9A0 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewController.h; sourceTree = "<group>"; };
-		A4D9E19B19ABEE6900E0B9A0 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
-		A4D9E19C19ABEE6900E0B9A0 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
-		A4D9E19D19ABEE6900E0B9A0 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
-		A4D9E19E19ABEE6900E0B9A0 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
 		A4D9E1A019ABF1E400E0B9A0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A4D9E1A219ABF1ED00E0B9A0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A4D9E1A419ABF1FB00E0B9A0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -202,11 +203,11 @@
 				A4D9E1A919ABF20F00E0B9A0 /* MobileCoreServices.framework in Frameworks */,
 				A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */,
 				A4D9E1A719ABF20100E0B9A0 /* CoreVideo.framework in Frameworks */,
+				A471F74B19AC24D10074DEF1 /* libCardIO.a in Frameworks */,
 				A4D9E1A519ABF1FB00E0B9A0 /* CoreMedia.framework in Frameworks */,
 				A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */,
 				A4D9E1A319ABF1ED00E0B9A0 /* AVFoundation.framework in Frameworks */,
 				A4D9E1A119ABF1E400E0B9A0 /* AudioToolbox.framework in Frameworks */,
-				A4D9E19F19ABEE6900E0B9A0 /* libCardIO.a in Frameworks */,
 				A48BBDC919A8FE2B0060047F /* CoreLocation.framework in Frameworks */,
 				A409B38519A5166400C83BD4 /* libsqlite3.0.dylib in Frameworks */,
 				A48BBDCB19A909440060047F /* MapKit.framework in Frameworks */,
@@ -262,8 +263,6 @@
 				A409B3A819A68DB700C83BD4 /* TMBPaymentDataViewController.m */,
 				A4D9E1B019ABF6A500E0B9A0 /* TMBCardIOAPIViewController.h */,
 				A4D9E1B119ABF6A500E0B9A0 /* TMBCardIOAPIViewController.m */,
-				A409B3A319A68DB700C83BD4 /* TMBPackageAdhesionViewController.h */,
-				A409B3A419A68DB700C83BD4 /* TMBPackageAdhesionViewController.m */,
 			);
 			path = Package;
 			sourceTree = "<group>";
@@ -384,6 +383,20 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		A471F74319AC24D10074DEF1 /* CardIO */ = {
+			isa = PBXGroup;
+			children = (
+				A471F74419AC24D10074DEF1 /* CardIO.h */,
+				A471F74519AC24D10074DEF1 /* CardIOCreditCardInfo.h */,
+				A471F74619AC24D10074DEF1 /* CardIOPaymentViewController.h */,
+				A471F74719AC24D10074DEF1 /* CardIOPaymentViewControllerDelegate.h */,
+				A471F74819AC24D10074DEF1 /* CardIOView.h */,
+				A471F74919AC24D10074DEF1 /* CardIOViewDelegate.h */,
+				A471F74A19AC24D10074DEF1 /* libCardIO.a */,
+			);
+			path = CardIO;
+			sourceTree = "<group>";
+		};
 		A48E3EDE199452F400EA54E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,10 +408,12 @@
 		A48E3EDF199452F400EA54E2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A45A95CC19ACC78900C8923E /* PickerView.png */,
+				A45A95CE19ACCB6E00C8923E /* DatePickerView.png */,
+				A45A95CA19ACBFBE00C8923E /* NavigationBar.png */,
 				A4CA6C0719AA4C31002DEBA3 /* Background.png */,
-				A4CA6C0B19AA53E3002DEBA3 /* Background2.png */,
+				A45A95D019ACD34700C8923E /* TabBar.png */,
 				A4CA6C0819AA4C31002DEBA3 /* Transparent.png */,
-				A4CA6C0D19AA5714002DEBA3 /* Label.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -406,7 +421,7 @@
 		A4BAD67019A21B0400EA244B /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A4D9E19719ABEE6900E0B9A0 /* CardIO */,
+				A471F74319AC24D10074DEF1 /* CardIO */,
 				A4BAD67119A21B0400EA244B /* iCarousel */,
 			);
 			path = API;
@@ -507,20 +522,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A4D9E19719ABEE6900E0B9A0 /* CardIO */ = {
-			isa = PBXGroup;
-			children = (
-				A4D9E19819ABEE6900E0B9A0 /* CardIO.h */,
-				A4D9E19919ABEE6900E0B9A0 /* CardIOCreditCardInfo.h */,
-				A4D9E19A19ABEE6900E0B9A0 /* CardIOPaymentViewController.h */,
-				A4D9E19B19ABEE6900E0B9A0 /* CardIOPaymentViewControllerDelegate.h */,
-				A4D9E19C19ABEE6900E0B9A0 /* CardIOView.h */,
-				A4D9E19D19ABEE6900E0B9A0 /* CardIOViewDelegate.h */,
-				A4D9E19E19ABEE6900E0B9A0 /* libCardIO.a */,
-			);
-			path = CardIO;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -605,13 +606,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4CA6C0E19AA5714002DEBA3 /* Label.png in Resources */,
+				A45A95CD19ACC78900C8923E /* PickerView.png in Resources */,
+				A45A95D119ACD34700C8923E /* TabBar.png in Resources */,
 				A4CA6C0A19AA4C31002DEBA3 /* Transparent.png in Resources */,
+				A45A95CF19ACCB6E00C8923E /* DatePickerView.png in Resources */,
 				A409B3DA19A68DB700C83BD4 /* Main_iPhone.storyboard in Resources */,
 				A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */,
 				A409B3D919A68DB700C83BD4 /* Main_iPad.storyboard in Resources */,
-				A4CA6C0C19AA53E3002DEBA3 /* Background2.png in Resources */,
 				A409B3D719A68DB700C83BD4 /* SKY_VENDA.sqlite in Resources */,
+				A45A95CB19ACBFBE00C8923E /* NavigationBar.png in Resources */,
 				A4CA6C0919AA4C31002DEBA3 /* Background.png in Resources */,
 				A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */,
 			);
@@ -655,7 +658,6 @@
 				A409B3EF19A6D7BF00C83BD4 /* TMBSignatureSingleton.m in Sources */,
 				A477242919A94D4C000CF8E9 /* TMBImageTableViewCell.m in Sources */,
 				A409B3CC19A68DB700C83BD4 /* TMBFaqListViewController.m in Sources */,
-				A409B3D019A68DB700C83BD4 /* TMBPackageAdhesionViewController.m in Sources */,
 				A48176A019A82A4900455EE0 /* TMBPackageDAO.m in Sources */,
 				A49C948719A92BDE00534BBF /* TMBButtonTableViewCell.m in Sources */,
 				A48BBDC719A8E9940060047F /* TMBEnterpriseContactDAO.m in Sources */,

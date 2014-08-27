@@ -41,6 +41,7 @@ enum TMBTextFieldTag:NSInteger{
 
 
 -(void)updateLabel;
+-(void)updateText;
 
 -(void)datePickerValueChanged:(UIDatePicker*)datePicker;
 

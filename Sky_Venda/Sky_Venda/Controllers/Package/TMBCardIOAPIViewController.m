@@ -17,7 +17,6 @@
 
 
 - (IBAction)cancelScan:(id)sender;
-@property (weak, nonatomic) IBOutlet UIView *cardIOView;
 
 @end
 
@@ -42,12 +41,16 @@
     
     sharedPaymentData = [TMBPaymentSingleton sharedData];
     
-    CardIOView *cardIOSubView = [[CardIOView alloc] initWithFrame:self.cardIOView.frame];
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    CardIOView *cardIOSubView = [[CardIOView alloc] initWithFrame:self.view.frame];
+    cardIOSubView.scannedImageDuration = 3;
+    NSLog(@"Originx: %.2f, Originy: %.2f, Width: %.2f, Heigth: %.2f",self.view.frame.origin.x,self.view.frame.origin.y,self.view.frame.size.width,self.view.frame.size.height);
     
     cardIOSubView.appToken = CardIOAppToken; // get your app token from the card.io website
     cardIOSubView.delegate = self;
     
-    [self.cardIOView addSubview:cardIOSubView];
+    [self.view addSubview:cardIOSubView];
     // Do any additional setup after loading the view.
 }
 
@@ -58,22 +61,27 @@
 }
 
 
+
 -(void)cardIOView:(CardIOView *)cardIOView didScanCard:(CardIOCreditCardInfo *)cardInfo{
     
     if (cardInfo) {
         // The full card number is available as info.cardNumber, but don't log that!
-        NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", cardInfo.redactedCardNumber, (unsigned long)cardInfo.expiryMonth, (unsigned long)cardInfo.expiryYear, cardInfo.cvv);
+        //NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", cardInfo.redactedCardNumber, (unsigned long)cardInfo.expiryMonth, (unsigned long)cardInfo.expiryYear, cardInfo.cvv);
         
         sharedPaymentData.creditCardInfo = cardInfo;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"CreditCardScaned" object:nil];
         // Use the card info...
     }
     else {
-        NSLog(@"User cancelled payment info");
+       // NSLog(@"User cancelled payment info");
         // Handle user cancellation here...
     }
+
+        [self dismissViewControllerAnimated:YES completion:nil];
+
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    
     
 }
 
