@@ -28,6 +28,7 @@
 		A409B3E919A6A8A000C83BD4 /* TMBCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3E819A6A8A000C83BD4 /* TMBCreditCard.m */; };
 		A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */; };
 		A409B3EF19A6D7BF00C83BD4 /* TMBSignatureSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */; };
+		A420EB3119AEA85F0042FEDE /* TMBContactRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = A420EB3019AEA85F0042FEDE /* TMBContactRequestor.m */; };
 		A45A95CB19ACBFBE00C8923E /* NavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CA19ACBFBE00C8923E /* NavigationBar.png */; };
 		A45A95CD19ACC78900C8923E /* PickerView.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CC19ACC78900C8923E /* PickerView.png */; };
 		A45A95CF19ACCB6E00C8923E /* DatePickerView.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CE19ACCB6E00C8923E /* DatePickerView.png */; };
@@ -122,6 +123,8 @@
 		A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignature.m; sourceTree = "<group>"; };
 		A409B3ED19A6D7BF00C83BD4 /* TMBSignatureSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSignatureSingleton.h; sourceTree = "<group>"; };
 		A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignatureSingleton.m; sourceTree = "<group>"; };
+		A420EB2F19AEA85F0042FEDE /* TMBContactRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBContactRequestor.h; sourceTree = "<group>"; };
+		A420EB3019AEA85F0042FEDE /* TMBContactRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBContactRequestor.m; sourceTree = "<group>"; };
 		A45A95CA19ACBFBE00C8923E /* NavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBar.png; sourceTree = "<group>"; };
 		A45A95CC19ACC78900C8923E /* PickerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickerView.png; sourceTree = "<group>"; };
 		A45A95CE19ACCB6E00C8923E /* DatePickerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DatePickerView.png; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 				A481769619A7CA0300455EE0 /* TMBFaqDAO.m */,
 				A481769819A7D08800455EE0 /* TMBFaqSingleton.h */,
 				A481769919A7D08800455EE0 /* TMBFaqSingleton.m */,
+				A420EB2F19AEA85F0042FEDE /* TMBContactRequestor.h */,
+				A420EB3019AEA85F0042FEDE /* TMBContactRequestor.m */,
 			);
 			path = Faq;
 			sourceTree = "<group>";
@@ -644,6 +649,7 @@
 				A409B3CB19A68DB700C83BD4 /* TMBFaqAnswerViewController.m in Sources */,
 				A409B3D119A68DB700C83BD4 /* TMBPackagePresentationViewController.m in Sources */,
 				A409B3D319A68DB700C83BD4 /* TMBClient.m in Sources */,
+				A420EB3119AEA85F0042FEDE /* TMBContactRequestor.m in Sources */,
 				A4D9E1B219ABF6A600E0B9A0 /* TMBCardIOAPIViewController.m in Sources */,
 				A409B3DD19A68DB700C83BD4 /* TMBPackagesPresentationTableViewCell.m in Sources */,
 				A409B3DC19A68DB700C83BD4 /* TMBMapGetLocationTableViewCell.m in Sources */,

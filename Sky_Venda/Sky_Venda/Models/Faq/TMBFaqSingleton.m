@@ -101,7 +101,7 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"Succeeded!");
+    NSLog(@"Succeeded! Faq Data");
     //Create a queue and dispatch the parsing of the data
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // Parse the data from JSON to an array
@@ -119,7 +119,10 @@
                     TMBFaq* faqItem = [[TMBFaq alloc] init];
                     faqItem.answer = [tempDictionary objectForKey:@"Answer"];
                     faqItem.question = [tempDictionary objectForKey:@"Question"];
-                    faqItem.image = [tempDictionary objectForKey:@"Image"];
+                    
+                    NSData *data = [[NSData alloc]initWithBase64EncodedString:[tempDictionary objectForKey:@"Image"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+                    faqItem.image = [UIImage imageWithData:data];
+
                     faqItem.questionId = [[tempDictionary objectForKey:@"id"]  intValue];
                     [self.faqList addObject:faqItem];
                 }
@@ -144,7 +147,7 @@
 
 -(BOOL)requestFaqList{
 
-    NSURL *myURL = [NSURL URLWithString:@"http://localhost/~thiagoMB/getUsers.php"];
+    NSURL *myURL = [NSURL URLWithString:@"http://localhost/~thiagoMB/getFaqList.php"];
     NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
     // Create the connection
     self.myConnection = [NSURLConnection connectionWithRequest:myRequest delegate:self];

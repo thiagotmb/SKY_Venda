@@ -9,6 +9,8 @@
 #import "TMBFaqListViewController.h"
 #import "TMBFaqSingleton.h"
 #import "TMBFaq.h"
+#import "TMBContactRequestor.h"
+#import "TMBSignatureSingleton.h"
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
@@ -25,11 +27,16 @@
 
 @property (nonatomic) UIRefreshControl* refreshControl;
 
+@property (nonatomic) TMBContactRequestor* contactRequestor;
+
+
+
 @end
 
 @implementation TMBFaqListViewController{
     
     TMBFaqSingleton *sharedFaqList;
+    TMBSignatureSingleton *sharedSignatureData;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,6 +52,7 @@
 {
     [super viewDidLoad];
     sharedFaqList = [TMBFaqSingleton sharedData];
+    sharedSignatureData = [TMBSignatureSingleton sharedData];
     
     self.faqList = sharedFaqList.faqList;
     
@@ -58,11 +66,17 @@
     self.alertView = [[UIAlertView alloc] initWithTitle:self.alertTitle message:nil delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Solicitar",nil];
     self.alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     
+    self.contactField = [self.alertView textFieldAtIndex:0];
+    self.contactField.keyboardAppearance = UIKeyboardAppearanceDark;
+    self.contactField.clearButtonMode = UITextFieldViewModeUnlessEditing;
+    self.contactField.textColor = [UIColor colorWithHue:0 saturation:1 brightness:.5 alpha:1];
+    
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(requestFaqList) forControlEvents:UIControlEventValueChanged];
     
+    self.contactRequestor = [[TMBContactRequestor alloc] init];
 
     
     
@@ -138,13 +152,13 @@
     self.alertTitle = @"Telefone para contato";
     self.alertView.title = self.alertTitle;
     
-    UITextField *textField = [self.alertView textFieldAtIndex:0];
-    textField.keyboardType = UIKeyboardTypeNumberPad;
-    textField.keyboardAppearance = UIKeyboardAppearanceDark;
+    self.contactField.keyboardType = UIKeyboardTypeNumberPad;
+    self.contactField.text = sharedSignatureData.signature.client.phoneNumber;
+    self.contactRequestor.type = 0;
+
     
     [self.alertView show];
     
-    NSLog(@"passei");
 }
 
 - (IBAction)requestWhatsappContact:(id)sender {
@@ -152,9 +166,10 @@
     self.alertTitle = @"Whatsapp para contato";
     self.alertView.title = self.alertTitle;
     
-    UITextField *textField = [self.alertView textFieldAtIndex:0];
-    textField.keyboardType = UIKeyboardTypeNumberPad;
-    textField.keyboardAppearance = UIKeyboardAppearanceDark;
+    self.contactField.keyboardType = UIKeyboardTypeNumberPad;
+    self.contactField.text = sharedSignatureData.signature.client.phoneNumber;
+    self.contactRequestor.type = 1;
+
     
     [self.alertView show];
     
@@ -165,9 +180,11 @@
     self.alertTitle = @"E-Mail para contato";
     self.alertView.title = self.alertTitle;
     
-    UITextField *textField = [self.alertView textFieldAtIndex:0];
-    textField.keyboardType = UIKeyboardTypeEmailAddress;
-    textField.keyboardAppearance = UIKeyboardAppearanceDark;
+    self.contactField.keyboardType = UIKeyboardTypeEmailAddress;
+    self.contactField.text = sharedSignatureData.signature.client.email;
+    
+    self.contactRequestor.type = 2;
+    
     [self.alertView show];
 
 }
@@ -175,6 +192,47 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     
+    switch (buttonIndex) {
+        case 0:
+            return;
+            break;
+        case 1:{
+            self.contactRequestor.contact = [alertView textFieldAtIndex:0].text;
+            self.contactRequestor.dateOfRequest = [NSString stringWithFormat:@"%@",[NSDate date]];
+            [self requestContact:self.contactRequestor];
+            UIAlertView* okAlert = [[UIAlertView alloc] initWithTitle:@"Solicitado!" message:@"Em instantes um atendente entrará em contato"  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [okAlert show];
+        }
+        default:
+            return;
+            break;
+    }
+    
+}
+
+- (BOOL)requestContact:(TMBContactRequestor*)contactRequestor{
+    //1.  Log the tag for verification first
+    
+	//2.REBUILD status string from passingObject
+	NSString *dataToPost = [[NSString alloc] initWithFormat:@"RequestorContact=%@&DateOfRequest=%@&RequestType=%d",contactRequestor.contact,contactRequestor.dateOfRequest,contactRequestor.type];
+	//3.  Post tag to cloud
+    
+    NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/~thiagoMB/contactRequest.php"]];
+    [request setURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLResponse *response;
+    NSError *error;
+	// We should probably be parsing the data returned by this call, for now just check the error.
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+   // NSLog(@"%@!",request);
+    return (error == nil);
 }
 
 -(void)dealloc{

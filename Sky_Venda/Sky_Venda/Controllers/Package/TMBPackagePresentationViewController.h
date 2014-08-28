@@ -12,4 +12,6 @@
 
 @interface TMBPackagePresentationViewController : UIViewController<iCarouselDelegate,iCarouselDataSource,UITableViewDataSource,UITableViewDelegate>
 
+-(void)reloadData;
+
 @end

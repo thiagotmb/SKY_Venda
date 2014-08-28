@@ -63,7 +63,7 @@ enum TMBTableViewRow:NSInteger{
     [super viewDidLoad];
     sharedSignatureData = [TMBSignatureSingleton sharedData];
     self.client = sharedSignatureData.signature.client;
-     
+    
     self.packagePresentation.image = sharedSignatureData.signature.package.mainImage;
 
     // Do any additional setup after loading the view.

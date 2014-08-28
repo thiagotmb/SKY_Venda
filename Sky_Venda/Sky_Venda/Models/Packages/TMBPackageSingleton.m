@@ -9,6 +9,13 @@
 #import "TMBPackageSingleton.h"
 #import "TMBPackageDAO.h"
 
+@interface TMBPackageSingleton ()<NSURLConnectionDelegate>
+
+@property (nonatomic) NSMutableData* buffer;
+@property(nonatomic) NSURLConnection* myConnection;
+
+@end
+
 @implementation TMBPackageSingleton{
     
     TMBPackageDAO *packageDAO;
@@ -60,8 +67,102 @@
 
 -(void)loadSharedData{
     
+    
     self.packageList = [packageDAO getPackageList];
 }
 
+
+#pragma NSURLConnection Methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    
+    [self.buffer setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    
+    [self.buffer appendData:data];
+    
+}
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    // Do cleanup
+    self.myConnection = nil;
+    self.buffer     = nil;
+    
+    // Inform the user, most likely in a UIAlert
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+    NSLog(@"ERROR %@", [error localizedDescription]);
+
+
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"Succeeded! Package Data");
+    //Create a queue and dispatch the parsing of the data
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // Parse the data from JSON to an array
+        NSError *error = nil;
+        NSArray *jsonString = [NSJSONSerialization JSONObjectWithData:self.buffer options:NSJSONReadingMutableContainers error:&error];
+        // Return to the main queue to handle the data & UI
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            //Check if error or not
+            if (!error) {
+                //If no error then PROCESS ARRAY
+
+                self.packageList = [[NSMutableArray alloc] init];
+
+                for (NSDictionary *tempDictionary in jsonString) {                    // Extract each dictionary’s username & put it into our array
+                    TMBPackage* packageItem = [[TMBPackage alloc] init];
+                    packageItem.packageId = [[tempDictionary objectForKey:@"id"] intValue];
+                    packageItem.name = [tempDictionary objectForKey:@"Name"];
+                    
+                    NSData *data = [[NSData alloc]initWithBase64EncodedString:[tempDictionary objectForKey:@"MainImage"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+                    packageItem.mainImage = [UIImage imageWithData:data];
+
+                    NSData *data2 = [[NSData alloc]initWithBase64EncodedString:[tempDictionary objectForKey:@"DetailImage"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+                    packageItem.detailImage = [UIImage imageWithData:data2];
+
+                    packageItem.price = [[tempDictionary objectForKey:@"Price"]  floatValue];
+                   // NSLog(@"%@",packageItem);
+                [self.packageList addObject:packageItem];
+                }
+                
+                [packageDAO updatePackageData:self.packageList];
+
+                // Call reload in order to refresh the tableview
+                
+            }else{
+                NSLog(@"ERROR %@", [error localizedDescription]);
+
+            }
+            //Stop animating the spinner
+            // Do cleanup
+            self.myConnection = nil;
+            self.buffer     = nil;
+        });
+        
+    });
+}
+
+-(BOOL)requestPackageList{
+    
+    NSURL *myURL = [NSURL URLWithString:@"http://localhost/~thiagoMB/getPackagesList.php"];
+    NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
+    // Create the connection
+    self.myConnection = [NSURLConnection connectionWithRequest:myRequest delegate:self];
+    //Test to make sure the connection worked
+    if (self.myConnection){
+        self.buffer = [NSMutableData data];
+        [self.myConnection start];
+        return YES;
+    }else{
+        NSLog(@"Connection Failed");
+
+        return NO;
+    }
+}
 
 @end

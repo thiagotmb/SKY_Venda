@@ -22,6 +22,7 @@
 
 
 -(NSMutableArray*)getPackageList;
-
+-(BOOL)savePackageData:(TMBPackage*)packageData;
+-(BOOL)updatePackageData:(NSArray*)packagesList;
 
 @end

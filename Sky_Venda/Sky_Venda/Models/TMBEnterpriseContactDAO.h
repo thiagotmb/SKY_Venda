@@ -20,5 +20,7 @@
 
 -(TMBEnterpriseContact*) getEnterpriseContact;
 
+-(BOOL)saveEnterpriseContactData:(TMBEnterpriseContact*)enterpriseContactData;
+-(BOOL)updateEnterpriseContactData:(TMBEnterpriseContact*)enterpriseContactData;
 
 @end

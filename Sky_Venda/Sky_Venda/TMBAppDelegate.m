@@ -28,12 +28,18 @@
     sharedPackageList = [TMBPackageSingleton sharedData];
     sharedEnterpriseContact = [TMBEnterpriseContactSingleton sharedData];
     
+    
     [sharedSignature loadSharedData];
     [sharedFaqList loadSharedData];
     [sharedPackageList loadSharedData];
     [sharedEnterpriseContact loadSharedData];
     
+
+    [sharedPackageList requestPackageList];
+
+    [sharedEnterpriseContact requestContactInfo];
     
+
     UIImage *navigationBarImage = [UIImage imageNamed:@"NavigationBar.png"];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithHue:0 saturation:1 brightness:0.5 alpha:1]];
     [[UINavigationBar appearance]
@@ -69,7 +75,7 @@
 {
     [sharedSignature loadSharedData];
     [sharedFaqList loadSharedData];
-    [sharedPackageList loadSharedData];
+    //[sharedPackageList loadSharedData];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

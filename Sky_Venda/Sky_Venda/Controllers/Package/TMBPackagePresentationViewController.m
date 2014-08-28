@@ -83,6 +83,7 @@
     sharedPackageData = [TMBPackageSingleton sharedData];
     // Do any additional setup after loading the view.
     self.packageList =  sharedPackageData.packageList;
+
     return self.packageList.count;
 }
 
@@ -168,6 +169,7 @@
 
                      }
                      completion:nil];
+
     //NSLog(@"%d",self.packagePresentPrincipalView.currentItemIndex);
 
 }
@@ -182,6 +184,12 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBClientDataViewController *clientDataViewController = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
     [self.navigationController pushViewController:clientDataViewController animated:YES];
+}
+
+-(void)reloadData{
+    
+    [self.packageDetailTableView reloadData];
+    [self.packagePresentPrincipalView reloadData];
 }
 
 #pragma mark - Navigation

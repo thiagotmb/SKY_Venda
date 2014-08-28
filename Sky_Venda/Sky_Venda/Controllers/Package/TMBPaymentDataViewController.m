@@ -72,6 +72,7 @@
         [self updateText:self.creditCardExpirationDateTextField];
         self.creditCardNumber.text = sharedPaymentData.creditCardInfo.redactedCardNumber;
         self.creditCard.number = sharedPaymentData.creditCardInfo.cardNumber;
+        sharedSignatureData.signature.creditCard = self.creditCard;
     }
 }
 
@@ -92,15 +93,18 @@
                      }
                      completion:nil];
     
+    
 }
 
 
 -(void)datePickerValueChanged:(UIDatePicker*)datePicker{
     
     [self updateText:self.creditCardExpirationDateTextField];
-    sharedSignatureData.signature.creditCard.expiration = datePicker.date;
+    self.creditCard.expiration = datePicker.date;
+    sharedSignatureData.signature.creditCard = self.creditCard;
     self.creditCardExpirationDateTextField.text = [sharedSignatureData.signature getStringFromDate:datePicker.date];
-
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -111,6 +115,8 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
+    self.creditCard.number = self.creditCardNumber.text;
+    sharedSignatureData.signature.creditCard = self.creditCard;
     [self.view endEditing:YES];
     
 }

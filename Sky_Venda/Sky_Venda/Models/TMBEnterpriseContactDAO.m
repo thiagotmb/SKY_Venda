@@ -42,7 +42,7 @@
     
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *querySQL = @"SELECT PhoneNumber, WhatsApp, Email, Cnpj, Name, AdressCep, AdressState, AdressCity, AdressSector, AdressStreet, AdressNumber, AdressComplement FROM EnterpriseContact";
+        NSString *querySQL = @"SELECT PhoneNumber, WhatsApp, Email, Cnpj, Name, AdressCep, AdressState, AdressCity, AdressSector, AdressStreet, AdressNumber, AdressComplement FROM EnterpriseInfo";
         const char *query_stmt = [querySQL UTF8String];
         
         if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
@@ -73,6 +73,109 @@
     
     return enterpriseContact;
 }
+
+-(BOOL)updateEnterpriseContactData:(TMBEnterpriseContact*)enterpriseContact{
+    
+    sqlite3_stmt *statement = NULL;
+    
+    const char* delete_stmt = "DELETE FROM EnterpriseInfo";
+    
+    BOOL sucess = NO;
+    
+    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+        
+        
+        if (sqlite3_exec(database, delete_stmt, NULL, NULL, NULL) == SQLITE_OK) {
+            sucess = YES;
+        }else{
+            sucess =  NO;
+        }
+    }
+    
+    sqlite3_finalize(statement);
+    sqlite3_close(database);
+    
+    sucess = [self saveEnterpriseContactData:enterpriseContact];
+    
+    
+    return  sucess;
+}
+
+-(BOOL)saveEnterpriseContactData:(TMBEnterpriseContact*)enterpriseContact{
+    
+    BOOL sucess = NO;
+    sqlite3_stmt *statement = NULL;
+    
+    const char* update_stmt = "INSERT INTO EnterpriseInfo (Name,Cnpj,Email,PhoneNumber,WhatsApp,AdressCep,AdressState,AdressCity,AdressSector,AdressStreet,AdressNumber,AdressComplement) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+    
+    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+        
+        
+        if (sqlite3_prepare_v2(database, update_stmt, -1, &statement, NULL) == SQLITE_OK){
+        }
+        
+        
+        if (sqlite3_bind_text(statement, 1, [enterpriseContact.name UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 2, [enterpriseContact.cnpj UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 3, [enterpriseContact.email UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 4, [enterpriseContact.phoneNumber UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 5, [enterpriseContact.whatsApp UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 6, [enterpriseContact.location.cep UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 7, [enterpriseContact.location.state UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 8, [enterpriseContact.location.city UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 9, [enterpriseContact.location.sector UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 10, [enterpriseContact.location.street UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 11, [enterpriseContact.location.number UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        if (sqlite3_bind_text(statement, 12, [enterpriseContact.location.complement UTF8String], -1, SQLITE_TRANSIENT) != SQLITE_OK)
+            NSLog(@"prepare failed: %s", sqlite3_errmsg(database));
+        
+        
+        
+        
+        
+        
+        if (sqlite3_step(statement) == SQLITE_DONE)
+        {
+            sucess = YES;
+        }
+        else
+        {
+            NSLog(@"failed: %s", sqlite3_errmsg(database));
+            sucess = NO;
+        }
+        
+        
+    }
+    
+    sqlite3_finalize(statement);
+    sqlite3_close(database);
+    
+    
+    return sucess;
+}
+
 
 
 @end

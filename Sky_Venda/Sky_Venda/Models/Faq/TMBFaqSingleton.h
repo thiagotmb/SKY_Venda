@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class TMBFaq;
-@interface TMBFaqSingleton : NSObject<UIAlertViewDelegate>
+@interface TMBFaqSingleton : NSObject<NSURLConnectionDelegate>
 
 @property (nonatomic) TMBFaq* faqItem;
 @property (nonatomic) NSMutableArray* faqList;
