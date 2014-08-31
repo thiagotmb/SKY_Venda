@@ -93,10 +93,10 @@
     self.buffer     = nil;
     
     // Inform the user, most likely in a UIAlert
-    NSLog(@"Connection failed! Error - %@ %@",
+    NSLog(@" TMBFaq Singleton Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-    NSLog(@"ERROR %@", [error localizedDescription]);
+    NSLog(@" TMBFaq Singleton ERROR %@", [error localizedDescription]);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DataRecieved" object:nil userInfo:[NSDictionary dictionaryWithObject:@"Error"forKey:@"Connection"]];
 }
 
@@ -132,7 +132,7 @@
                 // Call reload in order to refresh the tableview
                 
             }else{
-                NSLog(@"ERROR %@", [error localizedDescription]);
+                NSLog(@" TMBFaq Singleton ERROR %@", [error localizedDescription]);
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"DataRecieved" object:nil userInfo:[NSDictionary dictionaryWithObject:@"Error"forKey:@"Connection"]];
             }
             
@@ -147,17 +147,33 @@
 
 -(BOOL)requestFaqList{
 
-    NSURL *myURL = [NSURL URLWithString:@"http://localhost/~thiagoMB/getFaqList.php"];
-    NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
+    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/sky_sales/php/getFaqList.php"];
+    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
+    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
+    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
+    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
+    
+	//2.REBUILD status string from passingObject
+    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",dbHost,dbUserName,dbPassword,dbName]);
+    
+    NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:myURL];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+
     // Create the connection
-    self.myConnection = [NSURLConnection connectionWithRequest:myRequest delegate:self];
+    self.myConnection = [NSURLConnection connectionWithRequest:request delegate:self];
     //Test to make sure the connection worked
     if (self.myConnection){
         self.buffer = [NSMutableData data];
         [self.myConnection start];
         return YES;
     }else{
-        NSLog(@"Connection Failed");
+        NSLog(@" TMBFaq Singleton Connection Failed");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DataRecieved" object:nil userInfo:[NSDictionary dictionaryWithObject:@"Error"forKey:@"Connection"]];
         return NO;
     }

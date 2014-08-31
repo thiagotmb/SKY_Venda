@@ -19,6 +19,6 @@
 @property NSDate *birthDate;
 
 @property BOOL gender;
-@property int socialReason;
+@property int civilState;
 
 @end

@@ -42,7 +42,7 @@
     
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *querySQL = @"SELECT Name, Cpf, Rg, Email, PhoneNumber, BirthDate, SocialReason, Gender, Cep, City, State, Sector, Street, AdressNumber, Complement, CreditCardOperator, CreditCardNumber, CreditCardExpiration, Package, SubmitDate FROM SignatureData";
+        NSString *querySQL = @"SELECT Name, Cpf, Rg, Email, PhoneNumber, BirthDate, CivilState, Gender, Cep, City, State, Sector, Street, AdressNumber, Complement, CreditCardOperator, CreditCardNumber, CreditCardExpiration, Package, SubmitDate FROM SignatureData";
         const char *query_stmt = [querySQL UTF8String];
         
         if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
@@ -63,7 +63,7 @@
                 NSDate *storedBirthDate = [signatureData getDateFromString:[self getColumnText:5 forStatement:statement]];
                 signatureData.client.birthDate = storedBirthDate;
                 
-                signatureData.client.socialReason = sqlite3_column_int(statement, 6);
+                signatureData.client.civilState = sqlite3_column_int(statement, 6);
                 signatureData.client.gender = sqlite3_column_int(statement, 7);
 
                 signatureData.installationAdress.cep = [self getColumnText:8 forStatement:statement];;
@@ -109,7 +109,7 @@
         
         NSString *signatureSubmitDate = [signatureData getStringFromDate:signatureData.submitDate];
         
-            NSString *updateSQL = [NSString stringWithFormat:@"UPDATE SignatureData set Name = '%@', Cpf = '%@', Rg = '%@', Email = '%@', PhoneNumber = '%@', BirthDate = '%@', SocialReason = '%d', Gender = '%d', Cep = '%@', City = '%@', State = '%@', Sector = '%@', Street = '%@', AdressNumber = '%@', Complement = '%@', CreditCardOperator = '%d', CreditCardNumber = '%@', CreditCardExpiration = '%@', SubmitDate = '%@' ",signatureData.client.name,signatureData.client.cpf,signatureData.client.rg,signatureData.client.email,signatureData.client.phoneNumber, birthDateString, signatureData.client.socialReason, signatureData.client.gender, signatureData.installationAdress.cep, signatureData.installationAdress.city, signatureData.installationAdress.state, signatureData.installationAdress.sector, signatureData.installationAdress.street, signatureData.installationAdress.number, signatureData.installationAdress.complement, signatureData.creditCard.operatorCode, signatureData.creditCard.number, creditCardExpirationDateString, signatureSubmitDate];
+            NSString *updateSQL = [NSString stringWithFormat:@"UPDATE SignatureData set Name = '%@', Cpf = '%@', Rg = '%@', Email = '%@', PhoneNumber = '%@', BirthDate = '%@', CivilState = '%d', Gender = '%d', Cep = '%@', City = '%@', State = '%@', Sector = '%@', Street = '%@', AdressNumber = '%@', Complement = '%@', CreditCardOperator = '%d', CreditCardNumber = '%@', CreditCardExpiration = '%@', SubmitDate = '%@' ",signatureData.client.name,signatureData.client.cpf,signatureData.client.rg,signatureData.client.email,signatureData.client.phoneNumber, birthDateString, signatureData.client.civilState, signatureData.client.gender, signatureData.installationAdress.cep, signatureData.installationAdress.city, signatureData.installationAdress.state, signatureData.installationAdress.sector, signatureData.installationAdress.street, signatureData.installationAdress.number, signatureData.installationAdress.complement, signatureData.creditCard.operatorCode, signatureData.creditCard.number, creditCardExpirationDateString, signatureSubmitDate];
             const char* update_stmt = [updateSQL UTF8String];
 
             sqlite3_prepare_v2(database, update_stmt, -1, &statement, NULL);

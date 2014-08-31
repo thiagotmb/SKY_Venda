@@ -11,11 +11,13 @@
 #import "TMBPaymentSingleton.h"
 
 
-@interface TMBPaymentDataViewController ()
+@interface TMBPaymentDataViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (weak, nonatomic) IBOutlet UITextField *creditCardExpirationDateTextField;
 @property (weak, nonatomic) IBOutlet UITextView *signatureAdhesionTextView;
 @property (weak, nonatomic) IBOutlet UITextField *creditCardNumber;
+
+@property (nonatomic) UIDatePicker* datePicker;
 
 - (IBAction)submitSignature:(id)sender;
 
@@ -46,18 +48,22 @@
     self.creditCardNumber.text = self.creditCard.number;
     self.creditCardExpirationDateTextField.text = [sharedSignatureData.signature getStringFromDate:self.creditCard.expiration];
     
-
-    UIDatePicker *datePicker =[[UIDatePicker alloc] init];
-    datePicker.datePickerMode =UIDatePickerModeDate;
-    [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
-    datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"];
-    datePicker.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DatePickerView.png"]];
+    self.datePicker =[[UIDatePicker alloc] init];
+    self.datePicker.datePickerMode =UIDatePickerModeDate;
+    [self.datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+    self.datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(self.datePicker.frame.origin.x, self.datePicker.frame.origin.y, self.datePicker.frame.size.width/5,self.datePicker.frame.size.height) ];
+    [label setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"DatePickerView.png"]]];
+    [self.datePicker addSubview:label];
+    self.datePicker.viewForBaselineLayout.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DatePickerView.png"]];
+    self.datePicker.minimumDate = [NSDate date];
+    self.creditCardExpirationDateTextField.inputView = self.datePicker;
+    self.creditCardExpirationDateTextField.keyboardAppearance = UIKeyboardAppearanceDefault;
     
     if (self.creditCard.expiration!=nil) {
-        datePicker.date = self.creditCard.expiration;
+        self.datePicker.date = self.creditCard.expiration;
     }
     
-    self.creditCardExpirationDateTextField.inputView = datePicker;
     
     UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
     self.background.image = backgroundImage;
@@ -66,10 +72,10 @@
 
 -(void)updateCreditCardInfo:(NSNotification*)aNotification{
     
-    NSLog(@"pssei credit card scaned");
 
     if ([aNotification.name isEqual:@"CreditCardScaned"]) {
         [self updateText:self.creditCardExpirationDateTextField];
+        
         self.creditCardNumber.text = sharedPaymentData.creditCardInfo.redactedCardNumber;
         self.creditCard.number = sharedPaymentData.creditCardInfo.cardNumber;
         sharedSignatureData.signature.creditCard = self.creditCard;
@@ -92,7 +98,7 @@
                          [textField setAlpha:1];
                      }
                      completion:nil];
-    
+
     
 }
 
@@ -102,7 +108,13 @@
     [self updateText:self.creditCardExpirationDateTextField];
     self.creditCard.expiration = datePicker.date;
     sharedSignatureData.signature.creditCard = self.creditCard;
-    self.creditCardExpirationDateTextField.text = [sharedSignatureData.signature getStringFromDate:datePicker.date];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/yyyy"];
+    NSString *dateString;
+    dateString = [dateFormat stringFromDate:datePicker.date];
+    
+    self.creditCardExpirationDateTextField.text = dateString;
     
     
 }
@@ -121,14 +133,14 @@
     
 }
 
+
+
 -(void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCreditCardInfo:) name:@"CreditCardScaned" object:nil];
-    NSLog(@"%@",[[NSNotificationCenter defaultCenter] observationInfo]);
-    
-}
 
+}
 
 -(void)viewDidDisappear:(BOOL)animated{
     

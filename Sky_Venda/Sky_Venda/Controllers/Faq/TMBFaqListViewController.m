@@ -213,25 +213,31 @@
 - (BOOL)requestContact:(TMBContactRequestor*)contactRequestor{
     //1.  Log the tag for verification first
     
+    
+    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/sky_sales/php/contactRequest.php"];
+    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
+    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
+    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
+    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
+    
 	//2.REBUILD status string from passingObject
-	NSString *dataToPost = [[NSString alloc] initWithFormat:@"RequestorContact=%@&DateOfRequest=%@&RequestType=%d",contactRequestor.contact,contactRequestor.dateOfRequest,contactRequestor.type];
-	//3.  Post tag to cloud
+    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@&RequestorContact=%@&DateOfRequest=%@&RequestType=%d",dbHost,dbUserName,dbPassword,dbName,contactRequestor.contact,contactRequestor.dateOfRequest,contactRequestor.type]);
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/~thiagoMB/contactRequest.php"]];
-    [request setURL:url];
+    [request setURL:myURL];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
+
     
     NSURLResponse *response;
     NSError *error;
 	// We should probably be parsing the data returned by this call, for now just check the error.
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-   // NSLog(@"%@!",request);
+    NSLog(@"%@!",request);
     return (error == nil);
 }
 

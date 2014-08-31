@@ -1,11 +1,18 @@
 <?php
 
 //Conecta a database 
-$link = mysql_pconnect("localhost","root","root") or die("Could not connect with DB");
+$dbHost = $_POST['DBHost'];
+$dbUserName = $_POST['DBUserName'];
+$dbPassword = $_POST['DBPassword'];
+$dbName = $_POST['DBName'];
 
-//Seleciona o banco a ser usado
-mysql_select_db("SKY_VENDA") or die("Could not select database");
+$con = mysql_connect($dbHost,$dbUserName,$dbPassword);
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
 
+mysql_select_db($dbName, $con);
 
 $arr = array();
 

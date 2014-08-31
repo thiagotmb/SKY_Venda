@@ -45,7 +45,7 @@
     
     UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Não foi possível pegar sua localização, verifique suas conexões" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [errorAlert show];
-    NSLog(@"Error: %@",error.description);
+    NSLog(@"TMBGetLocation Error: %@",error.description);
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -157,7 +157,7 @@
 
     if (self.adress) {
         sharedSignatureData.signature.installationAdress = self.adress;
-        NSLog(@"%.8f,%.8f",zoomLocation.latitude,zoomLocation.longitude);
+       // NSLog(@"%.8f,%.8f",zoomLocation.latitude,zoomLocation.longitude);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationReceived" object:nil];
         MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
         

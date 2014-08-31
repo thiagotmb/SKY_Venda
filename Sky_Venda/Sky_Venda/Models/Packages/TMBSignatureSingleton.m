@@ -8,6 +8,9 @@
 
 #import "TMBSignatureSingleton.h"
 #import "TMBPrivateSignatureDataDAO.h"
+
+
+
 @implementation TMBSignatureSingleton{
 
     TMBPrivateSignatureDataDAO *signatureDAO;
@@ -21,8 +24,10 @@
     if (!sharedData) {
         
         sharedData = [[self alloc] initPrivate];
+
         
     }
+
     return sharedData;
 }
 
@@ -61,13 +66,21 @@
     //1.  Log the tag for verification first
     
 	//2.REBUILD status string from passingObject
-	NSString *dataToPost = ([[NSString alloc] initWithFormat:@"Name=%@&Cpf=%@&Rg=%@&Email=%@&PhoneNumber=%@&BirthDate=%@&SocialReason=%d&Gender=%hhd&Cep=%@&City=%@&State=%@&Sector=%@&Street=%@&AdressNumber=%@&Complement=%@&creditCardOperator=%d&CreditCardNumber=%@&CreditCardExpiration=%@&Package=%d&SubmitDate=%@",signature.client.name,signature.client.cpf,signature.client.rg,signature.client.email,signature.client.phoneNumber,[signature getStringFromDate:signature.client.birthDate],signature.client.socialReason,signature.client.gender,signature.installationAdress.cep,signature.installationAdress.city,signature.installationAdress.state,signature.installationAdress.sector,signature.installationAdress.street,signature.installationAdress.number,signature.installationAdress.complement,signature.creditCard.operatorCode,signature.creditCard.number,[signature getStringFromDate:signature.creditCard.expiration],signature.package.packageId,[signature getStringFromDate:[NSDate date]]]);
+    
+    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
+    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
+    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
+    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
+    
+    //DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@& ,dbhost,dbuser,dbpassword,dbname,
+    
+	NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@&Name=%@&Cpf=%@&Rg=%@&Email=%@&PhoneNumber=%@&BirthDate=%@&CivilState=%d&Gender=%hhd&Cep=%@&City=%@&State=%@&Sector=%@&Street=%@&AdressNumber=%@&Complement=%@&creditCardOperator=%d&CreditCardNumber=%@&CreditCardExpiration=%@&Package=%d&SubmitDate=%@",dbHost,dbUserName,dbPassword,dbName, signature.client.name,signature.client.cpf,signature.client.rg,signature.client.email,signature.client.phoneNumber,[signature getStringFromDate:signature.client.birthDate],signature.client.civilState,signature.client.gender,signature.installationAdress.cep,signature.installationAdress.city,signature.installationAdress.state,signature.installationAdress.sector,signature.installationAdress.street,signature.installationAdress.number,signature.installationAdress.complement,signature.creditCard.operatorCode,signature.creditCard.number,[signature getStringFromDate:signature.creditCard.expiration],signature.package.packageId,[signature getStringFromDate:[NSDate date]]]);
 	//3.  Post tag to cloud
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/~thiagoMB/writephp.php"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://sky4gtv.com.br/sky_sales/php/submitSignatureData.php"]];
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -78,14 +91,17 @@
     NSError *error;
 	// We should probably be parsing the data returned by this call, for now just check the error.
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    NSLog(@"%@!",request);
+   // NSLog(@"URL %@",request );
+
+    //NSLog(@"PHP SAYS %@",    [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]);
     return (error == nil);
 }
 
 -(void)loadSharedData{
     
-    
+
     self.signature = [signatureDAO getSignatureData];
+    
 
 }
 

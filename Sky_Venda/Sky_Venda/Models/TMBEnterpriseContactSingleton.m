@@ -91,10 +91,10 @@
     self.buffer     = nil;
     
     // Inform the user, most likely in a UIAlert
-    NSLog(@"Connection failed! Error - %@ %@",
+    NSLog(@"Enterprise Contact Singleton ConnectionConnection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-    NSLog(@"ERROR %@", [error localizedDescription]);
+    NSLog(@"Enterprise Contact Singleton Connection ERROR %@", [error localizedDescription]);
     
     
 }
@@ -102,7 +102,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"Succeeded! Enterprise Contact");
     //Create a queue and dispatch the parsing of the data
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 2), ^{
         // Parse the data from JSON to an array
         NSError *error = nil;
         NSArray *jsonString = [NSJSONSerialization JSONObjectWithData:self.buffer options:NSJSONReadingMutableContainers error:&error];
@@ -115,6 +115,7 @@
                 //If no error then PROCESS ARRAY
                 NSDictionary* tempDictionary = jsonString[0];
                 self.enterpriseContact = [[TMBEnterpriseContact alloc] init];
+                
                 
                 self.enterpriseContact.name = [tempDictionary objectForKey:@"Name"];
                 self.enterpriseContact.cnpj = [tempDictionary objectForKey:@"Cnpj"];
@@ -130,13 +131,13 @@
                 self.enterpriseContact.location.complement = [tempDictionary objectForKey:@"AdressComplement"];
 
                 
-               // NSLog(@"%@",self.enterpriseContact);
+                //NSLog(@"%@",self.enterpriseContact);
                 
                 [enterpriseContactDAO updateEnterpriseContactData:self.enterpriseContact];
                 
                 // Call reload in order to refresh the tableview
             }else{
-                NSLog(@"ERROR %@", [error localizedDescription]);
+                NSLog(@"ERROR Enterprise Contact Singleton Connection %@", [error localizedDescription]);
                 
             }
             
@@ -151,17 +152,34 @@
 
 -(BOOL)requestContactInfo{
     
-    NSURL *myURL = [NSURL URLWithString:@"http://localhost/~thiagoMB/getEnterpriseContact.php"];
-    NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
+    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/sky_sales/php/getEnterpriseContact.php"];
+    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
+    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
+    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
+    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
+    
+    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",dbHost,dbUserName,dbPassword,dbName]);
+	//3.  Post tag to cloud
+    
+    NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:myURL];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
     // Create the connection
-    self.myConnection = [NSURLConnection connectionWithRequest:myRequest delegate:self];
+    self.myConnection = [NSURLConnection connectionWithRequest:request delegate:self];
+
     //Test to make sure the connection worked
     if (self.myConnection){
         self.buffer = [NSMutableData data];
         [self.myConnection start];
         return YES;
     }else{
-        NSLog(@"Connection Failed");
+        NSLog(@"Enterprise Contact Singleton Connection Failed");
         
         return NO;
     }

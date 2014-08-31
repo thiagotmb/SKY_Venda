@@ -171,7 +171,7 @@
         }
         else
         {
-            NSLog(@"failed: %s", sqlite3_errmsg(database));
+            NSLog(@"TMBPackageDAO failed: %s", sqlite3_errmsg(database));
             sucess = NO;
         }
         

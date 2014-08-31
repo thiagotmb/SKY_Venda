@@ -34,7 +34,7 @@ enum TMBTextFieldTag:NSInteger{
     TMBClientBirhDatePickerTag = 12,
     
     TMBClientGenderPickerTag = 13,
-    TMBClientSocialReasonPickerTag = 14,
+    TMBClientCivilStatePickerTag = 14,
 
 };
 

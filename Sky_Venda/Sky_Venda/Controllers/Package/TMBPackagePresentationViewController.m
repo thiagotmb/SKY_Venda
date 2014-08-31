@@ -19,6 +19,8 @@
 @property (nonatomic) NSMutableArray* packageList;
 @property (nonatomic) TMBPackage* packageItem;
 
+@property (nonatomic) BOOL didAppear;
+
 @end
 
 @implementation TMBPackagePresentationViewController{
@@ -40,11 +42,32 @@
 {
     [super viewDidLoad];
     sharedSignatureData = [TMBSignatureSingleton sharedData];
-
+    sharedPackageData = [TMBPackageSingleton sharedData];
+    
     self.packagePresentPrincipalView.type = iCarouselTypeCoverFlow;
     self.packageDetailTableView.backgroundColor = [UIColor clearColor];
     self.packagePresentPrincipalView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+    
+    [self.packagePresentPrincipalView setCurrentItemIndex:9];
+
+    [UIView animateWithDuration:1.f
+                          delay:0.2f
+                        options:UIViewAnimationOptionLayoutSubviews
+                     animations:^{
+                         
+                         //image.alpha = 0.0;
+                         //self.packagePresentPrincipalView.frame = CGRectMake(0, self.view.center.y, self.view.frame.size.width, self.view.frame.size.height);
+                         self.packageDetailTableView.frame = CGRectMake(self.view.frame.size.width, self.packageDetailTableView.frame.origin.y,self.view.frame.size.width, self.view.frame.size.height);
+
+                         [self.packagePresentPrincipalView setCurrentItemIndex:2];
+                         
+                     }
+                     completion:nil];
+    
+   // [sharedPackageData requestPackageList];
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,22 +82,82 @@
     TMBImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PackageDetail" forIndexPath:indexPath];
     int selectedPackage = (int)self.packagePresentPrincipalView.currentItemIndex;
     self.packageItem = self.packageList[selectedPackage];
+    cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+
     sharedSignatureData.signature.package = self.packageItem;
+
+
+    cell.imageView.image = self.packageItem.detailImage;
     
-    
-    cell.imageView.image = self.packageItem.mainImage;
     return cell;
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 1;
+    return 2;
 }
+/*
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10,0,300,60)];
+    
+    // create image object
+    UIImage *myImage = [UIImage imageNamed:@"someimage.png"];;
+    
+    // create the label objects
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    headerLabel.frame = CGRectMake(0,18,200,20);
+    headerLabel.text =  @"Filmes";
+    headerLabel.textColor = [UIColor redColor];
+    
+    // create the imageView with the image in it
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:myImage];
+    imageView.frame = CGRectMake(10,10,50,50);
+    
+    [customView addSubview:imageView];
+    [customView addSubview:headerLabel];
+    
+    customView.backgroundColor = [UIColor clearColor];
+    
+    return customView;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 2;
+}
+
+
+-(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 100;
+}
+
+
+*/
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return self.packageItem.mainImage.size.height;
+    return self.packageItem.detailImage.size.height;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //NSLog(@"%d",self.packagePresentPrincipalView.currentItemIndex);
+    int selectedPackage = (int)self.packagePresentPrincipalView.currentItemIndex;
+    self.packageItem = self.packageList[selectedPackage];
+    sharedSignatureData.signature.package = self.packageItem;
+    
+
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    TMBClientDataViewController *clientDataViewController = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
+    [self.navigationController pushViewController:clientDataViewController animated:YES];
 }
 
 #pragma mark - iCarousel methods
@@ -83,6 +166,14 @@
     sharedPackageData = [TMBPackageSingleton sharedData];
     // Do any additional setup after loading the view.
     self.packageList =  sharedPackageData.packageList;
+    
+    if (!self.didAppear) {
+        TMBPackage *sky =[[TMBPackage alloc] init];
+        sky.mainImage =    [UIImage imageNamed:@"SKYLOGO.png"];
+        
+        [self.packageList addObject:sky];
+    }
+
 
     return self.packageList.count;
 }
@@ -100,6 +191,8 @@
     self.packageItem = self.packageList[index];
 
     packagePresentImageView.image = self.packageItem.mainImage;
+    //packagePresentImageView.image = [UIImage imageNamed:@"LaunchImage@iphoneR4.png"];
+
     
     return packagePresentImageView;
 }
@@ -169,8 +262,10 @@
 
                      }
                      completion:nil];
+    
 
-    //NSLog(@"%d",self.packagePresentPrincipalView.currentItemIndex);
+
+    
 
 }
 
@@ -180,6 +275,8 @@
     int selectedPackage = (int)self.packagePresentPrincipalView.currentItemIndex;
     self.packageItem = self.packageList[selectedPackage];
     sharedSignatureData.signature.package = self.packageItem;
+
+
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     TMBClientDataViewController *clientDataViewController = (TMBClientDataViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TMBClientDataViewController"];
@@ -190,6 +287,16 @@
     
     [self.packageDetailTableView reloadData];
     [self.packagePresentPrincipalView reloadData];
+}
+
+-(void)carouselDidEndDragging:(iCarousel *)carousel willDecelerate:(BOOL)decelerate{
+    if (!self.didAppear) {
+        self.didAppear = YES ;
+        [self.packageList removeLastObject];
+        
+        [self.packagePresentPrincipalView reloadData];
+        
+    }
 }
 
 #pragma mark - Navigation

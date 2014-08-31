@@ -200,8 +200,8 @@
             self.textField.text = self.pickerData[[pickerView selectedRowInComponent:component]];
 
             break;
-        case TMBClientSocialReasonPickerTag:
-            sharedSignatureData.signature.client.socialReason = (int)row;
+        case TMBClientCivilStatePickerTag:
+            sharedSignatureData.signature.client.civilState = (int)row;
             self.textField.text = self.pickerData[[pickerView selectedRowInComponent:component]];
             break;
         default:

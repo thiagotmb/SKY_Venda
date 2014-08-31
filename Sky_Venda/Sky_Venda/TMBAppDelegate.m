@@ -27,13 +27,14 @@
     sharedFaqList = [TMBFaqSingleton sharedData];
     sharedPackageList = [TMBPackageSingleton sharedData];
     sharedEnterpriseContact = [TMBEnterpriseContactSingleton sharedData];
-    
+
     
     [sharedSignature loadSharedData];
+
     [sharedFaqList loadSharedData];
     [sharedPackageList loadSharedData];
     [sharedEnterpriseContact loadSharedData];
-    
+
 
     [sharedPackageList requestPackageList];
 

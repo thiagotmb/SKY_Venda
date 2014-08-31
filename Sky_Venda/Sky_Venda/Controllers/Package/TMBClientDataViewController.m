@@ -26,7 +26,7 @@ enum TMBTableViewRow:NSInteger{
     TMBTableViewRowClientRg = 2,
     TMBTableViewRowClientCpf = 3,
     
-    TMBTableViewRowClientSocialReason = 4,
+    TMBTableViewRowClientCivilState = 4,
     TMBTableViewRowClientEmail = 5,
     TMBTableViewRowClientPhoneNumber = 6,
     TMBTableViewRowClientBirthDate = 7,
@@ -68,7 +68,7 @@ enum TMBTableViewRow:NSInteger{
 
     // Do any additional setup after loading the view.
     self.genderPickerData = @[@"Masculino",@"Feminino"];
-    self.socialReasonPickerData = @[@"Solteiro",@"Casado",@"Outros"];
+    self.civilStatePickerData = @[@"Solteiro",@"Casado",@"Outros"];
     
     UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
     self.background.image = backgroundImage;
@@ -111,6 +111,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.keyboardType = UIKeyboardTypeDefault;
             cell.textField.tag = TMBClientNameTextFieldTag;
             cell.textField.inputView = nil;
+            cell.textField.keyboardAppearance = UIKeyboardAppearanceDark;
             [cell updateLabel];
             return cell;
             break;
@@ -122,6 +123,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.placeholder = @"CPF relativo ao nome acima";
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             cell.textField.inputView = nil;
+            cell.textField.keyboardAppearance = UIKeyboardAppearanceDark;
 
             cell.textField.text = self.client.cpf;
             cell.textField.tag = TMBClientCpfTextFieldTag;
@@ -141,6 +143,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.text = self.client.rg;
             cell.textField.tag = TMBClientRgTextFieldTag;
             cell.textField.inputView = nil;
+            cell.textField.keyboardAppearance = UIKeyboardAppearanceDark;
             [cell updateLabel];
             return cell;
             
@@ -154,6 +157,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.text = self.client.email;
             cell.textField.tag = TMBClientEmailTextFieldTag;
             cell.textField.inputView = nil;
+            cell.textField.keyboardAppearance = UIKeyboardAppearanceDark;
             [cell updateLabel];
             return cell;
             
@@ -168,6 +172,7 @@ enum TMBTableViewRow:NSInteger{
             cell.textField.text = self.client.phoneNumber;
             cell.textField.tag = TMBClientPhoneNumberTextFieldTag;
             cell.textField.inputView = nil;
+            cell.textField.keyboardAppearance = UIKeyboardAppearanceDark;
             [cell updateLabel];
             return cell;
             break;
@@ -193,31 +198,35 @@ enum TMBTableViewRow:NSInteger{
             pickerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"PickerView.png"]];
 
             [pickerView setFrame:CGRectMake(pickerView.frame.origin.x, pickerView.frame.origin.y, pickerView.frame.size.width, pickerView.frame.size.height/2)];
+            cell.textField.keyboardAppearance = UIKeyboardAppearanceDefault;
+
             cell.textField.inputView = pickerView;
             [cell updateLabel];
 
             return cell;
             break;
         }
-        case TMBTableViewRowClientSocialReason:{
+        case TMBTableViewRowClientCivilState:{
             TMBTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"
                                                                            forIndexPath:indexPath];
-            cell.textField.tag = TMBClientSocialReasonPickerTag;
-            cell.titleLabel.text = @"Razão Social";
-            cell.textField.placeholder = @"Razão social";
-            cell.pickerData = self.socialReasonPickerData ;
+            cell.textField.tag = TMBClientCivilStatePickerTag;
+            cell.titleLabel.text = @"Estado Civil";
+            cell.textField.placeholder = @"Estado Civil";
+            cell.pickerData = self.civilStatePickerData ;
             cell.numberOfComponentsInPickerView = 1;
             
             UIPickerView* pickerView = [[UIPickerView alloc] init];
             pickerView.delegate = cell;
             pickerView.dataSource = cell;
-            [pickerView selectRow:self.client.socialReason inComponent:0 animated:YES];
-            pickerView.tag = TMBClientSocialReasonPickerTag;
-            if (self.socialReasonPickerData[self.client.socialReason]!=nil) {
+            [pickerView selectRow:self.client.civilState inComponent:0 animated:YES];
+            pickerView.tag = TMBClientCivilStatePickerTag;
+            if (self.civilStatePickerData[self.client.civilState]!=nil) {
                 pickerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"PickerView.png"]];
                 
                 [pickerView setFrame:CGRectMake(pickerView.frame.origin.x, pickerView.frame.origin.y, pickerView.frame.size.width, pickerView.frame.size.height/2)];
-            cell.textField.text = self.socialReasonPickerData[self.client.socialReason];
+            cell.textField.keyboardAppearance = UIKeyboardAppearanceDefault;
+
+            cell.textField.text = self.civilStatePickerData[self.client.civilState];
             }
             cell.textField.inputView = pickerView;
             [cell updateLabel];
@@ -298,6 +307,7 @@ enum TMBTableViewRow:NSInteger{
     keyboardShown = YES;
     
     // Get the keyboard size
+    
     UIScrollView *tableView;
     if([self.clientDataTableView.superview isKindOfClass:[UIScrollView class]])
         tableView = (UIScrollView *)self.clientDataTableView.superview;

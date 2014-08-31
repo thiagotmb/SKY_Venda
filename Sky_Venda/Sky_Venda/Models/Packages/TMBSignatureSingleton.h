@@ -13,7 +13,7 @@
 
 @class TMBSignature;
 
-@interface TMBSignatureSingleton : NSObject
+@interface TMBSignatureSingleton : NSObject<NSURLConnectionDataDelegate>
 
 @property (nonatomic) TMBSignature* signature;
 

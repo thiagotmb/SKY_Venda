@@ -29,6 +29,7 @@
 		A409B3EC19A6AFDA00C83BD4 /* TMBSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EB19A6AFDA00C83BD4 /* TMBSignature.m */; };
 		A409B3EF19A6D7BF00C83BD4 /* TMBSignatureSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */; };
 		A420EB3119AEA85F0042FEDE /* TMBContactRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = A420EB3019AEA85F0042FEDE /* TMBContactRequestor.m */; };
+		A4214E4C19B033E400A0C371 /* SKYLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = A4214E4B19B033E400A0C371 /* SKYLOGO.png */; };
 		A45A95CB19ACBFBE00C8923E /* NavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CA19ACBFBE00C8923E /* NavigationBar.png */; };
 		A45A95CD19ACC78900C8923E /* PickerView.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CC19ACC78900C8923E /* PickerView.png */; };
 		A45A95CF19ACCB6E00C8923E /* DatePickerView.png in Resources */ = {isa = PBXBuildFile; fileRef = A45A95CE19ACCB6E00C8923E /* DatePickerView.png */; };
@@ -125,6 +126,7 @@
 		A409B3EE19A6D7BF00C83BD4 /* TMBSignatureSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBSignatureSingleton.m; sourceTree = "<group>"; };
 		A420EB2F19AEA85F0042FEDE /* TMBContactRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBContactRequestor.h; sourceTree = "<group>"; };
 		A420EB3019AEA85F0042FEDE /* TMBContactRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBContactRequestor.m; sourceTree = "<group>"; };
+		A4214E4B19B033E400A0C371 /* SKYLOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKYLOGO.png; sourceTree = "<group>"; };
 		A45A95CA19ACBFBE00C8923E /* NavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBar.png; sourceTree = "<group>"; };
 		A45A95CC19ACC78900C8923E /* PickerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickerView.png; sourceTree = "<group>"; };
 		A45A95CE19ACCB6E00C8923E /* DatePickerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DatePickerView.png; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 		A48E3EDF199452F400EA54E2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A4214E4B19B033E400A0C371 /* SKYLOGO.png */,
 				A45A95CC19ACC78900C8923E /* PickerView.png */,
 				A45A95CE19ACCB6E00C8923E /* DatePickerView.png */,
 				A45A95CA19ACBFBE00C8923E /* NavigationBar.png */,
@@ -612,6 +615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A45A95CD19ACC78900C8923E /* PickerView.png in Resources */,
+				A4214E4C19B033E400A0C371 /* SKYLOGO.png in Resources */,
 				A45A95D119ACD34700C8923E /* TabBar.png in Resources */,
 				A4CA6C0A19AA4C31002DEBA3 /* Transparent.png in Resources */,
 				A45A95CF19ACCB6E00C8923E /* DatePickerView.png in Resources */,

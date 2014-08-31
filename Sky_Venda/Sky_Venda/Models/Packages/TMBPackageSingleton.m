@@ -90,10 +90,10 @@
     self.buffer     = nil;
     
     // Inform the user, most likely in a UIAlert
-    NSLog(@"Connection failed! Error - %@ %@",
+    NSLog(@"TMBPackageSingleton Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-    NSLog(@"ERROR %@", [error localizedDescription]);
+    NSLog(@"TMBPackageSingleton ERROR %@", [error localizedDescription]);
 
 
 }
@@ -105,6 +105,7 @@
         // Parse the data from JSON to an array
         NSError *error = nil;
         NSArray *jsonString = [NSJSONSerialization JSONObjectWithData:self.buffer options:NSJSONReadingMutableContainers error:&error];
+       // NSLog(@"%@",jsonString);
         // Return to the main queue to handle the data & UI
         dispatch_async(dispatch_get_main_queue(), ^{
 
@@ -121,7 +122,8 @@
                     
                     NSData *data = [[NSData alloc]initWithBase64EncodedString:[tempDictionary objectForKey:@"MainImage"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
                     packageItem.mainImage = [UIImage imageWithData:data];
-
+                    
+                    
                     NSData *data2 = [[NSData alloc]initWithBase64EncodedString:[tempDictionary objectForKey:@"DetailImage"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
                     packageItem.detailImage = [UIImage imageWithData:data2];
 
@@ -129,13 +131,14 @@
                    // NSLog(@"%@",packageItem);
                 [self.packageList addObject:packageItem];
                 }
-                
+                NSLog(@"PHP SAYS %@",    [NSString stringWithContentsOfURL:connection.originalRequest.URL encoding:NSUTF8StringEncoding error:nil]);
+
                 [packageDAO updatePackageData:self.packageList];
 
                 // Call reload in order to refresh the tableview
                 
             }else{
-                NSLog(@"ERROR %@", [error localizedDescription]);
+                NSLog(@"TMBPackageSingleton ERROR %@", [error localizedDescription]);
 
             }
             //Stop animating the spinner
@@ -149,17 +152,33 @@
 
 -(BOOL)requestPackageList{
     
-    NSURL *myURL = [NSURL URLWithString:@"http://localhost/~thiagoMB/getPackagesList.php"];
-    NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
-    // Create the connection
-    self.myConnection = [NSURLConnection connectionWithRequest:myRequest delegate:self];
+    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/sky_sales/php/getPackagesList.php"];
+    
+    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
+    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
+    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
+    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
+    
+	//2.REBUILD status string from passingObject
+    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",dbHost,dbUserName,dbPassword,dbName]);
+    
+    NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:myURL];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    self.myConnection = [NSURLConnection connectionWithRequest:request delegate:self];
     //Test to make sure the connection worked
     if (self.myConnection){
         self.buffer = [NSMutableData data];
         [self.myConnection start];
         return YES;
     }else{
-        NSLog(@"Connection Failed");
+        NSLog(@"TMBPackageSingleton Connection Failed");
 
         return NO;
     }

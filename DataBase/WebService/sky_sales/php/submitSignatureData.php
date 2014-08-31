@@ -1,17 +1,21 @@
+
 <?php
 
-echo "1 record added to tags";  
+$dbHost = $_POST['DBHost'];
+$dbUserName = $_POST['DBUserName'];
+$dbPassword = $_POST['DBPassword'];
+$dbName = $_POST['DBName'];
 
-
-$con = mysql_connect("localhost","root","root");
+$con = mysql_connect($dbHost,$dbUserName,$dbPassword);
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("SKY_VENDA", $con);
+mysql_select_db($dbName, $con);
 
-$socialReason = intval($_POST[SocialReason]);//filter_input($_POST[SocialReason], 'a', FILTER_VALIDATE_INT);
+
+$civilState = intval($_POST[CivilState]);//filter_input($_POST[CivilState], 'a', FILTER_VALIDATE_INT);
 $gender = intval($_POST[Gender]);
 
 $creditCardOperator = intval($_POST[CreditCardOperator]);
@@ -23,7 +27,7 @@ Rg,
 Email, 
 PhoneNumber, 
 BirthDate, 
-SocialReason, 
+CivilState, 
 Gender, 
 Cep, 
 City, 
@@ -43,7 +47,7 @@ SubmitDate) VALUES (
 '$_POST[Email]',
 '$_POST[PhoneNumber]',
 '$_POST[BirthDate]',
-'$socialReason',
+'$civilState',
 '$gender',
 '$_POST[Cep]',
 '$_POST[City]',

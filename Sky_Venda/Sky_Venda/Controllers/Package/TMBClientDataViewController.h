@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *clientDataTableView;
 
 @property (nonatomic) NSArray *genderPickerData;
-@property (nonatomic) NSArray *socialReasonPickerData;
+@property (nonatomic) NSArray *civilStatePickerData;
 
 @property TMBClient *client;
 

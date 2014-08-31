@@ -27,7 +27,7 @@
 }
 -(NSString *)description{
     
-    NSString *description = [NSString stringWithFormat:@"Object: %@\nName: %@\nCPF: %@\nRG: %@\nEmail: %@\nPhoneNumber: %@\nBirthDate: %@\nGender: %d\nSocialReazon: %d",self.class,self.name,self.cpf,self.rg,self.email,self.phoneNumber,self.birthDate,self.gender,self.socialReason];
+    NSString *description = [NSString stringWithFormat:@"Object: %@\nName: %@\nCPF: %@\nRG: %@\nEmail: %@\nPhoneNumber: %@\nBirthDate: %@\nGender: %d\nSocialReazon: %d",self.class,self.name,self.cpf,self.rg,self.email,self.phoneNumber,self.birthDate,self.gender,self.civilState];
     
     return description;
 }

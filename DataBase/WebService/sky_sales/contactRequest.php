@@ -1,12 +1,17 @@
  <?php
 
-$con = mysql_connect("localhost","root","root");
+$dbHost = $_POST['DBHost'];
+$dbUserName = $_POST['DBUserName'];
+$dbPassword = $_POST['DBPassword'];
+$dbName = $_POST['DBName'];
+
+$con = mysql_connect($dbHost,$dbUserName,$dbPassword);
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("SKY_VENDA", $con);
+mysql_select_db($dbName, $con);
 
 
 $RequestType = intval($_POST[RequestType]);

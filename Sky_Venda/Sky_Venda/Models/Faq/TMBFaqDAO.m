@@ -141,7 +141,7 @@
         }
         else
         {
-            NSLog(@"failed: %s", sqlite3_errmsg(database));
+            NSLog(@"TMBFAqDAO failed: %s", sqlite3_errmsg(database));
             sucess = NO;
         }
         
