@@ -15,6 +15,7 @@
 
 @interface TMBCardIOAPIViewController ()<CardIOViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 - (IBAction)cancelScan:(id)sender;
 
@@ -44,6 +45,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     CardIOView *cardIOSubView = [[CardIOView alloc] initWithFrame:self.view.frame];
+    CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - self.cancelButton.frame.size.height*5);
     cardIOSubView.scannedImageDuration = 3;
     //NSLog(@"Originx: %.2f, Originy: %.2f, Width: %.2f, Heigth: %.2f",self.view.frame.origin.x,self.view.frame.origin.y,self.view.frame.size.width,self.view.frame.size.height);
     

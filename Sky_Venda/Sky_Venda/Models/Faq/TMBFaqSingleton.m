@@ -147,7 +147,7 @@
 
 -(BOOL)requestFaqList{
 
-    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/sky_sales/php/getFaqList.php"];
+    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/php/getFaqList.php"];
     NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
     NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
     NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];

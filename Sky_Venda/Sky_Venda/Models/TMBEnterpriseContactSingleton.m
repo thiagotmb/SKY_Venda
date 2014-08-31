@@ -152,7 +152,7 @@
 
 -(BOOL)requestContactInfo{
     
-    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/sky_sales/php/getEnterpriseContact.php"];
+    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/php/getEnterpriseContact.php"];
     NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
     NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
     NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];

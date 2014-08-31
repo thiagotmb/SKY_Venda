@@ -80,7 +80,7 @@
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://sky4gtv.com.br/sky_sales/php/submitSignatureData.php"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://sky4gtv.com.br/php/submitSignatureData.php"]];
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];

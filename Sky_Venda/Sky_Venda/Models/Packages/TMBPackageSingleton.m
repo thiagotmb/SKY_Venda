@@ -152,7 +152,7 @@
 
 -(BOOL)requestPackageList{
     
-    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/sky_sales/php/getPackagesList.php"];
+    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/php/getPackagesList.php"];
     
     NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
     NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];

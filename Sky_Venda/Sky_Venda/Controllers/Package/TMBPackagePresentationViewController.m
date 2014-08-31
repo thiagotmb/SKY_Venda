@@ -82,7 +82,7 @@
     TMBImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PackageDetail" forIndexPath:indexPath];
     int selectedPackage = (int)self.packagePresentPrincipalView.currentItemIndex;
     self.packageItem = self.packageList[selectedPackage];
-    cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+    cell.contentView.backgroundColor = [UIColor clearColor];
 
     sharedSignatureData.signature.package = self.packageItem;
 

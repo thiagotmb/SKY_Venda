@@ -73,6 +73,7 @@
 		A4D9E1AF19ABF22500E0B9A0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D9E1AE19ABF22500E0B9A0 /* Security.framework */; };
 		A4D9E1B219ABF6A600E0B9A0 /* TMBCardIOAPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D9E1B119ABF6A500E0B9A0 /* TMBCardIOAPIViewController.m */; };
 		A4D9E1B519ABFAD800E0B9A0 /* TMBPaymentSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D9E1B419ABFAD800E0B9A0 /* TMBPaymentSingleton.m */; };
+		A4FABC4E19B3B0700012CC68 /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A4FABC4D19B3B0700012CC68 /* Button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +195,7 @@
 		A4D9E1B119ABF6A500E0B9A0 /* TMBCardIOAPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBCardIOAPIViewController.m; sourceTree = "<group>"; };
 		A4D9E1B319ABFAD800E0B9A0 /* TMBPaymentSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPaymentSingleton.h; sourceTree = "<group>"; };
 		A4D9E1B419ABFAD800E0B9A0 /* TMBPaymentSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPaymentSingleton.m; sourceTree = "<group>"; };
+		A4FABC4D19B3B0700012CC68 /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +424,7 @@
 				A4CA6C0719AA4C31002DEBA3 /* Background.png */,
 				A45A95D019ACD34700C8923E /* TabBar.png */,
 				A4CA6C0819AA4C31002DEBA3 /* Transparent.png */,
+				A4FABC4D19B3B0700012CC68 /* Button.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A45A95CD19ACC78900C8923E /* PickerView.png in Resources */,
+				A4FABC4E19B3B0700012CC68 /* Button.png in Resources */,
 				A4214E4C19B033E400A0C371 /* SKYLOGO.png in Resources */,
 				A45A95D119ACD34700C8923E /* TabBar.png in Resources */,
 				A4CA6C0A19AA4C31002DEBA3 /* Transparent.png in Resources */,
