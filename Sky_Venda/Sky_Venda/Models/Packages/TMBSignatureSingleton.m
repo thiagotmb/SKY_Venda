@@ -67,20 +67,15 @@
     
 	//2.REBUILD status string from passingObject
     
-    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
-    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
-    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
-    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
-    
     //DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@& ,dbhost,dbuser,dbpassword,dbname,
     
-	NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@&Name=%@&Cpf=%@&Rg=%@&Email=%@&PhoneNumber=%@&BirthDate=%@&CivilState=%d&Gender=%d&Cep=%@&City=%@&State=%@&Sector=%@&Street=%@&AdressNumber=%@&Complement=%@&creditCardOperator=%d&CreditCardNumber=%@&CreditCardExpiration=%@&Package=%d&SubmitDate=%@",dbHost,dbUserName,dbPassword,dbName, signature.client.name,signature.client.cpf,signature.client.rg,signature.client.email,signature.client.phoneNumber,[signature getStringFromDate:signature.client.birthDate],signature.client.civilState,signature.client.gender,signature.installationAdress.cep,signature.installationAdress.city,signature.installationAdress.state,signature.installationAdress.sector,signature.installationAdress.street,signature.installationAdress.number,signature.installationAdress.complement,signature.creditCard.operatorCode,signature.creditCard.number,[signature getStringFromDate:signature.creditCard.expiration],signature.package.packageId,[signature getStringFromDate:[NSDate date]]]);
+	NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@&Name=%@&Cpf=%@&Rg=%@&Email=%@&PhoneNumber=%@&BirthDate=%@&CivilState=%d&Gender=%d&Cep=%@&City=%@&State=%@&Sector=%@&Street=%@&AdressNumber=%@&Complement=%@&creditCardOperator=%d&CreditCardNumber=%@&CreditCardExpiration=%@&Package=%d&SubmitDate=%@",[TMBWebServiceDbInfoSingleton getWebServiceDbHost],[TMBWebServiceDbInfoSingleton getWebServiceDbUserName],[TMBWebServiceDbInfoSingleton getWebServiceDbUserPassword],[TMBWebServiceDbInfoSingleton getWebServiceDbName], signature.client.name,signature.client.cpf,signature.client.rg,signature.client.email,signature.client.phoneNumber,[signature getStringFromDate:signature.client.birthDate],signature.client.civilState,signature.client.gender,signature.installationAdress.cep,signature.installationAdress.city,signature.installationAdress.state,signature.installationAdress.sector,signature.installationAdress.street,signature.installationAdress.number,signature.installationAdress.complement,signature.creditCard.operatorCode,signature.creditCard.number,[signature getStringFromDate:signature.creditCard.expiration],signature.package.packageId,[signature getStringFromDate:[NSDate date]]]);
 	//3.  Post tag to cloud
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%ld", [postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%ld", (unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://sky4gtv.com.br/php/submitSignatureData.php"]];
+    NSURL *url = [NSURL URLWithString:[TMBWebServiceDbInfoSingleton getWebServiceUrlForType:TMBWebServiceUrlTypeSubmitSignatureData]];
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];

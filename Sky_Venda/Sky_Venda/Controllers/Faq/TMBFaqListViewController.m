@@ -12,8 +12,8 @@
 #import "TMBContactRequestor.h"
 #import "TMBSignatureSingleton.h"
 
-#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
 @interface TMBFaqListViewController ()
 
@@ -215,14 +215,10 @@
     //1.  Log the tag for verification first
     
     
-    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/php/contactRequest.php"];
-    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
-    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
-    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
-    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
-    
+    NSURL *myURL = [NSURL URLWithString:[TMBWebServiceDbInfoSingleton getWebServiceUrlForType:TMBWebServiceUrlTypeContactRequest]];
+
 	//2.REBUILD status string from passingObject
-    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@&RequestorContact=%@&DateOfRequest=%@&RequestType=%d",dbHost,dbUserName,dbPassword,dbName,contactRequestor.contact,contactRequestor.dateOfRequest,contactRequestor.type]);
+    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@&RequestorContact=%@&DateOfRequest=%@&RequestType=%d",[TMBWebServiceDbInfoSingleton getWebServiceDbHost],[TMBWebServiceDbInfoSingleton getWebServiceDbUserName],[TMBWebServiceDbInfoSingleton getWebServiceDbUserPassword],[TMBWebServiceDbInfoSingleton getWebServiceDbName],contactRequestor.contact,contactRequestor.dateOfRequest,contactRequestor.type]);
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
@@ -233,7 +229,6 @@
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
 
-    
     NSURLResponse *response;
     NSError *error;
 	// We should probably be parsing the data returned by this call, for now just check the error.

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TMBPackage.h"
+#import "TMBWebServiceDbInfoSingleton.h"
 
 @interface TMBPackageSingleton : NSObject
 

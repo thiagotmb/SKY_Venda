@@ -152,13 +152,10 @@
 
 -(BOOL)requestContactInfo{
     
-    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/php/getEnterpriseContact.php"];
-    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
-    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
-    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
-    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
+    NSURL *myURL = [NSURL URLWithString:[TMBWebServiceDbInfoSingleton getWebServiceUrlForType:TMBWebServiceUrlTypeContactRequest]];
+
     
-    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",dbHost,dbUserName,dbPassword,dbName]);
+    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",[TMBWebServiceDbInfoSingleton getWebServiceDbHost],[TMBWebServiceDbInfoSingleton getWebServiceDbUserName],[TMBWebServiceDbInfoSingleton getWebServiceDbUserPassword],[TMBWebServiceDbInfoSingleton getWebServiceDbName]]);
 	//3.  Post tag to cloud
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];

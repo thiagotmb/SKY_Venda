@@ -148,20 +148,18 @@
 
 -(BOOL)requestFaqList{
 
-    NSURL *myURL = [NSURL URLWithString:@"http://sky4gtv.com.br/php/getFaqList.php"];
-    NSString *dbHost = [NSString stringWithFormat:@"sky4gtvcombr.ipagemysql.com"];
-    NSString *dbPassword = [NSString stringWithFormat:@"bEk}Id)Ceas."];
-    NSString *dbUserName = [NSString stringWithFormat:@"iosapp"];
-    NSString *dbName = [ NSString stringWithFormat:@"sky_sales"];
+    NSURL *myURL = [NSURL URLWithString:[TMBWebServiceDbInfoSingleton getWebServiceUrlForType:TMBWebServiceUrlTypeGetFaqList]];
     
+
 	//2.REBUILD status string from passingObject
-    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",dbHost,dbUserName,dbPassword,dbName]);
+    NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",[TMBWebServiceDbInfoSingleton getWebServiceDbHost],[TMBWebServiceDbInfoSingleton getWebServiceDbUserName],[TMBWebServiceDbInfoSingleton getWebServiceDbUserPassword],[TMBWebServiceDbInfoSingleton getWebServiceDbName]]);
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:myURL];
     [request setHTTPMethod:@"POST"];
+    
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];

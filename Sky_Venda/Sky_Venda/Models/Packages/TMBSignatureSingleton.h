@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TMBSignature.h"
+#import "TMBWebServiceDbInfoSingleton.h"
 
 
 

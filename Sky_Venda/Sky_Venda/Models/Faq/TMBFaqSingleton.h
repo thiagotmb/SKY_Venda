@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TMBWebServiceDbInfoSingleton.h"
 
 @class TMBFaq;
 @interface TMBFaqSingleton : NSObject<NSURLConnectionDelegate>
