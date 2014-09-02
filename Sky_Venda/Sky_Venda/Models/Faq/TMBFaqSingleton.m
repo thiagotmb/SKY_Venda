@@ -120,6 +120,7 @@
                     faqItem.answer = [tempDictionary objectForKey:@"Answer"];
                     faqItem.question = [tempDictionary objectForKey:@"Question"];
                     
+                    
                     NSData *data = [[NSData alloc]initWithBase64EncodedString:[tempDictionary objectForKey:@"Image"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
                     faqItem.image = [UIImage imageWithData:data];
 
@@ -157,7 +158,7 @@
     NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",dbHost,dbUserName,dbPassword,dbName]);
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:myURL];
     [request setHTTPMethod:@"POST"];

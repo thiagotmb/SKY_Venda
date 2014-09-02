@@ -74,6 +74,11 @@
 		A4D9E1B219ABF6A600E0B9A0 /* TMBCardIOAPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D9E1B119ABF6A500E0B9A0 /* TMBCardIOAPIViewController.m */; };
 		A4D9E1B519ABFAD800E0B9A0 /* TMBPaymentSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D9E1B419ABFAD800E0B9A0 /* TMBPaymentSingleton.m */; };
 		A4FABC4E19B3B0700012CC68 /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A4FABC4D19B3B0700012CC68 /* Button.png */; };
+		A4FABC5019B3C3140012CC68 /* Button_Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = A4FABC4F19B3C3140012CC68 /* Button_Phone.png */; };
+		A4FABC5319B3C8500012CC68 /* Button_Email.png in Resources */ = {isa = PBXBuildFile; fileRef = A4FABC5119B3C8500012CC68 /* Button_Email.png */; };
+		A4FABC5419B3C8500012CC68 /* Button_Whatsapp.png in Resources */ = {isa = PBXBuildFile; fileRef = A4FABC5219B3C8500012CC68 /* Button_Whatsapp.png */; };
+		A4FABC5819B3D41D0012CC68 /* Item_Faq.png in Resources */ = {isa = PBXBuildFile; fileRef = A4FABC5719B3D41D0012CC68 /* Item_Faq.png */; };
+		A4FABC5A19B3D4570012CC68 /* Item_Packages.png in Resources */ = {isa = PBXBuildFile; fileRef = A4FABC5919B3D4570012CC68 /* Item_Packages.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +201,11 @@
 		A4D9E1B319ABFAD800E0B9A0 /* TMBPaymentSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBPaymentSingleton.h; sourceTree = "<group>"; };
 		A4D9E1B419ABFAD800E0B9A0 /* TMBPaymentSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPaymentSingleton.m; sourceTree = "<group>"; };
 		A4FABC4D19B3B0700012CC68 /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
+		A4FABC4F19B3C3140012CC68 /* Button_Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_Phone.png; sourceTree = "<group>"; };
+		A4FABC5119B3C8500012CC68 /* Button_Email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_Email.png; sourceTree = "<group>"; };
+		A4FABC5219B3C8500012CC68 /* Button_Whatsapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_Whatsapp.png; sourceTree = "<group>"; };
+		A4FABC5719B3D41D0012CC68 /* Item_Faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_Faq.png; sourceTree = "<group>"; };
+		A4FABC5919B3D4570012CC68 /* Item_Packages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_Packages.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +427,7 @@
 		A48E3EDF199452F400EA54E2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A4FABC4F19B3C3140012CC68 /* Button_Phone.png */,
 				A4214E4B19B033E400A0C371 /* SKYLOGO.png */,
 				A45A95CC19ACC78900C8923E /* PickerView.png */,
 				A45A95CE19ACCB6E00C8923E /* DatePickerView.png */,
@@ -425,6 +436,10 @@
 				A45A95D019ACD34700C8923E /* TabBar.png */,
 				A4CA6C0819AA4C31002DEBA3 /* Transparent.png */,
 				A4FABC4D19B3B0700012CC68 /* Button.png */,
+				A4FABC5119B3C8500012CC68 /* Button_Email.png */,
+				A4FABC5219B3C8500012CC68 /* Button_Whatsapp.png */,
+				A4FABC5719B3D41D0012CC68 /* Item_Faq.png */,
+				A4FABC5919B3D4570012CC68 /* Item_Packages.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -626,10 +641,15 @@
 				A409B3DA19A68DB700C83BD4 /* Main_iPhone.storyboard in Resources */,
 				A4C72F1319914B4E00536DD7 /* Images.xcassets in Resources */,
 				A409B3D919A68DB700C83BD4 /* Main_iPad.storyboard in Resources */,
+				A4FABC5419B3C8500012CC68 /* Button_Whatsapp.png in Resources */,
 				A409B3D719A68DB700C83BD4 /* SKY_VENDA.sqlite in Resources */,
+				A4FABC5019B3C3140012CC68 /* Button_Phone.png in Resources */,
 				A45A95CB19ACBFBE00C8923E /* NavigationBar.png in Resources */,
+				A4FABC5319B3C8500012CC68 /* Button_Email.png in Resources */,
 				A4CA6C0919AA4C31002DEBA3 /* Background.png in Resources */,
+				A4FABC5819B3D41D0012CC68 /* Item_Faq.png in Resources */,
 				A4C72F0219914B4E00536DD7 /* InfoPlist.strings in Resources */,
+				A4FABC5A19B3D4570012CC68 /* Item_Packages.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -77,9 +77,10 @@
     [self.refreshControl addTarget:self action:@selector(requestFaqList) forControlEvents:UIControlEventValueChanged];
     
     self.contactRequestor = [[TMBContactRequestor alloc] init];
+    
+    
+    
 
-    
-    
     // Do any additional setup after loading the view.
 }
 
@@ -224,7 +225,7 @@
     NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@&RequestorContact=%@&DateOfRequest=%@&RequestType=%d",dbHost,dbUserName,dbPassword,dbName,contactRequestor.contact,contactRequestor.dateOfRequest,contactRequestor.type]);
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:myURL];
     [request setHTTPMethod:@"POST"];

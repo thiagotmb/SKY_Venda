@@ -131,7 +131,7 @@
         if ( faqItem.image != (id)[NSNull null] ) {
             UIImage *uiimg = faqItem.image;
             NSData *data = UIImagePNGRepresentation(uiimg);
-            if (sqlite3_bind_blob(statement, 3, [data bytes], [data length], SQLITE_TRANSIENT) != SQLITE_OK)
+            if (sqlite3_bind_blob(statement, 3, [data bytes], (int)[data length], SQLITE_TRANSIENT) != SQLITE_OK)
                 sucess = NO;
         }
         

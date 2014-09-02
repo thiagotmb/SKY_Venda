@@ -30,14 +30,12 @@
 
     
     [sharedSignature loadSharedData];
-
     [sharedFaqList loadSharedData];
     [sharedPackageList loadSharedData];
     [sharedEnterpriseContact loadSharedData];
 
 
     [sharedPackageList requestPackageList];
-
     [sharedEnterpriseContact requestContactInfo];
     
 
@@ -49,6 +47,10 @@
     
     UIImage *tabBarImage = [UIImage imageNamed:@"TabBar.png"];
     [[UITabBar appearance] setBackgroundImage:tabBarImage];
+    
+    
+    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor colorWithHue:359 saturation:100 brightness:50 alpha:1];
+
     
     return YES;
 }

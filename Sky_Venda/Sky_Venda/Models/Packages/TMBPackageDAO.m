@@ -147,7 +147,7 @@
         if ( packageData.mainImage != (id)[NSNull null] ) {
             UIImage *uiimg = packageData.mainImage;
             NSData *data = UIImagePNGRepresentation(uiimg);
-            if (sqlite3_bind_blob(statement, 2, [data bytes], [data length], SQLITE_TRANSIENT) != SQLITE_OK)
+            if (sqlite3_bind_blob(statement, 2, [data bytes], (int)[data length], SQLITE_TRANSIENT) != SQLITE_OK)
                 sucess = NO;
         }
         
@@ -155,7 +155,7 @@
         if ( packageData.detailImage != (id)[NSNull null] ) {
             UIImage *uiimg = packageData.detailImage;
             NSData *data = UIImagePNGRepresentation(uiimg);
-            if (sqlite3_bind_blob(statement, 3, [data bytes], [data length], SQLITE_TRANSIENT) != SQLITE_OK)
+            if (sqlite3_bind_blob(statement, 3, [data bytes], (int)[data length], SQLITE_TRANSIENT) != SQLITE_OK)
                 sucess = NO;
         }
                 

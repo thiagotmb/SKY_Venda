@@ -128,6 +128,7 @@
                     packageItem.detailImage = [UIImage imageWithData:data2];
 
                     packageItem.price = [[tempDictionary objectForKey:@"Price"]  floatValue];
+                    NSLog(@"%@",packageItem.name);
                    // NSLog(@"%@",packageItem);
                 [self.packageList addObject:packageItem];
                 }
@@ -163,7 +164,7 @@
     NSString *dataToPost = ([[NSString alloc] initWithFormat:@"DBHost=%@&DBUserName=%@&DBPassword=%@&DBName=%@",dbHost,dbUserName,dbPassword,dbName]);
     
     NSData *postData = [dataToPost dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:myURL];
     [request setHTTPMethod:@"POST"];

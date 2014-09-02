@@ -66,6 +66,16 @@
                      completion:nil];
     
    // [sharedPackageData requestPackageList];
+    
+    self.tabBarController.tabBar.tintColor = [UIColor colorWithHue:359 saturation:100 brightness:50 alpha:1];
+    
+    UIImage *tabBarIconFaq = [UIImage imageNamed:@"Item_Faq.png"];
+    self.tabBarItem = [self.tabBarController.tabBar.items objectAtIndex:1];
+    self.tabBarItem.image = tabBarIconFaq;
+    
+    UIImage *tabBarIconPackages = [UIImage imageNamed:@"Item_Packages.png"];
+    self.tabBarItem = [self.tabBarController.tabBar.items objectAtIndex:0];
+    self.tabBarItem.image = tabBarIconPackages;
 
 
 }
