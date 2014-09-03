@@ -9,12 +9,12 @@
 #import "TMBPaymentDataViewController.h"
 #import "TMBCreditCard.h"
 #import "TMBPaymentSingleton.h"
+#import "TMBAdhesionViewController.h"
 
 
 @interface TMBPaymentDataViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (weak, nonatomic) IBOutlet UITextField *creditCardExpirationDateTextField;
-@property (weak, nonatomic) IBOutlet UITextView *signatureAdhesionTextView;
 @property (weak, nonatomic) IBOutlet UITextField *creditCardNumber;
 
 @property (nonatomic) UIDatePicker* datePicker;
@@ -67,8 +67,10 @@
     
     UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
     self.background.image = backgroundImage;
-        // Do any additional setup after loading the view.
+    
+    // Do any additional setup after loading the view.
 }
+
 
 -(void)updateCreditCardInfo:(NSNotification*)aNotification{
     
@@ -160,4 +162,36 @@
     
     [TMBSignatureSingleton postNewSignature:sharedSignatureData.signature];
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton*)sender{
+
+    
+    if ([[segue identifier] isEqualToString:@"pushAdhesionViewController"]) {
+        
+        switch (sender.tag) {
+            case 0:{
+                TMBAdhesionViewController *segueViewController = [segue destinationViewController];
+                segueViewController.urlString = @"https://a248.e.akamai.net/f/248/16140/2d/www1.sky.com.br/akamai/assine/doc/Politica_de_Prividade_SKY%20_%20Assine%20SKY_%2018%2006%202014%20_versao_limpa.pdf";
+
+            }
+                break;
+            case 1:{
+                NSLog(@"passei");
+                TMBAdhesionViewController *segueViewController = [segue destinationViewController];
+                segueViewController.urlString = @"https://a248.e.akamai.net/f/248/16140/7d/www1.sky.com.br/akamai/assine/pdf/Condicoes-gerais.pdf";
+            }
+                break;
+            default:
+                break;
+        }
+            
+
+        }
+
+}
+
+
+
+
 @end

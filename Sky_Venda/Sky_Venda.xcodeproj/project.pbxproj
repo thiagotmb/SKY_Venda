@@ -50,6 +50,7 @@
 		A48BBDCB19A909440060047F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48BBDCA19A909440060047F /* MapKit.framework */; };
 		A49C948719A92BDE00534BBF /* TMBButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49C948619A92BDE00534BBF /* TMBButtonTableViewCell.m */; };
 		A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BAD67319A21B0400EA244B /* iCarousel.m */; };
+		A4C1FF8219B7B1F10004B665 /* TMBAdhesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C1FF8119B7B1F10004B665 /* TMBAdhesionViewController.m */; };
 		A4C72EF819914B4E00536DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF719914B4E00536DD7 /* Foundation.framework */; };
 		A4C72EFA19914B4E00536DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */; };
 		A4C72EFC19914B4E00536DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C72EFB19914B4E00536DD7 /* UIKit.framework */; };
@@ -173,6 +174,8 @@
 		A49C948619A92BDE00534BBF /* TMBButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBButtonTableViewCell.m; sourceTree = "<group>"; };
 		A4BAD67219A21B0400EA244B /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		A4BAD67319A21B0400EA244B /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		A4C1FF8019B7B1F10004B665 /* TMBAdhesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBAdhesionViewController.h; sourceTree = "<group>"; };
+		A4C1FF8119B7B1F10004B665 /* TMBAdhesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBAdhesionViewController.m; sourceTree = "<group>"; };
 		A4C72EF419914B4E00536DD7 /* Sky_Venda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky_Venda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C72EF719914B4E00536DD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4C72EF919914B4E00536DD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -283,6 +286,8 @@
 				A409B3A819A68DB700C83BD4 /* TMBPaymentDataViewController.m */,
 				A4D9E1B019ABF6A500E0B9A0 /* TMBCardIOAPIViewController.h */,
 				A4D9E1B119ABF6A500E0B9A0 /* TMBCardIOAPIViewController.m */,
+				A4C1FF8019B7B1F10004B665 /* TMBAdhesionViewController.h */,
+				A4C1FF8119B7B1F10004B665 /* TMBAdhesionViewController.m */,
 			);
 			path = Package;
 			sourceTree = "<group>";
@@ -700,6 +705,7 @@
 				A48176A019A82A4900455EE0 /* TMBPackageDAO.m in Sources */,
 				A49C948719A92BDE00534BBF /* TMBButtonTableViewCell.m in Sources */,
 				A48BBDC719A8E9940060047F /* TMBEnterpriseContactDAO.m in Sources */,
+				A4C1FF8219B7B1F10004B665 /* TMBAdhesionViewController.m in Sources */,
 				A455C61119B64AFB0081D8E6 /* TMBWebServiceDbInfoSingleton.m in Sources */,
 				A481769719A7CA0300455EE0 /* TMBFaqDAO.m in Sources */,
 				A4BAD67419A21B0400EA244B /* iCarousel.m in Sources */,

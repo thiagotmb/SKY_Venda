@@ -16,7 +16,10 @@
     self = [super init];
     
     if (self) {
-        dbPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"SKY_VENDA.sqlite"];
+         NSString * docsPath= NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        [docsPath stringByAppendingPathComponent:@"studets.db"];
+        dbPath = [docsPath stringByAppendingPathComponent:@"SKY_VENDA.sqlite"];
+        
     }
     return self;
 }
