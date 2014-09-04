@@ -7,7 +7,7 @@
         <!--Package Presentation View Controller - Pacotes-->
         <scene sceneID="EMI-50-b6R">
             <objects>
-                <viewController id="lJb-FP-ZX0" customClass="TMBPackagePresentationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TMBPackagePresentationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lJb-FP-ZX0" customClass="TMBPackagePresentationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fXc-Eb-yVw"/>
                         <viewControllerLayoutGuide type="bottom" id="PKQ-Z0-Zd9"/>
@@ -431,7 +431,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-vz-2Xi">
-                                                    <rect key="frame" x="0.0" y="-3" width="320" height="50"/>
+                                                    <rect key="frame" x="0.0" y="-0.5" width="320" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.023573720190000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="Próximo Passo" backgroundImage="Button.png">
@@ -529,7 +529,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0C-Cb-1rH">
-                                <rect key="frame" x="0.0" y="99" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="101.5" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -578,7 +578,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL3-bz-tPN">
-                                <rect key="frame" x="0.0" y="474" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="472" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.023573720190000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Concordo e quero assinar" backgroundImage="Button.png">
@@ -590,25 +590,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j46-aK-t3r">
-                                <rect key="frame" x="0.0" y="330" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="327.5" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Política de Privacidade" backgroundImage="Button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VPE-Tb-Tri" kind="modal" identifier="pushAdhesionViewController" id="eWa-Ez-JOR"/>
+                                    <action selector="showPrivacyPolicy:" destination="V9l-wU-ELL" eventType="touchUpInside" id="xcE-ct-87w"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qo-k0-xSy">
-                                <rect key="frame" x="0.0" y="391" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="388.5" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Termo de Adesão" backgroundImage="Button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VPE-Tb-Tri" kind="modal" identifier="pushAdhesionViewController" id="JXD-XF-Dma"/>
+                                    <action selector="showAdhesionTerm:" destination="V9l-wU-ELL" eventType="touchUpInside" id="3LS-Z7-3b8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -631,6 +631,7 @@
                         <outlet property="background" destination="X3y-sI-M9z" id="epg-da-tfN"/>
                         <outlet property="creditCardExpirationDateTextField" destination="WrG-NN-RKe" id="9L3-b1-DF9"/>
                         <outlet property="creditCardNumber" destination="PRv-pB-JqA" id="Qbi-nO-JIq"/>
+                        <segue destination="VPE-Tb-Tri" kind="modal" identifier="pushAdhesionViewController" id="08M-8A-G9s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXU-bJ-Z31" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -708,7 +709,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9W-D3-V1J">
-                                                    <rect key="frame" x="0.0" y="298" width="320" height="50"/>
+                                                    <rect key="frame" x="0.0" y="304" width="320" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -765,7 +766,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuY-SE-PUV">
-                                                    <rect key="frame" x="-8" y="-2" width="328" height="50"/>
+                                                    <rect key="frame" x="-8" y="0.0" width="328" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -822,7 +823,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="eWa-Ez-JOR"/>
-    </inferredMetricsTieBreakers>
 </document>

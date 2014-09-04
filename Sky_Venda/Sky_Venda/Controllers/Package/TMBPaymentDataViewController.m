@@ -12,12 +12,17 @@
 #import "TMBAdhesionViewController.h"
 
 
-@interface TMBPaymentDataViewController ()<UITextFieldDelegate>
+@interface TMBPaymentDataViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (weak, nonatomic) IBOutlet UITextField *creditCardExpirationDateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *creditCardNumber;
 
 @property (nonatomic) UIDatePicker* datePicker;
+
+@property (nonatomic) UIAlertView* submited;
+
+- (IBAction)showAdhesionTerm:(id)sender;
+- (IBAction)showPrivacyPolicy:(id)sender;
 
 - (IBAction)submitSignature:(id)sender;
 
@@ -67,6 +72,8 @@
     
     UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
     self.background.image = backgroundImage;
+    
+    self.submited = [[ UIAlertView alloc] initWithTitle:@"Obrigado!" message:@"Sua assinatura foi registrada, aguarde o contato do setor técnico para agendar a instalação do equipamento" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     
     // Do any additional setup after loading the view.
 }
@@ -158,9 +165,20 @@
 
 }
 
+- (IBAction)showAdhesionTerm:(id)sender {
+    
+    [self performSegueWithIdentifier:@"pushAdhesionViewController" sender:sender];
+}
+
+- (IBAction)showPrivacyPolicy:(id)sender {
+    
+        [self performSegueWithIdentifier:@"pushAdhesionViewController" sender:sender];
+}
+
 - (IBAction)submitSignature:(id)sender {
     
     [TMBSignatureSingleton postNewSignature:sharedSignatureData.signature];
+    [[self submited] show];
 }
 
 
@@ -171,6 +189,7 @@
         
         switch (sender.tag) {
             case 0:{
+                
                 TMBAdhesionViewController *segueViewController = [segue destinationViewController];
                 segueViewController.urlString = @"https://a248.e.akamai.net/f/248/16140/2d/www1.sky.com.br/akamai/assine/doc/Politica_de_Prividade_SKY%20_%20Assine%20SKY_%2018%2006%202014%20_versao_limpa.pdf";
 
@@ -191,6 +210,13 @@
 
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TMBPackagePresentationViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 
 
