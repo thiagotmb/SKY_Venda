@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 - (IBAction)cancelScan:(id)sender;
+@property (weak, nonatomic) IBOutlet CardIOView *cardIo;
 
 @end
 
@@ -42,17 +43,17 @@
     
     sharedPaymentData = [TMBPaymentSingleton sharedData];
     
-    self.view.backgroundColor = [UIColor blackColor];
+    //self.view.backgroundColor = [UIColor blackColor];
     
-    CardIOView *cardIOSubView = [[CardIOView alloc] initWithFrame:self.view.frame];
-    CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - self.cancelButton.frame.size.height*5);
-    cardIOSubView.scannedImageDuration = 3;
+    self.cardIo.scannedImageDuration = 3;
     //NSLog(@"Originx: %.2f, Originy: %.2f, Width: %.2f, Heigth: %.2f",self.view.frame.origin.x,self.view.frame.origin.y,self.view.frame.size.width,self.view.frame.size.height);
     
-    cardIOSubView.appToken = CardIOAppToken; // get your app token from the card.io website
-    cardIOSubView.delegate = self;
+    self.cardIo.appToken = CardIOAppToken; // get your app token from the card.io website
+    self.cardIo.delegate = self;
     
-    [self.view addSubview:cardIOSubView];
+    self.cardIo.useCardIOLogo = YES;
+    
+    //[self.view addSubview:cardIOSubView];
     // Do any additional setup after loading the view.
 }
 
