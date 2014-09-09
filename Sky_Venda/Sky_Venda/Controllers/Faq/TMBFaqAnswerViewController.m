@@ -11,6 +11,7 @@
 #import "TMBFaq.h"
 
 @interface TMBFaqAnswerViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 @end
 
@@ -38,7 +39,8 @@
     self.question.text = self.faqItem.question;
     self.answerText.text = self.faqItem.answer;
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
     // Do any additional setup after loading the view.
 }
 

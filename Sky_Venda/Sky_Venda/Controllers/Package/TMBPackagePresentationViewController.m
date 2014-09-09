@@ -14,6 +14,7 @@
 
 @interface TMBPackagePresentationViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 @property(nonatomic,strong) IBOutlet iCarousel *packagePresentPrincipalView;
 @property (weak, nonatomic) IBOutlet UITableView *packageDetailTableView;
 @property (nonatomic) NSMutableArray* packageList;
@@ -47,7 +48,9 @@
     self.packagePresentPrincipalView.type = iCarouselTypeCoverFlow;
     self.packageDetailTableView.backgroundColor = [UIColor clearColor];
     self.packagePresentPrincipalView.backgroundColor = [UIColor clearColor];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
     
     [self.packagePresentPrincipalView setCurrentItemIndex:9];
 

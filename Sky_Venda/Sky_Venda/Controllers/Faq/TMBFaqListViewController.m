@@ -16,6 +16,7 @@
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
 @interface TMBFaqListViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 @property (nonatomic,strong) TMBFaq *faqItem;
 - (IBAction)requestPhoneContact:(id)sender;
@@ -60,7 +61,9 @@
     
     self.view.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
     
     
     self.alertView = [[UIAlertView alloc] initWithTitle:self.alertTitle message:nil delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Solicitar",nil];
