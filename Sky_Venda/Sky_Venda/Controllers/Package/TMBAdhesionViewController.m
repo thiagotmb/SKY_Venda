@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *adhesionWebView;
 - (IBAction)dismiss:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 @end
 
@@ -39,7 +40,8 @@
     [self.adhesionWebView loadRequest:request];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
     
 }
 

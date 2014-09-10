@@ -19,6 +19,7 @@
 
 - (IBAction)cancelScan:(id)sender;
 @property (weak, nonatomic) IBOutlet CardIOView *cardIo;
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 @end
 
@@ -55,6 +56,10 @@
     
     //[self.view addSubview:cardIOSubView];
     // Do any additional setup after loading the view.
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
+    self.background.image = backgroundImage;
+
 }
 
 - (void)didReceiveMemoryWarning

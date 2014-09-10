@@ -553,6 +553,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-Fv-sdG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLG-s8-yTr">
                                 <rect key="frame" x="86" y="525" width="148" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -579,15 +583,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TPL-Fv-sdG" secondAttribute="trailing" id="Bxz-6t-BMj"/>
+                            <constraint firstItem="wdn-gE-0QU" firstAttribute="top" secondItem="TPL-Fv-sdG" secondAttribute="bottom" id="FyW-YM-GfK"/>
+                            <constraint firstItem="TPL-Fv-sdG" firstAttribute="leading" secondItem="bCV-zE-hJx" secondAttribute="leading" id="Web-wn-Oth"/>
+                            <constraint firstItem="TPL-Fv-sdG" firstAttribute="top" secondItem="bCV-zE-hJx" secondAttribute="top" id="dXP-t4-Y9S"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="TPL-Fv-sdG" id="rXc-1n-2xa"/>
                         <outlet property="cancelButton" destination="MLG-s8-yTr" id="5eK-If-ww6"/>
                         <outlet property="cardIo" destination="2OI-F3-xt3" id="4RJ-JD-cvw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjZ-mA-oFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="-2812"/>
+            <point key="canvasLocation" x="1719" y="-2911"/>
         </scene>
         <!--Payment Data View Controller - Dados de Pagamento 3/3-->
         <scene sceneID="zJa-6W-NpE">
@@ -727,6 +738,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Apt-3s-Gqh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJR-aJ-L3u">
                                 <rect key="frame" x="0.0" y="67" width="320" height="501"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -746,9 +761,16 @@
                             </button>
                         </subviews>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Apt-3s-Gqh" secondAttribute="bottom" id="aDQ-UH-rbB"/>
+                            <constraint firstItem="Apt-3s-Gqh" firstAttribute="leading" secondItem="oUO-Sa-Fcv" secondAttribute="leading" id="j6s-ON-gIY"/>
+                            <constraint firstItem="Apt-3s-Gqh" firstAttribute="top" secondItem="oUO-Sa-Fcv" secondAttribute="top" id="n0t-hH-rle"/>
+                            <constraint firstAttribute="trailing" secondItem="Apt-3s-Gqh" secondAttribute="trailing" id="p22-OQ-48q"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="adhesionWebView" destination="iJR-aJ-L3u" id="r1O-WS-cQ0"/>
+                        <outlet property="background" destination="Apt-3s-Gqh" id="gKF-dO-zvv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7f-kg-2Jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
