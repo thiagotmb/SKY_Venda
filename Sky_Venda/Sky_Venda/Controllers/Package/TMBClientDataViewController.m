@@ -19,6 +19,9 @@
 @property (nonatomic) NSIndexPath *activeCellIndexPath;
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 
+@property (nonatomic) CGFloat lastScrollContentOffset;
+
+
 enum TMBTableViewRow:NSInteger{
   
     TMBTableViewRowClientName = 0,
@@ -37,6 +40,19 @@ enum TMBTableViewRow:NSInteger{
     
     
 };
+
+typedef enum ScrollDirection
+{
+    ScrollDirectionNone,
+    ScrollDirectionRight,
+    ScrollDirectionLeft,
+    ScrollDirectionUp,
+    ScrollDirectionDown,
+    ScrollDirectionCrazy,
+}ScrollDirection;
+
+@property(nonatomic, assign)CGFloat scrollViewlastContentOffset;
+@property(nonatomic) CGRect packagePresentationFrame;
 
 @end
 
@@ -72,8 +88,8 @@ enum TMBTableViewRow:NSInteger{
     
     UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
     self.background.image = backgroundImage;
-   
-    }
+    self.packagePresentationFrame = self.packagePresentation.frame;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -411,5 +427,29 @@ enum TMBTableViewRow:NSInteger{
         [self.clientDataTableView selectRowAtIndexPath:self.activeCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
 }
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    ScrollDirection scrollDirection;
+    if(self.scrollViewlastContentOffset > scrollView.contentOffset.y){
+        scrollDirection = ScrollDirectionUp;
+        NSLog(@"cima");
+    }
+        else
+        if(self.scrollViewlastContentOffset < scrollView.contentOffset.y)
+        {
+            scrollDirection =ScrollDirectionDown;
+            
+            if (self.packagePresentation.frame.size.height > self.packagePresentationFrame.size.height/3) {
+                [self.packagePresentation setFrame:CGRectMake(self.packagePresentation.frame.origin.x, self.packagePresentation.frame.origin.y - 2, self.packagePresentation.frame.size.width, self.packagePresentation.frame.size.height-5)];
+                [self.clientDataTableView setFrame:CGRectMake(self.clientDataTableView.frame.origin.x, self.clientDataTableView.frame.origin.y -5, self.clientDataTableView.frame.size.width, self.clientDataTableView.frame.size.height+5)];
+            }
+            
+            NSLog(@"%@",NSStringFromCGRect(self.packagePresentation.frame));
+        }
+    self.scrollViewlastContentOffset = scrollView.contentOffset.y;
+    
+}
+
 
 @end
