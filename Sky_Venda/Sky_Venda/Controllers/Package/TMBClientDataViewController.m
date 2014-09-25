@@ -54,6 +54,14 @@ typedef enum ScrollDirection
 @property(nonatomic, assign)CGFloat scrollViewlastContentOffset;
 @property(nonatomic) CGRect packagePresentationFrame;
 
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topPackagePresentation;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomTableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topPackageImage_TableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableView;
+
+@property (nonatomic) BOOL teste;
+@property (nonatomic) BOOL teste2;
 @end
 
 @implementation TMBClientDataViewController{
@@ -89,6 +97,11 @@ typedef enum ScrollDirection
     UIImage *backgroundImage = [UIImage imageNamed:@"Background.png"];
     self.background.image = backgroundImage;
     self.packagePresentationFrame = self.packagePresentation.frame;
+    
+    
+    
+    self.teste = NO;
+    self.teste2 = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,6 +113,10 @@ typedef enum ScrollDirection
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [self.view endEditing:YES];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
 }
 
 #pragma mark - TableView
@@ -423,33 +440,91 @@ typedef enum ScrollDirection
     if(self.activeCellIndexPath)
     {
         [self.clientDataTableView scrollToRowAtIndexPath:self.activeCellIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
-        
         [self.clientDataTableView selectRowAtIndexPath:self.activeCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    ScrollDirection scrollDirection;
-    if(self.scrollViewlastContentOffset > scrollView.contentOffset.y){
-        scrollDirection = ScrollDirectionUp;
-        NSLog(@"cima");
-    }
-        else
-        if(self.scrollViewlastContentOffset < scrollView.contentOffset.y)
-        {
-            scrollDirection =ScrollDirectionDown;
-            
-            if (self.packagePresentation.frame.size.height > self.packagePresentationFrame.size.height/3) {
-                [self.packagePresentation setFrame:CGRectMake(self.packagePresentation.frame.origin.x, self.packagePresentation.frame.origin.y - 2, self.packagePresentation.frame.size.width, self.packagePresentation.frame.size.height-5)];
-                [self.clientDataTableView setFrame:CGRectMake(self.clientDataTableView.frame.origin.x, self.clientDataTableView.frame.origin.y -5, self.clientDataTableView.frame.size.width, self.clientDataTableView.frame.size.height+5)];
-            }
-            
-            NSLog(@"%@",NSStringFromCGRect(self.packagePresentation.frame));
-        }
-    self.scrollViewlastContentOffset = scrollView.contentOffset.y;
-    
+
+    [self changeLayoutByScrollView:scrollView];
+
 }
 
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    self.teste2 = NO;
+
+}
+
+-(void)changeLayoutByScrollView:(UIScrollView*)scrollView{
+    
+    ScrollDirection scrollDirection;
+    scrollDirection = ScrollDirectionCrazy;
+    if(self.scrollViewlastContentOffset > scrollView.contentOffset.y ){
+        scrollDirection = ScrollDirectionUp;
+       // NSLog(@"cima");
+    }else if(self.scrollViewlastContentOffset < scrollView.contentOffset.y){
+        scrollDirection = ScrollDirectionDown;
+        
+       // NSLog(@"%@",NSStringFromCGRect(self.packagePresentation.frame));
+    }
+    
+    self.scrollViewlastContentOffset = scrollView.contentOffset.y;
+    
+    
+    if (!self.teste2) {
+        if (scrollDirection == ScrollDirectionUp) {
+            
+            if (self.topPackagePresentation.constant < 65) {
+                [self.topPackagePresentation setConstant:self.topPackagePresentation.constant+5];
+                [self.topTableView setConstant:self.topTableView.constant+5];
+                NSLog(@" menor que 65 ");
+                
+            }else if(self.topTableView.constant > 20 && self.topTableView.constant < 165){
+                
+                
+                if (self.teste) {
+                    [self.topTableView setConstant:self.topTableView.constant + self.navigationController.navigationBar.frame.size.height];
+                    [self.topTableView setConstant:self.topTableView.constant+35];
+                    
+                    self.teste = NO;
+                    
+                }
+                //[self.topPackagePresentation setConstant:self.topPackagePresentation.constant+5];
+                
+                NSLog(@" menor que 65 mario que 10");
+                
+            }
+            
+        }else{
+            
+            
+            if (self.topTableView.constant > 65 ) {
+                //[self.topPackagePresentation setConstant:self.topPackagePresentation.constant-5];
+                [self.topTableView setConstant:self.topTableView.constant-5];
+                NSLog(@" maior que 65 ");
+                
+            }else if(self.topTableView.constant > 20){
+                NSLog(@"maior que 65 menor que 10");
+                
+                if (!self.teste) {
+                    [self.topPackagePresentation setConstant:self.topPackagePresentation.constant- self.navigationController.navigationBar.frame.size.height];
+                    //[self.topPackageImage_TableView setConstant:self.topPackageImage_TableView.constant-5];
+                    [self.topTableView setConstant:self.topTableView.constant-35];
+                    self.teste = YES;
+                }
+                
+                
+            }
+            
+            
+        }
+        
+
+    }
+        
+    
+    
+}
 
 @end

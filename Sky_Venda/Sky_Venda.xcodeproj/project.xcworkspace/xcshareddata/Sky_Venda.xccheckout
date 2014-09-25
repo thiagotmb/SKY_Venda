@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>21DEA5E2-2F55-4329-BF73-2787C212BBC6</string>
+	<string>B7F4B73A-7666-4DC0-AB9C-9273EFBEC8B7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Sky_Venda</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>357499D8-8A81-4BC7-B220-CE30ACB583BA</key>
+		<key>E60B76CFD707637CCB239AF16111B3A1F72F38B7</key>
 		<string>https://github.com/thiagotmb/SKY_Venda.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Sky_Venda/Sky_Venda.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>357499D8-8A81-4BC7-B220-CE30ACB583BA</key>
+		<key>E60B76CFD707637CCB239AF16111B3A1F72F38B7</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/thiagotmb/SKY_Venda.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>357499D8-8A81-4BC7-B220-CE30ACB583BA</string>
+	<string>E60B76CFD707637CCB239AF16111B3A1F72F38B7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>357499D8-8A81-4BC7-B220-CE30ACB583BA</string>
+			<string>E60B76CFD707637CCB239AF16111B3A1F72F38B7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SKY_Venda</string>
 		</dict>
